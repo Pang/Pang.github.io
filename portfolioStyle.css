@@ -1,0 +1,152 @@
+body {
+background-color:#333333; 
+margin: 0;
+padding: 0;
+font-family:Georgia;
+color:beige; 
+text-align:center;
+}
+
+div {
+    margin: auto;
+}
+
+acronym {
+font-weight: bold; 
+font-style: italic; 
+color:white;
+}
+
+.topPage{
+    background-color:beige;
+    width:  100%;
+    min-width: 1000px;
+    position: fixed;
+    z-index: 10;
+    padding-top: 0px;
+    margin-left: 0px;
+    text-align: left;
+}
+
+.headertext {
+color:white; 
+text-align:center;
+min-width: 400px;
+}
+
+.listtext {
+list-style: none; 
+padding:0; 
+font-size:16px
+}
+
+.btnMenu {
+    background-color: #333333;
+    border: none;
+    color: beige;
+    padding: 6px 32px;
+    margin: 0px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    position:relative;
+    top: -7px;
+}
+
+.btnMenu:hover {
+    background-color: rgb(94, 94, 94);
+}
+
+.contentPos {
+    position:  relative;
+    top: 100px;
+}
+
+.frontImage {
+    background-image: url("tunnelMe.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 90%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: beige;
+}
+
+.MainHeader { 
+    color:#333333; 
+    font-size:40px; 
+    letter-spacing: 5px;
+    display: inline;
+    padding-left: 5px;
+    font-family: Cambria;
+    margin-left: 0px;
+}
+
+.MainHeader2 {
+    text-align:center; 
+    color:#333333; 
+    font-size:20px; 
+    letter-spacing: 10px;
+    font-family: Cambria;
+    white-space: nowrap;
+}
+
+.caption {
+  opacity:0.8;
+  font-weight: bold;
+  background: white;
+  color:black;
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 18px;
+  top: 10%;
+  margin-left: 40px;
+  padding: 7px;
+  position: relative;
+  width: 40%;
+  
+}
+
+.imgborder {
+border-width: 3px; 
+border-style: solid; 
+border-color: #333333;
+}
+
+#message {
+  border: none;
+  width: 80%;
+  height: 150px;
+}
+
+input[type=text], select {
+    text-align: center;
+    width: 80%;
+    padding: 5px;
+    border: none;
+}
+
+input[type=email], select {
+    text-align: center;
+    width: 80%;
+    padding: 5px;
+    border: none;
+}
+
+input[type=submit] {
+    background-color: beige;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #F0E68C;
+}
+
