@@ -17,6 +17,12 @@ font-style: italic;
 color:white;
 }
 
+fieldset {
+    width:50%; 
+    margin:auto; 
+    color:beige;
+} 
+
 .topPage{
     background-color:beige;
     width:  100%;
