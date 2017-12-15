@@ -2,7 +2,7 @@ body {
 background-color:#333333; 
 margin: 0;
 padding: 0;
-font-family:Georgia;
+font-family:Georgia, Helvetica;
 color:beige; 
 text-align:center;
 }
@@ -73,7 +73,7 @@ font-size: 18px;
     border: none;
     color: beige;
     padding: 6px 32px;
-    margin: 0px;
+    margin: 0;
     text-align: center;
     display: inline-block;
     font-size: 16px;
