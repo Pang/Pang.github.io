@@ -23,6 +23,11 @@ fieldset {
     color:beige;
 } 
 
+Legend {
+    color: beige;
+    text-align: center;
+}
+
 .topPage{
     background-color:beige;
     width:  100%;
