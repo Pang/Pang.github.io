@@ -12,11 +12,26 @@ window.onload = function() {
   
     //function that sets animation speed and dur
     function expand() {
-      if (ltv >= 10) {
+      if (ltv >= 15) {
         clearInterval(time);
       }
-      else {
+      else if (ltv < 10) {
+        ltv += 0.05;
+        logo1.style.letterSpacing = ltv+"px";
+        logo2.style.letterSpacing = ltv+"px";
+      } 
+      else if (ltv < 12) { 
+        ltv += 0.03;
+        logo1.style.letterSpacing = ltv+"px";
+        logo2.style.letterSpacing = ltv+"px";
+      } 
+      else if (ltv < 14) { 
         ltv += 0.02;
+        logo1.style.letterSpacing = ltv+"px";
+        logo2.style.letterSpacing = ltv+"px";
+      } 
+      else {
+        ltv += 0.01;
         logo1.style.letterSpacing = ltv+"px";
         logo2.style.letterSpacing = ltv+"px";
       }

@@ -39,6 +39,12 @@ Legend {
     text-align: left;
 }
 
+#logo2 {
+    margin: auto; 
+    letter-spacing: 1px;
+    text-shadow:3px 6px #1f1f1f;
+}
+
 .siteLogo {
     white-space: nowrap;
     font-size: 60px;
@@ -50,7 +56,8 @@ Legend {
     bottom: 10px;
     padding: 5px;
     padding-bottom: 45px;
-    
+    text-shadow: 3px 6px #1f1f1f;
+    box-shadow: 3px 6px #1f1f1f;
 }
 
 .headertext {
