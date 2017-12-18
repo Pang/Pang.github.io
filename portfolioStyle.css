@@ -1,5 +1,6 @@
 body {
-background-color:#333333; 
+background-color:#3a4a4b; 
+background: linear-gradient(to right, #3a4a4b , #4f7172);
 margin: 0;
 padding: 0;
 font-family:Georgia, Helvetica;
@@ -32,6 +33,7 @@ Legend {
     background-color:beige;
     width:  100%;
     min-width: 2000px;
+    max-height: 45px;
     position: fixed;
     z-index: 10;
     padding-top: 0px;
@@ -65,6 +67,7 @@ color:white;
 text-align:center;
 min-width: 400px;
 text-decoration: underline;
+margin:auto;
 }
 
 .listtext {
@@ -76,7 +79,7 @@ font-size: 18px;
 }
 
 .btnMenu {
-    background-color: #333333;
+    background-color: #496a6d;
     border: none;
     color: beige;
     padding: 6px 32px;
@@ -86,16 +89,25 @@ font-size: 18px;
     font-size: 16px;
     cursor: pointer;
     position:relative;
-    top: -7px;
+    top: -9px;
+    border: #262f30 1px;
 }
 
 .btnMenu:hover {
-    background-color: rgb(94, 94, 94);
+    background-color: #314647;
+    color: white;
+    padding: 8px 32px;
 }
+
 
 .contentPos {
     position:  relative;
-    top: 100px;
+    top: 140px;
+}
+
+.contentPosLogo {
+    position:  relative;
+    top: 300px;
 }
 
 footer {
@@ -115,7 +127,7 @@ footer {
 }
 
 .MainHeader { 
-    color:#333333; 
+    color:#496a6d; 
     font-size:40px; 
     letter-spacing: 5px;
     display: inline;
