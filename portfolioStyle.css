@@ -1,10 +1,10 @@
 body {
 background-color:#3a4a4b; 
-background: linear-gradient(to right, #2d3a3b , #354a52);
+background: linear-gradient(to right, #2d3a3b , #435b64);
 margin: 0;
 padding: 0;
 font-family:Georgia, Helvetica;
-color:white; 
+color: beige; 
 text-align:center;
 }
 
@@ -30,7 +30,7 @@ Legend {
 }
 
 .topPage{
-    background-color:rgb(29, 29, 29);
+    background-color:#242424;
     width:  100%;
     min-width: 2000px;
     max-height: 45px;
@@ -79,24 +79,39 @@ font-size: 18px;
 }
 
 .btnMenu {
-    background-color: #1f1f1f;
+    background-color: #242424;
     border: none;
-    color: #588a8d;
+    color: beige;
     padding: 5px 32px;
     margin: 0;
     text-align: center;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    position:relative;
-    top: -9px;
+    position:absolute;
     border: #262f30 1px;
 }
 
+#Home {
+    top:10px;
+    left:350px;
+}
+#About {
+    top:10px;
+    left:450px;
+}
+#Projects {
+    top:10px;
+    left:575px;
+}
+#Contact {
+    top:10px;
+    left:690px;
+}
+
 .btnMenu:hover {
-    background-color: #1f1f1f;
     color: white;
-    padding: 8px 32px;
+    padding: 5px 32px;
     font-weight: bold;
 }
 
@@ -128,7 +143,7 @@ footer {
 }
 
 .MainHeader { 
-    color: #588a8d; 
+    color: beige; 
     font-size:38px; 
     letter-spacing: 5px;
     display: inline;
