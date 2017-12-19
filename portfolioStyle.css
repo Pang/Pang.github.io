@@ -1,10 +1,10 @@
 body {
 background-color:#3a4a4b; 
-background: linear-gradient(to right, #2d3a3b , #435b64);
+background: linear-gradient(to right, #2d3636 , #43575e);
 margin: 0;
 padding: 0;
 font-family:Georgia, Helvetica;
-color: beige; 
+color: white; 
 text-align:center;
 }
 
@@ -81,8 +81,8 @@ font-size: 18px;
 .btnMenu {
     background-color: #242424;
     border: none;
-    color: beige;
-    padding: 5px 32px;
+    color: white;
+    padding: 5px 20px;
     margin: 0;
     text-align: center;
     display: inline-block;
@@ -111,7 +111,6 @@ font-size: 18px;
 
 .btnMenu:hover {
     color: white;
-    padding: 5px 32px;
     font-weight: bold;
 }
 
@@ -143,7 +142,7 @@ footer {
 }
 
 .MainHeader { 
-    color: beige; 
+    color: white; 
     font-size:38px; 
     letter-spacing: 5px;
     display: inline;
