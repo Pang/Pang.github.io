@@ -7,7 +7,7 @@ window.onload = function() {
     var logo1 = document.getElementById("logo1");
     var logo2 = document.getElementById("logo2");
   
-    //set frequency of animation
+    //set interval of expand function by 1 millisecond
     var time = setInterval(expand, 1);
   
     //function that sets animation speed and dur
