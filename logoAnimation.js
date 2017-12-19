@@ -7,7 +7,7 @@ window.onload = function() {
     var logo1 = document.getElementById("logo1");
     var logo2 = document.getElementById("logo2");
   
-    //set frequency(FPS) of animation
+    //set frequency of animation
     var time = setInterval(expand, 1);
   
     //function that sets animation speed and dur
@@ -17,23 +17,23 @@ window.onload = function() {
       }
       else if (ltv < 10) {
         ltv += 0.05;
-        logo1.style.letterSpacing = ltv+"px";
-        logo2.style.letterSpacing = ltv+"px";
+        logo1.style.letterSpacing = ltv+"px;";
+        logo2.style.letterSpacing = ltv+"px;";
       } 
       else if (ltv < 12) { 
         ltv += 0.03;
-        logo1.style.letterSpacing = ltv+"px";
-        logo2.style.letterSpacing = ltv+"px";
+        logo1.style.letterSpacing = ltv+"px;";
+        logo2.style.letterSpacing = ltv+"px;";
       } 
       else if (ltv < 14) { 
         ltv += 0.02;
-        logo1.style.letterSpacing = ltv+"px";
-        logo2.style.letterSpacing = ltv+"px";
+        logo1.style.letterSpacing = ltv+"px;";
+        logo2.style.letterSpacing = ltv+"px;";
       } 
       else {
         ltv += 0.01;
-        logo1.style.letterSpacing = ltv+"px";
-        logo2.style.letterSpacing = ltv+"px";
+        logo1.style.letterSpacing = ltv+"px;";
+        logo2.style.letterSpacing = ltv+"px;";
       }
     }
   }
