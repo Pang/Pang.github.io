@@ -4,17 +4,21 @@
   <title>RB's Contact</title> 
   <meta name="keywords" content="Ryan Beckett, HTML, Portfolio" />
   <link rel="Stylesheet" type="text/css" href="portfolioStyle.css" />
+  <script src="twitterIcon.js"></script>
 </head>
 
 <body>
 
-<div class="topPage">
-  <h1 class="MainHeader">RYAN BECKETT</h1>
-  <button class="btnMenu" id="Home" onclick="window.location.href='index.html'">Home</button>
-  <button class="btnMenu" id="About" onclick="window.location.href='portfolioAboutMe.html'">About Me</button>
-  <button class="btnMenu" id="Projects" onclick="window.location.href='portfolioProjects.html'">Projects</button>
-  <button class="btnMenu" id="Contact" onclick="window.location.href='portfolioContact.html'">Contact</button>
-</div> 
+  <nav>
+    <ul>
+      <li class="MainHeader">&nbspRYAN BECKETT</li>
+      <li><a id="menuBtn" href="index.html">Home</a></li>
+      <li><a id="menuBtn" href="portfolioAboutMe.html">About Me</a></li>
+      <li><a id="menuBtn" href="portfolioProjects.html">Projects</a></li>
+      <li><a id="menuBtn" href="portfolioContact.html">Contact</a></li>
+      <li><a href="https://www.Twitter.com/RyanBcktt" target="_blank"><img id="twitterLogo" src="Twitter_Default_Icon.png" onmouseover="hover(this)" onmouseout="unhover(this)"/></a></li>
+    </ul>
+  </nav> 
 
 <h1 class="contentPos headertext">Contact Me</h1> <br><br>
 
@@ -28,7 +32,7 @@
 
       <fieldset form="contact">
         <legend>Email Address:*</legend>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" placeholder="example@example.com" required>
       </fieldset> <br>
 
     <fieldset form="contact">
@@ -39,7 +43,7 @@
 
     <fieldset form="contact">
       <legend>Enter your message:</legend>
-      <textarea name="message" id="message"></textarea>
+      <textarea name="message" id="message" placeholder="Type your query here..."></textarea>
     </fieldset> <br> <br>
 
     <input type="submit" value="Submit">

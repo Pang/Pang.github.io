@@ -5,24 +5,28 @@
   <meta name="keywords" content="Ryan Beckett, HTML, Portfolio" />
   <link rel="Stylesheet" type="text/css" href="portfolioStyle.css" />
   <script src="logoAnimation.js"></script>
+  <script src="twitterIcon.js"></script>
 </head>
 
 <body>
 
-  <div class="topPage">
-    <h1 class="MainHeader">RYAN BECKETT</h1>
-    <button class="btnMenu" id="Home" onclick="window.location.href='index.html'">Home</button>
-    <button class="btnMenu" id="About" onclick="window.location.href='portfolioAboutMe.html'">About Me</button>
-    <button class="btnMenu" id="Projects" onclick="window.location.href='portfolioProjects.html'">Projects</button>
-    <button class="btnMenu" id="Contact" onclick="window.location.href='portfolioContact.html'">Contact</button>
-  </div> 
+  <nav>
+    <ul>
+      <li class="MainHeader">&nbspRYAN BECKETT</li>
+      <li><a id="menuBtn" href="index.html">Home</a></li>
+      <li><a id="menuBtn" href="portfolioAboutMe.html">About Me</a></li>
+      <li><a id="menuBtn" href="portfolioProjects.html">Projects</a></li>
+      <li><a id="menuBtn" href="portfolioContact.html">Contact</a></li>
+      <li><a href="https://www.Twitter.com/RyanBcktt" target="_blank"><img id="twitterLogo" src="Twitter_Default_Icon.png" onmouseover="hover(this)" onmouseout="unhover(this)"/></a></li>
+    </ul>
+  </nav> 
 
 <div class="contentPosLogo">
   <h1 class="siteLogo" id="logo1"> RYAN BECKETT</h1>
   <h2 id="logo2">PORTFOLIO</h2>
 </div>
 
-<br>
+
 <footer>
 <p>This website is a project in order to learn <abbr title="HyperText Markup Language">HTML</abbr>, 
   with use of <abbr title="Cascading Style Sheet">CSS</abbr>, <abbr title="JavaScript">JS</abbr> and <abbr title="Server Side Web Development Framework, usually written in C#!">ASP.NET</abbr>.
