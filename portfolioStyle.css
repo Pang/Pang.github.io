@@ -2,10 +2,17 @@ body {
     background-color:#3a4a4b; 
     background: linear-gradient(to right, #2d3636 , #43575e);
     margin: 0;
-    padding: 0;
     font-family:Georgia, Helvetica;
     color: white; 
     text-align:center;
+}
+
+nav {
+    position: fixed;
+    top:0px;
+    width:100%;
+    overflow:hidden;
+    z-index:1;
 }
 
 ul {
@@ -19,16 +26,6 @@ ul {
 hr {
     width: 20%;
     margin-top:28px;
-}
-.topPage {
-    background-color:#242424;
-    min-width: 2000px;
-    max-height: 45px;
-    position: fixed;
-    z-index: 10;
-    padding-top: 0px;
-    margin-left: 0px;
-    text-align: left;
 }
 
 #menuBtn {
@@ -76,6 +73,7 @@ Legend {
     Width: 25px; 
     margin-top: 8px;
     margin-right: 12px;
+    z-index: 2;
 }
 
 
@@ -109,8 +107,9 @@ Legend {
 }
 
 .contentPos {
+    z-index: 0;
     position:  relative;
-    top: 60px;
+    top: 100px;
 }
 
 .contentPosLogo {
