@@ -76,6 +76,11 @@ Legend {
     z-index: 2;
 }
 
+#anmImg {
+    border: solid 2px black;
+    width:350px;
+}
+
 
 #logo2 {
     margin: auto; 
