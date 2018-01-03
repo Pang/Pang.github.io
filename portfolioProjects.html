@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head> 
-  <title>RB's Projects</title> 
+  <title>Projects</title> 
   <meta name="keywords" content="Ryan Beckett, HTML, Portfolio" />
   <link rel="Stylesheet" type="text/css" href="portfolioStyle.css" />
-  <script src="twitterIcon.js"></script>
+  <script src="HoverFunctions.js"></script>
 </head>
 
 <body>
-
   <nav>
     <ul>
-      <li class="MainHeader">&nbspRYAN BECKETT</li>
+      <li class="MainHeader">&nbsp;RYAN BECKETT</li>
       <li><a id="menuBtn" href="index.html">Home</a></li>
       <li><a id="menuBtn" href="portfolioAboutMe.html">About Me</a></li>
       <li><a id="menuBtn" href="portfolioProjects.html">Projects</a></li>
       <li><a id="menuBtn" href="portfolioContact.html">Contact</a></li>
-      <li><a href="https://www.Twitter.com/RyanBcktt" target="_blank"><img id="twitterLogo" src="Twitter_Default_Icon.png" onmouseover="hover(this)" onmouseout="unhover(this)"/></a></li>
+      <li><a href="https://www.Twitter.com/RyanBcktt" target="_blank"><img id="twitterLogo" src="Twitter_Default_Icon.png" onmouseover="hoverTwit(this)" onmouseout="unhoverTwit(this)"/></a></li>
+      <li><a href="https://www.linkedin.com/in/ryan-beckett-75112510b/" target="_blank"><img id="LinkedInLogo" src="Linkd_Default_Icon.png" onmouseover="hoverLinkd(this)" onmouseout="unhoverLinkd(this)"/></a></li>
     </ul>
   </nav> 
 
-<div class="contentPos" style="width:70%">
-
+<div class="contentPos" style="width:70%; margin-bottom:200px;">
   <h1 class="headertext">Programming Projects</h1>
-  <p><i>(Click the pictures to see the code)</i></p> <br> <br>
-  <h3>Player vs Skeleton</h3>
+  <p style="font-size: 18px; color:#b5f8fd"><b>Click the pictures to see the code!</b></p> <br> <br>
+  <h3><u>Player vs Skeleton</u></h3>
   <a style="float:right; margin-right:50px;" href="https://gist.github.com/cPango/939914dbb745d225add92a6e4155403c" target="_blank"><img src="Skeleton Game.jpg"></img></a>
-  <p style="width:60%; margin-top:75px;">The thought behind this came as I was learning how objects work and how I can get two classes to interact with each others properties. By instantiating an object from each class I was able to simulate a battle between a player and the skeleton, creating new values each round to make the game less predictable whilst challenging the player to win in the least amount of turns possible.</p>
+  <p style="width:60%; margin-top:75px;">Written in C#, the thought behind this came as I was learning how objects work and how I can get two classes to interact with each others properties. By instantiating an object from each class I was able to simulate a battle between a player and the skeleton, creating new values each round to make the game less predictable whilst challenging the player to win in the least amount of turns possible.</p>
+</div>
 
-  <h3 style="margin-top:200px;">Home-Page Animation</h3>
+<div class="contentPos" style="width:70%; ">
+  <h3 style="margin-top:25px;"><u>Home-Page Animation</u></h3>
   <a style="float:right; margin-right:50px;" href="https://gist.github.com/cPango/e13e0323ae2b4ba39a236dca80769fb0" target="_blank"><img id="anmImg" src="animationProj.png"></a>
-  <p style="width:60%; margin-top:75px;">A homepage should be simple and welcoming, however not too bare. To create a landing page to entice guests I decided to make a simple animation using JavaScript to increase the letter spacing at a smooth rate. There are 2 points towards the end of the animation in which the expansion rate of the letter spacing slows down. Making it almost seemless with no sudden jumps or stops.</p> 
+  <p style="width:60%; margin-top:75px;">A homepage should be simple and welcoming, however not too bare. To create a landing page to entice guests I decided to make a simple animation using JavaScript to increase the letter spacing at a smooth rate. There are 3 points towards the end of the animation in which the expansion rate of the letter spacing slows down. Making it almost seemless with no sudden jumps or stops.</p> 
 </div>
 
-<div class="contentPos" style="width:70%; margin-top:200px;">  
+<div class="contentPos" style="width:70%; margin-top:250px;">  
   <h1 style="margin-top:250px;" class="headertext">Music Projects</h1> <br>
-  <iframe style="float:right; margin-right:50px;" width="30%" height="450" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/9708754&amp;color=%23a4a49c&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
-  <p style="width:60%; margin-top:75px;">Here are just a few songs I have finished over the years, produced and played by myself. I play guitar, piano, occasionally sing and dabble with other instruments</p>
+  <span style="text-align:center; width:60%; margin-top:75px;">Here are just a few songs I have finished over the years, produced and played by myself. I play guitar, piano, occasionally sing and dabble with other musical instruments/software.</span>
+  <br><br><iframe width="50%" height="450" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/9708754&amp;color=%23a4a49c&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
 </div>
-
-
 
 </body>
 </html>
