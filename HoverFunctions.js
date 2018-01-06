@@ -15,7 +15,7 @@ function unhoverLinkd(element) {
 }
 
 function hoverGit(element) {
-  element.setAttribute('src', 'Git_hover_Icon.png')
+  element.setAttribute('src', 'Git_Hover_Icon.png')
 }
 
 function unhoverGit(element) {
