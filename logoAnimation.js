@@ -1,7 +1,7 @@
 window.onload = function() {
     
     //current letter spacing value
-    var ltv = 0;
+    var lsv = 0;
   
     //logo ID element
     var logo1 = document.getElementById("logo1");
@@ -12,28 +12,28 @@ window.onload = function() {
   
     //function that sets animation speed and dur
     function expand() {
-      if (ltv >= 15) {
+      if (lsv >= 15) {
         clearInterval(time);
       }
-      else if (ltv < 10) {
-        ltv += 0.05;
-        logo1.style.letterSpacing = ltv+"px";
-        logo2.style.letterSpacing = ltv+"px";
+      else if (lsv < 10) {
+        lsv += 0.05;
+        logo1.style.letterSpacing = lsv+"px";
+        logo2.style.letterSpacing = lsv+"px";
       } 
-      else if (ltv < 12) { 
-        ltv += 0.03;
-        logo1.style.letterSpacing = ltv+"px";
-        logo2.style.letterSpacing = ltv+"px";
+      else if (lsv < 12) { 
+        lsv += 0.03;
+        logo1.style.letterSpacing = lsv+"px";
+        logo2.style.letterSpacing = lsv+"px";
       } 
-      else if (ltv < 14) { 
-        ltv += 0.02;
-        logo1.style.letterSpacing = ltv+"px";
-        logo2.style.letterSpacing = ltv+"px";
+      else if (lsv < 14) { 
+        lsv += 0.02;
+        logo1.style.letterSpacing = lsv+"px";
+        logo2.style.letterSpacing = lsv+"px";
       } 
       else {
-        ltv += 0.01;
-        logo1.style.letterSpacing = ltv+"px";
-        logo2.style.letterSpacing = ltv+"px";
+        lsv += 0.01;
+        logo1.style.letterSpacing = lsv+"px";
+        logo2.style.letterSpacing = lsv+"px";
       }
     }
   }

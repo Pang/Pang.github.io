@@ -1,6 +1,5 @@
 body {
-    background-color:#3a4a4b; 
-    background: linear-gradient(to right, #384444 , #566666);
+    background-color:#5e6a72; 
     margin: 0;
     font-family:Georgia, Helvetica;
     color: white; 
@@ -16,7 +15,7 @@ nav {
 }
 
 ul {
-    background-color: #242424;
+    background-color: #252525;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -38,12 +37,14 @@ hr {
     margin-top: 3px;
     display: block;
     padding: 10px;
-    background-color:#242424;
+    background-color:#252525;
     margin-right:4px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 }
 
 #menuBtn:hover {
-    background-color: rgb(56, 56, 56);
+    background-color: #4e4e4e
 }
 
 div {
@@ -85,8 +86,16 @@ Legend {
     z-index: 2;
 }
 
+#GitHubLogo {
+    float: right;
+    height: 32px;
+    width: 35px;
+    margin-top: 5px;
+    margin-right: 20px;
+    z-index: 2;
+}
+
 #anmImg {
-    border: solid 2px black;
     width:350px;
 }
 
