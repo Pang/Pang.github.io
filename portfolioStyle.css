@@ -111,7 +111,8 @@ Legend {
 #logo2 {
     margin: auto; 
     letter-spacing: 1px;
-    text-shadow:3px 6px #1f1f1f;
+    text-shadow:3px 6px 10px #1f1f1f;
+    z-index: 200;
 }
 
 .siteLogo {
@@ -125,8 +126,8 @@ Legend {
     bottom: 10px;
     padding: 5px;
     padding-bottom: 45px;
-    text-shadow: 3px 6px #1f1f1f;
-    box-shadow: 3px 6px #1f1f1f;
+    text-shadow: 3px 6px 10px #1f1f1f;
+    box-shadow: 3px 6px 10px #1f1f1f;
 }
 
 .headertext {
