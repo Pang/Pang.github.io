@@ -190,6 +190,32 @@ footer {
     position: relative;
     width: 60%;
     box-shadow: 2px 2px 12px rgb(19, 19, 19);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#projectPageLayout:hover {
+    background-color: #3a4044;
+}
+
+#PvFbox{
+    width:85%; 
+    position:relative; 
+    top:20px;
+    color:white; 
+    text-decoration:none;
+}
+
+#HPAbox {
+    width:85%; 
+    position:relative; 
+    top:20px;
+    color:white; 
+    text-decoration:none;
+}
+
+a {
+    text-decoration:none;
 }
 
 #contactPageLayout {
