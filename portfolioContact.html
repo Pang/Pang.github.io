@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
   <nav>
     <ul>
       <li class="MainHeader">&nbsp;RYAN BECKETT</li>
@@ -21,35 +22,36 @@
     </ul>
   </nav> 
 
-<h1 class="contentPos headertext">Contact Me</h1> <br><br>
+  <h1 class="contentPos headertext">Contact Me</h1> <br/><br/>
 
-<div class="contentPos">
-  <form id="contact" method="post" action="mailto:ryan.beckett@outlook.com">
+  <div id="contactPageLayout"> <br/>
+    <form id="contact" method="post" action="mailto:ryan.beckett@outlook.com">
+
+        <fieldset form="contact">
+          <legend>Full Name:</legend>
+          <input type="text" name="name" id="name">
+        </fieldset> <br/>
+
+        <fieldset form="contact">
+          <legend>Email Address:*</legend>
+          <input type="email" name="email" id="email" placeholder="example@example.com" required>
+        </fieldset> <br/>
 
       <fieldset form="contact">
-        <legend>Full Name:</legend>
-        <input type="text" name="name" id="name">
-      </fieldset> <br>
+        <legend>Gender:</legend>
+        <input type="radio" name="gender" id="male"><label for="male">Male</label>
+        <input type="radio" name="gender" id="female"><label for="female">Female</label>
+      </fieldset> <br/>
 
       <fieldset form="contact">
-        <legend>Email Address:*</legend>
-        <input type="email" name="email" id="email" placeholder="example@example.com" required>
-      </fieldset> <br>
+        <legend>Enter your message:</legend>
+        <textarea name="message" id="message" placeholder="Type your query here..."></textarea>
+      </fieldset> <br/> <br/>
 
-    <fieldset form="contact">
-      <legend>Gender:</legend>
-      <input type="radio" name="gender" id="male"><label for="male">Male</label>
-      <input type="radio" name="gender" id="female"><label for="female">Female</label>
-    </fieldset> <br>
+      <input type="submit" value="Submit">
+    </form>   
+  </div>
 
-    <fieldset form="contact">
-      <legend>Enter your message:</legend>
-      <textarea name="message" id="message" placeholder="Type your query here..."></textarea>
-    </fieldset> <br> <br>
-
-    <input type="submit" value="Submit">
-  </form>   
-</div>
-<br>
+<br/>
 </body>
 </html>

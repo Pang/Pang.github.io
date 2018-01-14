@@ -58,7 +58,7 @@ acronym {
 }
 
 fieldset {
-    width:50%; 
+    width:80%; 
     margin:auto; 
     color:white;
 } 
@@ -167,20 +167,31 @@ footer {
 .shortAM {
     text-align:center; 
     color:white; 
-    width:40%; 
+    width:90%; 
     font-size: 18px;
-}
-
-.longAM {
-    font-size: 18px;
-    width:70%; 
-    margin: auto;
 }
 
 #message {
   border: none;
   width: 80%;
   height: 150px;
+}
+
+#projectPageLayout {
+    background-color: #4e575e;
+    border-radius: 0%;
+    padding-bottom: 35px;
+    position: relative;
+    width: 60%;
+}
+
+#contactPageLayout {
+    background-color: #4e575e;
+    border-radius: 2%;
+    padding-bottom: 25px;
+    position: relative;
+    top: 100px;
+    width: 50%;
 }
 
 input[type=text], select {
