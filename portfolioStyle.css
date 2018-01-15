@@ -186,12 +186,12 @@ footer {
 
 #projectPageLayout {
     background-color: #4b5358;
-    padding-bottom: 35px;
     position: relative;
     width: 60%;
     box-shadow: 2px 2px 12px rgb(19, 19, 19);
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+    margin-top: 30px;
 }
 
 #projectPageLayout:hover {
@@ -201,7 +201,6 @@ footer {
 #PvFbox{
     width:85%; 
     position:relative; 
-    top:20px;
     color:white; 
     text-decoration:none;
 }
@@ -209,7 +208,6 @@ footer {
 #HPAbox {
     width:85%; 
     position:relative; 
-    top:20px;
     color:white; 
     text-decoration:none;
 }
