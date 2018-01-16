@@ -103,8 +103,7 @@ Legend {
 }
 
 #anmImg {
-    width:300px;
-    height:300px;
+    width: 30%;
 }
 
 
@@ -187,7 +186,7 @@ footer {
 #projectPageLayout {
     background-color: #4b5358;
     position: relative;
-    width: 60%;
+    width: 50%;
     box-shadow: 2px 2px 12px rgb(19, 19, 19);
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
