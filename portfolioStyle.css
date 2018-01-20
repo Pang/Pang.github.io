@@ -208,6 +208,12 @@ footer {
     text-decoration:none;
 }
 
+#CFAbox {
+    position:relative; 
+    color:white; 
+    text-decoration:none;
+}
+
 a {
     text-decoration:none;
 }
