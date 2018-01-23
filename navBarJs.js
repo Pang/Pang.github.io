@@ -1,7 +1,7 @@
 window.addEventListener("load", () => { 
 
     const navigate = `
-        <ul>
+        <ul id="navFunc">
             <li class="MainHeader">&nbsp;RYAN BECKETT</li>
             <li><a id="menuBtn" href="index.html">Home</a></li>
             <li><a id="menuBtn" href="portfolioAboutMe.html">About Me</a></li>
@@ -15,33 +15,16 @@ window.addEventListener("load", () => {
 
     document.querySelector('.navigateBar').innerHTML = navigate;
 
+    const navFunc = document.querySelector("#navFunc");
 
-    const logoChange = document.querySelectorAll(".logoChange");
-
-    for ( let i = 0 ; i < logoChange.length ; i++ ) {
-        logoChange[i].addEventListener("mouseover", () => {
-            if(logoChange[i].id == "twitterLogo"){
-                logoChange[i].src = 'Twitter_Hover_Icon.png';
-            } 
-            if (logoChange[i].id == "LinkedInLogo") {
-                logoChange[i].src = 'Linkd_Hover_Icon.png';
-            } 
-            if(logoChange[i].id == "GitHubLogo"){
-                logoChange[i].src = 'Git_Hover_Icon.png';
-            }
-        });
-
-        logoChange[i].addEventListener("mouseout", () => {
-            if(logoChange[i].id== "twitterLogo"){
-                logoChange[i].src = 'Twitter_Default_Icon.png';
-            } 
-            if (logoChange[i].id == "LinkedInLogo") {
-                logoChange[i].src = 'Linkd_Default_Icon.png';
-            } 
-            if(logoChange[i].id == "GitHubLogo"){
-                logoChange[i].src = 'Git_Default_Icon.png';
-            }
-        });
-    }
-
+    navFunc.addEventListener('mouseover', (x) => {
+        if ( x.target.id == "twitterLogo" ) { x.target.src = 'Twitter_Hover_Icon.png'; } 
+        else if ( x.target.id == "LinkedInLogo" ) { x.target.src = "Linkd_Hover_Icon.png"; }
+        else if ( x.target.id == "GitHubLogo" ) { x.target.src = "Git_Hover_Icon.png"; }
+    })
+    navFunc.addEventListener('mouseout', (x) => {
+        if (x.target.id == "twitterLogo"){ x.target.src = 'Twitter_Default_Icon.png'; } 
+        else if (x.target.id == "LinkedInLogo"){ x.target.src = "Linkd_Default_Icon.png"; }
+        else if (x.target.id == "GitHubLogo"){ x.target.src = "Git_Default_Icon.png"; }
+    })
 })
