@@ -7,9 +7,9 @@ window.addEventListener("load", () => {
             <li><a id="menuBtn" href="portfolioAboutMe.html">About Me</a></li>
             <li><a id="menuBtn" href="portfolioProjects.html">Projects</a></li>
             <li><a id="menuBtn" href="portfolioContact.html">Contact</a></li>
-            <li><a href="https://www.Twitter.com/RyanBcktt" target="_blank"><img class="logoChange" id="twitterLogo" src="Twitter_Default_Icon.png" /></a></li>
-            <li><a href="https://www.linkedin.com/in/ryan-beckett-75112510b/" target="_blank"><img class="logoChange" id="LinkedInLogo" src="Linkd_Default_Icon.png"/></a></li>
-            <li><a href="https://gist.github.com/cPango/" target="_blank"><img class="logoChange" id="GitHubLogo" src="Git_Default_Icon.png"/></a></li>
+            <li><a href="https://www.Twitter.com/RyanBcktt" target="_blank"><img id="twitterLogo" src="Twitter_Default_Icon.png" /></a></li>
+            <li><a href="https://www.linkedin.com/in/ryan-beckett-75112510b/" target="_blank"><img id="LinkedInLogo" src="Linkd_Default_Icon.png"/></a></li>
+            <li><a href="https://gist.github.com/cPango/" target="_blank"><img id="GitHubLogo" src="Git_Default_Icon.png"/></a></li>
         </ul>
     `;
 
@@ -27,4 +27,4 @@ window.addEventListener("load", () => {
         else if (x.target.id == "LinkedInLogo"){ x.target.src = "Linkd_Default_Icon.png"; }
         else if (x.target.id == "GitHubLogo"){ x.target.src = "Git_Default_Icon.png"; }
     })
-})
+});
