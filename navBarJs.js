@@ -23,8 +23,8 @@ window.addEventListener("load", () => {
         else if ( x.target.id == "GitHubLogo" ) { x.target.src = "Git_Hover_Icon.png"; }
     })
     navFunc.addEventListener('mouseout', (x) => {
-        if (x.target.id == "twitterLogo"){ x.target.src = 'Twitter_Default_Icon.png'; } 
-        else if (x.target.id == "LinkedInLogo"){ x.target.src = "Linkd_Default_Icon.png"; }
-        else if (x.target.id == "GitHubLogo"){ x.target.src = "Git_Default_Icon.png"; }
+        if ( x.target.id == "twitterLogo" ) { x.target.src = 'Twitter_Default_Icon.png'; } 
+        else if ( x.target.id == "LinkedInLogo" ) { x.target.src = "Linkd_Default_Icon.png"; }
+        else if ( x.target.id == "GitHubLogo" ) { x.target.src = "Git_Default_Icon.png"; }
     })
 });
