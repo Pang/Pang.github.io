@@ -196,22 +196,14 @@ footer {
     background-color: #3a4044;
 }
 
-#PvFbox{
+#projBox{
     position:relative; 
     color:white; 
     text-decoration:none;
 }
 
-#HPAbox {
-    position:relative; 
-    color:white; 
-    text-decoration:none;
-}
-
-#CFAbox {
-    position:relative; 
-    color:white; 
-    text-decoration:none;
+#listImg {
+width: 40%;
 }
 
 a {
