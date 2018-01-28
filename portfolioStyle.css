@@ -215,7 +215,6 @@ a {
     position: relative;
     top: 100px;
     width: 50%;
-    box-shadow: 2px 2px 12px rgb(19, 19, 19);
 }
 
 input[type=text], select {
