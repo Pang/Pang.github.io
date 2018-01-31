@@ -31,6 +31,21 @@ button {
     height: 18px;
 }
 
+#funcBtn2 {
+    float:right;
+    color: black;
+}
+
+button.edit {
+    font-size: 22px;
+    background-color: transparent;
+    border-radius: 0%;
+    border: none;
+    padding: 1px 1px 1px 1px;
+    position: relative;
+    top: -2px;
+}
+
 button.newItem  {
     background-color: rgb(89, 158, 89);
     width: 75px;
