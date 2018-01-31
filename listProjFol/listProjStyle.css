@@ -31,11 +31,6 @@ button {
     height: 18px;
 }
 
-#funcBtn2 {
-    float:right;
-    color: black;
-}
-
 button.edit {
     font-size: 22px;
     background-color: transparent;
@@ -44,6 +39,8 @@ button.edit {
     padding: 1px 1px 1px 1px;
     position: relative;
     top: -2px;
+    float:right;
+    color: black;
 }
 
 button.newItem  {

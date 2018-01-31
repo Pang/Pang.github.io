@@ -11,40 +11,33 @@ window.addEventListener("load", function startPageEvent() {
     const changeTitleBtn = document.querySelector('button.newTitle');
     const addToListBtn = document.querySelector('button.newItem'); //type='submit'
     const newVal = document.querySelector('input.newValue'); //Input box
-    const tickBoxVal = document.querySelectorAll('.tickBox'); //Check box
 
     //Creates & appends buttons to list items then assigns the class name and text content.
     function attachButtons(li){
-        let up = document.createElement('input');
-        up.className = 'up';
-        up.id = 'funcBtn'
-        up.type = 'image';
-        up.src = "listProjFol/UpArrow.png"
+        function createListFunction(elementName, elementClass, elementSrc){
+            const element = document.createElement(elementName);
+            element.className = elementClass;
+            element.id = 'funcBtn';
+            element.type = 'image';
+            element.src = elementSrc;
+            return element;
+        }
+        const up = createListFunction('input', 'up', 'listProjFol/UpArrow.png');
         li.appendChild(up);
 
-        let down = document.createElement('input');
-        down.className = 'down';
-        down.id = 'funcBtn'
-        down.type = 'image';
-        down.src = "listProjFol/DownArrow.png"
+        const down = createListFunction('input', 'down', 'listProjFol/DownArrow.png');
         li.appendChild(down);
 
-        let remove = document.createElement('input');
-        remove.className = 'remove';
-        remove.id = 'funcBtn'
-        remove.type = 'image';
-        remove.src = "listProjFol/RemoveBtn.png"
+        const remove = createListFunction('input', 'remove', 'listProjFol/RemoveBtn.png');
         li.appendChild(remove);
 
         let edit = document.createElement('button');
         edit.className = 'edit'
         edit.textContent = 'E';
-        edit.id = 'funcBtn2';
         li.appendChild(edit);
 
         let tickBox = document.createElement('input')
         tickBox.type = 'checkbox';
-        tickBox.className = 'tickBox';
         li.appendChild(tickBox);
     }
 
@@ -151,7 +144,6 @@ window.addEventListener("load", function startPageEvent() {
 
         while(switching){
             switching = false;
-
             for(i=0;i<(listItems.length - 1);i++){
                 shouldSwitch = false;
                 if (listItems[i].textContent > listItems[i+1].textContent){
@@ -165,5 +157,4 @@ window.addEventListener("load", function startPageEvent() {
             }
         }
     });
-
 });
