@@ -20,16 +20,11 @@ window.addEventListener("load", function startPageEvent() {
             element.id = 'funcBtn';
             element.type = 'image';
             element.src = elementSrc;
-            return element;
+            li.appendChild(element);
         }
-        const up = createListFunction('input', 'up', 'listProjFol/UpArrow.png');
-        li.appendChild(up);
-
-        const down = createListFunction('input', 'down', 'listProjFol/DownArrow.png');
-        li.appendChild(down);
-
-        const remove = createListFunction('input', 'remove', 'listProjFol/RemoveBtn.png');
-        li.appendChild(remove);
+        createListFunction('input', 'up', 'listProjFol/UpArrow.png');
+        createListFunction('input', 'down', 'listProjFol/DownArrow.png');
+        createListFunction('input', 'remove', 'listProjFol/RemoveBtn.png');
 
         let edit = document.createElement('button');
         edit.className = 'edit'
