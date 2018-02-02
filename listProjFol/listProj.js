@@ -1,5 +1,6 @@
 window.addEventListener("load", function startPageEvent() {
 
+
     //These variables are declared to make reading/writing code a cleaner process.
     const listUl = document.querySelectorAll('ul')[0];
     const listItems = listUl.getElementsByTagName('li');
@@ -10,7 +11,29 @@ window.addEventListener("load", function startPageEvent() {
     const orderListBtn = document.querySelector('button.orderList');
     const changeTitleBtn = document.querySelector('button.newTitle');
     const addToListBtn = document.querySelector('button.newItem'); //type='submit'
-    const newVal = document.querySelector('input.newValue'); //Input box
+    const inputBox = document.querySelector('input.newValue'); //Input box
+    let itemCount = 1;
+    let itemsArray = [];
+
+    //Local storage
+    let myLocalStorage = window.localStorage;
+    function setLists() {
+        let list = localStorage.setItem('')
+    }
+    loadLocals = () => {
+        for(let i = 0; i < localStorage.length; i++){
+            if(localStorage.key(i).indexOf('item'+i)){
+                const li = document.createElement('li');
+                const span = document.createElement('span');
+                span.id = localStorage.key(i);
+                span.textContent = localStorage.getItem(localStorage.key(i));
+                li.appendChild(span);
+                listUl.appendChild(li);
+                itemCount++;
+            }
+        }
+    }
+    loadLocals();
 
     //Creates & appends buttons to list items then assigns the class name and text content.
     function attachButtons(li){
@@ -26,12 +49,12 @@ window.addEventListener("load", function startPageEvent() {
         createListFunction('input', 'down', 'listProjFol/DownArrow.png');
         createListFunction('input', 'remove', 'listProjFol/RemoveBtn.png');
 
-        let edit = document.createElement('button');
+        const edit = document.createElement('button');
         edit.className = 'edit'
         edit.textContent = 'E';
         li.appendChild(edit);
 
-        let tickBox = document.createElement('input')
+        const tickBox = document.createElement('input')
         tickBox.type = 'checkbox';
         li.appendChild(tickBox);
     }
@@ -42,8 +65,10 @@ window.addEventListener("load", function startPageEvent() {
 
     //Adds functionality to the buttons called above.
     listUl.addEventListener('click', (x) => {
-        let li = x.target.parentNode;
-        let ul = li.parentNode;
+        const li = x.target.parentNode;
+        const ul = li.parentNode;
+        const span = li.firstElementChild;
+
         if(x.target.tagName == 'INPUT'){
             if(x.target.className == 'up'){   
                 let prevLi = li.previousElementSibling; 
@@ -57,24 +82,38 @@ window.addEventListener("load", function startPageEvent() {
             }
             if(x.target.className == 'remove'){
                 ul.removeChild(li);
+                for(let i = 0; i < localStorage.length; i++){
+                    if(span.id == localStorage.key(i)){
+                        console.log(span.id);
+                        localStorage.removeItem(localStorage.key(i));
+                    }
+                }
             }
         }
         if(x.target.tagName == 'BUTTON' ){
+            changeFunc = {
+                Edit: () => {
+                    const span = li.firstElementChild;
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.value = span.textContent;
+                    li.insertBefore(input, span);
+                    li.removeChild(span);
+                    x.target.textContent = 'S';
+                },
+                Save: () => {
+                    const input = li.firstElementChild;
+                    const span = document.createElement('span');
+                    span.textContent = input.value;
+                    li.insertBefore(span, input);
+                    li.removeChild(input);
+                    x.target.textContent = 'E';
+                }
+            }
             if(x.target.textContent == 'E'){               
-                const span = li.firstElementChild;
-                const input = document.createElement('input');
-                input.type = 'text';
-                input.value = span.textContent;
-                li.insertBefore(input, span);
-                li.removeChild(span);
-                x.target.textContent = 'S';
+                changeFunc.Edit();
             } else if (x.target.textContent == 'S'){
-                const input = li.firstElementChild;
-                const span = document.createElement('span');
-                span.textContent = input.value;
-                li.insertBefore(span, input);
-                li.removeChild(input);
-                x.target.textContent = 'E';
+                changeFunc.Save();
             }
         }
     });
@@ -105,29 +144,32 @@ window.addEventListener("load", function startPageEvent() {
     //Takes the content from the Input box and places into the list if not empty. It then clears the input box.
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        let li = document.createElement('li');
-        let span = document.createElement('span');
+        const li = document.createElement('li');
+        const span = document.createElement('span');
         li.appendChild(span);
-        let listItemVar = newVal.value;
+        
+        let listItemVar = inputBox.value;
         listItemVar = upperFirst(listItemVar);
-
         span.textContent = listItemVar
 
         //stop item insertion if box is empty or over 20 characters.
         if (li.textContent != '' && li.textContent.length <= 25){
             listUl.appendChild(li);
+            localStorage.setItem('item' + itemCount, span.textContent);
+            attachButtons(li);
+            span.id = 'item' + itemCount;
+            itemCount++
         } else {
             alert("Input must be between 1 and 25 characters long");
         }
-        newVal.value = '';
-        attachButtons(li);
+        inputBox.value = '';
     });
 
     //Reads input box and places the value into the heading.
     changeTitleBtn.addEventListener('click', () => {
         let titleTxt = document.querySelector('#listTitle');
-        titleTxt.textContent = newVal.value;
-        newVal.value = '';
+        titleTxt.textContent = inputBox.value;
+        inputBox.value = '';
     });
 
     //Checks each item in the list begins if their beginning letter is higher than it's neighbours.
