@@ -13,7 +13,6 @@ window.addEventListener("load", function startPageEvent() {
     const addToListBtn = document.querySelector('button.newItem'); //type='submit'
     const inputBox = document.querySelector('input.newValue'); //Input box
     let itemCount = 1;
-    let itemsArray = [];
 
     //Local storage
     let myLocalStorage = window.localStorage;
@@ -29,7 +28,6 @@ window.addEventListener("load", function startPageEvent() {
                 span.textContent = localStorage.getItem(localStorage.key(i));
                 li.appendChild(span);
                 listUl.appendChild(li);
-                itemCount++;
             }
         }
     }
