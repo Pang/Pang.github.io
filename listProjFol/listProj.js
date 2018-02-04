@@ -12,7 +12,8 @@ window.addEventListener("load", function startPageEvent() {
     const changeTitleBtn = document.querySelector('button.newTitle');
     const addToListBtn = document.querySelector('button.newItem'); //type='submit'
     const inputBox = document.querySelector('input.newValue'); //Input box
-    let itemCount = 1;
+
+    listItemsArr = new Array();
 
     //Local storage
     let myLocalStorage = window.localStorage;
@@ -20,16 +21,26 @@ window.addEventListener("load", function startPageEvent() {
         let list = localStorage.setItem('')
     }
     loadLocals = () => {
-        for(let i = 0; i < localStorage.length; i++){
-            if(localStorage.key(i).indexOf('item'+i)){
-                const li = document.createElement('li');
-                const span = document.createElement('span');
-                span.id = localStorage.key(i);
-                span.textContent = localStorage.getItem(localStorage.key(i));
-                li.appendChild(span);
-                listUl.appendChild(li);
-            }
-        }
+        Object.keys(localStorage).forEach(function(item) {
+            const li = document.createElement('li');
+            const span = document.createElement('span');
+            span.id = localStorage.getItem(item);
+            span.textContent = localStorage.getItem(item);
+            li.appendChild(span);
+            listUl.appendChild(li);
+            console.log(item);
+        });
+
+        // for(let i = 0; i < localStorage.length; i++){
+        //     if(localStorage.key(i).indexOf('item'+i)){
+        //         const li = document.createElement('li');
+        //         const span = document.createElement('span');
+        //         span.id = localStorage.key(i);
+        //         span.textContent = localStorage.getItem(localStorage.key(i));
+        //         li.appendChild(span);
+        //         listUl.appendChild(li);
+        //     }
+        // }
     }
     loadLocals();
 
@@ -81,7 +92,7 @@ window.addEventListener("load", function startPageEvent() {
             if(x.target.className == 'remove'){
                 ul.removeChild(li);
                 for(let i = 0; i < localStorage.length; i++){
-                    if(span.id == localStorage.key(i)){
+                    if('item' + span.id == localStorage.key(i)){
                         console.log(span.id);
                         localStorage.removeItem(localStorage.key(i));
                     }
@@ -125,6 +136,7 @@ window.addEventListener("load", function startPageEvent() {
             listItemLine.style.backgroundColor = "grey";
             listItemLine.style.textDecoration = "line-through"
             listItemLine.setAttribute('id', 'listChecked');
+
         } else {
             listItemLine.style.backgroundColor = "";
             listItemLine.style.textDecoration = ""
@@ -150,13 +162,21 @@ window.addEventListener("load", function startPageEvent() {
         listItemVar = upperFirst(listItemVar);
         span.textContent = listItemVar
 
-        //stop item insertion if box is empty or over 20 characters.
+        //stop item insertion if box is empty or over 25 characters.
         if (li.textContent != '' && li.textContent.length <= 25){
             listUl.appendChild(li);
-            localStorage.setItem('item' + itemCount, span.textContent);
+            localStorage.setItem('item' + span.textContent, span.textContent);
+            span.id = 'item' + span.textcontent;
             attachButtons(li);
-            span.id = 'item' + itemCount;
-            itemCount++
+
+            let tempListObj = {
+                itemName: span.textContent,
+                itemChecked: false,
+                itemId: 'item' + span.textContent,
+            };
+
+            listItemsArr.push(tempListObj);
+
         } else {
             alert("Input must be between 1 and 25 characters long");
         }
