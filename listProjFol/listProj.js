@@ -112,6 +112,7 @@ window.addEventListener("load", function startPageEvent() {
                     li.insertBefore(input, span);
                     li.removeChild(span);
                     x.target.textContent = 'S';
+                    localStorage.removeItem(prevContent)
                 },
                 Save: () => {
                     const input = li.firstElementChild;
