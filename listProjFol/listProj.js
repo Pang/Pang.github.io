@@ -55,11 +55,40 @@ window.addEventListener("load", function startPageEvent() {
         li.appendChild(tickBox);
     }
 
+    //Checks there are items on the list, then enables checks if entry has been ticked('checked').
+    function itemCheck() {
+        for(let i = 0; i < listItems.length ; i++){
+            document.querySelectorAll('.tickBox')[i].addEventListener('change', (x) => {
+                const checkbox = x.target;
+                const listItemLine = checkbox.parentNode;
+                const span = listItemLine.firstElementChild;
+        
+                if (checkbox.checked) {
+                    localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:span.id}));
+                    listItemLine.style.backgroundColor = "grey";
+                    listItemLine.style.textDecoration = "line-through"
+        
+                } else {
+                    localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:span.id}));
+                    listItemLine.style.backgroundColor = "";
+                    listItemLine.style.textDecoration = "";
+                }
+            });
+        }
+    }
+
+    //When creating the order-list button later, it will not treat upper and lower case equally, 
+    //this function will help keep the list organized & make sense.
+    function upperFirst(string) 
+    {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     //Attaches all buttons to each list item
     for(let i=0;i<listItems.length;i++){
         attachButtons(listItems[i]);
     } 
-
+    
     //Checks if list items were checked by accessing localStorage object boolean
     for(let i=0;i<listItems.length;i++){
         if(JSON.parse(localStorage.getItem(localStorage.key(i))).itemChecked == true){
@@ -74,6 +103,8 @@ window.addEventListener("load", function startPageEvent() {
             listItems[i].style.textDecoration = ""
         }
     }
+    
+    itemCheck();
 
     //Adds functionality to the buttons called above.
     listUl.addEventListener('click', (x) => {
@@ -121,7 +152,10 @@ window.addEventListener("load", function startPageEvent() {
 
                     span.id = 'item'+upper;
                     span.textContent = upper;
+
                     localStorage.setItem(span.id, JSON.stringify({itemName:upper, itemChecked:false, itemId:span.id}));
+                    li.style.backgroundColor = "";
+                    li.style.textDecoration = "";
                     
                     li.insertBefore(span, input);
                     li.removeChild(input);
@@ -136,39 +170,6 @@ window.addEventListener("load", function startPageEvent() {
             }
         }
     });
-
-    //Checks there are items on the list, then enables checks if entry has been ticked('checked').
-    if (listItems.length > 0) {
-        for(let i = 0; i < listItems.length ; i++){
-            document.querySelectorAll('.tickBox')[i].addEventListener('change', (x) => {
-                const checkbox = x.target;
-                const listItemLine = checkbox.parentNode;
-                const span = listItemLine.firstElementChild;
-        
-                if (checkbox.checked) {
-                    localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:span.id}));
-                    console.log(JSON.parse(localStorage.getItem(span.id)));
-                    listItemLine.style.backgroundColor = "grey";
-                    listItemLine.style.textDecoration = "line-through"
-                    listItemLine.setAttribute('id', 'listChecked');
-        
-                } else {
-                    localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:span.id}));
-                    console.log(JSON.parse(localStorage.getItem(span.id)));
-                    listItemLine.style.backgroundColor = "";
-                    listItemLine.style.textDecoration = ""
-                    listItemLine.setAttribute('id', 'listUnchecked');
-                }
-            });
-        }
-    }
-
-    //When creating the order-list button later, it will not treat upper and lower case equally, 
-    //this function will help keep the list organized & make sense.
-    function upperFirst(string) 
-    {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
 
     //Takes the content from the Input box and places into the list if not empty. It then clears the input box.
     form.addEventListener('submit', (e) => {
@@ -201,6 +202,7 @@ window.addEventListener("load", function startPageEvent() {
             alert("Input must be between 1 and 25 characters long");
         }
         inputBox.value = '';
+        itemCheck();
     });
 
     //Reads input box and places the value into the heading.
