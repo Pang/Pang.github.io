@@ -22,7 +22,6 @@ window.addEventListener("load", function startPageEvent() {
 
             span.id = JSON.parse(myJsonObj).itemId;
             span.textContent = JSON.parse(myJsonObj).itemName;
-            li.id = 'line' + JSON.parse(myJsonObj).itemName;
 
             li.appendChild(span);
             listUl.appendChild(li);
@@ -103,6 +102,7 @@ window.addEventListener("load", function startPageEvent() {
             }
         }
         if(x.target.tagName == 'BUTTON' ){
+            let prevContent = 0;
             changeFunc = {
                 Edit: () => {
                     const span = li.firstElementChild;
@@ -116,7 +116,11 @@ window.addEventListener("load", function startPageEvent() {
                 Save: () => {
                     const input = li.firstElementChild;
                     const span = document.createElement('span');
-                    span.textContent = input.value;
+                    let upper = upperFirst(input.value);
+
+                    span.id = 'item'+upper;
+                    span.textContent = upper;
+                    
                     li.insertBefore(span, input);
                     li.removeChild(input);
                     x.target.textContent = 'E';
@@ -130,28 +134,29 @@ window.addEventListener("load", function startPageEvent() {
         }
     });
 
-    //Gives the user a chance to tick/cross off items on the list by watching if the tickbox is checked.
-    listUl.addEventListener('change', (x) => {
-        const checkbox = x.target;
-        const listItemLine = checkbox.parentNode;
-        const span = listItemLine.firstElementChild;
-        const itemID = listItemLine.firstElementChild.id;
-
-        if (checkbox.checked) {
-            localStorage.setItem(itemID, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:itemID}));
-            console.log(JSON.parse(localStorage.getItem(itemID)));
-            listItemLine.style.backgroundColor = "grey";
-            listItemLine.style.textDecoration = "line-through"
-            listItemLine.setAttribute('id', 'listChecked');
-
-        } else {
-            localStorage.setItem(itemID, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:itemID}));
-            console.log(JSON.parse(localStorage.getItem(itemID)));
-            listItemLine.style.backgroundColor = "";
-            listItemLine.style.textDecoration = ""
-            listItemLine.setAttribute('id', 'listUnchecked');
-        }
-    });
+    //Checks there are items on the list, then enables checks if entry has been ticked('checked').
+    if (listItems.length > 0) {
+        document.querySelector('.tickBox').addEventListener('change', (x) => {
+            const checkbox = x.target;
+            const listItemLine = checkbox.parentNode;
+            const span = listItemLine.firstElementChild;
+    
+            if (checkbox.checked) {
+                localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:span.id}));
+                console.log(JSON.parse(localStorage.getItem(span.id)));
+                listItemLine.style.backgroundColor = "grey";
+                listItemLine.style.textDecoration = "line-through"
+                listItemLine.setAttribute('id', 'listChecked');
+    
+            } else {
+                localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:span.id}));
+                console.log(JSON.parse(localStorage.getItem(span.id)));
+                listItemLine.style.backgroundColor = "";
+                listItemLine.style.textDecoration = ""
+                listItemLine.setAttribute('id', 'listUnchecked');
+            }
+        });
+    }
 
     //When creating the order-list button later, it will not treat upper and lower case equally, 
     //this function will help keep the list organized & make sense.
@@ -174,7 +179,6 @@ window.addEventListener("load", function startPageEvent() {
         //stop item insertion if box is empty or over 25 characters.
         if (li.textContent != '' && li.textContent.length <= 25){
             span.id = 'item' + listItemValue;
-            li.id = 'line' + listItemValue;
             listUl.appendChild(li);
             
             console.log(li);
