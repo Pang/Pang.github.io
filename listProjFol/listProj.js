@@ -138,26 +138,28 @@ window.addEventListener("load", function startPageEvent() {
 
     //Checks there are items on the list, then enables checks if entry has been ticked('checked').
     if (listItems.length > 0) {
-        document.querySelector('.tickBox').addEventListener('change', (x) => {
-            const checkbox = x.target;
-            const listItemLine = checkbox.parentNode;
-            const span = listItemLine.firstElementChild;
-    
-            if (checkbox.checked) {
-                localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:span.id}));
-                console.log(JSON.parse(localStorage.getItem(span.id)));
-                listItemLine.style.backgroundColor = "grey";
-                listItemLine.style.textDecoration = "line-through"
-                listItemLine.setAttribute('id', 'listChecked');
-    
-            } else {
-                localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:span.id}));
-                console.log(JSON.parse(localStorage.getItem(span.id)));
-                listItemLine.style.backgroundColor = "";
-                listItemLine.style.textDecoration = ""
-                listItemLine.setAttribute('id', 'listUnchecked');
-            }
-        });
+        for(let i = 0; i < listItems.length ; i++){
+            document.querySelectorAll('.tickBox')[i].addEventListener('change', (x) => {
+                const checkbox = x.target;
+                const listItemLine = checkbox.parentNode;
+                const span = listItemLine.firstElementChild;
+        
+                if (checkbox.checked) {
+                    localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:span.id}));
+                    console.log(JSON.parse(localStorage.getItem(span.id)));
+                    listItemLine.style.backgroundColor = "grey";
+                    listItemLine.style.textDecoration = "line-through"
+                    listItemLine.setAttribute('id', 'listChecked');
+        
+                } else {
+                    localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:span.id}));
+                    console.log(JSON.parse(localStorage.getItem(span.id)));
+                    listItemLine.style.backgroundColor = "";
+                    listItemLine.style.textDecoration = ""
+                    listItemLine.setAttribute('id', 'listUnchecked');
+                }
+            });
+        }
     }
 
     //When creating the order-list button later, it will not treat upper and lower case equally, 
