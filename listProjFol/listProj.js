@@ -17,7 +17,6 @@ window.addEventListener("load", function startPageEvent() {
         for(i = 0; i < localStorage.length; i++){
             const li = document.createElement('li');
             const span = document.createElement('span');
-
             let myJsonObj = localStorage.getItem(localStorage.key(i));
 
             span.id = JSON.parse(myJsonObj).itemId;
@@ -43,11 +42,8 @@ window.addEventListener("load", function startPageEvent() {
         createListFunction('input', 'up', 'listProjFol/UpArrow.png');
         createListFunction('input', 'down', 'listProjFol/DownArrow.png');
         createListFunction('input', 'remove', 'listProjFol/RemoveBtn.png');
-
-        const edit = document.createElement('button');
-        edit.className = 'edit'
-        edit.textContent = 'E';
-        li.appendChild(edit);
+        createListFunction('input', 'edit', 'listProjFol/editBtn.png' );
+        createListFunction('input', 'save', 'listProjFol/saveBtn.png');
 
         const tickBox = document.createElement('input')
         tickBox.type = 'checkbox';
@@ -89,7 +85,7 @@ window.addEventListener("load", function startPageEvent() {
         attachButtons(listItems[i]);
     } 
     
-    //Checks if list items were checked by accessing localStorage object boolean
+    //Checks if list items were ticked by accessing localStorage object boolean
     for(let i=0;i<listItems.length;i++){
         if(JSON.parse(localStorage.getItem(localStorage.key(i))).itemChecked == true){
             document.querySelectorAll('.tickBox')[i].checked=true;
@@ -111,6 +107,7 @@ window.addEventListener("load", function startPageEvent() {
         const li = x.target.parentNode;
         const ul = li.parentNode;
         const span = li.firstElementChild;
+        let prevContent = span.id;
 
         if(x.target.tagName == 'INPUT'){
             if(x.target.className == 'up'){   
@@ -131,42 +128,35 @@ window.addEventListener("load", function startPageEvent() {
                     }
                 }
             }
-        }
-        if(x.target.tagName == 'BUTTON' ){
-            let prevContent = span.id;
-            console.log(prevContent);
-            changeFunc = {
-                Edit: () => {
-                    const input = document.createElement('input');
-                    input.type = 'text';
-                    input.value = span.textContent;
-                    li.insertBefore(input, span);
-                    li.removeChild(span);
-                    x.target.textContent = 'S';
-                    localStorage.removeItem(prevContent)
-                },
-                Save: () => {
-                    const input = li.firstElementChild;
-                    const span = document.createElement('span');
-                    let upper = upperFirst(input.value);
+            if(x.target.className == 'edit'){
+                li.querySelector('.edit').style.display = 'none';
+                li.querySelector('.save').style.display = 'block';
 
-                    span.id = 'item'+upper;
-                    span.textContent = upper;
-
-                    localStorage.setItem(span.id, JSON.stringify({itemName:upper, itemChecked:false, itemId:span.id}));
-                    li.style.backgroundColor = "";
-                    li.style.textDecoration = "";
-                    
-                    li.insertBefore(span, input);
-                    li.removeChild(input);
-                    x.target.textContent = 'E';
-                    console.log(prevContent);
-                }
+                const inputEdit = document.createElement('input');
+                inputEdit.type = 'text';
+                inputEdit.value = span.textContent;
+                li.insertBefore(inputEdit, span);
+                li.removeChild(span);
+                localStorage.removeItem(prevContent);
             }
-            if(x.target.textContent == 'E'){               
-                changeFunc.Edit();
-            } else if (x.target.textContent == 'S'){
-                changeFunc.Save();
+            if (x.target.className == 'save'){
+                li.querySelector('.edit').style.display = 'block';
+                li.querySelector('.save').style.display = 'none';
+
+                const input = li.firstElementChild;
+                const span = document.createElement('span');
+                let upper = upperFirst(input.value);
+
+                span.id = 'item'+upper;
+                span.textContent = upper;
+
+                localStorage.setItem(span.id, JSON.stringify({itemName:upper, itemChecked:false, itemId:span.id}));
+                li.querySelector('.tickBox').checked=false;
+                li.style.backgroundColor = "";
+                li.style.textDecoration = "";
+                
+                li.insertBefore(span, input);
+                li.removeChild(input);
             }
         }
     });
