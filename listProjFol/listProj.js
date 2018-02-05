@@ -102,10 +102,10 @@ window.addEventListener("load", function startPageEvent() {
             }
         }
         if(x.target.tagName == 'BUTTON' ){
-            let prevContent = 0;
+            let prevContent = span.id;
+            console.log(prevContent);
             changeFunc = {
                 Edit: () => {
-                    const span = li.firstElementChild;
                     const input = document.createElement('input');
                     input.type = 'text';
                     input.value = span.textContent;
@@ -120,10 +120,12 @@ window.addEventListener("load", function startPageEvent() {
 
                     span.id = 'item'+upper;
                     span.textContent = upper;
+                    localStorage.setItem(span.id, JSON.stringify({itemName:upper, itemChecked:true, itemId:span.id}));
                     
                     li.insertBefore(span, input);
                     li.removeChild(input);
                     x.target.textContent = 'E';
+                    console.log(prevContent);
                 }
             }
             if(x.target.textContent == 'E'){               
