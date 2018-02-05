@@ -121,7 +121,7 @@ window.addEventListener("load", function startPageEvent() {
 
                     span.id = 'item'+upper;
                     span.textContent = upper;
-                    localStorage.setItem(span.id, JSON.stringify({itemName:upper, itemChecked:true, itemId:span.id}));
+                    localStorage.setItem(span.id, JSON.stringify({itemName:upper, itemChecked:false, itemId:span.id}));
                     
                     li.insertBefore(span, input);
                     li.removeChild(input);
