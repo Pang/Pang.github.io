@@ -1,6 +1,5 @@
 window.addEventListener("load", function startPageEvent() {
 
-
     //These variables are declared to make reading/writing code a cleaner process.
     const listUl = document.querySelectorAll('ul')[0];
     const listItems = listUl.getElementsByTagName('li');
@@ -13,35 +12,23 @@ window.addEventListener("load", function startPageEvent() {
     const addToListBtn = document.querySelector('button.newItem'); //type='submit'
     const inputBox = document.querySelector('input.newValue'); //Input box
 
-    listItemsArr = new Array();
-
     //Local storage
-    let myLocalStorage = window.localStorage;
-    function setLists() {
-        let list = localStorage.setItem('')
-    }
     loadLocals = () => {
-        Object.keys(localStorage).forEach(function(item) {
+        for(i = 0; i < localStorage.length; i++){
             const li = document.createElement('li');
             const span = document.createElement('span');
-            span.id = localStorage.getItem(item);
-            span.textContent = localStorage.getItem(item);
+
+            let myJsonObj = localStorage.getItem(localStorage.key(i));
+
+            span.id = JSON.parse(myJsonObj).itemId;
+            span.textContent = JSON.parse(myJsonObj).itemName;
+            li.id = 'line' + JSON.parse(myJsonObj).itemName;
+
             li.appendChild(span);
             listUl.appendChild(li);
-            console.log(item);
-        });
-
-        // for(let i = 0; i < localStorage.length; i++){
-        //     if(localStorage.key(i).indexOf('item'+i)){
-        //         const li = document.createElement('li');
-        //         const span = document.createElement('span');
-        //         span.id = localStorage.key(i);
-        //         span.textContent = localStorage.getItem(localStorage.key(i));
-        //         li.appendChild(span);
-        //         listUl.appendChild(li);
-        //     }
-        // }
-    }
+            console.log(JSON.parse(myJsonObj));
+            }
+        };
     loadLocals();
 
     //Creates & appends buttons to list items then assigns the class name and text content.
@@ -65,11 +52,28 @@ window.addEventListener("load", function startPageEvent() {
 
         const tickBox = document.createElement('input')
         tickBox.type = 'checkbox';
+        tickBox.className = 'tickBox';
         li.appendChild(tickBox);
     }
 
+    //Attaches all buttons to each list item
     for(let i=0;i<listItems.length;i++){
         attachButtons(listItems[i]);
+    } 
+
+    //Checks if list items were checked by accessing localStorage object boolean
+    for(let i=0;i<listItems.length;i++){
+        if(JSON.parse(localStorage.getItem(localStorage.key(i))).itemChecked == true){
+            document.querySelectorAll('.tickBox')[i].checked=true;
+        }
+        //Applies neccessary changes checked items
+        if(document.querySelectorAll('.tickBox')[i].checked){
+            listItems[i].style.backgroundColor = "grey";
+            listItems[i].style.textDecoration = "line-through"
+        } else {
+            listItems[i].style.backgroundColor = "";
+            listItems[i].style.textDecoration = ""
+        }
     }
 
     //Adds functionality to the buttons called above.
@@ -92,8 +96,7 @@ window.addEventListener("load", function startPageEvent() {
             if(x.target.className == 'remove'){
                 ul.removeChild(li);
                 for(let i = 0; i < localStorage.length; i++){
-                    if('item' + span.id == localStorage.key(i)){
-                        console.log(span.id);
+                    if(span.id == localStorage.key(i)){
                         localStorage.removeItem(localStorage.key(i));
                     }
                 }
@@ -131,13 +134,19 @@ window.addEventListener("load", function startPageEvent() {
     listUl.addEventListener('change', (x) => {
         const checkbox = x.target;
         const listItemLine = checkbox.parentNode;
+        const span = listItemLine.firstElementChild;
+        const itemID = listItemLine.firstElementChild.id;
 
         if (checkbox.checked) {
+            localStorage.setItem(itemID, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:itemID}));
+            console.log(JSON.parse(localStorage.getItem(itemID)));
             listItemLine.style.backgroundColor = "grey";
             listItemLine.style.textDecoration = "line-through"
             listItemLine.setAttribute('id', 'listChecked');
 
         } else {
+            localStorage.setItem(itemID, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:itemID}));
+            console.log(JSON.parse(localStorage.getItem(itemID)));
             listItemLine.style.backgroundColor = "";
             listItemLine.style.textDecoration = ""
             listItemLine.setAttribute('id', 'listUnchecked');
@@ -158,15 +167,17 @@ window.addEventListener("load", function startPageEvent() {
         const span = document.createElement('span');
         li.appendChild(span);
         
-        let listItemVar = inputBox.value;
-        listItemVar = upperFirst(listItemVar);
-        span.textContent = listItemVar
+        let listItemValue = inputBox.value;
+        listItemValue = upperFirst(listItemValue);
+        span.textContent = listItemValue
 
         //stop item insertion if box is empty or over 25 characters.
         if (li.textContent != '' && li.textContent.length <= 25){
+            span.id = 'item' + listItemValue;
+            li.id = 'line' + listItemValue;
             listUl.appendChild(li);
-            localStorage.setItem('item' + span.textContent, span.textContent);
-            span.id = 'item' + span.textcontent;
+            
+            console.log(li);
             attachButtons(li);
 
             let tempListObj = {
@@ -175,7 +186,7 @@ window.addEventListener("load", function startPageEvent() {
                 itemId: 'item' + span.textContent,
             };
 
-            listItemsArr.push(tempListObj);
+            localStorage.setItem('item' + tempListObj.itemName, JSON.stringify(tempListObj));
 
         } else {
             alert("Input must be between 1 and 25 characters long");
