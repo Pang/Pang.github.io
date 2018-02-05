@@ -163,6 +163,7 @@ window.addEventListener("load", function startPageEvent() {
 
     //Takes the content from the Input box and places into the list if not empty. It then clears the input box.
     form.addEventListener('submit', (e) => {
+        let submitEntry = true;
         e.preventDefault();
         const li = document.createElement('li');
         const span = document.createElement('span');
@@ -172,11 +173,17 @@ window.addEventListener("load", function startPageEvent() {
         listItemValue = upperFirst(listItemValue);
         span.textContent = listItemValue
 
-        //stop item insertion if box is empty or over 25 characters.
-        if (li.textContent != '' && li.textContent.length <= 25){
+        for(i=0;i<listItems.length;i++){
+            if(li.textContent == listItems[i].textContent){
+                submitEntry = false;
+            }
+        }
+
+        //stop entry insertion if box is not between 1 to 25 characters or is already on the list.
+        if (li.textContent != '' && li.textContent.length <= 25 && submitEntry == true){
             span.id = 'item' + listItemValue;
             listUl.appendChild(li);
-            
+          
             console.log(li);
             attachButtons(li);
 
@@ -189,8 +196,9 @@ window.addEventListener("load", function startPageEvent() {
             localStorage.setItem('item' + tempListObj.itemName, JSON.stringify(tempListObj));
 
         } else {
-            alert("Input must be between 1 and 25 characters long");
+            alert("Entry must be between 1 to 25 characters long and not already be on the list");
         }
+
         inputBox.value = '';
         itemCheck();
     });
