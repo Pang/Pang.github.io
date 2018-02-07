@@ -51,6 +51,11 @@ div {
     margin: auto;
 }
 
+h3 {
+    text-decoration: underline;
+    color: blue;
+}
+
 acronym {
     font-weight: bold; 
     font-style: italic; 
@@ -197,7 +202,7 @@ footer {
 }
 
 #listImg {
-    width: 60%;
+    width: 80%;
 }
 
 a {

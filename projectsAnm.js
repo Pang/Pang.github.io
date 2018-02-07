@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     //ListCreator
-    $('div').eq(5).hover(function() {
+    $('div').eq(4).hover(function() {
         $('ol').eq(1).slideDown();
     });
-    $('div').eq(5).mouseleave(function() {
+    $('div').eq(4).mouseleave(function() {
         $('ol').eq(1).slideUp();
     });
 });
