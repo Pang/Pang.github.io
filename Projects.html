@@ -4,7 +4,9 @@
   <title>Projects</title> 
   <meta name="keywords" content="Ryan Beckett, HTML, Portfolio" />
   <link rel="Stylesheet" type="text/css" href="portfolioStyle.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="navBarJs.js"></script>
+  <script src="projectsAnm.js"></script>
 </head>
 
 <body>
@@ -19,10 +21,10 @@
       <div id="projBox"><br/>
         <h2>Knight vs Foe</h2>
         <h4 style="color: red;"><i>Work In Progress!</i></h4>
-        <img style="width: 60%" src="images/PlayerVsFoe_Game.png"></img>
+        <img id="listImg" src="images/PlayerVsFoe_Game.png"></img>
         <div style="Width:85%">
-          <h3>Features:</h3>
           <ol style="list-style:none; padding:0;">
+            <li><h3>Features:</h3></li>
             <li>[x]Allow user to create name for their knight</li>
             <li>[x]Turn choice (hit/heal)</li>
             <li>[x]Randomly generate a foe (random race &amp; class)</li>
@@ -40,8 +42,8 @@
         <h4 style="color: red;"><i>Work In Progress!</i></h4>
         <img id="listImg" src="images/ListProj.png"> <br/>
         <div style="Width:85%">
-          <h3>Features:</h3>
           <ol style="list-style:none; padding:0;">
+            <li><h3>Features:</h3></li>
             <li>[x]Add or remove items</li>
             <li>[x]Edit list items and their position</li>
             <li>[x]Order list feature</li>
@@ -57,8 +59,7 @@
 
     <div style="width: 230px; text-align:center;">
         <a target="_blank" href="ListCreator.html"><p>Click here to try List Creator!</p></a>
-      </div>
-  
+    </div> <br/>
 
     <div id="projectPageLayout" style="position:relative; top:20px;"> <a href="https://gist.github.com/cPango/c4b1b81f26bee424de6dae96e60dbf38" target="_blank">
       <div id="projBox"><br/>
@@ -72,7 +73,6 @@
       </div>
     </div></a>
     
-
     <br/><br/><br/>
 
 </body>
