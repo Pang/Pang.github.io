@@ -75,10 +75,7 @@ window.addEventListener("load", function startPageEvent() {
 
     //When creating the order-list button later, it will not treat upper and lower case equally, 
     //this function will help keep the list organized & make sense.
-    function upperFirst(string) 
-    {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+    upperFirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
     //Attaches all buttons to each list item
     for(let i=0;i<listItems.length;i++){
