@@ -67,11 +67,12 @@ acronym {
 fieldset {
     width:90%; 
     margin:auto; 
-    color:rgb(0, 0, 0);
+    color:white;
+    border:none;
 } 
 
 Legend {
-    color: rgb(0, 0, 0);
+    color: white;
     text-align: center;
 }
 
@@ -176,12 +177,6 @@ footer {
     font-size: 18px;
 }
 
-#message {
-    border: none;
-    width: 90%;
-    height: 150px;
-}
-
 #projectPageLayout {
     position: relative;
     width: 50%;
@@ -214,25 +209,26 @@ a {
     position: relative;
     top: 100px;
     width: 50%;
+    background-color: rgb(44, 44, 44);
+    box-shadow: 6px 6px 10px #8b8b8b;
 }
 
 input[type=text], select {
+    color: white;
     text-align: center;
     width: 90%;
     padding: 5px;
-    border: none;
 }
 
 input[type=email], select {
     text-align: center;
     width: 90%;
     padding: 5px;
-    border: none;
 }
 
 input[type=submit] {
     font-weight: bold;
-    background-color: #b9b9b9;
+    background-color: #e0e0e0;
     color: black;
     padding: 12px 20px;
     border: none;
@@ -242,9 +238,14 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #8b8b8b;
+    background-color: #acacac;
     color: rgb(0, 0, 0);
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 
+textarea {
+    border: none;
+    width: 90%;
+    height: 120px;
+}
