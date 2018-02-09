@@ -15,20 +15,20 @@ window.addEventListener("load", function startPageEvent() {
 
   //function that sets animation speed and dur.
   function expand() {
-    if (lsv >= 15) {
+    if (lsv >= 30) {
       clearInterval(time);
     }
-    else if (lsv < 10) {
+    else if (lsv < 20) {
       lsv += 0.16;
       logoLs(logo1);
       logoLs(logo2);
     } 
-    else if (lsv < 12) { 
+    else if (lsv < 27) { 
       lsv += 0.09;
       logoLs(logo1);
       logoLs(logo2);
     } 
-    else if (lsv < 14) { 
+    else if (lsv < 28) { 
       lsv += 0.06;
       logoLs(logo1);
       logoLs(logo2);
