@@ -17,6 +17,22 @@ nav {
     z-index:1;
 }
 
+#contactEmail {
+    color: white;
+    float: right;
+    position: relative;
+    top: 12px;
+    right: 50px;
+}
+
+#contactEmail:hover {
+    color: blue;
+    float: right;
+    position: relative;
+    top: 12px;
+    right: 50px;
+}
+
 ul {
     background-color: #252525;
     list-style-type: none;
@@ -118,6 +134,8 @@ Legend {
     margin: auto; 
     letter-spacing: 1px;
     text-shadow:3px 6px 7px #797979;
+    position: relative;
+    bottom: 100px;
 }
 
 .siteLogo {
@@ -128,9 +146,10 @@ Legend {
     margin: auto;
     letter-spacing: 1px;
     position: relative;
-    bottom: 10px;
+    bottom: 100px;
     padding: 5px;
-    padding-bottom: 45px;
+    padding-left: 12px;
+    padding-bottom: 35px;
     text-shadow: 3px 6px 7px #a8a8a8;
     box-shadow: 3px 6px 10px #a8a8a8;
 }
@@ -206,50 +225,4 @@ footer {
 
 a {
     text-decoration:none;
-}
-
-#contactPageLayout {
-    padding-bottom: 20px;
-    position: relative;
-    top: 100px;
-    width: 50%;
-    background-color: #5a5a5a;
-    box-shadow: 6px 6px 10px #8b8b8b;
-}
-
-input[type=text], select {
-    color: white;
-    text-align: center;
-    width: 90%;
-    padding: 5px;
-}
-
-input[type=email], select {
-    text-align: center;
-    width: 90%;
-    padding: 5px;
-}
-
-input[type=submit] {
-    font-weight: bold;
-    background-color: #e0e0e0;
-    color: black;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-input[type=submit]:hover {
-    background-color: #acacac;
-    color: rgb(0, 0, 0);
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-textarea {
-    border: none;
-    width: 90%;
-    height: 120px;
 }

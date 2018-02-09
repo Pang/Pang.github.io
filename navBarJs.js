@@ -6,10 +6,10 @@ window.addEventListener("load", () => {
             <li><a id="menuBtn" href="index.html">Home</a></li>
             <li><a id="menuBtn" href="AboutMe.html">About Me</a></li>
             <li><a id="menuBtn" href="Projects.html">Projects</a></li>
-            <li><a id="menuBtn" href="Contact.html">Contact</a></li>
             <li><a href="https://www.Twitter.com/RyanBcktt" target="_blank"><img id="twitterLogo" src="icons/Twitter_Default_Icon.png" /></a></li>
             <li><a href="https://www.linkedin.com/in/ryan-beckett-75112510b/" target="_blank"><img id="LinkedInLogo" src="icons/Linkd_Default_Icon.png"/></a></li>
             <li><a href="https://gist.github.com/cPango/" target="_blank"><img id="GitHubLogo" src="icons/Git_Default_Icon.png"/></a></li>
+            <li><a id="contactEmail" href="mailto:ryan.beckett@outlook.com">Ryan.Beckett@Outlook.com</a></li>
         </ul>
     `;
 

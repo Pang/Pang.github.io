@@ -19,4 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
     $('div').eq(2).mouseleave(function() {
         $('ol').eq(1).slideUp();
     });
+
+    //divAnm
+    $('div').eq(3).hover(function() {
+        $('ol').eq(2).slideDown();
+    })
+    $('div').eq(3).mouseleave(function() {
+        $('ol').eq(2).slideUp();
+    })
 });
