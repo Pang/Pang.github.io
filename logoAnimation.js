@@ -18,8 +18,8 @@ window.addEventListener("load", function startPageEvent() {
     if (lsv >= 30) {
       clearInterval(time);
     }
-    else if (lsv < 20) {
-      lsv += 0.16;
+    else if (lsv < 25) {
+      lsv += 0.18;
       logoLs(logo1);
       logoLs(logo2);
     } 
@@ -28,7 +28,7 @@ window.addEventListener("load", function startPageEvent() {
       logoLs(logo1);
       logoLs(logo2);
     } 
-    else if (lsv < 28) { 
+    else if (lsv < 29) { 
       lsv += 0.06;
       logoLs(logo1);
       logoLs(logo2);
