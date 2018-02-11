@@ -154,6 +154,7 @@ window.addEventListener("load", function startPageEvent() {
         listItemValue = upperFirst(listItemValue);
         span.textContent = listItemValue
 
+        //checks item is not already on list
         for(i=0;i<listItems.length;i++){
             if(li.textContent == listItems[i].textContent){
                 submitEntry = false;
