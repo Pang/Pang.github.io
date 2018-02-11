@@ -1,18 +1,17 @@
-@media screen and (min-width:800px) {
-    body { 
-        background-image: radial-gradient(rgb(255, 255, 255) 0%, rgb(226, 226, 226) 60%, rgb(136, 136, 136) 100%);
-        background-attachment: fixed;
-        background-size: 100% 100%;
-    }
-}
-
 body {
-    background-color: #f0f0f0;
+    background-image: radial-gradient(rgb(255, 255, 255) 0%, rgb(226, 226, 226) 60%, rgb(136, 136, 136) 100%); 
+    background-attachment: fixed;
+    background-size: 100% 100%;
     margin: 0;
     font-family:Georgia, Helvetica;
     color: black; 
     text-align:center;
 }
+
+@media only screen and (max-width: 768px) { 
+    body { background-color: #f0f0f0; }
+}
+
 
 nav {
     position: fixed;
@@ -131,14 +130,6 @@ acronym {
     text-shadow: 5px 6px 8px #1d1d1d;
 }
 
-.contentPos {
-    z-index: 0;
-    width: 100%;
-    margin:auto;
-    position:  relative;
-    top: 80px;
-}
-
 #homepage {
     position: relative;
     text-align: center;
@@ -150,28 +141,6 @@ acronym {
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.MainHeader {
-    color:white; 
-    font-size:36px;
-    font-weight: bold; 
-    font-family: Cambria;
-    float:left;
-    margin-right: 20px;
-}
-
-.imgborder {
-    border-width: 3px; 
-    border-style: solid; 
-    border-color: #333333;
-}
-
-.shortAM {
-    text-align:center; 
-    color:black; 
-    width:90%; 
-    font-size: 18px;
 }
 
 #projectPageLayout {
@@ -201,7 +170,7 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: underline;
     font-size: 4em;
-    color: rgb(46, 55, 77);
+    color: rgb(0, 0, 0);
     display: inline;
     padding:20px;
 }

@@ -8,7 +8,7 @@ window.addEventListener("load", function startPageEvent() {
   const logo2 = document.getElementById("logo2");
 
   //set interval of expand function by 10 milliseconds.
-  const time = setInterval(expand, 10);
+  const time = setInterval(expand, 20);
 
   //changes the letterSpacing to equal the 'lsv' value.
   const logoLs = x => { x.style.letterSpacing = lsv+"px";}
@@ -18,12 +18,12 @@ window.addEventListener("load", function startPageEvent() {
     if (lsv >= 30) {
       clearInterval(time);
     }
-    else if (lsv < 25) {
+    else if (lsv < 27) {
       lsv += 0.18;
       logoLs(logo1);
       logoLs(logo2);
     } 
-    else if (lsv < 27) { 
+    else if (lsv < 28) { 
       lsv += 0.09;
       logoLs(logo1);
       logoLs(logo2);
@@ -34,7 +34,7 @@ window.addEventListener("load", function startPageEvent() {
       logoLs(logo2);
     } 
     else {
-      lsv += 0.03;
+      lsv += 0.02;
       logoLs(logo1);
       logoLs(logo2);
     }
