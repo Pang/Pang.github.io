@@ -1,18 +1,16 @@
 window.addEventListener("load", function startPageEvent() {
 
     //These variables are declared to make reading/writing code a cleaner process.
-    const listUl = document.querySelectorAll('ul')[0];
-    const listItems = listUl.getElementsByTagName('li');
-    const listTitle = document.querySelector('#listTitle');
-    const form = document.querySelector('#newItemForm');
+    const $listUl = $('ul');
+    const listItems = document.getElementsByTagName('li');
+    const $form = $('#newItemForm');
 
-    //These buttons are not child nodes of the list.
-    const orderListBtn = document.querySelector('button.orderList');
-    const changeTitleBtn = document.querySelector('button.newTitle');
-    const addToListBtn = document.querySelector('button.newItem'); //type='submit'
+    //These are not child nodes of the list.
+    const $orderListBtn = $('button.orderList');
+    const $changeTitleBtn = $('button.newTitle');
     const inputBox = document.querySelector('input.newValue'); //Input box
 
-    //Local storage
+    //Load localStorage
     loadLocals = () => {
         for(i = 0; i < localStorage.length; i++){
             const li = document.createElement('li');
@@ -23,11 +21,12 @@ window.addEventListener("load", function startPageEvent() {
             span.textContent = JSON.parse(myJsonObj).itemName;
 
             li.appendChild(span);
-            listUl.appendChild(li);
-            console.log(JSON.parse(myJsonObj));
-            }
-        };
+            $listUl.append(li);
+            attachButtons(li);
+        }
+    }
     loadLocals();
+    tickTrue();
 
     //Creates & appends buttons to list items then assigns the class name and text content.
     function attachButtons(li){
@@ -51,56 +50,42 @@ window.addEventListener("load", function startPageEvent() {
         li.appendChild(tickBox);
     }
 
-    //Checks there are items on the list, then enables checks if entry has been ticked('checked').
-    function itemCheck() {
-        for(let i = 0; i < listItems.length ; i++){
-            document.querySelectorAll('.tickBox')[i].addEventListener('change', (x) => {
-                const checkbox = x.target;
-                const listItemLine = checkbox.parentNode;
-                const span = listItemLine.firstElementChild;
-        
-                if (checkbox.checked) {
-                    localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:span.id}));
-                    listItemLine.style.backgroundColor = "grey";
-                    listItemLine.style.textDecoration = "line-through"
-        
-                } else {
-                    localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:span.id}));
-                    listItemLine.style.backgroundColor = "";
-                    listItemLine.style.textDecoration = "";
-                }
-            });
+    //Takes the info from ticked/non-ticked items and stores it into localStorage
+    $('li').each(function() {
+        $('.tickBox').on('change', (x) => {
+            const checkbox = x.target;
+            const listItemLine = checkbox.parentNode;
+            const span = listItemLine.firstElementChild;
+            
+            if (checkbox.checked) {
+                localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:span.id}));
+            } else {
+                localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:span.id}));
+            }
+            tickTrue();
+        });
+    });
+
+    //Finds ticked entries and applies changes
+    function tickTrue() {
+        for(i = 0; i < localStorage.length; i++){
+            if(JSON.parse(localStorage.getItem(localStorage.key(i))).itemChecked == true){
+                document.querySelectorAll('.tickBox')[i].checked=true;
+                document.getElementsByTagName('li')[i].style.backgroundColor = "grey";
+                document.getElementsByTagName('li')[i].style.textDecoration = "line-through"
+            } else {
+                document.querySelectorAll('.tickBox')[i].checked=false;
+                document.getElementsByTagName('li')[i].style.backgroundColor = "";
+                document.getElementsByTagName('li')[i].style.textDecoration = "";
+            }
         }
     }
-
-    //When creating the order-list button later, it will not treat upper and lower case equally, 
-    //this function will help keep the list organized & make sense.
+    
+    //All new entries will use this to capitalize the first letter
     upperFirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
-    //Attaches all buttons to each list item
-    for(let i=0;i<listItems.length;i++){
-        attachButtons(listItems[i]);
-    } 
-    
-    //Checks if list items were ticked by accessing localStorage object boolean
-    for(let i=0;i<listItems.length;i++){
-        if(JSON.parse(localStorage.getItem(localStorage.key(i))).itemChecked == true){
-            document.querySelectorAll('.tickBox')[i].checked=true;
-        }
-        //Applies neccessary changes checked items
-        if(document.querySelectorAll('.tickBox')[i].checked){
-            listItems[i].style.backgroundColor = "grey";
-            listItems[i].style.textDecoration = "line-through"
-        } else {
-            listItems[i].style.backgroundColor = "";
-            listItems[i].style.textDecoration = ""
-        }
-    }
-    
-    itemCheck();
-
-    //Adds functionality to the buttons called above.
-    listUl.addEventListener('click', (x) => {
+    //Adds functionality to buttons.
+    $listUl.on('click', (x) => {
         const li = x.target.parentNode;
         const ul = li.parentNode;
         const span = li.firstElementChild;
@@ -149,8 +134,7 @@ window.addEventListener("load", function startPageEvent() {
 
                 localStorage.setItem(span.id, JSON.stringify({itemName:upper, itemChecked:false, itemId:span.id}));
                 li.querySelector('.tickBox').checked=false;
-                li.style.backgroundColor = "";
-                li.style.textDecoration = "";
+                tickTrue();
                 
                 li.insertBefore(span, input);
                 li.removeChild(input);
@@ -159,7 +143,7 @@ window.addEventListener("load", function startPageEvent() {
     });
 
     //Takes the content from the Input box and places into the list if not empty. It then clears the input box.
-    form.addEventListener('submit', (e) => {
+    $form.on('submit', (e) => {
         let submitEntry = true;
         e.preventDefault();
         const li = document.createElement('li');
@@ -179,7 +163,7 @@ window.addEventListener("load", function startPageEvent() {
         //stop entry insertion if box is not between 1 to 25 characters or is already on the list.
         if (li.textContent != '' && li.textContent.length <= 25 && submitEntry == true){
             span.id = 'item' + listItemValue;
-            listUl.appendChild(li);
+            $listUl.append(li);
           
             console.log(li);
             attachButtons(li);
@@ -197,23 +181,20 @@ window.addEventListener("load", function startPageEvent() {
         }
 
         inputBox.value = '';
-        itemCheck();
     });
 
     //Reads input box and places the value into the heading.
-    changeTitleBtn.addEventListener('click', () => {
-        let titleTxt = document.querySelector('#listTitle');
+    $changeTitleBtn.on('click', () => {
+        const titleTxt = document.querySelector('#listTitle');
         titleTxt.textContent = inputBox.value;
         inputBox.value = '';
     });
 
     //Checks each item in the list begins if their beginning letter is higher than it's neighbours.
     //The switches are used to trigger the ordering 'insertBefore' function to correctly place each list item if the above case is true.
-    orderListBtn.addEventListener('click', (x) => {
-        let switching = true;
-        let shouldSwitch;
-        let i;
-
+    $orderListBtn.on('click', (x) => {
+        let switching = true, shouldSwitch, i;
+        
         while(switching){
             switching = false;
             for(i=0;i<(listItems.length - 1);i++){
