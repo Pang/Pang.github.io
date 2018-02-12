@@ -1,15 +1,5 @@
-@media screen and (max-device-width: 768px) { 
-    body { background: #f0f0f0; }
-}
-@media screen and (min-width: 769px) { 
-    body {     
-        background:#f0f0f0 radial-gradient(rgb(255, 255, 255) 0%, rgb(226, 226, 226) 60%, rgb(136, 136, 136) 100%); 
-        background-attachment: fixed;
-        background-size: 100% 100%; 
-    }
-}
-
 body {
+    background: #f1eddf;
     margin: 0;
     font-family:Georgia, Helvetica;
     color: black; 
