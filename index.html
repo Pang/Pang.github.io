@@ -6,6 +6,10 @@
   <link rel="Stylesheet" type="text/css" href="portfolioStyle.css" />
   <script src="javaScript/logoAnimation.js"></script>
   <script src="javaScript/jsFeatures.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="javaScript/jsProjects.js"></script>
 </head>
 
 <body>
@@ -25,7 +29,7 @@
     <a id="contactEmail" href="mailto:ryan.beckett@outlook.com"><span style="font-size: 30px;">Ryan.Beckett@Outlook.com</span></a>
   </div><br/>
 
-  <hr><br/><br/> 
+  <hr>
 
   <div>
     <ol style="list-style-type: circle; font-size: 3em;">
@@ -34,11 +38,44 @@
         <li>C#</li>
         <li>SQL</li>
       </ol>
-  </div> <br/>
+  </div> 
 
   <hr><br/>
 
-  <a href="Projects.html"><h3 id="changePage">See Projects</h3></a>
+  <div id="projectPageLayout">        
+    <h2 style="position: relative; top:20px;">Knight vs Foe</h2>
+    <h4 style="color: red;"><i>Work In Progress!</i></h4>
+    <img id="listImg" src="images/PlayerVsFoe_Game.png"></img>
+    <ol><br/>
+      <a href="https://gist.github.com/cPango/939914dbb745d225add92a6e4155403c" target="_blank"><span id='codeLink'>VIEW CODE</span></a>
+      <h2>Features:</h2>
+      <li>[x]Allow user to create name for their knight</li>
+      <li>[x]Turn choice (hit/heal)</li>
+      <li>[x]Randomly generate a foe (random race &amp; class)</li>
+      <li>[x]Npc makes own choices based on it's health</li>
+      <li>[x]Npc's get harder after each kill</li>
+      <li>[ ]Create GUI</li>
+    </ol><br/>
+  </div>
+
+  <div id="projectPageLayout" style="position:relative; top:10px;"> 
+    <h2 style="position: relative; top:20px;">List Creator</h2>
+    <h4 style="color: red;"><i>Work In Progress!</i></h4>
+    <img id="listImg" src="images/ListProj.png"> <br/>
+    <ol><br/>
+      <a href="https://gist.github.com/cPango/59148e852eab7b3207b77d44684dd099" target="_blank"><span id="codeLink">VIEW CODE</span></a> <br/><br/>
+      <a target="_blank" href="ListCreator.html"><span id="codeLink">TRY APP</span></a>
+      <h2>Features:</h2>
+      <li>[x]Add or remove items</li>
+      <li>[x]Edit list items and their position</li>
+      <li>[x]Order list feature</li>
+      <li>[x]Check/tick list items</li>
+      <li>[x]Store entries and all changes into localStorage using JSON</li>
+      <li>[x]Prevent duplicate items being added to list</li>
+      <li>[ ]Add additional notes to each list items</li>
+      <li>[ ]Give user control over colours/themes</li>
+    </ol><br/>
+  </div>
 
   </div><br/><br/><br/><br/>
 
