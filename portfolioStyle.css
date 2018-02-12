@@ -1,7 +1,4 @@
 body {
-    background-image: radial-gradient(rgb(255, 255, 255) 0%, rgb(226, 226, 226) 60%, rgb(136, 136, 136) 100%); 
-    background-attachment: fixed;
-    background-size: 100% 100%;
     margin: 0;
     font-family:Georgia, Helvetica;
     color: black; 
