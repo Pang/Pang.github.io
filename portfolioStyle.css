@@ -1,5 +1,5 @@
 body {
-    background: #f8f6ed;
+    background: #ffffff;
     margin: 0;
     font-family:Georgia, Helvetica;
     color: black; 
@@ -153,6 +153,10 @@ acronym {
 
 #listImg {
     width: 80%;
+}
+#listImg2 {
+    width: 500px;
+    display:inline-block;
 }
 
 a {
