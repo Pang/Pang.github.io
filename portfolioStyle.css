@@ -181,13 +181,13 @@ h3 {
 }
 
 #codeLink:hover {
-    background-color:rgb(49, 82, 110);
+    background-color:rgb(120, 160, 194);
     color:white;
     box-shadow: 2px 2px 2px rgb(31, 31, 31);;
 }
 
 #codeLink:active {
-    background-color:rgb(120, 160, 194);
+    background-color:rgb(49, 82, 110);
     color:white;
     box-shadow: inset 2px 2px 2px rgb(31, 31, 31);;
 }
