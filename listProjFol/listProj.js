@@ -1,4 +1,4 @@
-window.addEventListener("load", function startPageEvent() {
+window.addEventListener("DOMContentLoaded", function startPageEvent() {
 
     //These variables are declared to make reading/writing code a cleaner process.
     const $listUl = $('ul');
@@ -24,9 +24,9 @@ window.addEventListener("load", function startPageEvent() {
             $listUl.append(li);
             attachButtons(li);
         }
+        getCheckedItems();
     }
     loadLocals();
-    tickTrue();
 
     //Creates & appends buttons to list items then assigns the class name and text content.
     function attachButtons(li){
@@ -50,37 +50,36 @@ window.addEventListener("load", function startPageEvent() {
         li.appendChild(tickBox);
     }
 
+    //Finds ticked entries and applies changes
+    function getCheckedItems(){
+        for(i = 0; i < localStorage.length; i++){
+            if(JSON.parse(localStorage.getItem(localStorage.key(i))).itemChecked == true){
+                document.querySelectorAll('.tickBox')[i].checked=true;
+                $('li').eq(i).addClass('ticked');
+            } else {
+                $('li').eq(i).removeClass('ticked');
+                document.querySelectorAll('.tickBox')[i].checked=false;
+            }
+        }
+    }
+
     //Takes the info from ticked/non-ticked items and stores it into localStorage
     $('li').each(function() {
         $('.tickBox').on('change', (x) => {
             const checkbox = x.target;
             const listItemLine = checkbox.parentNode;
             const span = listItemLine.firstElementChild;
-            
+
             if (checkbox.checked) {
                 localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:span.id}));
+                listItemLine.className = 'ticked';
             } else {
                 localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:span.id}));
+                listItemLine.className = ' ';
             }
-            tickTrue();
         });
     });
 
-    //Finds ticked entries and applies changes
-    function tickTrue() {
-        for(i = 0; i < localStorage.length; i++){
-            if(JSON.parse(localStorage.getItem(localStorage.key(i))).itemChecked == true){
-                document.querySelectorAll('.tickBox')[i].checked=true;
-                document.getElementsByTagName('li')[i].style.backgroundColor = "grey";
-                document.getElementsByTagName('li')[i].style.textDecoration = "line-through"
-            } else {
-                document.querySelectorAll('.tickBox')[i].checked=false;
-                document.getElementsByTagName('li')[i].style.backgroundColor = "";
-                document.getElementsByTagName('li')[i].style.textDecoration = "";
-            }
-        }
-    }
-    
     //All new entries will use this to capitalize the first letter
     upperFirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
@@ -113,6 +112,7 @@ window.addEventListener("load", function startPageEvent() {
             if(x.target.className == 'edit'){
                 li.querySelector('.edit').style.display = 'none';
                 li.querySelector('.save').style.display = 'block';
+                li.querySelector('.tickBox').style.display = 'none';
 
                 const inputEdit = document.createElement('input');
                 inputEdit.type = 'text';
@@ -124,7 +124,8 @@ window.addEventListener("load", function startPageEvent() {
             if (x.target.className == 'save'){
                 li.querySelector('.edit').style.display = 'block';
                 li.querySelector('.save').style.display = 'none';
-
+                li.querySelector('.tickBox').style.display = 'inline-block';
+                
                 const input = li.firstElementChild;
                 const span = document.createElement('span');
                 let upper = upperFirst(input.value);
@@ -134,7 +135,7 @@ window.addEventListener("load", function startPageEvent() {
 
                 localStorage.setItem(span.id, JSON.stringify({itemName:upper, itemChecked:false, itemId:span.id}));
                 li.querySelector('.tickBox').checked=false;
-                tickTrue();
+                li.className = '';
                 
                 li.insertBefore(span, input);
                 li.removeChild(input);
@@ -145,7 +146,6 @@ window.addEventListener("load", function startPageEvent() {
     //Takes the content from the Input box and places into the list if not empty. It then clears the input box.
     $form.on('submit', (e) => {
         let submitEntry = true;
-        e.preventDefault();
         const li = document.createElement('li');
         const span = document.createElement('span');
         li.appendChild(span);
@@ -169,13 +169,13 @@ window.addEventListener("load", function startPageEvent() {
             console.log(li);
             attachButtons(li);
 
-            let tempListObj = {
+            let placeholder = {
                 itemName: span.textContent,
                 itemChecked: false,
                 itemId: 'item' + span.textContent,
             };
 
-            localStorage.setItem('item' + tempListObj.itemName, JSON.stringify(tempListObj));
+            localStorage.setItem('item' + placeholder.itemName, JSON.stringify(placeholder));
 
         } else {
             alert("Entry must be between 1 to 25 characters long and not already be on the list");
