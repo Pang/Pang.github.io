@@ -1,34 +1,66 @@
 window.addEventListener("DOMContentLoaded", function startPageEvent() {
 
     //These variables are declared to make reading/writing code a cleaner process.
-    const $listUl = $('ul');
     const listItems = document.getElementsByTagName('li');
     const $form = $('#newItemForm');
-
-    //These are not child nodes of the list.
-    const $orderListBtn = $('button.orderList');
-    const $changeTitleBtn = $('button.newTitle');
     const inputBox = document.querySelector('input.newValue'); //Input box
 
-    //Load localStorage
-    loadLocals = () => {
-        for(i = 0; i < localStorage.length; i++){
+    //Array for each item added to list.
+    let entries = [];
+
+    //Constructor for each entry object.
+    function Entry(name) {
+        this.name = name;
+        this.ticked = false;
+    }
+
+    //Turn entry into an object and pushes it into the array 'entries'.
+    addEntry = (name) => {
+        let item = new Entry(name);
+        entries.push(item);
+        saveEntry();
+    }
+
+    //Removes entry from it's position on the list.
+    removeEntry = (index) => {
+        entries.splice(index, 1);
+        saveEntry();
+    }
+
+    //Saves current state of list.
+    saveEntry = () => {
+        let str = JSON.stringify(entries);
+        localStorage.setItem('entries', str);
+    }
+
+    //Returns the objects from the 'entries' array at the particular index.
+    getEntry = (index) => entries[index];
+
+    //Parses the data in localStorage and puts it back into the 'entries' array.
+    loadEntries = () => {
+        let str = localStorage.getItem('entries');
+        entries = JSON.parse(str);
+        if (!entries){
+            entries = [];
+        }
+    }
+
+    //Returns the list to the web page after it's parsed from the function 'loadEntries'.
+    listEntries = () => {
+        for (var i in entries){
             const li = document.createElement('li');
             const span = document.createElement('span');
-            let myJsonObj = localStorage.getItem(localStorage.key(i));
-
-            span.id = JSON.parse(myJsonObj).itemId;
-            span.textContent = JSON.parse(myJsonObj).itemName;
-
+            span.textContent = entries[i].name;
             li.appendChild(span);
-            $listUl.append(li);
+            $('ul').append(li);
             attachButtons(li);
         }
-        getCheckedItems();
     }
-    loadLocals();
 
-    //Creates & appends buttons to list items then assigns the class name and text content.
+    loadEntries();
+    listEntries();
+
+    //Creates & appends buttons to each list item.
     function attachButtons(li){
         function createListFunction(elementName, elementClass, elementSrc){
             const element = document.createElement(elementName);
@@ -71,10 +103,8 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
             const span = listItemLine.firstElementChild;
 
             if (checkbox.checked) {
-                localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:true, itemId:span.id}));
                 listItemLine.className = 'ticked';
             } else {
-                localStorage.setItem(span.id, JSON.stringify({itemName:span.textContent, itemChecked:false, itemId:span.id}));
                 listItemLine.className = ' ';
             }
         });
@@ -84,7 +114,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
     upperFirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
     //Adds functionality to buttons.
-    $listUl.on('click', (x) => {
+    $('ul').on('click', (x) => {
         const li = x.target.parentNode;
         const ul = li.parentNode;
         const span = li.firstElementChild;
@@ -95,6 +125,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 let prevLi = li.previousElementSibling; 
                 if(prevLi){
                     ul.insertBefore(li, prevLi);
+                    entries.indexOf
                 }            
             }
             if(x.target.className == 'down'){
@@ -103,9 +134,9 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
             }
             if(x.target.className == 'remove'){
                 ul.removeChild(li);
-                for(let i = 0; i < localStorage.length; i++){
-                    if(span.id == localStorage.key(i)){
-                        localStorage.removeItem(localStorage.key(i));
+                for(let i = 0; i < entries.length; i++){
+                    if (span.textContent == entries[i].name){
+                        removeEntry(i)
                     }
                 }
             }
@@ -133,7 +164,6 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 span.id = 'item'+upper;
                 span.textContent = upper;
 
-                localStorage.setItem(span.id, JSON.stringify({itemName:upper, itemChecked:false, itemId:span.id}));
                 li.querySelector('.tickBox').checked=false;
                 li.className = '';
                 
@@ -143,9 +173,10 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         }
     });
 
-    //Takes the content from the Input box and places into the list if not empty. It then clears the input box.
+    //Takes the content from the Input box and places into the list if not empty, then clearing the input box.
     $form.on('submit', (e) => {
         let submitEntry = true;
+        e.preventDefault();
         const li = document.createElement('li');
         const span = document.createElement('span');
         li.appendChild(span);
@@ -164,18 +195,11 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         //stop entry insertion if box is not between 1 to 25 characters or is already on the list.
         if (li.textContent != '' && li.textContent.length <= 25 && submitEntry == true){
             span.id = 'item' + listItemValue;
-            $listUl.append(li);
-          
-            console.log(li);
+
+            addEntry(listItemValue);
+            saveEntry();
+            $('ul').append(li);
             attachButtons(li);
-
-            let placeholder = {
-                itemName: span.textContent,
-                itemChecked: false,
-                itemId: 'item' + span.textContent,
-            };
-
-            localStorage.setItem('item' + placeholder.itemName, JSON.stringify(placeholder));
 
         } else {
             alert("Entry must be between 1 to 25 characters long and not already be on the list");
@@ -185,15 +209,16 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
     });
 
     //Reads input box and places the value into the heading.
-    $changeTitleBtn.on('click', () => {
+    $('button.newTitle').on('click', () => {
         const titleTxt = document.querySelector('#listTitle');
         titleTxt.textContent = inputBox.value;
+        localStorage.setItem('title', inputBox.value);
         inputBox.value = '';
     });
 
     //Checks each item in the list begins if their beginning letter is higher than it's neighbours.
     //The switches are used to trigger the ordering 'insertBefore' function to correctly place each list item if the above case is true.
-    $orderListBtn.on('click', (x) => {
+    $('button.orderList').on('click', (x) => {
         let switching = true, shouldSwitch, i;
         
         while(switching){
