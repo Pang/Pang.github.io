@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         entries.splice(index, 1);
         saveEntry();
     }
-
+    
     //Saves current state of list.
     saveEntry = () => {
         let str = JSON.stringify(entries);
@@ -54,11 +54,21 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
             li.appendChild(span);
             $('ul').append(li);
             attachButtons(li);
+            if (entries[i].ticked == true){
+
+            }
+
         }
+    }
+
+    titleLoad = () => {
+        let str = localStorage.getItem('title')
+        $('#listTitle').text(str);
     }
 
     loadEntries();
     listEntries();
+    titleLoad();
 
     //Creates & appends buttons to each list item.
     function attachButtons(li){
@@ -80,41 +90,14 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         tickBox.type = 'checkbox';
         tickBox.className = 'tickBox';
         li.appendChild(tickBox);
+        tickBox.value = tickBox.parentNode.textContent;
     }
-
-    //Finds ticked entries and applies changes
-    function getCheckedItems(){
-        for(i = 0; i < localStorage.length; i++){
-            if(JSON.parse(localStorage.getItem(localStorage.key(i))).itemChecked == true){
-                document.querySelectorAll('.tickBox')[i].checked=true;
-                $('li').eq(i).addClass('ticked');
-            } else {
-                $('li').eq(i).removeClass('ticked');
-                document.querySelectorAll('.tickBox')[i].checked=false;
-            }
-        }
-    }
-
-    //Takes the info from ticked/non-ticked items and stores it into localStorage
-    $('li').each(function() {
-        $('.tickBox').on('change', (x) => {
-            const checkbox = x.target;
-            const listItemLine = checkbox.parentNode;
-            const span = listItemLine.firstElementChild;
-
-            if (checkbox.checked) {
-                listItemLine.className = 'ticked';
-            } else {
-                listItemLine.className = ' ';
-            }
-        });
-    });
 
     //All new entries will use this to capitalize the first letter
     upperFirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
     //Adds functionality to buttons.
-    $('ul').on('click', (x) => {
+    $('ul').on('click change', (x) => {
         const li = x.target.parentNode;
         const ul = li.parentNode;
         const span = li.firstElementChild;
@@ -171,6 +154,21 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 li.removeChild(input);
             }
         }
+        //Checks entries are ticked and swaps the class for appropriate CSS change.
+        if (x.target.className == 'tickBox'){
+            for (i = 0; i < entries.length; i++){
+                if (entries[i].name == x.target.value && x.target.checked){
+                    li.className = 'ticked';
+                    entries[i].ticked = true;
+                    saveEntry();
+                }
+                if (entries[i].name == x.target.value && !x.target.checked) {
+                    li.className = ' ';
+                    entries[i].ticked = false;
+                    saveEntry();
+                }
+            }
+        };
     });
 
     //Takes the content from the Input box and places into the list if not empty, then clearing the input box.
