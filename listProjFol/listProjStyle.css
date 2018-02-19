@@ -1,7 +1,7 @@
 body {
     background: rgb(255, 255, 255);
-    max-width: 800px;
-    min-width: 500px;
+    max-width: 80%;
+    min-width: 400px;
     margin: 75px auto;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -32,23 +32,17 @@ button {
 }
 
 button.edit {
-    font-size: 22px;
-    background-color: transparent;
-    border-radius: 0%;
-    border: none;
-    padding: 1px 1px 1px 1px;
     position: relative;
     top: -2px;
     float:right;
-    color: black;
 }
 
 input.edit {
-display:block;
+    display:block;
 }
 
 input.save {
-display:none;
+    display:none;
 }
 
 button.newItem  {
@@ -57,15 +51,27 @@ button.newItem  {
     text-align: center;
 }
 
+button.newItem:hover {
+    background-color: rgb(129, 192, 129);
+}
+
 button.newTitle  {
     background-color: rgb(77, 104, 122);
     width: 100px;
     text-align: center;
 }
 
+button.newTitle:hover  {
+    background-color: rgb(130, 156, 173);
+}
+
 button.orderList {
     background-color: rgb(165, 154, 104);
     text-align: center;
+}
+
+button.orderList:hover {
+    background-color: rgb(196, 187, 147);
 }
 
 .listBox {
@@ -102,5 +108,4 @@ li:nth-child(even){
 li.ticked {
     background-color: rgba(70, 70, 70, 0.6);
     text-decoration: line-through;
-    
 }

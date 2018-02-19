@@ -54,10 +54,11 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
             li.appendChild(span);
             $('ul').append(li);
             attachButtons(li);
+
             if (entries[i].ticked == true){
-
+                document.querySelectorAll('.tickBox')[i].checked = true;
+                li.className = 'ticked';
             }
-
         }
     }
 
@@ -127,7 +128,16 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 li.querySelector('.edit').style.display = 'none';
                 li.querySelector('.save').style.display = 'block';
                 li.querySelector('.tickBox').style.display = 'none';
+                li.id = 'editting';
 
+                for(let i = 0; i < entries.length; i++){
+                    if (entries[i].name == span.textContent){
+                        entries[i].ticked = false;
+                        li.querySelector('.tickBox').checked=false;
+                        li.className = '';
+                    }
+                }
+                
                 const inputEdit = document.createElement('input');
                 inputEdit.type = 'text';
                 inputEdit.value = span.textContent;
@@ -140,18 +150,22 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 li.querySelector('.save').style.display = 'none';
                 li.querySelector('.tickBox').style.display = 'inline-block';
                 
+
                 const input = li.firstElementChild;
                 const span = document.createElement('span');
                 let upper = upperFirst(input.value);
-
-                span.id = 'item'+upper;
                 span.textContent = upper;
 
-                li.querySelector('.tickBox').checked=false;
-                li.className = '';
+                for(let i = 0; i < entries.length; i++){
+                    if (listItems[i].id == 'editting'){
+                        entries[i].name = upper;
+                        li.id = '';
+                    }
+                }
                 
                 li.insertBefore(span, input);
                 li.removeChild(input);
+                saveEntry();
             }
         }
         //Checks entries are ticked and swaps the class for appropriate CSS change.
@@ -192,8 +206,6 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
 
         //stop entry insertion if box is not between 1 to 25 characters or is already on the list.
         if (li.textContent != '' && li.textContent.length <= 25 && submitEntry == true){
-            span.id = 'item' + listItemValue;
-
             addEntry(listItemValue);
             saveEntry();
             $('ul').append(li);
