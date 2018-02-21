@@ -64,7 +64,11 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
 
     titleLoad = () => {
         let str = localStorage.getItem('title')
-        $('#listTitle').text(str);
+        if (str){
+            $('#listTitle').text(str);
+        } else {
+            $('#listTitle').text("New list");
+        }
     }
 
     loadEntries();
