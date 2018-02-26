@@ -1,7 +1,9 @@
 <html><head> 
     <title>Portfolio</title> 
     <meta name="keywords" content="Ryan Beckett, HTML, Portfolio">
-    <link rel="Stylesheet" type="text/css" href="portfolioStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" media="only screen and (min-width:500px)" type="text/css" href="portfolioStyle.css">
+    <link rel="Stylesheet" media="only screen and (max-width:500px)" type="text/css" href="portfolioStyleMobile.css">
     <script src="javaScript/logoAnimation.js"></script>
     <script src="javaScript/jsFeatures.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -22,13 +24,13 @@
       <a href="https://www.Twitter.com/RyanBcktt" target="_blank"><img id="twitterLogo" src="icons/Twitter_Default_Icon.png"></a>
       <a href="https://www.linkedin.com/in/ryan-beckett-75112510b/" target="_blank"><img id="LinkedInLogo" src="icons/Linkd_Default_Icon.png"></a>
       <a href="https://gist.github.com/cPango/" target="_blank"><img id="GitHubLogo" src="icons/Git_Default_Icon.png"></a><br><br>
-      <a id="contactEmail" href="mailto:ryan.beckett@outlook.com"><span style="font-size: 30px;">Ryan.Beckett@Outlook.com</span></a>
+      <a id="contactEmail" href="mailto:ryan.beckett@outlook.com"><span>Ryan.Beckett@Outlook.com</span></a>
     </div><br>
   
     <hr>
   
     <div>
-      <ol style="list-style-type: circle; font-size: 3em;">
+      <ol id="skillList">
           <li>HTML &amp; CSS</li>
           <li>Javascript, JQuery &amp; AJAX</li>
           <li>C#</li>
