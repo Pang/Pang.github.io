@@ -152,8 +152,9 @@ acronym {
 }
 
 #listImg {
-    max-width: 80%;
-    max-height: 500px;
+    min-width: 50%;
+    max-width: 90%;
+    max-height: 50%;
 }
 #listImg2 {
     width: 500px;
