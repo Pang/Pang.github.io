@@ -1,5 +1,8 @@
-<html><head> 
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
     <title>Portfolio</title> 
+    <meta charset="utf-8">
     <meta name="keywords" content="Ryan Beckett, HTML, Portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" media="only screen and (min-width:500px)" type="text/css" href="portfolioStyle.css">
@@ -22,84 +25,86 @@
       </div> <br>
     </header>
 
-    <section>
-      <div id="links">
-        <a href="https://www.Twitter.com/RyanBcktt" target="_blank"><img id="twitterLogo" src="icons/Twitter_Default_Icon.png"></a>
-        <a href="https://www.linkedin.com/in/ryan-beckett-75112510b/" target="_blank"><img id="LinkedInLogo" src="icons/Linkd_Default_Icon.png"></a>
-        <a href="https://gist.github.com/cPango/" target="_blank"><img id="GitHubLogo" src="icons/Git_Default_Icon.png"></a><br><br>
-        <a id="contactEmail" href="mailto:ryan.beckett@outlook.com"><span>Ryan.Beckett@Outlook.com</span></a>
-      </div><br>
-    </section>
-    <hr>
-  
-    <section>
-      <div>
-        <ol id="skillList">
-            <li>HTML &amp; CSS</li>
-            <li>Javascript, JQuery &amp; AJAX</li>
-            <li>C# &amp; ASP.NET</li>
-            <li>SQL</li>
-          </ol>
-      </div> 
-    </section>
-    <hr><br>
+    <main>
+      <section>
+        <div id="links">
+          <a href="https://www.Twitter.com/RyanBcktt" target="_blank"><img id="twitterLogo" src="icons/Twitter_Default_Icon.png"></a>
+          <a href="https://www.linkedin.com/in/ryan-beckett-75112510b/" target="_blank"><img id="LinkedInLogo" src="icons/Linkd_Default_Icon.png"></a>
+          <a href="https://gist.github.com/cPango/" target="_blank"><img id="GitHubLogo" src="icons/Git_Default_Icon.png"></a><br>
+          <a id="contactEmail" href="mailto:ryan.beckett@outlook.com?subject=Dear%20Mr%20Beckett"><span>Ryan.Beckett@Outlook.com</span></a>
+        </div><br>
+      </section>
+      <hr>
+    
+      <section>
+        <div>
+          <ol id="skillList">
+              <li>HTML &amp; CSS</li>
+              <li>Javascript, JQuery &amp; AJAX</li>
+              <li>C# &amp; ASP.NET</li>
+              <li>SQL</li>
+            </ol>
+        </div> 
+      </section>
+      <hr><br>
 
-    <section>
-      <div id="projectPageLayout" style="position:relative; top:10px;"> 
-        <h2>Admins List</h2>
-        <img id="listImg" src="images/ListProj.png"> <br>
-        <ol style="display: none;"><br>
-          <a href="https://gist.github.com/cPango/59148e852eab7b3207b77d44684dd099" target="_blank"><span id="codeLink">VIEW CODE</span></a> <br><br>
-          <a target="_blank" href="AdminsList.html"><span id="codeLink">TRY APP</span></a>
-          <h2>Features:</h2>
-          <li>[x]Add/remove items</li>
-          <li>[x]Edit position and text of items</li>
-          <li>[x]Order list feature</li>
-          <li>[x]Check/tick list items</li>
-          <li>[x]Store entries into localStorage using JSON</li>
-          <li>[x]Store checked status in localStorage</li>
-          <li>[x]Store changes to text in localStorage</li>
-          <li>[x]Prevent duplicate items being added to list</li>
-        </ol><br>
-      </div>
+      <section>
+        <div id="projectPageLayout" style="position:relative; top:10px;"> 
+          <h2>Admins List</h2>
+          <img id="listImg" src="images/ListProj.png"> <br>
+          <ol style="display: none;"><br>
+            <a href="https://gist.github.com/cPango/59148e852eab7b3207b77d44684dd099" target="_blank"><span id="codeLink">VIEW CODE</span></a> <br><br>
+            <a target="_blank" href="AdminsList.html"><span id="codeLink">TRY APP</span></a>
+            <h2>Features:</h2>
+            <li>[x]Add/remove items</li>
+            <li>[x]Edit position and text of items</li>
+            <li>[x]Order list feature</li>
+            <li>[x]Check/tick list items</li>
+            <li>[x]Store entries into localStorage using JSON</li>
+            <li>[x]Store checked status in localStorage</li>
+            <li>[x]Store changes to text in localStorage</li>
+            <li>[x]Prevent duplicate items being added to list</li>
+          </ol><br>
+        </div>
 
-      <div id="projectPageLayout" style="position:relative; top:10px;"> 
-        <h2>Treehouse API</h2>
-        <img id="listImg" src="images/apiTest.png"> <br>
-        <ol style="display: none;"><br>
-          <a href="https://gist.github.com/cPango/5c0614c1f8b915baad031908c3fb37af" target="_blank"><span id="codeLink">VIEW CODE</span></a> <br><br>
-          <li>Using Node.js I am able to call the treehouse API to retrieve my profile details, 
-            and then parse it to display the info that I want. The 'getProfile' function is created to 
-            easily replace my profile name with somebody else that I may prefer to view.</li>
-        </ol><br>
-      </div>
+        <div id="projectPageLayout" style="position:relative; top:10px;"> 
+          <h2>Treehouse API</h2>
+          <img id="listImg" src="images/apiTest.png"> <br>
+          <ol style="display: none;"><br>
+            <a href="https://gist.github.com/cPango/5c0614c1f8b915baad031908c3fb37af" target="_blank"><span id="codeLink">VIEW CODE</span></a> <br><br>
+            <li>Using Node.js I am able to call the treehouse API to retrieve my profile details, 
+              and then parse it to display the info that I want. The 'getProfile' function is created to 
+              easily replace my profile name with somebody else that I may prefer to view.</li>
+          </ol><br>
+        </div>
 
-      <div id="projectPageLayout">        
-        <h2>Knight vs Random Foe's</h2>
-        <img id="listImg" src="images/PlayerVsFoe_Game.png">
-        <ol style="display: none;"><br>
-          <a href="https://gist.github.com/cPango/939914dbb745d225add92a6e4155403c" target="_blank"><span id="codeLink">VIEW CODE</span></a>
-          <h2>Features:</h2>
-          <li>[x]Allow user to create name for their knight</li>
-          <li>[x]Turn choice (hit/heal)</li>
-          <li>[x]Randomly generate a foe (random race &amp; class)</li>
-          <li>[x]Npc makes own choices based on it's health</li>
-          <li>[x]Npc's get harder after each kill</li>
-        </ol><br>
-      </div>
-  
-      <div id="projectPageLayout">        
-        <h2>Tic Tac BOOM</h2>
-        <img id="listImg" src="images/TicTacToeGame.png">
-        <ol style="display: none;"><br>
-          <a href="https://gist.github.com/cPango/17d8b4be56a1505fd26b1fbb449326a6" target="_blank"><span id="codeLink">VIEW CODE</span></a><br><br>
-          <li>A simple game of Tic Tac Toe made using Visual Studio's Windows Form Apps template. 
-            You can play with a friend in this turn based game and watch as the winner lights up the board.
-          </li>
-        </ol><br>
-      </div>
-    </section>
-
+        <div id="projectPageLayout">        
+          <h2>Knight vs Random Foe's</h2>
+          <img id="listImg" src="images/PlayerVsFoe_Game.png">
+          <ol style="display: none;"><br>
+            <a href="https://gist.github.com/cPango/939914dbb745d225add92a6e4155403c" target="_blank"><span id="codeLink">VIEW CODE</span></a>
+            <h2>Features:</h2>
+            <li>[x]Allow user to create name for their knight</li>
+            <li>[x]Turn choice (hit/heal)</li>
+            <li>[x]Randomly generate a foe (random race &amp; class)</li>
+            <li>[x]Npc makes own choices based on it's health</li>
+            <li>[x]Npc's get harder after each kill</li>
+          </ol><br>
+        </div>
+    
+        <div id="projectPageLayout">        
+          <h2>Tic Tac BOOM</h2>
+          <img id="listImg" src="images/TicTacToeGame.png">
+          <ol style="display: none;"><br>
+            <a href="https://gist.github.com/cPango/17d8b4be56a1505fd26b1fbb449326a6" target="_blank"><span id="codeLink">VIEW CODE</span></a><br><br>
+            <li>A simple game of Tic Tac Toe made using Visual Studio's Windows Form Apps template. 
+              You can play with a friend in this turn based game and watch as the winner lights up the board.
+            </li>
+          </ol><br>
+        </div>
+      </section>
+    </main>
+    
     <footer>
       <hr>
       <p>&copy; 2018 Ryan Beckett, Portfolio.</p>

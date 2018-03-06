@@ -1,5 +1,7 @@
 body {
-    background: #ffffff;
+    background-color: rgb(255, 255, 255);
+    background: radial-gradient(rgb(255, 255, 255) 60%, rgb(173, 173, 173));
+
     margin: 0;
     font-family:Georgia, Helvetica;
     color: black; 
