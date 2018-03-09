@@ -151,11 +151,6 @@ acronym {
     text-decoration:none;
 }
 
-#projectPageLayout:hover {
-    background-color: #9bbdd8;
-    box-shadow: 2px 2px 12px rgb(119, 119, 119);
-}
-
 #listImg {
     min-width: 80%;
     max-width: 90%;
@@ -167,7 +162,8 @@ acronym {
 }
 
 a {
-    text-decoration:none;
+    text-decoration: none;
+    white-space: pre-wrap;
 }
 
 h3 {
@@ -179,22 +175,18 @@ h3 {
     padding:20px;
 }
 
-#codeLink {
-    font-size:22px; 
-    background-color:rgb(65, 106, 139);
-    color:white;
-    padding:6px 12px;
-    border-radius: 8px;
-}
-
 #codeLink:hover {
-    background-color:rgb(120, 160, 194);
-    color:white;
-    box-shadow: 2px 2px 2px rgb(31, 31, 31);;
+    background-color: rgb(120, 160, 194);
+    color: white;
 }
 
 #codeLink:active {
-    background-color:rgb(49, 82, 110);
-    color:white;
-    box-shadow: inset 2px 2px 2px rgb(31, 31, 31);;
+    background-color: rgb(49, 82, 110);
+    color: white;
+    box-shadow: inset 2px 2px 2px rgb(31, 31, 31);
+}
+
+#leftArrow, #rightArrow {
+    font-size: 60px;
+    padding: 0px 20px;
 }
