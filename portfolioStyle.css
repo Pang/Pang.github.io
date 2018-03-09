@@ -143,6 +143,11 @@ acronym {
     transform: translate(-50%, -50%);
 }
 
+#intro {
+    display:inline-block; 
+    padding:0px 100px;
+}
+
 a {
     text-decoration:none;
 }
