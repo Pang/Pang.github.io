@@ -40,8 +40,8 @@ ol {
 }
 
 hr {
-    width: 20%;
-    margin-top:28px;
+    width: 55%;
+    margin-top:0px;
 }
 
 #menuBtn {
@@ -145,7 +145,7 @@ acronym {
 
 #intro {
     display:inline-block; 
-    padding:0px 100px;
+    padding:0px 80px;
 }
 
 a {
