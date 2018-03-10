@@ -183,12 +183,13 @@ h3 {
     text-decoration: underline;
 }
 
-.smIcon:hover {
-    transition-duration: 0.2s;
+.smIcon {
+    border-radius:20%;
 }
 
 .smIcon:hover {
     transform: scale(1.1);
+    box-shadow: 1px 1px 8px black;
 }
 
 #projectPageLayout {
