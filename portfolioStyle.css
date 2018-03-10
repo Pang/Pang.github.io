@@ -112,26 +112,32 @@ acronym {
 }
 
 #logo2 {
-    margin: auto; 
-    letter-spacing: 1px;
-    text-shadow:3px 6px 8px #1b1b1b;
-    position: relative;
+    margin: auto;
+    font-size: 30px;
     bottom: 100px;
 }
+
+@keyframes logoAnm {
+    0% {letter-spacing: 0px;}
+    100%{letter-spacing: 32px;}
+}
+
 
 .siteLogo {
     white-space: nowrap;
     font-size: 100px;
     display: inline;
     margin: auto;
-    letter-spacing: 1px;
     position: relative;
     bottom: 100px;
     padding: 5px;
     padding-left: 12px;
     padding-bottom: 35px;
     text-shadow: 5px 6px 8px #1d1d1d;
+    animation: 2s ease-out 0s 1 logoAnm;
+    letter-spacing: 32px;
 }
+
 
 #homepage {
     position: relative;
