@@ -80,6 +80,10 @@ acronym {
     overflow: hidden;
 }
 
+.smIcon {
+    border-radius: 20%;
+}
+
 #twitterLogo {
     height: 65px;
     Width: 65px; 
