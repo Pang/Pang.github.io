@@ -1,46 +1,25 @@
+* {
+    box-sizing:border-box;
+}
+
 body {
     background-color: rgb(255, 255, 255);
-    background: radial-gradient(rgb(255, 255, 255) 60%, rgb(173, 173, 173));
     margin: 0;
-    font-family:Georgia, Helvetica;
+    font-family:Georgia, Helvetica, Arial;
     color: black; 
     text-align:center;
 }
 
-nav {
-    position: fixed;
-    top:0px;
-    width:100%;
-    overflow:hidden;
-    z-index:1;
-}
-
-#contactEmail {
-    position: relative;
-    bottom: 15px;
-    color: rgb(0, 0, 0);
-    font-size: 30px;
-    transition: 0.2s;
-}
-
-#contactEmail:hover {
-    color: blue;
-    transform:scale(1.1)
-}
-
-
 ul {
     background-color: #252525;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    padding-left: 0px;
     overflow: hidden;
 }
 
 ol {
     list-style:none; 
-    padding:0; 
-    border: 1px solid transparent;
+    padding-left: 0px;
     text-align: center;
 }
 
@@ -49,115 +28,63 @@ hr {
     margin-top:0px;
 }
 
-#menuBtn {
-    float: left;
-    font-family: georgia;
-    text-align: center;
-    padding: 11px 10px;
-    color: white;
-    text-decoration: none;
-    margin-top: 3px;
-    display: block;
-    padding: 10px;
-    background-color:#252525;
-    margin-right:4px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-#menuBtn:hover {
-    background-color: #666666
-}
-
 #skillList {
     font-size: 40px;
 }
 
-acronym {
-    font-weight: bold; 
-    font-style: italic; 
-    color:black;
-}
-
-#TunnelMe {
-    max-width: 100%;
-    max-height: 800px;
-    overflow: hidden;
-}
-
-#anmImg {
-    width: 30%;
-}
-
-#logo2 {
-    margin: auto;
-    font-size: 30px;
-    bottom: 100px;
-}
-
 @keyframes logoAnm {
-    0% {letter-spacing: 0px;}
-    100%{letter-spacing: 32px;}
+    0% {
+        letter-spacing: 0px;
+    }
+    100% {
+        letter-spacing: 32px;
+    }
 }
-
-
-.siteLogo {
-    white-space: nowrap;
-    font-size: 100px;
-    display: inline;
-    margin: auto;
-    position: relative;
-    bottom: 100px;
-    padding: 5px;
-    padding-left: 12px;
-    padding-bottom: 35px;
-    text-shadow: 5px 6px 8px #1d1d1d;
-    animation: 2s ease-out 0s 1 logoAnm;
-    letter-spacing: 32px;
-}
-
-
-#homepage {
+header {
+    background: #262626 url(images/coverBg.png);
+    width: 100%;
+    height: 350px;
     position: relative;
     text-align: center;
-    color:white;
-    background-color: black;
-    box-shadow: 2px 2px 12px rgb(19, 19, 19);
+    color: white;
+    text-shadow: 5px 6px 5px #1a1a1a;
     width: 100%;
+    padding-top: 30px;
+    border-bottom: solid #336699 10px;
 }
 
-.contentPosLogo {
-    position: absolute;
-    top: 80%;
-    left: 51%;
-    transform: translate(-50%, -50%);
+header div {
+    position: relative;
+    top: 5px;
+}
+
+header h1 {
+    white-space: nowrap;
+    font-size: 100px;
+    margin: auto;
+    animation: 2s ease-out 0s 1 logoAnm;
+    letter-spacing: 32px;
+    position: relative;
+}
+
+header h1:nth-of-type(2){
+    bottom:30px;
+}
+
+header h4 {
+    animation: 2s ease-out 0s 1 logoAnm;
+    letter-spacing: 32px;
+    font-size: 30px;
+    position: relative;
+    bottom: 90px;
 }
 
 #intro {
-    display:inline-block; 
+    display: inline-block;
     margin: 0px 80px;
 }
 
-a {
-    text-decoration:none;
-}
-
-h1 {
-    font-size: 40px;
-}
-
-h3 {
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(0, 0, 0);
-}
-
-#codeLink {
-    font-size:22px; 
-    color:blue;
-    text-decoration: underline;
-}
-
-.smIcon {
+#intro img {
     border-radius: 20%;
     position: relative;
     top: 15px;
@@ -167,12 +94,50 @@ h3 {
     z-index: 2;
 }
 
-.smIcon:hover {
+#intro img:hover {
     transform: scale(1.1);
     box-shadow: 1px 1px 8px black;
 }
 
-#projectPageLayout {
+#intro a {
+    position: relative;
+    bottom: 0px;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+#intro p:hover {
+    color: blue;
+    transform: scale(1.1)
+}
+
+
+
+.projectContainer h1 {
+    font-size: 40px;
+}
+
+#leftArrow, #rightArrow {
+    position: relative;
+    top: -50px;
+    cursor: pointer;
+    width: auto;
+    padding: 0px 20px;
+    margin-top: -22px;
+    font-weight: bold;
+    font-size: 60px;
+    transition: 0.1s;
+    border-radius: 0 3px 3px 0;
+}
+
+#leftArrow:hover, #rightArrow:hover {
+    color: cornflowerblue;
+}
+
+
+.codeProjects {
     position: relative;
     top: -40px;
     transition-duration: 0.4s;
@@ -180,11 +145,18 @@ h3 {
     text-decoration: none;
     animation-name: slide;
     animation-duration: 1s;
+    text-decoration: none;
 }
 
-.projectContainer {
-    margin: 0 auto;
-    width: 80%;
+.codeProjects p {
+    font-size: 22px;
+    font-weight: bold;
+    color: blue;
+    text-decoration: underline;
+}
+
+.codeProjects img {
+    max-width: 75%;
 }
 
 /* Safari 4.0 - 8.0 */
@@ -212,21 +184,3 @@ h3 {
         opacity: 1;
     }
 }
-
-#leftArrow, #rightArrow {
-    position: relative;
-    top: -50px;
-    cursor: pointer;
-    width: auto;
-    padding: 0px 20px;
-    margin-top: -22px;
-    font-weight: bold;
-    font-size: 60px;
-    transition: 0.1s;
-    border-radius: 0 3px 3px 0;
-}
-
-#leftArrow:hover, #rightArrow:hover {
-    color: cornflowerblue;
-}
-

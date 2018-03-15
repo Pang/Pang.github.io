@@ -27,4 +27,3 @@ document.addEventListener("DOMContentLoaded", () => {
         myProjects[slideIndex - 1].style.display = "block";
     }
 });
-
