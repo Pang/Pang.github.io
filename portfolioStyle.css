@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: #FFF;
     margin: 0;
     font-family:Georgia, Helvetica, Arial;
     color: black; 
@@ -125,6 +125,7 @@ header h4 {
     width: auto;
     padding: 0px 20px;
     margin-top: -22px;
+    color:#336699;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 200px;
     transition: 0.1s;
