@@ -4,26 +4,29 @@ document.addEventListener("DOMContentLoaded", () => {
     let slideIndex = 1;
     showProjects(slideIndex);
 
+    //Jquery assigning functions to buttons
     $("#rightArrow").click(function() { nextProj(1) } );
     $("#leftArrow").click(function() { nextProj(-1) } );
 
-    function nextProj(n) {
-        showProjects(slideIndex += n);
-    }
+    //slides right when clicked, 'n' decides how many times
+    nextProj = (n) => showProjects(slideIndex += n);
 
-    function currentSlide(n) {
-        showProjects(slideIndex = n);
-    }
+    //current slide shown
+    currentSlide = (n) => showProjects(slideIndex = n);
 
     function showProjects(n) {
-        let myProjects = document.querySelectorAll(".codeProjects");
-        
+        const myProjects = document.querySelectorAll(".codeProjects");
+
+        //Reset to 1 if max number of projects exceeds
         if (n > myProjects.length) { slideIndex = 1 }
+        //Allows looping backwards
         if (n < 1) { slideIndex = myProjects.length }
 
+        //Hides all projects
         for (let i = 0; i < myProjects.length; i++) {
             myProjects[i].style.display = "none";
         }
-        myProjects[slideIndex - 1].style.display = "block";
+        //shows the project currently selected in the array
+        myProjects[slideIndex-1].style.display = "block";
     }
 });

@@ -13,13 +13,13 @@ body {
 ul {
     background-color: #252525;
     list-style-type: none;
-    padding-left: 0px;
+    padding-left: 0;
     overflow: hidden;
 }
 
 ol {
     list-style:none; 
-    padding-left: 0px;
+    padding-left: 0;
     text-align: center;
 }
 
@@ -34,7 +34,7 @@ hr {
 
 @keyframes logoAnm {
     0% {
-        letter-spacing: 0px;
+        letter-spacing: 0;
     }
     100% {
         letter-spacing: 32px;
@@ -82,7 +82,7 @@ header h4 {
 
 #intro {
     display: inline-block;
-    margin: 0px 80px;
+    margin: 0 80px;
 }
 
 #intro img {
@@ -102,7 +102,7 @@ header h4 {
 
 #intro a {
     position: relative;
-    bottom: 0px;
+    bottom: 0;
     color: rgb(0, 0, 0);
     font-size: 30px;
     transition: 0.2s;
@@ -116,6 +116,7 @@ header h4 {
 
 .projectContainer h1 {
     font-size: 40px;
+    letter-spacing: 7px;
 }
 
 #leftArrow, #rightArrow {
@@ -123,12 +124,12 @@ header h4 {
     top:140px;
     cursor: pointer;
     width: auto;
-    padding: 0px 20px;
+    padding: 0 20px;
     margin-top: -22px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 200px;
     transition: 0.1s;
-    margin: 0px 40px;
+    margin: 0 40px;
     z-index: 99;
 }
 
@@ -152,7 +153,6 @@ header h4 {
     text-decoration: none;
     animation-name: slide;
     animation-duration: 1s;
-    text-decoration: none;
 }
 
 .codeProjects p {
@@ -165,7 +165,7 @@ header h4 {
 .codeProjects img {
     max-width: 50%;
     max-height: 50%;
-    box-shadow: 0px 15px 20px -12px black;
+    box-shadow: 0 15px 20px -12px black;
 }
 
 /* Safari 4.0 - 8.0 */
@@ -176,7 +176,7 @@ header h4 {
     }
 
     to {
-        right: 0px;
+        right: 0;
         opacity: 1;
     }
 }
@@ -188,13 +188,13 @@ header h4 {
     }
 
     to {
-        right: 0px;
+        right: 0;
         opacity: 1;
     }
 }
 
 /*Media Queries*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 926px) {
     header {
         height: 300px;
     }
