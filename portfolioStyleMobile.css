@@ -9,7 +9,7 @@ body {
 ul {
     background-color: #252525;
     list-style-type: none;
-    padding-left: 0px;
+    padding-left: 0;
     overflow: hidden;
 }
 
@@ -31,7 +31,7 @@ hr {
 
 @keyframes logoAnm {
     0% {
-        letter-spacing: 0px;
+        letter-spacing: 0;
     }
 
     100% {
@@ -49,7 +49,6 @@ header {
     color: white;
     background-color: #262626;
     text-shadow: 5px 6px 5px #000;
-    width: 100%;
     padding-top: 40px;
     border-bottom: solid #336699 8px;
     box-shadow: inset 0 0 50px 20px black;
@@ -78,7 +77,7 @@ header h4 {
 
 #intro {
     display: inline-block;
-    margin: 0px;
+    margin: 0;
 }
 
 #intro img {
@@ -93,7 +92,7 @@ header h4 {
 
 #intro a {
     position: relative;
-    bottom: 0px;
+    bottom: 0;
     color: rgb(0, 0, 0);
     font-size: 22px;
     transition: 0.2s;
@@ -109,7 +108,6 @@ header h4 {
 
 .projectContainer {
     margin: 0 auto;
-    width: 80%;
     width: 80%;
 }
 
@@ -151,7 +149,6 @@ header h4 {
     text-decoration: none;
     animation-name: slide;
     animation-duration: 1s;
-    text-decoration: none;
 }
 
 .codeProjects p {
@@ -173,7 +170,7 @@ header h4 {
     }
 
     to {
-        right: 0px;
+        right: 0;
         opacity: 1;
     }
 }
@@ -186,7 +183,7 @@ header h4 {
     }
 
     to {
-        right: 0px;
+        right: 0;
         opacity: 1;
     }
 }
