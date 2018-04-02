@@ -160,6 +160,7 @@ header h4 {
 
 .codeProjects img {
     max-width: 75%;
+    box-shadow: 0 15px 20px -12px black;
 }
 
 /* Safari 4.0 - 8.0 */
