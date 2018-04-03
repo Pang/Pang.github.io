@@ -10,13 +10,6 @@ body {
     text-align:center;
 }
 
-ul {
-    background-color: #252525;
-    list-style-type: none;
-    padding-left: 0;
-    overflow: hidden;
-}
-
 ol {
     list-style:none; 
     padding-left: 0;
@@ -41,23 +34,11 @@ hr {
         letter-spacing: 32px;
     }
 }
-header {
-    background: #262626 url(images/coverBg.png);
-    width: 100%;
-    max-width: 100%;
-    height: 350px;
-    position: relative;
-    text-align: center;
-    color: white;
-    text-shadow: 5px 6px 5px #1a1a1a;
-    padding-top: 30px;
-    border-bottom: solid #336699 8px;
-    box-shadow: inset 0 0 80px 40px black;
-}
 
-header div {
-    position: relative;
-    top: 5px;
+header {
+    width: 100%;
+    height: 500px;
+    padding-top: 100px;
 }
 
 header h1 {
@@ -156,7 +137,9 @@ header h4 {
     animation-duration: 1s;
 }
 
-.codeProjects p {
+.codeProjects a {
+    position:relative;
+    top:16px;
     font-size: 22px;
     font-weight: bold;
     color: blue;
@@ -164,7 +147,7 @@ header h4 {
 }
 
 .codeProjects img {
-    max-width: 50%;
+    max-width: 700px;
     max-height: 50%;
     box-shadow: 0 15px 20px -12px black;
 }
@@ -197,10 +180,11 @@ header h4 {
 /*Media Queries*/
 @media screen and (max-width: 926px) {
     header {
-        height: 300px;
+        height: 280px;
     }
     header div {
-        top: 50px;
+        position:relative;
+        top: 30px;
     }
     header h1 {
         font-size: 55px;
@@ -218,5 +202,109 @@ header h4 {
     }
     #leftArrow, #rightArrow {
         font-size: 100px;
+    }
+
+    .codeProjects img {
+        max-width: 60%;
+        box-shadow: 0 15px 20px -12px black;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    @keyframes logoAnm {
+        0% {
+            letter-spacing: 0;
+        }
+
+        100% {
+            letter-spacing: 10px;
+        }
+    }
+
+    header {
+        height: 220px;
+        padding-top: 30px;
+    }
+
+    header h1 {
+        font-size: 40px;
+        letter-spacing: 10px;
+        bottom: 0px;
+    }
+
+    header h1:nth-of-type(2) {
+        bottom: 24px;
+    }
+
+    header h4 {
+        letter-spacing: 10px;
+        font-size: 20px;
+        position: relative;
+        bottom: 60px;
+    }
+
+    .projectContainer {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .projectContainer h1 {
+        font-size: 30px;
+        font-style: italic;
+    }
+    #intro {
+        display: inline-block;
+        margin: 0;
+    }
+
+    #intro + #intro {
+        margin-top: 25px;
+    }
+
+    #intro:nth-of-type(2){
+        margin-bottom:40px;
+    }
+
+    #intro img {
+        max-height: 70px;
+        max-width: 70px;
+        margin: 5px;
+    }
+
+    #intro a {
+        font-size: 22px;
+    }
+
+    #skillList {
+        font-size: 30px;
+    }
+
+    #leftArrow, #rightArrow {
+        position: relative;
+        top: -95px;
+        margin: 0px;
+        color: #336699;
+        font-size: 80px;
+    }
+
+    .codeProjects {
+        position: relative;
+        top: -40px;
+        transition-duration: 0.4s;
+        color: black;
+        text-decoration: none;
+        animation-name: slide;
+        animation-duration: 1s;
+    }
+
+    .codeProjects a {
+        position:relative;
+        top:12px;
+    }
+
+    .codeProjects img {
+        max-width: 75%;
+        box-shadow: 0 15px 20px -12px black;
     }
 }
