@@ -37,8 +37,8 @@ hr {
 
 header {
     width: 100%;
-    height: 500px;
-    padding-top: 100px;
+    height: 600px;
+    padding-top: 150px;
 }
 
 header h1 {
@@ -65,6 +65,19 @@ header h4 {
 #intro {
     display: inline-block;
     margin: 0 80px;
+}
+
+#intro:nth-of-type(1) {
+    margin-top: 20px;
+}
+
+#intro:nth-of-type(2) {
+    margin-bottom: 20px;
+}
+
+.projectContainer{
+    margin-top: 140px;
+    margin-bottom: 140px;
 }
 
 #intro img {
@@ -178,21 +191,34 @@ header h4 {
 }
 
 /*Media Queries*/
-@media screen and (max-width: 926px) {
+@media screen and (max-width: 700px) {
+
+    @keyframes logoAnm {
+        0% {
+            letter-spacing: 0;
+        }
+
+        100% {
+            letter-spacing: 18px;
+        }
+    }
+
     header {
-        height: 280px;
+        width: 100%;
+        height: 600px;
+        padding-top: 150px;
     }
     header div {
         position:relative;
         top: 30px;
     }
     header h1 {
-        font-size: 55px;
+        font-size: 70px;
         letter-spacing: 18px;
         bottom: 10px;
     }
     header h4 {
-        font-size: 30px;
+        font-size: 40px;
         bottom: 80px;
         letter-spacing: 12px;
     }
@@ -220,6 +246,12 @@ header h4 {
         100% {
             letter-spacing: 10px;
         }
+    }
+
+    hr {
+        width: 100%;
+        margin: 0;
+        opacity: 0;
     }
 
     header {
@@ -253,6 +285,7 @@ header h4 {
         font-size: 30px;
         font-style: italic;
     }
+
     #intro {
         display: inline-block;
         margin: 0;
@@ -263,7 +296,7 @@ header h4 {
     }
 
     #intro:nth-of-type(2){
-        margin-bottom:40px;
+        margin-bottom:12px;
     }
 
     #intro img {
@@ -278,6 +311,10 @@ header h4 {
 
     #skillList {
         font-size: 30px;
+    }
+
+    .projectContainer {
+        margin-top: 40px;
     }
 
     #leftArrow, #rightArrow {
