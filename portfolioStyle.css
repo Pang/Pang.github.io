@@ -105,6 +105,13 @@ header h4 {
     font-size: 100px;
     text-decoration: none;
     color: black;
+    color: #111;
+}
+
+#dropProjects:hover {
+    cursor: pointer;
+    text-shadow: 0px 5px 12px #333;
+    color: #000;
 }
 
 #projectContainer h1 {
