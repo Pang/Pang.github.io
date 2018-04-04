@@ -16,16 +16,6 @@ ol {
     text-align: center;
 }
 
-hr {
-    margin-left:20%;
-    width: 60%;
-    margin-top: 0;
-}
-
-#skillList {
-    font-size: 40px;
-}
-
 @keyframes logoAnm {
     0% {
         letter-spacing: 0;
@@ -37,7 +27,6 @@ hr {
 
 header {
     width: 100%;
-    height: 600px;
     padding-top: 150px;
 }
 
@@ -63,36 +52,44 @@ header h4 {
 }
 
 #intro {
-    display: inline-block;
-    margin: 0 80px;
+    width: 100%;
+    margin-top: -150px;
+    padding-bottom:160px;
 }
 
-#intro:nth-of-type(1) {
-    margin-top: 20px;
+#projectContainer{
+    display:none;
+    margin-top: 100px;
+    padding-bottom: 20px;
 }
 
-#intro:nth-of-type(2) {
-    margin-bottom: 20px;
-}
-
-.projectContainer{
-    margin-top: 140px;
-    margin-bottom: 140px;
-}
-
-#intro img {
+.socialIcon {
     border-radius: 20%;
     position: relative;
     top: 15px;
-    height: 100px;
-    Width: 100px;
+    height: 70px;
+    Width: 70px;
     margin: 15px;
     z-index: 2;
 }
 
-#intro img:hover {
+#contactEmail {
+    border-radius: 10%;
+    position: relative;
+    top: -5px;
+    left: 15px;
+    height: 60px;
+    margin-right: 60px;
+}
+
+#contactEmail:hover {
     transform: scale(1.1);
-    box-shadow: 1px 1px 8px black;
+    box-shadow: 0 15px 20px -12px black;
+}
+
+.socialIcon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 20px -12px black;
 }
 
 #intro a {
@@ -104,12 +101,13 @@ header h4 {
     text-decoration: none;
 }
 
-#intro p:hover {
-    color: blue;
-    transform: scale(1.1)
+#dropProjects {
+    font-size: 100px;
+    text-decoration: none;
+    color: black;
 }
 
-.projectContainer h1 {
+#projectContainer h1 {
     font-size: 40px;
     letter-spacing: 7px;
 }
@@ -165,6 +163,22 @@ header h4 {
     box-shadow: 0 15px 20px -12px black;
 }
 
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #111;
+    color: white;
+    margin-top: 160px;
+}
+footer p {
+    font-weight:bold;
+    position:relative;
+    top: 10px;
+}
+
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes slide {
     from {
@@ -191,7 +205,7 @@ header h4 {
 }
 
 /*Media Queries*/
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
 
     @keyframes logoAnm {
         0% {
@@ -230,8 +244,8 @@ header h4 {
         font-size: 100px;
     }
 
-    .codeProjects img {
-        max-width: 60%;
+    li img {
+        width: 60%;
         box-shadow: 0 15px 20px -12px black;
     }
 }
@@ -248,13 +262,8 @@ header h4 {
         }
     }
 
-    hr {
-        width: 100%;
-        margin: 0;
-        opacity: 0;
-    }
-
     header {
+        margin-top:50px;
         height: 220px;
         padding-top: 30px;
     }
@@ -276,45 +285,37 @@ header h4 {
         bottom: 60px;
     }
 
-    .projectContainer {
-        margin: 0 auto;
-        width: 100%;
+    #projectContainer {
+        margin-top: 0px;
     }
 
-    .projectContainer h1 {
+    #projectContainer h1 {
         font-size: 30px;
         font-style: italic;
     }
 
     #intro {
         display: inline-block;
+        position:relative;
+        top: -60px;
+        right: 3px;
         margin: 0;
     }
 
-    #intro + #intro {
-        margin-top: 25px;
-    }
-
-    #intro:nth-of-type(2){
-        margin-bottom:12px;
-    }
-
     #intro img {
-        max-height: 70px;
-        max-width: 70px;
-        margin: 5px;
+        max-height: 50px;
+        max-width: 50px;
+        margin: 3px;
+    }
+
+    #contactEmail {
+        top: 11px;
+        left: 0px;
+        height: 40px; 
     }
 
     #intro a {
         font-size: 22px;
-    }
-
-    #skillList {
-        font-size: 30px;
-    }
-
-    .projectContainer {
-        margin-top: 40px;
     }
 
     #leftArrow, #rightArrow {
@@ -343,5 +344,9 @@ header h4 {
     .codeProjects img {
         max-width: 75%;
         box-shadow: 0 15px 20px -12px black;
+    }
+
+    footer {
+        margin-top: 140px;
     }
 }
