@@ -351,8 +351,8 @@ footer p {
     }
 
     .dropDownMenus {
-        padding-top: 0;
-    }
+        margin-top: 0;
+     }
 
     #skillsContainer {
         font-size: 20px;
