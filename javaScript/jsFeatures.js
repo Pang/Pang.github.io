@@ -1,8 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => { 
 
+    let skillsDisplayed = false;
+    const $dropSkills = $("#dropSkills");
+
+    $dropSkills.click(function () {
+        if (!skillsDisplayed) { revealSkills() }
+        else { hideSkills() };
+    });
+
+    function revealSkills() {
+        $dropSkills.html("Skills &#9650;")
+        $("#skillsContainer").slideDown();
+        skillsDisplayed = true;
+    }
+    function hideSkills() {
+        $dropSkills.html("Skills &#9660;")
+        $("#skillsContainer").slideUp();
+        skillsDisplayed = false;
+    }
+
+
+    let projectsDisplayed = false;
+    const $dropProjects = $("#dropProjects");
+
+    //determines if project container is open/closed
+    $dropProjects.click(function () {
+        if (!projectsDisplayed) { revealProjects() }
+        else { hideProjects() };
+    });
+
+    //Uses jquery to show container, change button and animate using slideDown
+    function revealProjects() {
+        const projectContainer = document.querySelector("#projectContainer")
+        $dropProjects.html("Projects &#9650;")
+        $("#projectContainer").slideDown();
+        showProjects(slideIndex);
+        projectsDisplayed = true;
+    }
+    function hideProjects() {
+        const projectContainer = document.querySelector("#projectContainer")
+        $dropProjects.html("Projects &#9660;")
+        $("#projectContainer").slideUp();
+        projectsDisplayed = false;
+    }
+
     //Slideshow for Projects
     let slideIndex = 1;
-    //showProjects(slideIndex);
 
     //Jquery assigning functions to buttons
     $("#rightArrow").click(function() { nextProj(1) } );
@@ -30,30 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         myProjects[slideIndex-1].style.display = "block";
     }
 
-    let open = false;
-    const $dropProjects = $("#dropProjects");
 
-    $dropProjects.click(function () {
-        if (open == false) { revealProjects() }
-        else { hideProjects() };
-    });
 
-    function revealProjects() {
-        const projectContainer = document.querySelector("#projectContainer")
-        $dropProjects.html("&#9650;")
-        $("#projectContainer").slideDown();
-        projectContainer.style.display = "block";
-        showProjects(slideIndex);
-        
-        open = true;
-    }
-
-    function hideProjects() {
-        const projectContainer = document.querySelector("#projectContainer")
-        $dropProjects.html("&#9660;")
-        $("#projectContainer").slideUp();
-        //projectContainer.style.display = "none";
-        
-        open = false;
-    }
 });
