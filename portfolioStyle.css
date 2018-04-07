@@ -135,7 +135,7 @@ header > h4 {
     animation-duration: 1s;
 }
 
-.codeProjects a {
+ .codeProjects > a{ 
     position:relative;
     top:16px;
     font-size: 22px;
@@ -144,15 +144,16 @@ header > h4 {
     text-decoration: underline;
 }
 
+.codeProjects > a[href^="AdminsList"] {
+    position:relative;
+    top: 30px;
+    top: 30px;
+}
+
 .codeProjects img {
     max-width: 700px;
     max-height: 50%;
     box-shadow: 0 15px 20px -12px black;
-}
-
-#projectContainer ul {
-    list-style: none;
-    padding-left: 0;
 }
 
 #skillsContainer > ul {
