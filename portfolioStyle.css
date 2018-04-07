@@ -10,15 +10,6 @@ body {
     text-align:center;
 }
 
-@keyframes logoAnm {
-    0% {
-        letter-spacing: 0;
-    }
-    100% {
-        letter-spacing: 32px;
-    }
-}
-
 header {
     width: 100%;
     padding-top: 150px;
@@ -181,19 +172,18 @@ footer {
     font-weight: bold;
 }
 
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes slide {
-    from {
-        right: 100px;
-        opacity: 0;
+/* Keyframes ------ Animations ------ */
+
+@keyframes logoAnm {
+    0% {
+        letter-spacing: 0;
     }
 
-    to {
-        right: 0;
-        opacity: 1;
+    100% {
+        letter-spacing: 32px;
     }
 }
-/* Standard syntax */
+
 @keyframes slide {
     from {
         right: 100px;
@@ -206,7 +196,8 @@ footer {
     }
 }
 
-/*Media Queries*/
+/* Media Query ------ Tablet View ------ */
+
 @media screen and (max-width: 900px) {
 
     @keyframes logoAnm {
@@ -274,6 +265,8 @@ footer {
         margin-top: -120px;
     }
 }
+
+/* Media Query ------ Mobile View ------ */
 
 @media screen and (max-width: 500px) {
 
@@ -345,9 +338,10 @@ footer {
         font-size: 22px;
     }
 
-    .dropDownMenus {
+    .dropDownMenus > a {
         margin-top: 0;
-     }
+        font-size: 40px;
+    }
 
     #skillsContainer > ul{
         margin-left: 0;
