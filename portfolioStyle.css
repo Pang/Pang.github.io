@@ -3,7 +3,8 @@
 }
 
 body {
-    background-color: #fff;
+    background-color: #FFF;
+    background-image: url(images/material_background.jpg);
     margin: 0;
     font-family: Georgia, Helvetica, Arial;
     color: black;
@@ -90,6 +91,12 @@ header > h4 {
     user-select: none;
 }
 
+.dropDownMenus:hover {
+    cursor: pointer;
+    text-shadow: 0px 5px 12px #333;
+    color: #000;
+}
+
 #skillsContainer {
     font-family: 'Global Monospace', monospace;
     font-size: 40px;
@@ -97,11 +104,7 @@ header > h4 {
     display:none;
 }
 
-.dropDownMenus:hover {
-    cursor: pointer;
-    text-shadow: 0px 5px 12px #333;
-    color: #000;
-}
+
 
 #leftArrow, #rightArrow {
     position: relative;
@@ -282,6 +285,9 @@ footer {
         }
     }
 
+    body {
+        background: #eee;
+    }
     header {
         height: 220px;
         margin-top: 20px;
