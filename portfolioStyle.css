@@ -159,10 +159,15 @@ header > h4 {
     box-shadow: 0 15px 20px -12px black;
 }
 
-ul {
+#projectContainer ul {
     list-style: none;
     padding-left: 0;
-    text-align: center;
+}
+
+#skillsContainer > ul {
+    list-style-type: none;
+    text-align: left;
+    margin-left: 35%;
 }
 
 footer {
@@ -247,14 +252,20 @@ footer {
     }
 
     #leftArrow + #rightArrow {
-        margin-left: 200px;
+        margin-left: 220px;
     }
-    
-    a {
+
+    .dropDownMenus > a {
         font-size: 50px;
     }
 
-    li img {
+    #skillsContainer > ul {
+        list-style-type: none;
+        text-align: left;
+        margin-left: 20%;
+    }
+
+    li > img {
         width: 60%;
         box-shadow: 0 15px 20px -12px black;
     }
@@ -334,13 +345,13 @@ footer {
         font-size: 22px;
     }
 
-    a {
-        font-size: 40px;
-    }
-
     .dropDownMenus {
         margin-top: 0;
      }
+
+    #skillsContainer > ul{
+        margin-left: 0;
+    }
 
     #skillsContainer {
         font-size: 20px;
