@@ -37,14 +37,13 @@ header > h4 {
     bottom: 70px;
 }
 
-#intro {
+#links {
     width: 100%;
-    margin-top: -110px;
-    padding-bottom:110px;
+    margin-top: 110px;
     padding-right: 25px;
 }
 
-#intro > a {
+#links > a {
     text-decoration: none;
 }
 
@@ -57,7 +56,6 @@ header > h4 {
 .socialIcon {
     border-radius: 20%;
     position: relative;
-    top: 15px;
     height: 70px;
     Width: 70px;
     margin: 15px;
@@ -125,7 +123,7 @@ header > h4 {
     animation-duration: 1s;
 }
 
- .codeProjects > a{ 
+.codeProjects > a{ 
     position:relative;
     top:16px;
     font-size: 22px;
@@ -161,15 +159,19 @@ li:hover {
 }
 
 footer {
+    padding-top:30px;
+}
+
+footer > span {
     position: relative;
-    margin-top: 180px;
-    padding-top: 10px;
-    height: 50px;
+    display:inline-block;
+    padding: 12px; 
     width: 100%;
     background-color: #111;
     color: white;
     font-weight: bold;
 }
+
 
 /* Keyframes ------ Animations ------ */
 
@@ -231,18 +233,13 @@ footer {
         letter-spacing: 12px;
     }
 
-    #intro {
-        padding-right: 10px;
+    #links {
+        padding-bottom: 10px;
     }
 
-    #intro img {
+    #links img {
         margin: 10px;
         z-index: 2;
-    }
-
-    #contactEmail {
-        top: 11px;
-        left: 0px;
     }
 
     #leftArrow, #rightArrow {
@@ -317,28 +314,21 @@ footer {
         font-style: italic;
     }
 
-    #intro {
+    #links {
         display: inline-block;
         position: relative;
-        top: -30px;
         margin: 0;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
         padding-right: 3px;
     }
 
-    #intro img {
-        max-height: 45px;
-        max-width: 45px;
+    #links img {
+        height: 40px;
+        width: 40px;
         margin: 3px;
     }
 
-    #contactEmail {
-        top: 11px;
-        left: 0px;
-        height: 36px; 
-    }
-
-    #intro a {
+    #links a {
         font-size: 22px;
     }
 
