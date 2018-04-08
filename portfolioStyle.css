@@ -41,6 +41,7 @@ header > h4 {
     width: 100%;
     margin-top: -110px;
     padding-bottom:110px;
+    padding-right: 25px;
 }
 
 #intro > a {
@@ -229,6 +230,11 @@ footer {
         position:relative;
         letter-spacing: 12px;
     }
+
+    #intro {
+        padding-right: 10px;
+    }
+
     #intro img {
         margin: 10px;
         z-index: 2;
@@ -313,11 +319,11 @@ footer {
 
     #intro {
         display: inline-block;
-        position:relative;
+        position: relative;
         top: -30px;
-        right: 3px;
         margin: 0;
         padding-bottom: 40px;
+        padding-right: 3px;
     }
 
     #intro img {
