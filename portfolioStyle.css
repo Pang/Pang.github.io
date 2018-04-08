@@ -275,17 +275,22 @@ footer > span {
         background: #eee;
     }
     header {
+        width: 100%;
+        background-color:#101010;
+        color: white;
         height: 220px;
         margin-top: 0;
-        padding-top: 50px;
-        margin-bottom: 150px;
+        padding-top: 0px;
+        margin-bottom: 50px;
+        padding-bottom:370px;
     }
 
     header > img {
-        height: 200px;
-        width: 200px;
+        height: 210px;
+        width: 210px;
         float: none;
         margin: 20px;
+        border: white 4px groove;
     }
 
     header > h1 {
@@ -331,6 +336,8 @@ footer > span {
     .dropDownMenus > a {
         margin-top: 0;
         font-size: 40px;
+        font-family: 'Century Schoolbook';
+        font-weight: bold;
     }
 
     #skillsContainer > ul{
