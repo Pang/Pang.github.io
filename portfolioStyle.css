@@ -169,7 +169,6 @@ header > h4 {
     content: "// ";
 }
 
-
 li:hover {
     color: blue;
 }
@@ -336,15 +335,15 @@ footer {
     }
 
     #intro img {
-        max-height: 50px;
-        max-width: 50px;
+        max-height: 45px;
+        max-width: 45px;
         margin: 3px;
     }
 
     #contactEmail {
         top: 11px;
         left: 0px;
-        height: 40px; 
+        height: 36px; 
     }
 
     #intro a {
