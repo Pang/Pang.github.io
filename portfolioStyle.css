@@ -63,22 +63,8 @@ header > h4 {
     z-index: 2;
 }
 
-#contactEmail {
-    border-radius: 10%;
-    position: relative;
-    top: -5px;
-    left: 15px;
-    height: 60px;
-    margin-right: 60px;
-}
-
-#contactEmail:hover {
-    transform: scale(1.1);
-    box-shadow: 0 15px 20px -12px black;
-}
-
 .socialIcon:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     box-shadow: 0 15px 20px -12px black;
 }
 
