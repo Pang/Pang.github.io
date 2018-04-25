@@ -12,13 +12,17 @@ body {
     font-family: Georgia, Helvetica, Arial;
     color: black;
     text-align: center;
-    background-image: url(images/material_background.jpg)
+    background-color: #444;
+}
+
+main{
+  color: white;
 }
 
 .headerContainer {
-    height: 210px;
-    background-color: #121212;
-    color: white;
+    background-color: #eee;
+    color: black;
+    padding: 100px 0;
 }
 
 header {
@@ -44,14 +48,14 @@ header > h1 {
     text-align:left;
     position: relative;
     line-height:0.8;
+    margin-bottom: 0;
 }
 
 header > h4 {
-    position:relative;
-    top: -40px;
     animation: 2s ease-out 0s 1 logoAnm;
     letter-spacing: 25px;
     font-size: 30px;
+    margin: 0;
 }
 
 #links {
@@ -61,13 +65,6 @@ header > h4 {
 
 #links > a {
     text-decoration: none;
-}
-
-#skillsContainer {
-    font-family: 'Global Monospace', monospace;
-    font-size: 30px;
-    letter-spacing: 2px;
-    margin: 75px 200px 50px 200px;
 }
 
 #projectContainer > h1 {
@@ -89,15 +86,6 @@ header > h4 {
     box-shadow: 0 15px 20px -12px black;
 }
 
-#skillsContainer span {
-    display:inline-block;
-}
-
-#skillsContainer span:hover {
-    color: blue;
-    cursor: default;
-}
-
 #leftArrow, #rightArrow {
     position: relative;
     top:4px;
@@ -107,7 +95,7 @@ header > h4 {
     font-size: 80px;
     transition: 0.1s;
     z-index: 99;
-    color: #333;
+    color: #999;
     user-select: none;
 }
 
@@ -119,18 +107,17 @@ header > h4 {
     position: relative;
     top: -40px;
     transition-duration: 0.4s;
-    color: black;
     text-decoration: none;
     animation-name: slide;
     animation-duration: 1s;
 }
 
-.codeProjects > a{ 
+.codeProjects > a{
     position:relative;
     top:16px;
     font-size: 22px;
     font-weight: bold;
-    color: blue;
+    color: cornflowerblue;
     text-decoration: underline;
 }
 
@@ -195,11 +182,6 @@ footer > span {
         }
     }
 
-    #skillsContainer {
-        font-size: 30px;
-        margin: 75px 100px;
-    }
-
     #links {
         padding-bottom: 10px;
     }
@@ -220,35 +202,17 @@ footer > span {
 
 @media screen and (max-width: 500px) {
 
-    @keyframes logoAnm {
-        0% {
-            letter-spacing: 0;
-        }
-
-        100% {
-            letter-spacing: 10px;
-        }
-    }
-
-    body {
-        background: #eee;
-    }
     header {
         width: 100%;
-        background-color:#101010;
-        color: white;
         height: 220px;
         margin-top: 0;
         padding-top: 0;
-        margin-bottom: 50px;
-        padding-bottom:370px;
     }
 
     header > img {
         height: 210px;
         width: 210px;
         float: none;
-        margin: 20px;
         border: white 4px groove;
     }
 
@@ -261,7 +225,6 @@ footer > span {
         letter-spacing: 10px;
         font-size: 20px;
         animation: none;
-        margin-top: 45px;
     }
 
     #projectContainer h1 {
@@ -273,8 +236,6 @@ footer > span {
 
     #links {
         display: inline-block;
-        position: relative;
-        margin-top: 170px;
         padding-bottom: 0;
         padding-right: 3px;
     }
@@ -289,16 +250,9 @@ footer > span {
         font-size: 22px;
     }
 
-    #skillsContainer {
-        font-size: 20px;
-        margin: 50px 50px 0 50px;
-       
-    }
-
     .codeProjects {
         position: relative;
         transition-duration: 0.4s;
-        color: black;
         text-decoration: none;
         animation-name: slide;
         animation-duration: 1s;
