@@ -1,16 +1,27 @@
 body {
-    background: rgb(255, 255, 255);
-    max-width: 80%;
-    min-width: 400px;
-    margin: 75px auto;
+    background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
 
 h1 {
-    margin: 0px;
+    margin-top:0px;
     text-align: center;
-    text-decoration: underline;
+    display: inline-block;
+    margin-left: 25%;
+}
+
+header {
+  text-align: center;
+}
+
+#newTitleEdit  {
+    display: inline-block;
+    width: 22px;
+}
+#newTitleSave {
+  display: none;
+  width: 22px;
 }
 
 button {
@@ -20,7 +31,6 @@ button {
     border: solid rgb(82, 82, 82) 1px;
     border-radius: 6px;
     margin: 2px;
-    float: middle;
     padding: 5px 5px;
     font-weight: bold;
 }
@@ -47,18 +57,13 @@ input.save {
 
 button.newItem  {
     background-color: rgb(89, 158, 89);
-    width: 75px;
+    width: 150px;
+    font-size: 20px;
     text-align: center;
 }
 
 button.newItem:hover {
     background-color: rgb(129, 192, 129);
-}
-
-button.newTitle  {
-    background-color: rgb(77, 104, 122);
-    width: 100px;
-    text-align: center;
 }
 
 button.newTitle:hover  {
@@ -92,13 +97,12 @@ input {
 
 ul {
     list-style: decimal;
-    font: 18px;
+    font-size: 18px;
     padding: 0px;
 }
 
 li {
     padding: 6px;
-    border-width: 50%;
 }
 
 li:nth-child(even){
@@ -108,4 +112,48 @@ li:nth-child(even){
 li.ticked {
     background-color: rgba(70, 70, 70, 0.6);
     text-decoration: line-through;
+}
+
+#toggleBtnOn {
+  position:relative;
+  top:-10px;
+  float: left;
+  height: 60px;
+  width: 60px;
+  display:none;
+}
+
+#toggleBtnOff {
+  position:relative;
+  top:-10px;
+  float: left;
+  height: 60px;
+  width: 60px;
+  display:block;
+}
+
+/* Media Query ------ Tablet & Mobile View ------ */
+
+@media screen and (max-width: 800px) {
+
+  body {
+    background-color: rgb(221, 221, 221);
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    padding: 7px 0;  ;
+  }
+
+  .listBox {
+      margin:0;
+      padding: 0;
+      border: 0;
+      width: 100%;
+      box-shadow: none;
+  }
+
 }

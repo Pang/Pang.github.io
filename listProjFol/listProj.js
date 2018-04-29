@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         entries.splice(index, 1);
         saveEntry();
     }
-    
+
     //Saves current state of list.
     saveEntry = () => {
         let str = JSON.stringify(entries);
@@ -65,9 +65,9 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
     titleLoad = () => {
         let str = localStorage.getItem('title')
         if (str){
-            $('#listTitle').text(str);
+            $('#title').text(str);
         } else {
-            $('#listTitle').text("New list");
+            $('#title').text("New list");
         }
     }
 
@@ -109,16 +109,18 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         let prevContent = span.id;
 
         if(x.target.tagName == 'INPUT'){
-            if(x.target.className == 'up'){   
-                let prevLi = li.previousElementSibling; 
+            if(x.target.className == 'up'){
+                let prevLi = li.previousElementSibling;
                 if(prevLi){
                     ul.insertBefore(li, prevLi);
                     entries.indexOf
-                }            
+                }
             }
             if(x.target.className == 'down'){
                 let nextLi = li.nextElementSibling;
+                if(nextLi){
                 ul.insertBefore(li, nextLi.nextElementSibling);
+                }
             }
             if(x.target.className == 'remove'){
                 ul.removeChild(li);
@@ -141,7 +143,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                         li.className = '';
                     }
                 }
-                
+
                 const inputEdit = document.createElement('input');
                 inputEdit.type = 'text';
                 inputEdit.value = span.textContent;
@@ -153,7 +155,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 li.querySelector('.edit').style.display = 'block';
                 li.querySelector('.save').style.display = 'none';
                 li.querySelector('.tickBox').style.display = 'inline-block';
-                
+
 
                 const input = li.firstElementChild;
                 const span = document.createElement('span');
@@ -166,7 +168,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                         li.id = '';
                     }
                 }
-                
+
                 li.insertBefore(span, input);
                 li.removeChild(input);
                 saveEntry();
@@ -189,6 +191,79 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         };
     });
 
+    let editButtons = true;
+
+    function checkButtonsView(){
+      if(editButtons){
+        document.querySelectorAll('input')
+        $('.up').show();
+        $('.down').show();
+        $('.edit').show();
+        $('#newTitleEdit').show();
+        $('.orderList').show();
+        }
+        else {
+        $('.up').hide();
+        $('.down').hide();
+        $('.edit').hide();
+        $('#newTitleEdit').hide();
+        $('.orderList').hide();
+      }
+    }
+
+    $('#toggleBtnOff').on('click', () => {
+        $('#toggleBtnOff').hide();
+        $('#toggleBtnOn').show();
+        editButtons = false;
+        checkButtonsView();
+    });
+
+    $('#toggleBtnOn').on('click', () => {
+        $('#toggleBtnOff').show();
+        $('#toggleBtnOn').hide();
+        editButtons = true;
+        checkButtonsView();
+    });
+
+    //Reads input box and places the value into the heading.
+    $('#newTitleEdit').on('click', () => {
+        const header = document.querySelector('header');
+        const h1 = document.querySelector('h1');
+        const span = document.querySelector('#title');
+
+        const inputEdit = document.createElement('input');
+        inputEdit.type = 'text';
+        inputEdit.id = 'titleEdit';
+        inputEdit.value = h1.textContent;
+        $('#newTitleEdit').hide();
+        $('#newTitleSave').show();
+
+        header.insertBefore(inputEdit, h1);
+        header.removeChild(h1);
+
+        localStorage.removeItem('title');
+    });
+
+    $('#newTitleSave').on('click', () => {
+        const header = document.querySelector('header');
+        const titleEditTxt = document.querySelector('#titleEdit');
+        const inputEdit = document.querySelector('#titleEdit')
+
+        $('#newTitleSave').hide();
+        $('#newTitleEdit').show();
+
+        const h1 = document.createElement('h1');
+        const span = document.createElement('span');
+        span.id = "title";
+        span.textContent = inputEdit.value;
+        h1.appendChild(span);
+
+        header.insertBefore(h1, inputEdit);
+        header.removeChild(inputEdit);
+
+        localStorage.setItem('title', inputEdit.value);
+    });
+
     //Takes the content from the Input box and places into the list if not empty, then clearing the input box.
     $form.on('submit', (e) => {
         let submitEntry = true;
@@ -196,7 +271,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         const li = document.createElement('li');
         const span = document.createElement('span');
         li.appendChild(span);
-        
+
         let listItemValue = inputBox.value;
         listItemValue = upperFirst(listItemValue);
         span.textContent = listItemValue
@@ -208,7 +283,8 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
             }
         }
 
-        //stop entry insertion if box is not between 1 to 25 characters or is already on the list.
+        //stop entry insertion if box is not between 1 to 20 characters or is already on the list.
+        //the extra 5 are for the buttons
         if (li.textContent != '' && li.textContent.length <= 25 && submitEntry == true){
             addEntry(listItemValue);
             saveEntry();
@@ -216,25 +292,19 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
             attachButtons(li);
 
         } else {
-            alert("Entry must be between 1 to 25 characters long and not already be on the list");
+            alert("Entry must be between 1 to 20 characters long and not already be on the list");
         }
 
         inputBox.value = '';
     });
 
-    //Reads input box and places the value into the heading.
-    $('button.newTitle').on('click', () => {
-        const titleTxt = document.querySelector('#listTitle');
-        titleTxt.textContent = inputBox.value;
-        localStorage.setItem('title', inputBox.value);
-        inputBox.value = '';
-    });
+
 
     //Checks each item in the list begins if their beginning letter is higher than it's neighbours.
     //The switches are used to trigger the ordering 'insertBefore' function to correctly place each list item if the above case is true.
     $('button.orderList').on('click', (x) => {
         let switching = true, shouldSwitch, i;
-        
+
         while(switching){
             switching = false;
             for(i=0;i<(listItems.length - 1);i++){
