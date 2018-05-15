@@ -16,6 +16,7 @@ body {
 }
 
 main{
+    margin-top: 20px;
   color: white;
 }
 
@@ -129,8 +130,12 @@ header > h4 {
 
 .codeProjects img {
     max-width: 700px;
-    max-height: 50%;
+    height: 450px;
     box-shadow: 0 15px 20px -12px black;
+}
+
+footer {
+    margin-top: 40px;
 }
 
 footer > span {
@@ -267,7 +272,8 @@ footer > span {
     }
 
     .codeProjects img {
-        max-width: 75%;
+        height: 200px;
+        max-width: 90%;
         box-shadow: 0 15px 20px -12px black;
     }
 
