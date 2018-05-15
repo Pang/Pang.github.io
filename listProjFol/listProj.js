@@ -139,7 +139,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 for(let i = 0; i < entries.length; i++){
                     if (entries[i].name == span.textContent){
                         entries[i].ticked = false;
-                        li.querySelector('.tickBox').checked=false;
+                        li.querySelector('.tickBox').checked = false;
                         li.className = '';
                     }
                 }
@@ -171,6 +171,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
 
                 li.insertBefore(span, input);
                 li.removeChild(input);
+                li.querySelector('.tickBox').value = upper;
                 saveEntry();
             }
         }
@@ -191,10 +192,11 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         };
     });
 
-    let editButtons = true;
+    //turns minimal mode on & off
+    let showEditButtons = true;
 
-    function checkButtonsView(){
-      if(editButtons){
+    function minimalModeCheck(){
+      if(showEditButtons){
         document.querySelectorAll('input')
         $('.up').show();
         $('.down').show();
@@ -214,15 +216,15 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
     $('#toggleBtnOff').on('click', () => {
         $('#toggleBtnOff').hide();
         $('#toggleBtnOn').show();
-        editButtons = false;
-        checkButtonsView();
+        showEditButtons = false;
+        minimalModeCheck();
     });
 
     $('#toggleBtnOn').on('click', () => {
         $('#toggleBtnOff').show();
         $('#toggleBtnOn').hide();
-        editButtons = true;
-        checkButtonsView();
+        showEditButtons = true;
+        minimalModeCheck();
     });
 
     //Reads input box and places the value into the heading.
@@ -289,15 +291,13 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
             saveEntry();
             $('ul').append(li);
             attachButtons(li);
-
+            minimalModeCheck();
         } else {
             alert("Entry must be between 1 to 20 characters long and not already be on the list");
         }
 
         inputBox.value = '';
     });
-
-
 
     //Checks each item in the list begins if their beginning letter is higher than it's neighbours.
     //The switches are used to trigger the ordering 'insertBefore' function to correctly place each list item if the above case is true.
