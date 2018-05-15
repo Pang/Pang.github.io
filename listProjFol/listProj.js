@@ -272,8 +272,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         const span = document.createElement('span');
         li.appendChild(span);
 
-        let listItemValue = inputBox.value;
-        listItemValue = upperFirst(listItemValue);
+        let listItemValue = upperFirst(inputBox.value);
         span.textContent = listItemValue
 
         //checks item is not already on list
