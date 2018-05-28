@@ -62,6 +62,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         }
     }
 
+    //load title from localstorage
     titleLoad = () => {
         let str = localStorage.getItem('title')
         if (str){
@@ -173,6 +174,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 li.removeChild(input);
                 li.querySelector('.tickBox').value = upper;
                 saveEntry();
+                minimalModeCheck();
             }
         }
         //Checks entries are ticked and swaps the class for appropriate CSS change.
