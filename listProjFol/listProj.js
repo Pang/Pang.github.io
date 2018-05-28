@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
     let entries = [];
 
     //Constructor for each entry object.
-    function Entry(name) {
+    function Entry(name, ticked) {
         this.name = name;
         this.ticked = false;
     }
@@ -18,18 +18,18 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
     addEntry = (name) => {
         let item = new Entry(name);
         entries.push(item);
-        saveEntry();
+        saveEntry(entries);
     }
 
     //Removes entry from it's position on the list.
     removeEntry = (index) => {
         entries.splice(index, 1);
-        saveEntry();
+        saveEntry(entries);
     }
 
     //Saves current state of list.
-    saveEntry = () => {
-        let str = JSON.stringify(entries);
+    saveEntry = (entryArr) => {
+        let str = JSON.stringify(entryArr);
         localStorage.setItem('entries', str);
     }
 
@@ -70,11 +70,29 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         } else {
             $('#title').text("New list");
         }
-    }
+    };
+
+    //Reads the order of the list items >> places into array >> replaces entries array
+    saveListOrder = () => {
+        let entriesReplace = [];
+
+        for(let x = 0; x < listItems.length; x++) {
+            let item = new Entry(listItems[x].textContent);
+            entriesReplace.push(item); 
+            for(let i = 0; i < listItems.length; i++){
+                if(entries[i].name == entriesReplace[x].name && entries[i].ticked == true){
+                    entriesReplace[x].ticked = true;
+                }
+            };            
+        };
+        saveEntry(entriesReplace);
+    };
 
     loadEntries();
     listEntries();
     titleLoad();
+
+    saveListOrder();
 
     //Creates & appends buttons to each list item.
     function attachButtons(li){
@@ -114,13 +132,14 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 let prevLi = li.previousElementSibling;
                 if(prevLi){
                     ul.insertBefore(li, prevLi);
-                    entries.indexOf
+                    saveListOrder();
                 }
             }
             if(x.target.className == 'down'){
                 let nextLi = li.nextElementSibling;
                 if(nextLi){
-                ul.insertBefore(li, nextLi.nextElementSibling);
+                    ul.insertBefore(li, nextLi.nextElementSibling);
+                    saveListOrder();
                 }
             }
             if(x.target.className == 'remove'){
@@ -173,7 +192,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 li.insertBefore(span, input);
                 li.removeChild(input);
                 li.querySelector('.tickBox').value = upper;
-                saveEntry();
+                saveEntry(entries);
                 minimalModeCheck();
             }
         }
@@ -183,12 +202,12 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 if (entries[i].name == x.target.value && x.target.checked){
                     li.className = 'ticked';
                     entries[i].ticked = true;
-                    saveEntry();
+                    saveEntry(entries);
                 }
                 if (entries[i].name == x.target.value && !x.target.checked) {
                     li.className = ' ';
                     entries[i].ticked = false;
-                    saveEntry();
+                    saveEntry(entries);
                 }
             }
         };
@@ -290,7 +309,7 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
         //the extra 5 are for the buttons
         if (li.textContent != '' && li.textContent.length <= 25 && submitEntry == true){
             addEntry(listItemValue);
-            saveEntry();
+            saveEntry(entries);
             $('ul').append(li);
             attachButtons(li);
             minimalModeCheck();
@@ -320,5 +339,6 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 switching = true;
             }
         }
+        saveListOrder();        
     });
 });
