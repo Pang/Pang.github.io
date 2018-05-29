@@ -85,7 +85,8 @@ window.addEventListener("DOMContentLoaded", function startPageEvent() {
                 }
             };            
         };
-        saveEntry(entriesReplace);
+        entries = entriesReplace;
+        saveEntry(entries);
     };
 
     loadEntries();
