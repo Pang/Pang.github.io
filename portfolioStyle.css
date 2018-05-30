@@ -187,6 +187,24 @@ footer > span {
         }
     }
 
+    header > img {
+        float: none;
+    }
+
+    header > h1 {
+        font-size: 60px;
+        text-align: center;
+    }
+
+    header > h4 {
+        font-size: 30px;
+    }
+
+    .codeProjects img {
+        height: auto;
+        max-width: 90%;
+    }
+
     #links {
         padding-bottom: 10px;
     }
