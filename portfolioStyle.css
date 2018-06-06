@@ -36,7 +36,7 @@ header {
 
 header > h1 {
     white-space: nowrap;
-    font-size: 60px;
+    font-size: 80px;
     margin-top:0px;
     position: relative;
     margin-bottom: -10px;
@@ -61,8 +61,8 @@ header > h1 {
 .socialIcon {
     border-radius: 20%;
     position: relative;
-    height: 70px;
-    Width: 70px;
+    height: 60px;
+    Width: 60px;
     margin: 15px;
     z-index: 2;
 }
@@ -179,6 +179,10 @@ footer > span {
         letter-spacing: 12px;
     }
 
+    .socialIcon {
+        height: 50px;
+        width: 50px;
+    }
     .codeProjects img {
         height: auto;
         max-width: 90%;
@@ -205,7 +209,7 @@ footer > span {
 @media screen and (max-width: 500px) {
 
     .headerContainer {
-        padding: 50px 0;
+        padding: 40px 0;
     }
 
     header {
