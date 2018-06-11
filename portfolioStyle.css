@@ -9,7 +9,8 @@ hr {
 
 body {
     margin: 0;
-    font-family: Georgia, Helvetica, Arial;
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 4px;
     color: black;
     text-align: center;
     background-color: #444;
@@ -17,7 +18,7 @@ body {
 
 main{
     margin-top: 20px;
-  color: white;
+    color: white;
 }
 
 .headerContainer {
@@ -29,39 +30,23 @@ main{
 header {
     position: relative;
     display: inline-block;
-    padding-top: 10px;
+    padding-top: 0px;
     padding-bottom: 0px;
-}
-
-header > img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    float: left;
-    margin-top: 0px;
-    border: white 2px groove;
 }
 
 header > h1 {
     white-space: nowrap;
     font-size: 80px;
-    margin-top:10px;
-    text-align:left;
+    margin-top:0px;
     position: relative;
-    line-height:0.8;
-    margin-bottom: 0;
-}
-
-header > h4 {
-    animation: 2s ease-out 0s 1 logoAnm;
+    margin-bottom: -10px;
     letter-spacing: 25px;
-    font-size: 30px;
-    margin: 0;
+    animation: 2s ease-out 0s 1 logoAnm;
+
 }
 
 #links {
     width: 100%;
-    padding-right: 25px;
 }
 
 #links > a {
@@ -76,8 +61,8 @@ header > h4 {
 .socialIcon {
     border-radius: 20%;
     position: relative;
-    height: 70px;
-    Width: 70px;
+    height: 60px;
+    Width: 60px;
     margin: 15px;
     z-index: 2;
 }
@@ -183,23 +168,21 @@ footer > span {
         }
 
         100% {
-            letter-spacing: 25px;
+            letter-spacing: 6px;
         }
     }
 
-    header > img {
-        float: none;
-    }
-
     header > h1 {
-        font-size: 60px;
+        font-size: 55px;
         text-align: center;
+        animation: none;
+        letter-spacing: 12px;
     }
 
-    header > h4 {
-        font-size: 30px;
+    .socialIcon {
+        height: 50px;
+        width: 50px;
     }
-
     .codeProjects img {
         height: auto;
         max-width: 90%;
@@ -226,7 +209,7 @@ footer > span {
 @media screen and (max-width: 500px) {
 
     .headerContainer {
-        padding: 50px 0;
+        padding: 40px 0;
     }
 
     header {
@@ -235,22 +218,12 @@ footer > span {
         padding-top: 0;
     }
 
-    header > img {
-        height: 210px;
-        width: 210px;
-        float: none;
-        border: white 4px groove;
-    }
-
     header > h1 {
-        font-size: 45px;
+        font-size: 35px;
         text-align:center;
-    }
-
-    header > h4 {
-        letter-spacing: 10px;
-        font-size: 20px;
-        animation: none;
+        letter-spacing: 6px;
+        animation: 2s ease-out 0s 1 logoAnm;
+        
     }
 
     #projectContainer h1 {
@@ -262,6 +235,7 @@ footer > span {
 
     #links {
         display: inline-block;
+        padding-top:6px;
         padding-bottom: 0;
         padding-right: 3px;
     }
