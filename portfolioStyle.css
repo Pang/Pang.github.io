@@ -13,7 +13,7 @@ body {
     letter-spacing: 4px;
     color: black;
     text-align: center;
-    background-color: #444;
+    background-color: rgb(59, 59, 59);
 }
 
 main{
@@ -22,9 +22,9 @@ main{
 }
 
 .headerContainer {
-    background-color: #eee;
+    background-color: rgb(243, 243, 243);
     color: black;
-    padding: 150px 0 200px 0;
+    padding: 75px 0 90px 0;
 }
 
 header {
