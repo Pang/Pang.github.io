@@ -16,15 +16,12 @@ body {
     background-color: rgb(59, 59, 59);
 }
 
-main{
-    margin-top: 20px;
-    color: white;
-}
 
 .headerContainer {
     background-color: rgb(243, 243, 243);
     color: black;
     padding: 75px 0 90px 0;
+    box-shadow: inset 0px -20px 27px -14px rgb(59, 59, 59);
 }
 
 header {
@@ -51,6 +48,11 @@ header > h1 {
 
 #links > a {
     text-decoration: none;
+}
+
+main{
+    margin-top: 20px;
+    color: white; 
 }
 
 #projectContainer > h1 {
