@@ -42,7 +42,6 @@ header > h1 {
     margin-bottom: -10px;
     letter-spacing: 25px;
     animation: 2s ease-out 0s 1 logoAnm;
-
 }
 
 #links {
@@ -51,6 +50,10 @@ header > h1 {
 
 #links > a {
     text-decoration: none;
+}
+
+#projectContainer{
+    height: 800px;
 }
 
 #projectContainer > h1 {
@@ -109,7 +112,6 @@ header > h1 {
 
 .codeProjects > a[href^="AdminsList"] {
     position: relative;
-    top: 30px;
     top: 30px;
 }
 
