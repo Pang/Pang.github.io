@@ -18,9 +18,16 @@ body {
 
 .headerContainer {
     background-color: rgb(243, 243, 243);
+    background-image: url('images/banner3.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
     color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;    
     padding: 75px 0 90px 0;
-    box-shadow: inset 0px -20px 27px -14px rgb(59, 59, 59);
+    box-shadow: inset 0px -20px 27px -14px rgb(20, 20, 20);
 }
 
 header {
@@ -40,10 +47,6 @@ header > h1 {
     animation: 2s ease-out 0s 1 logoAnm;
 }
 
-#links {
-    width: 100%;
-}
-
 #links > a {
     text-decoration: none;
 }
@@ -51,34 +54,13 @@ header > h1 {
 #projectContainer{
     height: 800px;
     padding-top: 20px;
-    background-color: rgb(59, 59, 59);
+    background-color: #222;
     color:white;    
 }
 
 #projectContainer > h1 {
     display:inline-block;
     font-size: 50px;
-}
-
-#skills {
-    background-color: rgb(243, 243, 243);
-    color: black;
-    height: 40px;
-    box-shadow: inset 0px 20px 27px -14px rgb(59, 59, 59);
-}
-
-.socialIcon {
-    border-radius: 20%;
-    position: relative;
-    height: 60px;
-    Width: 60px;
-    margin: 15px;
-    z-index: 2;
-}
-
-.socialIcon:hover {
-    transform: scale(1.2);
-    box-shadow: 0 15px 20px -12px black;
 }
 
 #leftArrow, #rightArrow {
@@ -127,21 +109,51 @@ header > h1 {
     box-shadow: 0 15px 20px -12px black;
 }
 
+#skills {
+    box-shadow: inset 0px 20px 27px -14px rgb(20, 20, 20);
+    background-image: url('images/banner2.jpg');
+    height: 100%; 
+    height: 500px;
+    font-size: 24px;
+    color: black;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#skillList {
+    position: relative; 
+    top:100px; 
+    font-size: 30px;
+    color:black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
 footer {
-    margin-top: 180px;
-    box-shadow: -5px 6px 20px 12px rgb(32, 32, 32);
+    box-shadow: -5px 6px 20px 12px rgb(44, 44, 44);
 }
 
-footer > span {
+footer{
     position: relative;
     display: inline-block;
-    padding: 12px;
+    padding: 12px 0 0 0;
     width: 100%;
     font-weight: bold;
     color: white;
-    background-color: #111;
+    background-color: rgb(10, 10, 10);
+    height: 80px;
 }
 
+.socialIcon {
+    background-color: #111;
+    height: 30px;
+    width: 30px;
+    border-radius: 20%;
+}
+
+.socialIcon:hover {
+    transform: scale(1.2);
+}
 
 /* Keyframes ------ Animations ------ */
 
@@ -197,23 +209,10 @@ footer > span {
         letter-spacing: 12px;
     }
 
-    .socialIcon {
-        height: 50px;
-        width: 50px;
-    }
     .codeProjects img {
         height: auto;
         max-width: 90%;
         max-height: 400px;
-    }
-
-    #links {
-        padding-bottom: 10px;
-    }
-
-    #links img {
-        margin: 10px;
-        z-index: 2;
     }
 
     li > img {
@@ -244,8 +243,7 @@ footer > span {
         font-size: 35px;
         text-align:center;
         letter-spacing: 6px;
-        animation: 2s ease-out 0s 1 logoAnm;
-        
+        animation: 2s ease-out 0s 1 logoAnm; 
     }
 
     #projectContainer h1 {
@@ -253,23 +251,6 @@ footer > span {
         font-style: italic;
         position:relative;
         top: -7px;
-    }
-
-    #links {
-        display: inline-block;
-        padding-top:6px;
-        padding-bottom: 0;
-        padding-right: 3px;
-    }
-
-    #links img {
-        height: 40px;
-        width: 40px;
-        margin: 3px;
-    }
-
-    #links a {
-        font-size: 22px;
     }
 
     .codeProjects {
@@ -291,14 +272,9 @@ footer > span {
         box-shadow: 0 15px 20px -12px black;
     }
 
-    footer {
-        margin-top: 170px;
-    }
-
     footer > span {
         position: relative;
         display: inline-block;
-        padding: 12px;
         width: 100%;
         background-color: #111;
         color: white;
