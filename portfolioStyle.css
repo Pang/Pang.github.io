@@ -42,8 +42,10 @@ header > h1 {
     margin-top:-40px;
     position: relative;
     margin-bottom: -10px;
-    letter-spacing: 25px;
+    letter-spacing: 20px;
     animation: 2s ease-out 0s 1 logoAnm;
+    font-family: Monoton;
+    font-weight: normal;
 }
 
 #links > a {
@@ -52,7 +54,7 @@ header > h1 {
 
 #leftArrow, #rightArrow {
     position: relative;
-    top:-36px;
+    top:-50px;
     display: inline-block;
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
@@ -74,7 +76,7 @@ header > h1 {
 
 .codeProjects {
     position: relative;
-    top: -40px;
+    top: 40px;
     transition-duration: 0.4s;
     text-decoration: none;
     animation-name: slide;
@@ -106,6 +108,7 @@ header > h1 {
     font-size: 18px;
     position: relative;
     top: -10px;
+    font-family: Kaushan Script;
 }
 
 footer{
@@ -138,7 +141,7 @@ footer{
     }
 
     100% {
-        letter-spacing: 25px;
+        letter-spacing: 20px;
     }
 }
 
@@ -156,7 +159,7 @@ footer{
 
 /* Media Query ------ Tablet View ------ */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
 
     @keyframes logoAnm {
         0% {
@@ -164,7 +167,7 @@ footer{
         }
 
         100% {
-            letter-spacing: 6px;
+            letter-spacing: 5px;
         }
     }
 
@@ -198,12 +201,12 @@ footer{
 
 /* Media Query ------ Mobile View ------ */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
 
     .headerContainer {
-        padding: 50px 0 40px 0;
+        padding: 20px 0 20px 0;
         box-shadow: none;
-        border-bottom: 2px solid white;
+        border-bottom: 1px solid white;
     }
     
     header {
@@ -213,16 +216,15 @@ footer{
     }
 
     header > h1 {
-        font-size: 35px;
+        font-size: 40px;
+        font-family: Kaushan Script;
         text-align:center;
-        letter-spacing: 6px;
+        letter-spacing: 2px;
         margin-top: 5px;
-        animation: 2s ease-out 0s 1 logoAnm; 
     }
 
     #leftArrow, #rightArrow {
-        top: -65px;
-
+        top: -45px;
     }
   
     #projectContainer {
@@ -232,6 +234,7 @@ footer{
     
     .codeProjects {
         position: relative;
+        top: 0px;
         transition-duration: 0.4s;
         text-decoration: none;
         animation-name: slide;
@@ -249,13 +252,8 @@ footer{
         box-shadow: 0 15px 20px -12px black;
     }
     #skills {
-        font-size: 18px;
-        display: none;
-    }
-    #skillList {
-        position: relative; 
-        top:80px; 
-        font-size: 30px;
+        font-size: 12px;
+        top:10px;
     }
 
     footer > span {
