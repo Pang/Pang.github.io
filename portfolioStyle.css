@@ -11,36 +11,39 @@ body {
     margin: 0;
     font-family: 'Titillium Web', sans-serif;
     letter-spacing: 4px;
-    color: black;
-    background: rgb(243, 243, 243);
+    color: rgb(255, 255, 255);
+    background: rgb(32, 32, 32);
     text-align: center;
 }
 
 .headerContainer {
     background-color: rgb(243, 243, 243);
-    background-image: url('images/banner3.jpg');
+    background-image: url('images/banner11.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    color: black;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;    
-    padding: 75px 0 90px 0;
+    color: rgb(255, 255, 255);
+    padding: 30px 0 10px 0;
     box-shadow: inset 0px -20px 27px -14px rgb(20, 20, 20);
+}
+
+#leftArrow, #rightArrow,  {
+    display: inline-block;
 }
 
 header {
     position: relative;
     display: inline-block;
-    padding-top: 0px;
+    padding-top: 10px;
     padding-bottom: 0px;
 }
 
 header > h1 {
     white-space: nowrap;
-    font-size: 80px;
-    margin-top:0px;
+    font-size: 90px;
+    margin-top:-40px;
     position: relative;
     margin-bottom: -10px;
     letter-spacing: 25px;
@@ -49,18 +52,6 @@ header > h1 {
 
 #links > a {
     text-decoration: none;
-}
-
-#projectContainer{
-    height: 800px;
-    padding-top: 20px;
-    background-color: #222;
-    color:white;    
-}
-
-#projectContainer > h1 {
-    display:inline-block;
-    font-size: 50px;
 }
 
 #leftArrow, #rightArrow {
@@ -87,6 +78,7 @@ header > h1 {
     text-decoration: none;
     animation-name: slide;
     animation-duration: 1s;
+    margin-bottom: 150px;
 }
 
 .codeProjects > a{
@@ -110,29 +102,9 @@ header > h1 {
 }
 
 #skills {
-    box-shadow: inset 0px 20px 27px -14px rgb(20, 20, 20);
-    background-image: url('images/banner2.jpg');
-    height: 100%; 
-    height: 600px;
-    font-size: 24px;
-    color: black;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#skillList {
-    position: relative; 
-    top:90px; 
-    font-size: 60px;
-    color:black;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-    line-height: 1em;
-}
-
-footer {
-    box-shadow: -5px 6px 20px 12px rgb(44, 44, 44);
+    font-size: 18px;
+    position: relative;
+    top: -10px;
 }
 
 footer{
@@ -196,12 +168,7 @@ footer{
     }
 
     .headerContainer {
-        padding: 50px 0 50px 0;
-    }
-
-    #projectContainer {
-        height: 100%;
-        max-height: 730px;
+        padding: 50px 0 30px 0;
     }
 
     header > h1 {
@@ -228,33 +195,30 @@ footer{
 @media screen and (max-width: 500px) {
 
     .headerContainer {
-        padding: 40px 0;
-    }
-
-    #projectContainer {
-        height: 510px;
+        padding: 50px 0 40px 0;
+        box-shadow: none;
+        border-bottom: 2px solid white;
     }
     
     header {
         width: 100%;
         margin-top: 0;
-        padding-top: 0;
+        padding-bottom: 40px;
     }
 
     header > h1 {
         font-size: 35px;
         text-align:center;
         letter-spacing: 6px;
+        margin-top: 5px;
         animation: 2s ease-out 0s 1 logoAnm; 
     }
 
-    #projectContainer h1 {
-        font-size: 30px;
-        font-style: italic;
-        position:relative;
-        top: -7px;
+    #projectContainer {
+        margin-top: 20px;
+        height: 520px;
     }
-
+    
     .codeProjects {
         position: relative;
         transition-duration: 0.4s;
@@ -274,7 +238,8 @@ footer{
         box-shadow: 0 15px 20px -12px black;
     }
     #skills {
-        height: 400px;
+        font-size: 18px;
+        display: none;
     }
     #skillList {
         position: relative; 
