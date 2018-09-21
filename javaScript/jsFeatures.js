@@ -31,4 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showProjects(slideIndex);
 
+
+    //Modal
+    document.getElementById("openModal").addEventListener('click', () => {
+        document.getElementById("modal").style.display = "block";
+    });
+
+    document.getElementById("exitModal").addEventListener('click', () => {
+        document.getElementById("modal").style.display = "none";
+    
+    });
+
 });
