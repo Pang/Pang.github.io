@@ -295,6 +295,7 @@ textarea{
         padding: 20px 0 20px 0;
         box-shadow: none;
         border-bottom: 1px solid white;
+        height: 200px;
     }
     
     header {
