@@ -133,6 +133,80 @@ footer{
     transform: scale(1.2);
 }
 
+#modal{
+    display:none;
+    position: fixed;
+    top:0;
+    margin:0;
+    background-color:rgba(1,1,1,0.5); 
+    width:100%;
+    height:100%;
+    z-index: 2;
+}
+
+#modalContent{
+    position: fixed;
+    margin:auto;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -225px;
+    width: 450px;
+    height: 450px;
+    z-index: 3;
+    background-color: #333;
+    padding: 0 20px 0 20px;
+    border: solid 4px #555;
+    border-radius: 6px;
+}
+
+form{
+    position: inline-block;
+    margin-top: 20px;
+    width: 400px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.3;
+}
+
+button[type="submit"]{
+    width: 400px;
+    background-color:white;
+    border:none;
+    border-radius: 5px;
+    padding: 4px 0;
+    background-color:rgb(8, 133, 8);
+    color:white;
+    font-weight: bold;
+}
+button[type="submit"]:hover{
+    background-color: rgb(48, 189, 48);
+    cursor:pointer;
+}
+input[type="text"]{
+    width: 250px;
+}
+
+#exitModal{
+    font-size: 60px;
+    z-index: 5;
+    position: relative;
+    float:right;
+    top:-20px;
+    color: rgb(255, 0, 0);
+    font-weight: bolder;
+}
+#exitModal:hover{
+    color: rgb(255, 79, 79);
+    cursor:pointer;
+}
+
+textarea{
+    width: 400px;
+    height: 100px;
+}
+
 /* Keyframes ------ Animations ------ */
 
 @keyframes logoAnm {
