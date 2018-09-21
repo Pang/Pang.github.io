@@ -345,6 +345,25 @@ textarea{
         display: block;
     }
 
+    form{
+        width:250px;
+        line-height: 1.4;
+        font-size: 12px;
+    }
+    input[type="text"]{
+        width: 180px;
+    }
+    textarea{
+        width: 250px;
+    }
+    button[type="submit"]{
+        width: 250px;
+    }
+    #modalContent{
+        width:300px;
+        margin-left:-150px;
+    }
+
     footer > span {
         position: relative;
         display: inline-block;
