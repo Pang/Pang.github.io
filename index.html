@@ -1,133 +1,14 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <title>Portfolio</title>
-    <meta charset="utf-8">
-    <meta name="keywords" content="Ryan Beckett, Programmer, Coding, Portfolio">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="Stylesheet" type="text/css" href="portfolioStyle.css">
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web|Monoton|Kaushan+Script" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="images/ProfilePic.jpg">
-    <script src="javaScript/jsFeatures.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-</head>
-
+  <meta charset="utf-8">
+  <title>PortfolioV2</title>
+  <base href="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="styles.e7f89c27c109947cf7f6.css"></head>
 <body>
-    <div class="headerContainer">
-        <header>
-            <h1>Ryan Beckett</h1> 
-            <h2 id="skills">
-                UI/UX Designer - Websites/Applications - FullStack Developer
-            </h2>
-        </header>
-    </div>
-    <main>
-        <section id="projectContainer">
-            <a id="leftArrow">&#171;</a>
-            <a id="rightArrow">&#187;</a>
-
-            <div class="codeProjects">
-                <h2>Repo*Viewer~V2 [WIP]</h2>
-                <a href="images/repoViewerV2.png"><img src="images/repoViewerV2.png" style="border: solid 1px rgb(71, 71, 71);"></a><br><br>
-                <a href="https://github.com/cPango/repoViewerV2" target="_blank">VIEW CODE</a><br>
-                <a href="http://www.ryanbeckett.uk/repoViewerV2/" target="_blank">TRY APP</a>
-            </div>
-
-            <div class="codeProjects">
-                <h2>IckleTots Website</h2>
-                <a href="images/ickletots.png"><img src="images/ickletots.png"></a><br><br>
-                <a href="https://www.IckleTots.com" target="_blank">VIEW SITE</a>
-            </div>
-
-            <div class="codeProjects">
-                <h2>AR Property Maintenance Website</h2>
-                <a href="images/arpm.png"><img src="images/arpm.png"></a><br><br>
-                <a href="https://www.ar-propertymaintenance.co.uk" target="_blank">VIEW SITE</a>
-            </div>
-
-            <div class="codeProjects">
-                <h2>Discord Bot [NodeJs]</h2>
-                <a href="images/discordBot.png"><img src="images/discordBot.png" style="border: solid 1px rgb(71, 71, 71);"></a><br><br>
-                <a href="https://github.com/cPango/discordBot" target="_blank">VIEW CODE</a>
-            </div>
-
-            <div class="codeProjects">
-                <h2>List App [Web Storage API]</h2>
-                <a href="images/ListProj.png"><img src="images/ListProj.png"></a><br><br>
-                <a href="https://github.com/cPango/ListApp-Web-Storage-API" target="_blank">VIEW CODE</a><br />
-                <a target="_blank" href="https://www.ryanbeckett.uk/ListApp-Web-Storage-API/">TRY APP</a>
-            </div>
-
-            <div class="codeProjects">
-                <h2>Knights &amp; Warlocks CLI Game [C#]</h2>
-                <a href="images/PlayerVsFoe_Game.png"><img src="images/PlayerVsFoe_Game.png"></a><br><br>
-                <a href="https://github.com/cPango/KnightsAndWarlocks" target="_blank">VIEW CODE</a>
-            </div>
-
-            <div class="codeProjects">
-                <h2>Treehouse Profile API [NodeJs]</h2>
-                <a href="images/thAPI.png"><img src="images/thAPI.png" style="border: solid 1px lightgray;"></a><br><br>
-                <a href="https://github.com/cPango/TreehouseAPI-NodeJS" target="_blank">VIEW CODE</a>
-            </div>
-
-            <div class="codeProjects">
-                <h2>Tic Tac BOOM [C#]</h2>
-                <a href="images/TicTacToeGame.png"><img src="images/TicTacToeGame.png"></a><br><br>
-                <a href="https://gist.github.com/cPango/17d8b4be56a1505fd26b1fbb449326a6" target="_blank">VIEW CODE</a>
-            </div>
-        </section>
-
-        <section id="modal">
-            <div id="modalContent">
-                <span id="exitModal">×</span>
-                <form action="https://formspree.io/ryan.beckett@outlook.com"
-                method="POST">
-                    <input type="hidden" name="_subject" value="cPango web form submmission" />
-                    <input type="text" name="_gotcha" style="display:none" />
-                    <label for="name">Name:</label><br>
-                    <input name="name" type="text" />
-                    <br>
-                    <label for="email">Email:</label><br>
-                    <input name="email" type="text" />
-                    <br>
-                    <label for="mobile">Mobile:</label><br>
-                    <input name="mobile" type="text" />
-                    <br>
-                    <label for="website_header">Website/company header:</label><br>
-                    <input name="website_header" type="text" />
-                    <br>
-                    <label for="colors">Design colours:</label><br>
-                    <input name="colors" type="text" />
-                    <br>
-                    <label for="web_idea">Explain what contents you need on the website (eg:introductions, portfolio/gallery, forms etc):</label><br>
-                    <textarea name="web_idea"></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </section>
-    </main> <br>
-    
-    <h2 id="openModal">Need a website designing?</h2>
-    
-    <footer>
-        <span>&copy; 2018 Ryan Beckett, Portfolio.</span>
-        <section id="links">
-            <a href="https://www.Twitter.com/RyanBcktt" target="_blank">
-                <img class="socialIcon" src="icons/Twitter_Default_Icon.png" title="Twitter" />
-            </a>
-            <a href="https://www.linkedin.com/in/ryan-beckett-75112510b/" target="_blank">
-                <img class="socialIcon" src="icons/Linkd_Default_Icon.png" title="LinkedIn" />
-            </a>
-            <a href="https://github.com/cPango" target="_blank">
-                <img class="socialIcon" src="icons/Git_Default_Icon.png" title="GitHub" />
-            </a>
-            <a href="https://steamcommunity.com/id/Bcktt/" target="_blank">
-                <img class="socialIcon" src="icons/steamLogo.png" title="Steam" />
-            </a>
-            <a href="mailto:ryan.beckett@outlook.com?subject=Dear%20Mr%20Beckett">
-                <img class="socialIcon" src="icons/Mail_Icon.png" title="Email" />
-            </a>
-        </section>
-    </footer>
-</body>
+  <app-root></app-root>
+<script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.c6871e56cb80756a5498.js"></script><script type="text/javascript" src="main.6b4317cda90fe6bbf0b1.js"></script></body>
 </html>
