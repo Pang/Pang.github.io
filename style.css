@@ -1,0 +1,63 @@
+body {
+    text-align: center;
+    font-family: Montserrat;
+
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    display: inline-block;
+    font-size: 30px;
+}
+
+li > a:hover {
+    text-decoration: none;
+    filter:blur(1px);
+}
+.projImg {
+    width: 400px;
+    max-width: 100%;
+}
+
+.btn-color {
+    background-color: #dbc8b8;
+    color: rgb(66, 66, 66);
+    font-weight: bold;
+}
+
+.card-header {
+    font-size: 20px;
+    background-color: #eee1d6;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@keyframes linkHover {
+    from { border-radius: 0}
+    to { border-radius: 50%}
+}
+@keyframes linkUnhover {
+    from { border-radius: 50%}
+    to { border-radius: 0}
+}
+
+#links > a > img {
+    height: 40px;
+    animation-name: linkUnhover;
+    animation-duration: 0.5s;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#links > a > img:hover{
+    animation-name: linkHover;
+    animation-duration: 0.2s;
+    border-radius: 50%;
+}

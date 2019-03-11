@@ -1,15 +1,202 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>RyanBeckett</title>
-  <base href="">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<link rel="stylesheet" href="styles.9e7b88e4d1612d149420.css"></head>
+    <meta charset="utf-8">
+    <title>RyanBeckett</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
 <body>
-  <app-root></app-root>
-<script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.7037a817a5bb670ed2ca.js"></script><script type="text/javascript" src="main.981eb54ffbf938cb5c3d.js"></script></body>
+    <img id="home" class="center-block mx-auto img-fluid" src="images/SiteLogo.png">
+
+    <!-- NAV BAR -->
+    <ul class="container bg-white text-center sticky-top">
+        <li>
+            <a class="text-dark" href="#home">Home</a>
+        </li>
+            <span> &diams; </span>
+        <li>
+            <a class="text-dark" href="#projects">Projects</a>
+        </li>
+            <span> &diams; </span>
+        <li>
+            <a class="text-dark" href="#work">Work</a>
+        </li>
+        <hr>
+    </ul>
+    <!-- End of NAV BAR -->
+
+    <!-- LINKS -->
+    <div id="links" class="mb-3">
+        <a href="mailto:ryan.beckett@outlook.com"><img src="icons/mail.svg"></a>
+        <a target="_blank" href="https://www.linkedin.com/in/ryan-beckett-75112510b/"><img src="icons/linkedin.svg"></a>
+        <a target="_blank" href="https://twitter.com/RyanBcktt"><img src="icons/twitter.svg"></a>
+        <a target="_blank" href="https://www.instagram.com/ryan.bcktt/"><img src="icons/instagram.svg"></a>
+        <a target="_blank" href="https://github.com/cPango"><img src="icons/github.png"></a>
+    </div>
+    <!-- End of LINKS -->
+
+    <div class="container">
+        <p class="lead">
+            My goal is to become a fullstack developer profficient in .Net Core technologies and Angular on the front end.
+            I got into programming through curiosity beginning with C#, then after a few console apps I moved on to web development. 
+            Through the use of books and online resources I am always exploring new areas of computer science and coding as both a 
+            hobby and for self-development.
+        </p>
+    </div>
+
+<!-- Projects Section -->
+    <div id="projects" class="container">
+        <h1 class="my-5">Projects</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/repoViewerV2.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <h3>Repository Viewer</h3>
+                <p>Using Angular, this app pulls Repo's through GitHub's API and displays their commits.</p>
+                <a class="btn btn-color" target="_blank" href="https://www.ryanbeckett.uk/repoViewerV2/">View Project</a>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/unit21.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <h3>Unit21 [WiP]</h3>
+                <p>Website built with bootstrap and custom CSS</p>
+                <a class="btn btn-color" target="_blank" href="https://affectionate-jones-0078ba.netlify.com/">View Project</a>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/ickletots.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <h3>Ickletots</h3>
+                <p>Website built with bootstrap and custom CSS</p>
+                <a class="btn btn-color" target="_blank" href="https://www.ickletots.com/">View Project</a>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/ListProj.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <h3>List to Local Storage</h3>
+                <p>An list application that stores entries in the browsers local storage. Just incase you forget!</p>
+                <a class="btn btn-color" target="_blank" href="https://www.ryanbeckett.uk/ListApp-Web-Storage-API/">View Project</a>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/arpm.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <h3>AR-PropertyMaintenance</h3>
+                <p>Website built with bootstrap and custom CSS</p>
+                <a class="btn btn-color" target="_blank" href="https://www.ar-propertymaintenance.co.uk/">View Project</a>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/CCC.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <h3>Cybele Cycling Club [WiP]</h3>
+                <p>Website built with bootstrap and custom CSS</p>
+                <a class="btn btn-color" target="_blank" href="https://cranky-lamport-8a6267.netlify.com/">View Project</a>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/PlayerVsFoe_Game.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <h3>CLI RPG</h3>
+                <p>Knights & Warlocks
+                    A text-based RPG for the console written in C#; kill as many enemies before they kill you!</p>
+                <a class="btn btn-color" target="_blank" href="https://github.com/cPango/KnightsAndWarlocks">View Project</a>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/discordBot.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <h3>Discord Bot</h3>
+                <p>A Discord companion with multi-functionality. Written with NodeJS</p>
+                <a class="btn btn-color" target="_blank" href="https://github.com/cPango/discordBot">View Project</a>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!-- End of Projects-->
+
+    <!-- Work -->
+    <div id="work" class="container">
+        <h1 class="my-5">Work</h1>
+
+        <div class="card text-center mb-5">
+            <div class="card-header btn-color">Health Informatics Programme Admin</div>
+                <div class="card-body">
+                    <span class="card-title">NHS - Blackpool Victoria Hospital</span>
+                    <p class="card-text">
+                        In this role I manage proposals for new services, software and suppliers by collecting all the necessary details and presenting it to senior managers within the trust. This involves looking at the advantages of bringing in the proposal, 
+                        what resources will be required, how in-depth a data protection impact assessment must be, finding better solutions etc. Another part of my role is to set up meetings for the project managers and external companies we are contracted to, 
+                        take minutes and help test software during it's pilot/upgrade. Finally I am responsible for the team's SharePoint website, which I have designed with the feedback of my peers; aiming to fit the needs of my team and be as efficient as possible.
+                    </p>
+                </div>
+            <div class="card-footer text-muted">September 2018 - Present</div>
+        </div>
+
+        <div class="card text-center mb-5">
+            <div class="card-header btn-color">Information Governance Officer</div>
+                <div class="card-body">
+                    <span class="card-title">NHS - Blackpool Victoria Hospital</span>
+                    <p class="card-text">
+                            My main priorities in this role involved auditing the hospital wards and offices, discovering any possible risks/data breaches, advising staff members on any issues concerning data protection, handling Freedom 
+                            of Information requests and publication to the trust's disclosure log, training staff to be compliant in data protection, which was mandatory through the IG toolkit (now Data Security and Protection Toolkit) and finally advising on projects 
+                            During my time here I took a course on the General Data Protection Regulation (GDPR) and Data Protection Act 2018 with 'Act Now' since I was required to have an in-depth understanding of these legislation.
+                    </p>
+                </div>
+            <div class="card-footer text-muted">August 2017 – August 2018</div>
+        </div>
+
+        <div class="card text-center mb-5">
+                <div class="card-header btn-color">Medical Records Clerk</div>
+                    <div class="card-body">
+                        <span class="card-title">NHS - Blackpool Victoria Hospital</span>
+                        <p class="card-text">
+                                I was required to store and retrieve patient notes from around the hospital, trace them to the correct departments and prepare them in time for appointments. 
+                                This means confirming all the details for the patient inside are still correct by matching it to the system,putting together new folders if necessary and finding previous references from GP’s or other areas of the hospital to place into the file.
+                        </p>
+                    </div>
+                <div class="card-footer text-muted">June 2017 – August 2017</div>
+            </div>
+    </div>
+    <!-- End of work -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
 </html>
