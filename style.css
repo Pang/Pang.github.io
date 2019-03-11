@@ -1,7 +1,6 @@
 body {
     text-align: center;
     font-family: Montserrat;
-
 }
 
 ul {
@@ -12,6 +11,12 @@ ul {
 li {
     display: inline-block;
     font-size: 30px;
+}
+
+@media (max-width: 400px) {
+    li {
+        font-size: 24px;
+    }
 }
 
 li > a:hover {
