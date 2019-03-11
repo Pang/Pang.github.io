@@ -1,0 +1,30 @@
+#siteLogo{
+    margin-top: 50px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+h1 {
+    margin-top: 15px;
+}
+
+h1, h2 {
+    letter-spacing: 20px;
+}
+
+@media screen and (max-width:990px){
+    #siteLogo{
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    #siteLogo {
+        margin:auto;
+        width: 100%;
+        display: block
+    }
+    #siteLogo{
+        display:none;
+    }
+}
