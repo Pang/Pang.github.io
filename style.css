@@ -13,10 +13,6 @@ li {
     font-size: 30px;
 }
 
-#introduction {
-    display: none;
-}
-
 #projects > div > div > img {
     border: solid 1px black;
 }
@@ -118,11 +114,5 @@ li > a:hover {
 }
 
 @media only screen and (max-width: 600px) {
-    #projects {
-        /* display: none; */
-    }
 
-    #introduction {
-        display: block;
-    }
 }
