@@ -27,9 +27,36 @@ li > a:hover {
     text-decoration: none;
     filter:blur(1px);
 }
+
 .projImg {
-    width: 400px;
+    height: 100%;
+    width: 100%;
+}
+
+.projCard {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 16vh;
     max-width: 100%;
+    border: black 1px solid;
+}
+
+.projCard > h3 {
+    position: relative;;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40%;
+    display: none;
+}
+
+.projCard:hover {
+    background-color: rgba(0, 0, 0, 0.733);
+    background-blend-mode: color;
+}
+.projCard:hover > h3 {
+    display: block;
+    color: white;
+    text-decoration: none;
 }
 
 .btn-color {

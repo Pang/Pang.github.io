@@ -11,26 +11,10 @@
 </head>
 <body>
     <img id="home" class="center-block mx-auto img-fluid" src="images/SiteLogo.png">
-
     <!-- NAV BAR -->
-    <ul class="container bg-white text-center sticky-top">
-        <li>
-            <a class="text-dark" href="#home">Home</a>
-        </li>
-            <span>-</span>
-        <li>
-            <a class="text-dark" href="#projects">Projects</a>
-        </li>
-            <span>-</span>
-        <li>
-            <a class="text-dark" href="#work">Work</a>
-        </li>
-        <hr>
-    </ul>
-    <!-- End of NAV BAR -->
 
     <!-- LINKS -->
-    <div id="links" class="my-3">
+    <div id="links" class="mt-2 mb-4">
         <a href="mailto:ryan.beckett@outlook.com"><img src="icons/mail.svg"></a>
         <a target="_blank" href="https://www.linkedin.com/in/ryan-beckett-75112510b/"><img src="icons/linkedin.svg"></a>
         <a target="_blank" href="https://twitter.com/RyanBcktt"><img src="icons/twitter.svg"></a>
@@ -39,129 +23,73 @@
     </div>
     <!-- End of LINKS -->
 
-    <div class="container">
+    <!-- <div class="container">
         <p class="lead">
             Training to become a fullstack developer profficient in .Net Core technologies and Angular on the front end.
             I began programming in C# with the intent on changing my career path after getting a degree in Music Production.
             First by creating programs to work on the command line interface, then moving into web development. The majority of the free time I have outside of my 
             normal day job is invested towards personal development - consisting of learning computer science and improving my programming knowledge.
         </p>
-    </div>
+    </div> -->
 
 <!-- Projects Section -->
     <div id="projects" class="container">
-        <h1 class="my-5">Projects</h1>
-        
-        <div class="row">
-            <div class="col-md-6">
-                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/mailingList.png" alt="">
-            </div>
-            <div class="col-md-6">
-                <h3>Mailing List /w API & Database</h3>
-                <p>API created using ASP.Net Core, Front end in Angular 7 and SQLite for maintaining the database. Error handling capabilities and LINQ for querying</p>
-                <a class="btn btn-color" target="_blank" href="https://github.com/cPango/MailingList">View Project</a>
-            </div>
-        </div>
-        <hr>
 
         <div class="row">
-            <div class="col-md-6">
-                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/WebChat.png" alt="">
-            </div>
-            <div class="col-md-6">
-                <h3>WebChat</h3>
-                <p>Communicate in this real-time app using .NET Core Signal R. Front-end built in Angular</p>
-                <a class="btn btn-color" target="_blank" href="https://github.com/cPango/WebChat">View Project</a>
-            </div>
+            <a class="col-md-4 pb-4" target="_blank" href="https://github.com/cPango/MailingList">
+                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/mailingList.png)">
+                    <h3>Mailing List</h3>
+                </div>
+            </a>
+            <a class="col-md-4 pb-4" target="_blank" href="https://github.com/cPango/WebChat">
+                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/WebChat.png)">
+                    <h3>WebChat</h3>
+                </div>
+            </a>
+            <a class="col-md-4 pb-4" target="_blank" href="https://www.ryanbeckett.uk/repoViewerV2/">
+                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/repoViewerV2.png)">
+                    <h3>RepoViewer</h3>
+                </div>
+            </a>
         </div>
-        <hr>
 
         <div class="row">
-            <div class="col-md-6">
-                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/repoViewerV2.png" alt="">
-            </div>
-            <div class="col-md-6">
-                <h3>Repository Viewer</h3>
-                <p>Using Angular, this app pulls Repo's through GitHub's API and displays their commits.</p>
-                <a class="btn btn-color" target="_blank" href="https://www.ryanbeckett.uk/repoViewerV2/">View Project</a>
-            </div>
+            <a class="col-md-4 pb-4" target="_blank" href="https://www.ryanbeckett.uk/SpaceX-Launches/#/">
+                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/spaceXL.png)">
+                    <h3>SpaceX-Launches</h3>
+                </div>
+            </a>
+            <a class="col-md-4 pb-4" target="_blank" href="https://cranky-lamport-8a6267.netlify.com/">
+                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/CCC.png)">
+                    <h3>Cybelé Cycling Club</h3>
+                </div>
+            </a>
+            <a class="col-md-4 pb-4" target="_blank" href="https://affectionate-jones-0078ba.netlify.com/">
+                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/unit21.png)">
+                    <h3>Unit21 [WiP]</h3>
+                </div>
+            </a>
         </div>
-        <hr>
 
         <div class="row">
-            <div class="col-md-6">
-                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/spaceXL.png" alt="">
-            </div>
-            <div class="col-md-6">
-                <h3>SpaceX Launches</h3>
-                <p>This application aggregates data straight from the SpaceX API, allowing you to choose a launch and expand more details</p>
-                <a class="btn btn-color" target="_blank" href="https://www.ryanbeckett.uk/SpaceX-Launches/#/">View Project</a>
-            </div>
+            <a class="col-md-4 pb-4" target="_blank" href="https://www.ickletots.com/">
+                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/ickletots.png)">
+                    <h3>Ickletots</h3>
+                </div>
+            </a>
+            <a class="col-md-4 pb-4" target="_blank" href="https://github.com/cPango/KnightsAndWarlocks">
+                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/PlayerVsFoe_Game.png)">
+                    <h3>CLI RPG</h3>
+                </div>
+            </a>
+            <a class="col-md-4 pb-4" target="_blank" href="https://github.com/cPango/discordBot">
+                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/discordBot.png)">
+                    <h3>Discord Bot</h3>
+                </div>
+            </a>
         </div>
-        <hr>
 
-        <div class="row">
-            <div class="col-md-6">
-                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/CCC.png" alt="">
-            </div>
-            <div class="col-md-6">
-                <h3>Cybelé Cycling Club</h3>
-                <p>Website built with bootstrap and custom CSS</p>
-                <a class="btn btn-color" target="_blank" href="https://cranky-lamport-8a6267.netlify.com/">View Project</a>
-            </div>
-        </div>
-        <hr>
-
-        <div class="row">
-            <div class="col-md-6">
-                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/unit21.png" alt="">
-            </div>
-            <div class="col-md-6">
-                <h3>Unit21 [WiP]</h3>
-                <p>Website built with bootstrap and custom CSS</p>
-                <a class="btn btn-color" target="_blank" href="https://affectionate-jones-0078ba.netlify.com/">View Project</a>
-            </div>
-        </div>
-        <hr>
-
-        <div class="row">
-            <div class="col-md-6">
-                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/ickletots.png" alt="">
-            </div>
-            <div class="col-md-6">
-                <h3>Ickletots</h3>
-                <p>Website built with bootstrap and custom CSS</p>
-                <a class="btn btn-color" target="_blank" href="https://www.ickletots.com/">View Project</a>
-            </div>
-        </div>
-        <hr>
-
-        <div class="row">
-            <div class="col-md-6">
-                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/PlayerVsFoe_Game.png" alt="">
-            </div>
-            <div class="col-md-6">
-                <h3>CLI RPG</h3>
-                <p>Knights & Warlocks
-                    A text-based RPG for the console written in C#; kill as many enemies before they kill you!</p>
-                <a class="btn btn-color" target="_blank" href="https://github.com/cPango/KnightsAndWarlocks">View Project</a>
-            </div>
-        </div>
-        <hr>
-
-        <div class="row">
-            <div class="col-md-6">
-                <img class="projImg img-fluid rounded mb-3 mb-md-0" src="images/discordBot.png" alt="">
-            </div>
-            <div class="col-md-6">
-                <h3>Discord Bot</h3>
-                <p>A Discord companion with multi-functionality. Written with NodeJS</p>
-                <a class="btn btn-color" target="_blank" href="https://github.com/cPango/discordBot">View Project</a>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <!-- End of Projects-->
+<!-- ###################################################### -->
 
     <!-- Work -->
     <div id="work" class="container">
