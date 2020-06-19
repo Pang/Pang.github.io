@@ -3,18 +3,6 @@ body {
     font-family: Montserrat;
 }
 
-.flexContainer {
-    max-width: 1000px;
-    display: flex;
-    margin: 10px auto;
-}
-
-.flexItem {
-    flex-grow: 1;
-    justify-content: center;
-    padding: 20px;
-}
-
 ul {
     list-style-type: none;
     padding-left: 0;
@@ -43,11 +31,6 @@ li > a:hover {
     filter:blur(1px);
 }
 
-.projImg {
-    height: 100%;
-    width: 100%;
-}
-
 .projCard {
     background-size: cover;
     background-repeat: no-repeat;
@@ -55,10 +38,6 @@ li > a:hover {
     max-width: 100%;
     border: black 1px solid;
     text-decoration: none;
-}
-#highlighted {
-    height: 24vh;
-    width: 28vw;
 }
 
 .projCard > h3 {
