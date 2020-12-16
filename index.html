@@ -10,116 +10,166 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 <body>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4" onclick="">
+                <h4 class="text-white">Home</h4>
+                <span class="text-muted">Homepage & CV</span>
+            </div>
+            <div class="bg-dark p-4">
+                <h4 class="text-white">NHS</h4>
+                <span class="text-muted">Work and Achievements</span>
+            </div>
+            <div class="bg-dark p-4">
+                <h4 class="text-white">Copilot</h4>
+                <span class="text-muted">Twitch data tools</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark justify-content-center">
+            <a target="_blank" href="https://github.com/Pang"><span class="material-icons">code</span></a>
+        </nav>
+      </div>
+      
     <img id="home" class="center-block mx-auto img-fluid" src="images/SiteLogo.png">
 
-    <!-- LINKS -->
-    <div id="links" class="mt-2 mb-3">
-        <a href="mailto:ryan.beckett@outlook.com"><img src="icons/mail.svg"></a>
-        <a target="_blank" href="https://www.linkedin.com/in/ryan-beckett-75112510b/"><img src="icons/linkedin.svg"></a>
-        <a target="_blank" href="https://twitter.com/dev_pang"><img src="icons/twitter.svg"></a>
-        <!-- <a target="_blank" href="https://www.instagram.com/ryan.bcktt/"><img src="icons/instagram.svg"></a> -->
-        <a target="_blank" href="https://github.com/Pang"><img src="icons/github.png"></a>
-    </div>
-    <!-- End of LINKS -->
+    <ul id="navbar" class="nav nav-tabs nav-fill">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#introduction" role="tab" aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#NHS" role="tab" aria-selected="false">NHS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#Copilot" role="tab" aria-selected="false">Copilot</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#Others" role="tab" aria-selected="false">Others</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
 
-    <div id="introduction" class="container mb-4">
-        <p class="lead">
-            A full stack web developer profficient in .Net Core technologies and front-end Javascript frameworks, primarily Angular and Vue.
-            I currently work as a Software Developer / Dev Ops Engineer for the NHS, where my main focus is on the Nexus
-            Electronic Patient Record. This is a multi-purpose system designed to improve upon the hospitals admission flow, having a clean
-            interface to understand the wards current state and which patient needs tending to, as well as connecting together the PAS and
-            other independant systems into one place for medical and administration staff to access.
-        </p>
-        <p class="lead">
-            Second to this I am a Cofounder and developer of Copilot, this is a platform for Twitch data tools including but not limited to:
-            profile design analytics, generated graphs to see how users interacted with your streams, music detection to avoid DMCA copyright 
-            strikes and more. 
-        </p>
-        <p>
-            Apart from web-development, I am also passionate about producing music, drawing, snowboarding, and making fun things in Unity :)
-        </p>
-    </div>
-    <hr><br />
-    <!-- Highlighted Projects -->
-        <div id="projects" class="container">
-            <div class="row">
-                <a class="col-md-6 pb-4" target="_blank" href="https://copilot.gg">
-                    <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/Copilot.png)">
-                        <h3>Copilot</h3>
-                    </div>
-                </a>
-                <div class="col-md-6 pb-4">
-                    <p>
-                        Copilot is a collection of data tools for Twitch as well as a place to collaborate and gain 
-                        insights with other streamers. This is my latest project with another peer and allows for real-time
-                        graph generation of phrase highlighting on previously saved streams. Features for Copilot are plentiful
-                        and still continues to grow!
-                    </p>
-                </div>
-            </div>
-
-            <div class="row">
-                <a class="col-md-6 pb-4" target="_blank" href="https://github.com/Pang/ThoughtWall">
-                    <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/ThoughtWall.png)">
-                        <h3>ThoughtWall</h3>
-                    </div>
-                </a>
-                <div class="col-md-6 pb-4">
-                    <p>
-                        Thoughtwall was my first project to learn Angular and DotnetCore. It has since gone through many iterations to 
-                        get to it's current state and uses technologies such as SignalR (Websockets/RPC's), Angular Material (Themes and 
-                        components) and Entity Framework Core (ORM). This app allows users to register and create threadposts where conversations
-                        can take place in real time.
-                    </p>
-                </div>
-            </div>
-        </div>   
-
-    <hr> <br />
-    <!-- Projects -->
-    <div id="projects" class="container">
-        <div class="row">
-            <a class="col-md-4 pb-4" target="_blank" href="https://github.com/Pang/signalRstreaming">
-                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/signalRstreaming.png)">
-                    <h3>SignalR Streaming</h3>
-                </div>
-            </a>
-            <a class="col-md-4 pb-4" target="_blank" href="https://pang.github.io/SpaceX-Launches/#/">
-                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/spaceXL.png)">
-                    <h3>SpaceX-Launches</h3>
-                </div>
-            </a>
-            <a class="col-md-4 pb-4" target="_blank" href="https://affectionate-jones-0078ba.netlify.com/">
-                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/unit21.png)">
-                    <h3>Unit21 [WiP]</h3>
-                </div>
-            </a>
+        <!-- INTRODUCTION -->
+        <div class="tab-pane fade show active mt-3 container" id="introduction" role="tabpanel" aria-labelledby="introduction">
+            <p>
+                A full stack web developer profficient in .Net Core technologies and front-end Javascript frameworks, primarily Angular and Vue.
+                I currently work as a Software Developer / Dev Ops Engineer for the NHS, where my main focus is on the Nexus
+                Electronic Patient Record. This is a multi-purpose system designed to improve upon the hospitals admission flow, having a clean
+                interface to understand the wards current state and which patient needs tending to, as well as connecting together the PAS and
+                other independant systems into one place for medical and administration staff to access.
+            </p>
+            <p>
+                Second to this I am a Cofounder and developer of Copilot, this is a platform for Twitch data tools including but not limited to:
+                profile design analytics, generated graphs to see how users interacted with your streams, music detection to avoid DMCA copyright 
+                strikes and more. 
+            </p>
+            <p>
+                Apart from web-development, I am also passionate about producing music, drawing, snowboarding, and making fun things in Unity :)
+            </p>
         </div>
 
-        <div class="row">
-            <a class="col-md-4 pb-4" target="_blank" href="https://github.com/Pang/repoViewerV2">
-                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/repoViewerV2.png)">
-                    <h3>RepoViewer</h3>
-                </div>
-            </a>
-            <a class="col-md-4 pb-4" target="_blank" href="https://pang.github.io/IckleTots/">
-                <div class="projCard img-fluid rounded mb-md-0" style="background-image: url(images/ickletots.png)">
-                    <h3>Ickletots</h3>
-                </div>
-            </a>
-            <a class="col-md-4 pb-4" target="_blank" href="https://github.com/Pang/KnightsAndWarlocks">
-                <div class="projCard img-fluid rounded mb-md-0"
-                    style="background-image: url(images/PlayerVsFoe_Game.png)">
-                    <h3>CLI RPG</h3>
-                </div>
-            </a>
+        <!-- NHS HISTORY -->
+        <div class="tab-pane fade show mt-3 container" id="NHS" role="tabpanel" aria-labelledby="NHS">
+            <h3>Blackpool Teaching Hospital, UK</h3><br />
 
+            <h4>Informatics Developer</h4>
+            <h6>Aug 2019 – Present</h6>
+            <p>
+                Working with technologies like .Net Core (C#) and Angular/Vue (Javascript) on the front end, I have been a part of a great team to create software through web development which aids the work of the medical and clinical staff around the hospital. Other tools include Git, GitLab, SmartGit, Postman, Swagger, Mattermost, SQL and utilising methods pertaining to Agile such as daily scrums and the development life-cycle.
+            </p><br/>
+
+            <h4>Health Informatics Project Admin</h4>
+            <h6>Aug 2018 – Aug 2019</h6>
+            <p>
+                In this role I manage proposals for new services, software and suppliers by collecting all the necessary details and presenting it to senior managers within the trust. This involves looking at the advantages of bringing in the proposal, what resources will be required, how in-depth a data protection impact assessment must be, finding better solutions etc.
+
+                Another part of my role is to set up meetings for the project managers and external companies we are contracted to, take minutes and help test software during it's pilot/upgrade.
+                Finally I am responsible for the team's SharePoint website, which I have designed with the feedback of my peers; aiming to fit the needs of my team and be as efficient as possible.
+            </p><br/>
+
+            <h4>Information Governance Officer</h4>
+            <h6>Aug 2017 – Aug 2018</h6>
+            <p>
+                My main priorities in this role involved auditing the hospital wards and offices, discovering any possible risks/data breaches, advising staff members on any issues concerning data protection, handling Freedom of Information requests and publication to the trust's disclosure log, training staff to be compliant in data protection, which was mandatory through the IG toolkit (now Data Security and Protection Toolkit) and finally advising on projects
+                During my time here I took a course on the General Data Protection Regulation (GDPR) and Data Protection Act 2018 since I was required to have an in-depth understanding of these legislation.
+            </p><br/>
+
+            <h4>Medical Records Clerk</h4>
+            <h6>Jun 2017 – Aug 2017</h6>
+            <p>
+                I was required to store and retrieve patient notes from around the hospital, trace them to the correct departments and prepare them in time for appointments. This means confirming all the details for the patient inside are still correct by matching it to the system, putting together new folders if necessary and finding previous references from GP’s or other areas of the hospital to place into the file.
+            </p>
+        </div>
+
+        <!-- Copilot -->
+        <div class="tab-pane fade show mt-3 container" id="Copilot" role="tabpanel" aria-labelledby="Copilot">
+            <h3>Copilot</h3>
+            <h6>Twitch Tools and Data Analytics</h6>
+            <div id="carouselCopilot" class="carousel slide border border-dark" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselCopilot" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselCopilot" data-slide-to="1"></li>
+                    <li data-target="#carouselCopilot" data-slide-to="2"></li>
+                    <li data-target="#carouselCopilot" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="copilotImgs carousel-item active">
+                    <img class="d-block w-100" src="images/CopilotCarousel/homepage.png">
+                  </div>
+                  <div class="copilotImgs carousel-item">
+                    <img class="d-block w-100" src="images/CopilotCarousel/TrainwrecksProfile.png">
+                  </div>
+                  <div class="copilotImgs carousel-item">
+                    <img class="d-block w-100" src="images/CopilotCarousel/SodapoppinStream.png">
+                  </div>
+                  <div class="copilotImgs carousel-item">
+                    <img class="d-block w-100" src="images/CopilotCarousel/Membership.png">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselCopilot" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselCopilot" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+            </div> <br />
+            <h4><a href="https://copilot.gg/">https://copilot.gg/</a></h4>
+            <div class="text-center mt-3 pb-4">
+                <p>
+                    I am a cofounder and developer of Copilot, which is a collection of data tools for Twitch as 
+                    well as a place to collaborate and gain insights with other streamers. The web application  
+                    consists of all the following features. Allows user to browse your chat reactivity in a simple 
+                    and easy to use graph to see your best moments based on emotes and phrases used in chat.
+                </p>
+                <p>
+                    It also allows you to scan your channel for accessibility issues, such as colorblindness colour 
+                    schemes or patterns that may not suite your design. One if it's main features is allowing streamer to
+                    maintain their copyright standing within livestreams and creative content in a trackable dashboard.
+                </p>
+                    Finally, you can do all of this collaboritively and invite other users, managers, or editors to be a
+                    part of your profile and collaborate on your Copiloted stream content.
+                </p>
+            </div>
+        </div>
+
+        <!-- OTHER PROJECTS -->
+        <div class="tab-pane fade show mt-3 container" id="Others" role="tabpanel" aria-labelledby="Others">
+            <h4>WIP</h4>
+            <!-- <img class="copilotImgs d-block w-100 rounded" src="images/ThoughtWall.png" alt="Second slide">
+            <p>
+                Thoughtwall was my first project to learn Angular and DotnetCore. It has since gone through many iterations to 
+                get to it's current state and uses technologies such as SignalR (Websockets/RPC's), Angular Material (Themes and 
+                components) and Entity Framework Core (ORM). This app allows users to register and create threadposts where conversations
+                can take place in real time.
+            </p> -->
         </div>
     </div>
-    <!-- End of Projects -->
 
     <br />
     <p>&copy; Ryan Beckett - 2020</p>
