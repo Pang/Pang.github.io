@@ -23,6 +23,12 @@ body {
     margin-bottom: 50px;
 }
 
+.techIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 ul {
     list-style-type: none;
     padding-left: 0;
