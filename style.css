@@ -44,6 +44,10 @@ body {
     margin-bottom: 50px;
 }
 
+#NHS, #Others {
+    text-align: left;
+}
+
 .techIcon {
     display: flex;
     align-items: center;
