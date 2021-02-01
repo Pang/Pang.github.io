@@ -3,25 +3,18 @@ body {
     font-family: Montserrat;
 }
 
-#carouselCopilot {
+.carouselStyle {
     max-width: 900px;
     max-height: 400px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.copilotImgs > img {
+.carouselImgs > img {
     margin-left: auto;
     margin-right: auto;
     width: 90%;
     max-height: 400px;
-}
-
-.shieldmaidenImgs > img {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    max-height: 500px;
 }
 
 .neon-glow {
