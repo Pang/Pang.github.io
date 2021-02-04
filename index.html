@@ -178,11 +178,12 @@
 
         <!-- OTHER PROJECTS -->              
         <div class="tab-pane fade show mt-3 container" id="Others" role="tabpanel" aria-labelledby="Others">
-            <h4>Procedural Terrain Generation [WIP]</h4>
+            <h4>Procedural Terrain Generation</h4>
             <p class="my-4">
-                Currently a work in progress; in brief I am using a mesh generator with perlin noise and having fun with scales, octaves
-                and other properties to create an ideal terrain where I can bring more ideas to life! I am using a low number of vertices 
-                to create triangles alongside flatshading in order to create a low-poly look.
+                For this project I began with a simple mesh generator, 100 x 100 vertices - and since you need 3 vertices 
+                to create a triangle and 2 triangles to create a square, I ended up multiplying this by another 6 to give me 60,000
+                vertices. This still wasn't enought to create the island size I was after so I scaled the mesh out by 50. Since I had
+                set out to create a low-poly look, hence also flat-shading the map, this worked out quite well!
             </p>
             <div id="carouselMeshGen" class="carouselStyle carousel slide border border-dark mb-5" data-ride="carousel">
               <ol class="carousel-indicators">
@@ -194,10 +195,10 @@
               </ol>
               <div class="carousel-inner">
                 <div class="carouselImgs carousel-item active">
-                  <img class="d-block w-100" src="images/TerrainGeneration/flatShaded.png">
+                  <img class="d-block w-100" src="images/TerrainGeneration/Seed3.png">
                 </div>
                 <div class="carouselImgs carousel-item">
-                  <img class="d-block w-100" src="images/TerrainGeneration/firstIsland.png">
+                  <img class="d-block w-100" src="images/TerrainGeneration/Beach.png">
                 </div>
                 <div class="carouselImgs carousel-item">
                   <img class="d-block w-100" src="images/TerrainGeneration/islandWtrees.png">
@@ -206,7 +207,7 @@
                   <img class="d-block w-100" src="images/TerrainGeneration/secondIsland.png">
                 </div>
                 <div class="carouselImgs carousel-item">
-                  <img class="d-block w-100" src="images/TerrainGeneration/FirstImg.png">
+                  <img class="d-block w-100" src="images/TerrainGeneration/colorIsland.png">
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselMeshGen" role="button" data-slide="prev">
@@ -218,47 +219,55 @@
                 <span class="sr-only">Next</span>
               </a>
           </div>
+          <p>
+            The fun part was playing with perlin noise to get the desired landscape, I created a 'fall-off' map gradient which was subtracted from
+            the original perlin noise height, lowering the edges so it would be presented as an island instead of appearing to go on forever. 
+            I created the shader for the land using Unity's PBR graph and set the Albedo to the Vertex Color of the the gradient property that belonged 
+            to the Mesh Script, this was extremely helpful for creating beaches, separating forests and making the higher hills seem rockier.
+          </p>
 
-            <h4>ShieldMaidens</h4>
-            <p class="my-4">
-                This is an endless runner game that is never the same twice! With a collection of map parts that are randomized 
-                as you make your way through a medieval world, you will have to think on your feet and react quickly to the environment
-                laid out before you in order to get as far through these English Anglo-Saxon lands as you possibly can. Your arsenal 
-                includes just a shield and yourself, block arrows and dash your way across traps and water!
-            </p>
-            <div id="carouselShieldmaiden" class="carouselStyle carousel slide border border-dark" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselShieldmaiden" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselShieldmaiden" data-slide-to="1"></li>
-                    <li data-target="#carouselShieldmaiden" data-slide-to="2"></li>
-                    <li data-target="#carouselShieldmaiden" data-slide-to="3"></li>
-                    <li data-target="#carouselShieldmaiden" data-slide-to="4"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carouselImgs carousel-item active">
-                    <img class="d-block w-100" src="images/ShieldMaidens/villagebash.png">
-                  </div>
-                  <div class="carouselImgs carousel-item">
-                    <img class="d-block w-100" src="images/ShieldMaidens/pitFall.png">
-                  </div>
-                  <div class="carouselImgs carousel-item">
-                    <img class="d-block w-100" src="images/ShieldMaidens/riverBoxes.png">
-                  </div>
-                  <div class="carouselImgs carousel-item">
-                    <img class="d-block w-100" src="images/ShieldMaidens/StartMenu.png">
-                  </div>
-                  <div class="carouselImgs carousel-item">
-                    <img class="d-block w-100" src="images/ShieldMaidens/boxClimb.png">
-                  </div>
+          <hr class="my-5" />
+
+          <h4>ShieldMaidens</h4>
+          <p class="my-4">
+              This is an endless runner game that is never the same twice! With a collection of map parts that are randomized 
+              as you make your way through a medieval world, you will have to think on your feet and react quickly to the environment
+              laid out before you in order to get as far through these English Anglo-Saxon lands as you possibly can. Your arsenal 
+              includes just a shield and yourself, block arrows and dash your way across traps and water!
+          </p>
+          <div id="carouselShieldmaiden" class="carouselStyle carousel slide border border-dark" data-ride="carousel">
+              <ol class="carousel-indicators">
+                  <li data-target="#carouselShieldmaiden" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselShieldmaiden" data-slide-to="1"></li>
+                  <li data-target="#carouselShieldmaiden" data-slide-to="2"></li>
+                  <li data-target="#carouselShieldmaiden" data-slide-to="3"></li>
+                  <li data-target="#carouselShieldmaiden" data-slide-to="4"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carouselImgs carousel-item active">
+                  <img class="d-block w-100" src="images/ShieldMaidens/villagebash.png">
                 </div>
-                <a class="carousel-control-prev" href="#carouselShieldmaiden" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselShieldmaiden" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
+                <div class="carouselImgs carousel-item">
+                  <img class="d-block w-100" src="images/ShieldMaidens/pitFall.png">
+                </div>
+                <div class="carouselImgs carousel-item">
+                  <img class="d-block w-100" src="images/ShieldMaidens/riverBoxes.png">
+                </div>
+                <div class="carouselImgs carousel-item">
+                  <img class="d-block w-100" src="images/ShieldMaidens/StartMenu.png">
+                </div>
+                <div class="carouselImgs carousel-item">
+                  <img class="d-block w-100" src="images/ShieldMaidens/boxClimb.png">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselShieldmaiden" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselShieldmaiden" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
             <p class="my-4">
               This was my first attempt at creating something in Unity and I had made the decision to draw all assets myself. Having just picked up
