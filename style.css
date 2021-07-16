@@ -3,13 +3,31 @@ body {
     font-family: Montserrat;
 }
 
+.infoCard {
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(52,58,64);
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+}
+
+#carouselShieldmaiden {
+    display: inline-block; 
+    width: calc(50% - 10px) !important; 
+    position: relative;
+    top: -20px;
+}
 .carouselStyle {
     max-width: 800px;
     max-height: 400px;
     margin-left: auto;
     margin-right: auto;
-    -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
-    box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 3px 3px 18px rgb(0 0 0 / 50%);
+    box-shadow: 3px 3px 18px rgb(0 0 0 / 50%);
+}
+.carousel-inner {
+    border: solid 1px rgb(173, 173, 173)
 }
 
 .carouselImgs > img {
@@ -65,8 +83,10 @@ ul {
 .ytWrapper {
     margin-left:auto;
     margin-right:auto;
-    max-width: 700px; 
-    height: 390px;
+    flex: auto;
+    display: inline-block;
+    width: calc(50% - 10px); 
+    height: 350px;
     -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
     box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
 }
@@ -79,5 +99,8 @@ ul {
         width: 510px;
         height: 250px;
         max-width: 100%; 
+    }
+    #carouselShieldmaiden {
+        width: 100% !important;
     }
 }
