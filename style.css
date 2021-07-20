@@ -12,6 +12,16 @@ body {
     box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
 }
 
+.cvCardHeader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.cvJobDate {
+    font-size: 14px; 
+    color: #DBC8B8;
+}
+
 #carouselShieldmaiden {
     display: inline-block; 
     width: calc(50% - 10px) !important; 
