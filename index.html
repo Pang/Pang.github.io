@@ -301,17 +301,16 @@
             </div>
             <hr style="border: 1px solid #DBC8B8;"/>
             <p class="my-4">
-                For this project I began with a simple mesh generator, 100 x 100 vertices - and since you need 3 vertices 
-                to create a triangle and 2 triangles to create a square, I ended up multiplying this by another 6 to give me 60,000
-                vertices. This still wasn't enough to create the island size I was after so I scaled the mesh out by 50. Since I had
-                set out to create a low-poly look, hence also flat-shading the map, this worked out quite well!
+              For this project I began with a simple mesh generator, 100 x 100 vertices - and since you need 3 vertices 
+              to create a triangle and 2 triangles to create a square, I ended up multiplying this by another 6 to give me 60,000
+              vertices. This still wasn't enough to create the island size I was after so I scaled the mesh out by 50. Since I had
+              set out to create a low-poly look, hence also flat-shading the map, this worked out quite well!
             </p>
             <p>
               The fun part was playing with perlin noise to get the desired landscape. I created a 'fall-off' map gradient which was subtracted from
-              the original perlin noise height, lowering the edges so it would be presented as an island instead of appearing suddenly falling off the edge. 
+              the original perlin noise height, lowering the edges so it would be presented as an island instead of suddenly appearing to fall off the edge. 
               I created the shader for the land using Unity's PBR graph and set the Albedo to the Vertex Color of the Gradient property that belonged 
-              to the Mesh Script, this was extremely helpful for creating beaches, separating forests and making the higher hills seem rockier, 
-              based off the height of the vertices.
+              to the Mesh Script, that way I could use the height of each vertices to define beaches, grass and mountain-tops.
             </p>
 
             <div class="ytWrapper">
