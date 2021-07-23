@@ -96,7 +96,7 @@ ul {
     flex: auto;
     display: inline-block;
     width: calc(50% - 10px); 
-    height: 350px;
+    height: 300px;
     -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
     box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
 }
