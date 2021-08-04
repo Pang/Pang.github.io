@@ -28,7 +28,7 @@
           <a class="nav-link active" data-toggle="tab" href="#introduction" role="tab" aria-selected="true">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#NHS" role="tab" aria-selected="false">NHS</a>
+          <a class="nav-link" data-toggle="tab" href="#CV" role="tab" aria-selected="false">CV</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#WebApps" role="tab" aria-selected="false">WebApps</a>
@@ -40,8 +40,7 @@
     <div class="tab-content" id="myTabContent">
 
         <!-- INTRODUCTION -->
-        <div class="tab-pane fade show active mt-2 container" id="introduction" role="tabpanel" aria-labelledby="introduction">
-
+        <div class="tab-pane fade show active container" id="introduction" role="tabpanel" aria-labelledby="introduction">
             <div class="row container mx-auto mb-4 justify-content-between">
                 <div class="techIcon">
                     <img style="width: 100px" src="images/Techs/netCore.jpg" />
@@ -53,6 +52,9 @@
                     <img style="width: 100px;" src="images/Techs/Vue.jpg" />
                 </div>
                 <div class="techIcon">
+                  <img style="width: 100px" src="images/Techs/React.jpg" />
+              </div>
+                <div class="techIcon">
                     <img style="width: 100px" src="images/Techs/Unity.jpg" />
                 </div>
             </div>
@@ -62,7 +64,7 @@
               </div>
               <hr style="border: 1px solid #DBC8B8;"/>
               <p>
-                  A full stack web developer profficient in .Net Core technologies and front-end Javascript frameworks, primarily Angular and Vue.
+                  A full stack web developer profficient in .Net Core technologies and a few popular front-end Javascript framework.
                   I currently work as a Software Developer / Dev Ops Engineer for the NHS, where my main focus is on the Nexus
                   Electronic Patient Record. This is a multi-purpose system designed to improve upon the quality of healthcare alongside the hospitals 
                   admission flow. It is important it has a clean interface for medical staff to understand the wards current state and the priority to
@@ -93,6 +95,10 @@
             <p>
               Vue is the framework use for the website I Co-founded https://copilot.gg which has been running since summer 2020. The website connects web-sockets to the server (SignalR Hub) to receive instant notifications if other users have interacted with your profile or a processed job has finished. It's also currently hosted on Azure, which we have used to track performance spikes and make improvements to the frontend such as lazyload scrolling and debouncing.
             </p>
+            <h4 class="cvCardHeader" style="color: #DBC8B8">React (v17)</h4>
+            <p>
+              I have a few small projects and github repositories containing React workflow as well as currently working on a frontend rework of my Thoughtwall App. More to come here soon!
+            </p>
             <h4 class="cvCardHeader" style="color: #DBC8B8">.Net Core (v3.1)</h4>
             <p>
               I use .Net both for my full time job at the hospital and for Copilot.gg to create all of my REST API’s, together with Entity Framework & SQL (with both code-first and database-first approaches), using LINQ to acquire data and finally for handling JWT requests so users can log into the sites I have created and browse content intended for them securely.
@@ -105,15 +111,12 @@
           </div>
         </div>
         
-        <!-- NHS HISTORY -->
-        <div class="tab-pane fade show mt-3 container cvBio" id="NHS" role="tabpanel" aria-labelledby="NHS">
-            <h3>Blackpool Teaching Hospital, UK</h3><br />
+        <!-- CV HISTORY -->
+        <div class="tab-pane fade show mt-3 container cvBio" id="CV" role="tabpanel" aria-labelledby="CV">
+            <h3>Blackpool Teaching Hospital, UK</h3>
             <div class="infoCard">
               <div class="cvCardHeader" style="color: rgb(236, 208, 182)">
-                  <h4>Informatics Developer &nbsp;<span class="cvJobDate">Aug 2019 – April 2021</span></h4>
-              </div>
-              <div class="cvCardHeader" style="color: rgb(236, 208, 182)">
-                <h4>Senior Developer &nbsp;<span class="cvJobDate">April 2021 – Present</span></h4>
+                  <h4>Informatics Developer &nbsp;<span class="cvJobDate">Aug 2019 – September 2021</span></h4>
               </div>
               <p>
                   Here I am primarily working with technologies like .Net Core (C#) on the back-end and Angular (Javascript) on the front-end, 
@@ -153,17 +156,6 @@
               </p>
               <p>
                   During my time here I took a course on the General Data Protection Regulation (GDPR) and Data Protection Act 2018 since I was required to have an in-depth understanding of these legislation.
-              </p>
-              
-              <br/><hr style="border: 1px solid #DBC8B8;"/><br/>
-
-              <div class="cvCardHeader" style="color: rgb(236, 208, 182)">
-                <h4>Medical Records Clerk &nbsp;<span class="cvJobDate">Jun 2017 – Aug 2017</span></h4>
-              </div>
-              <p>
-                  I was required to store and retrieve patient notes from around the hospital, trace them to the correct departments and prepare them in time for appointments. This means confirming all the 
-                  details for the patient inside are still correct by matching it to the system, putting together new folders if necessary and finding previous references from GP’s or other areas of the 
-                  hospital to place into the file.
               </p>
             </div>
         </div>
@@ -233,9 +225,13 @@
                   <li data-target="#thoughtWallCarousel" data-slide-to="0" class="active"></li>
                   <li data-target="#thoughtWallCarousel" data-slide-to="1"></li>
                   <li data-target="#thoughtWallCarousel" data-slide-to="2"></li>
+                  <li data-target="#thoughtWallCarousel" data-slide-to="3"></li>
               </ol>
               <div class="carousel-inner">
                 <div class="carouselImgs carousel-item active">
+                  <img class="d-block w-100" src="images/ThoughtWall/ReactHomepage.png">
+                </div>
+                <div class="carouselImgs carousel-item">
                   <img class="d-block w-100" src="images/ThoughtWall/HomePage.png">
                 </div>
                 <div class="carouselImgs carousel-item">
@@ -262,6 +258,7 @@
                     ideal project for me to test out any new features I want to play with, but also to show how much I have learnt and where I am
                     in my coding journey.
                 </p>
+                <p>The first image is a rewrite in React, the other 3 are from the angular SPA project.</p>
             </div>
           </div>
 
