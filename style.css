@@ -1,6 +1,8 @@
 body {
     text-align: center;
     font-family: Montserrat;
+    background-color: #333333;
+    color: white;
 }
 
 .infoCard {
@@ -8,8 +10,9 @@ body {
     margin-top: 30px;
     border-radius: 5px;
     text-align: left;
+    /* color: #94CEC0; */
     color: white;
-    background-color: rgba(52,58,64);
+    background-color: rgb(51 51 51);
     box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
 }
 
@@ -17,6 +20,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
+    color: white;
 }
 .cvJobDate {
     font-size: 14px; 
@@ -48,34 +52,40 @@ body {
     max-height: 400px;
 }
 
-.neon-glow {
-    border-radius: 50%;
+#picOfMe {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 80px;
 }
-
-.neon-glow:hover {
-    animation: githubBtn 1s infinite;
-    animation-direction: alternate;
+#picOfMe > img, #picOfMe > div {
+    margin: 10px;
+    margin-bottom: 40px;
+    width: 300px;
+    border-radius: 5px;
 }
-
-@keyframes githubBtn {
-    from {box-shadow: none;}
-    to {box-shadow: 0px 0px 40px 15px #0ff;}
-}
-
-#navbar {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
+#picOfMe > div > p {
+    position: relative;
+    top: 20%;
 }
 
 #NHS, #Others {
     text-align: left;
 }
 
+#techIcons {
+    height: 0;
+    position: relative;
+    top: 50px;
+}
+
 .techIcon {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.techIcon > img {
+    width: 75px;
 }
 
 ul {
@@ -101,9 +111,18 @@ ul {
     box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 766px) {
+    #picOfMe {
+        margin-bottom: 0px;
+    }
+    #picOfMe > div > p {
+        top: -50%;
+    }
+    #techIcons {
+        top: -50px;
+    }
     .techIcon > img {
-        width: 50px !important;
+        width: 40px;
     }
     .ytWrapper {
         width: 510px;

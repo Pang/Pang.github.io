@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
       <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130558659-1"></script>
     <script>
@@ -24,17 +25,27 @@
 </head>
 
 <body>
-    <div class="pos-f-t">
-        <nav class="navbar navbar-dark bg-dark justify-content-center">
-            <a target="_blank" href="https://github.com/Pang"><span class="material-icons neon-glow">code</span></a>
-        </nav>
-      </div>
-      
-    <img id="home" class="center-block mx-auto img-fluid" src="images/SiteLogo.png">
+    <img id="home" class="center-block mx-auto img-fluid" src="images/NameHeader.png">
 
-    <ul id="navbar" class="nav nav-tabs nav-fill">
+    <div id="picOfMe" class="container flex row mx-auto justify-content-center">
+      <img src="./images/me.jpg" />
+      <div>
+        <p>Web & Unity Dev</p>
+        <div id="techIcons" class="row container mx-auto mb-4 justify-content-center">
+          <div class="techIcon mx-2">
+            <img src="images/Techs/cSharpLogo.png" />
+          </div>
+          <div class="techIcon mx-2">
+            <img src="images/Techs/JsLogo.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="myTabContent">
+      <ul id="navbar" class="nav nav-tabs nav-fill mx-auto justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#introduction" role="tab" aria-selected="true">Home</a>
+          <a class="nav-link active" data-toggle="tab" href="#introduction" role="tab" aria-selected="true">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#CV" role="tab" aria-selected="false">CV</a>
@@ -45,51 +56,11 @@
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#Others" role="tab" aria-selected="false">Unity</a>
         </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-
+      </ul>
+      
         <!-- INTRODUCTION -->
         <div class="tab-pane fade show active container" id="introduction" role="tabpanel" aria-labelledby="introduction">
-            <div class="row container mx-auto mb-4 justify-content-between">
-                <div class="techIcon">
-                    <img style="width: 100px" src="images/Techs/netCore.jpg" />
-                </div>
-                <div class="techIcon">
-                    <img style="width: 100px;" src="images/Techs/Angular.jpg" />
-                </div>
-                <div class="techIcon">
-                    <img style="width: 100px;" src="images/Techs/Vue.jpg" />
-                </div>
-                <div class="techIcon">
-                  <img style="width: 100px" src="images/Techs/React.jpg" />
-              </div>
-                <div class="techIcon">
-                    <img style="width: 100px" src="images/Techs/Unity.jpg" />
-                </div>
-            </div>
-            <div class="infoCard">
-              <div class="cvCardHeader">
-                <h4>About me</h4>
-              </div>
-              <hr style="border: 1px solid #DBC8B8;"/>
-              <p>
-                  A full stack web developer profficient in .Net Core technologies and a few popular front-end Javascript framework.
-                  I currently work as a Software Developer / Dev Ops Engineer for the NHS, where my main focus is on the Nexus
-                  Electronic Patient Record. This is a multi-purpose system designed to improve upon the quality of healthcare alongside the hospitals 
-                  admission flow. It is important it has a clean interface for medical staff to understand the wards current state and the priority to
-                  which patients needs tending to. It also connects together the PAS (Patient Administration System) and other independant systems, 
-                  creating one space where medical and administration staff can access the information they need quickly.
-              </p>
-              <p>
-                  Second to this I am a Cofounder and developer of Copilot, this is a platform for Twitch data tools including but not limited to:
-                  profile design analytics, generated graphs to see how users interacted with streams, music detection to avoid DMCA copyright 
-                  strikes and more in the works. It has a free tier and a subscription model, but regardless of a users status they are able to join
-                  our discord and get round the clock customer service.
-              </p>
-              <p>
-                  Apart from web-development, I'm also pretty passionate about producing music, drawing, snowboarding, and making fun things in Unity :)
-              </p>
-            </div>
+
           <div class="infoCard">
             <div class="cvCardHeader">
               <h4>Technologies</h4>
@@ -288,51 +259,9 @@
                 <p>The first image is a rewrite in React, the other 3 are from the angular SPA project.</p>
             </div>
           </div>
+        </div>
 
           <br /><hr />
-
-          <div class="infoCard">
-            <div class="cvCardHeader">
-              <h4>Game Database &nbsp;<span class="cvJobDate">Find old and new games</span></h4>
-            </div>
-            <hr style="border: 1px solid #DBC8B8;"/>
-            <div id="ngGameDbCarousel" class="carouselStyle carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                  <li data-target="#ngGameDbCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#ngGameDbCarousel" data-slide-to="1"></li>
-                  <li data-target="#ngGameDbCarousel" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carouselImgs carousel-item active">
-                  <img class="d-block w-100" src="images/ngGameDb/homepage.jpg">
-                </div>
-                <div class="carouselImgs carousel-item">
-                  <img class="d-block w-100" src="images/ngGameDb/gamePics.jpg">
-                </div>
-                <div class="carouselImgs carousel-item">
-                  <img class="d-block w-100" src="images/ngGameDb/gameInfo.jpg">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#ngGameDbCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#ngGameDbCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div> <br />
-            <h4 style="text-align: center"><a style="color: rgb(236, 208, 182);" href="https://github.com/Pang/ng-game-db">NgGameDB Repo</a></h4>
-            <h4 style="text-align: center"><a style="color: rgb(236, 208, 182);" href="https://pang.github.io/ng-game-db/">NgGameDB Preview</a></h4>
-            <div class="text-center mt-3 pb-4">
-              <p class="text-left">
-                  This was part of an Angular course I took on to refresh my foundations of the Angular framework.
-                  I did this in part to improve my understanding, understand how others used the framework and also
-                  to see if this was a good stepping stone for my colleagues to upskill and get involved with in-house development.
-              </p>
-            </div>
-          </div>
-        </div>
 
         <!-- OTHER PROJECTS -->              
         <div class="tab-pane fade show mt-3 container" id="Others" role="tabpanel" aria-labelledby="Others">
