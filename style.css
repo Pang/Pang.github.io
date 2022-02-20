@@ -1,6 +1,7 @@
 body {
     text-align: center;
-    font-family: Montserrat;
+    font-family: Montserrat; /* consolas ?*/
+    background: url('./images/seamless_paper_texture.png') repeat;
 }
 
 .infoCard {
@@ -50,7 +51,7 @@ body {
     max-height: 400px;
 }
 #home {
-    margin-top: 100px;
+    margin-top: 90px;
 }
 #picOfMe {
     font-family: 'Shadows Into Light', cursive;
