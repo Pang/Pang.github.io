@@ -76,12 +76,12 @@ body {
 .glossyImg::before {
     content:'';
     position: absolute;
-    height:50%;    
+    height: 50%;
     width: 200%;
-    top:-35%;
-    right:-50%;
-    background:rgba(255,255,255,0.2);
-    transform:rotate(10deg);
+    top: -27%;
+    right: -50%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(12deg);
     z-index: 1;
 }
 
@@ -90,6 +90,7 @@ body {
 }
 #img3d {
     position: relative;
+    left: -17px;
     margin: 0 auto;
     width: 500px;
     transform: rotate3d(1, 90, 0, -20deg);
@@ -102,6 +103,12 @@ body {
 }
 #activeCopilotImg {
     display:block !important;
+}
+
+.projectDetailsContainer {
+    width: 500px;
+    padding: 30px 0;
+    font-weight: 600;
 }
 
 
