@@ -109,7 +109,7 @@ body {
     transform: rotate3d(1, 90, 0, -20deg);
     overflow: hidden;
     box-shadow: 0px 30px 40px -25px rgb(149 206 192);
-    max-width: 80%;
+    max-width: 90%;
 }
 #img3d.img3dReverse {
     transform: rotate3d(1, 90, 0, 20deg); 
@@ -117,7 +117,7 @@ body {
 }
 #img3d > img {
     width: 100%;
-    height: 225px;
+    height: 250px;
     display: none;
 }
 .activeImg {
@@ -177,13 +177,6 @@ ul {
     max-width: 1125px;
 }
 
-.material-icons {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 36px !important;
-    color: #f8f9fa;
-}
-
 .ytWrapper {
     margin-left:auto;
     margin-right:auto;
@@ -209,6 +202,9 @@ ul {
     }
     .techIcon > img {
         width: 40px;
+    }
+    #img3d > img {
+        height: 200px;
     }
     .ytWrapper {
         width: 510px;
