@@ -40,24 +40,42 @@
         </div>
       </div>
     </div>
+    <p>Site under construction</p>
 
-    <h2 class="my-5" >Currently Under Construction :)</h2>
-
-    <div class="d-flex flex-wrap-reverse justify-content-center align-items-center my-5">
-      <div class="projectDetailsContainer">
-        <p>As part of a team of 2, we developed this web application to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p> 
-        <p>We also added some nifty features to visualise their chat data too!</p>
+    <!-- Copilot project -->
+    <div class="py-5 mb-5" style="background-color:#333333">
+      <div class="d-flex flex-wrap-reverse justify-content-center align-items-center my-5">
+        <div class="projectDetailsContainer">
+          <h4 style="color: rgb(236, 208, 182)">Copilot</h4>
+          <p>As part of a team of 2, we developed this web application to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p> 
+          <p>We also added some nifty features to visualise their chat data too!</p>
+        </div>
+        <div id="img3dContainer">
+          <figure id="img3d" class="glossyImg">
+              <img id="activeCopilotImg" src="./images/CopilotCarousel/homepage.jpg" />
+              <img src="./images/CopilotCarousel/PiscesPixieProfile.jpg" />
+              <img src="./images/CopilotCarousel/piscesStream.jpg" />
+          </figure>
+        </div>
       </div>
-      <!-- Add  -->
-      <div id="img3dContainer">
-        <figure id="img3d" class="glossyImg">
-            <img id="activeCopilotImg" src="./images/CopilotCarousel/homepage.jpg" />
-            <img src="./images/CopilotCarousel/PiscesPixieProfile.jpg" />
-            <img src="./images/CopilotCarousel/piscesStream.jpg" />
-        </figure>
+      <br />
+    <!-- Copilot project -->
+      <div class="d-flex flex-wrap justify-content-center align-items-center my-5">
+        <div id="img3dContainer">
+          <figure id="img3d" style="transform: rotate3d(1, 90, 0, 20deg); left: 17px;">
+              <img id="activeCopilotImg" src="./images/ThoughtWall/ReactHomepage.png" />
+              <img src="./images/CopilotCarousel/PiscesPixieProfile.jpg" />
+              <img src="./images/CopilotCarousel/piscesStream.jpg" />
+          </figure>
+        </div>
+
+        <div class="projectDetailsContainer">
+          <h4 style="color: rgb(236, 208, 182)">ThoughtWall</h4>
+          <p>Thoughtwall was my first solo full-stack project that I've used as a playground to practice new technologies, designs & feature ideas</p> 
+          <p>It allows for booking appointments with other users, created threads (similar to reddit) and having realtime conversations using websockets</p>
+        </div>
       </div>
     </div>
-
 
     <div class="tab-content" id="myTabContent">
       <ul id="navbar" class="nav nav-tabs nav-fill mx-auto justify-content-center">
@@ -66,9 +84,6 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#CV" role="tab" aria-selected="false">CV</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#WebApps" role="tab" aria-selected="false">WebApps</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#Others" role="tab" aria-selected="false">Unity</a>
@@ -83,28 +98,9 @@
               <h4>Technologies</h4>
             </div>
             <hr style="border: 1px solid #DBC8B8;"/>
-            <span style="font-size: 14px">Angular-v12, Vue-v2, HTML/CSS, Javascript, Typescript, RXJS, DotNet Core, WebAPI’s, LINQ, EntityFramework, SQL, MSSQLSMS, SignalR, Websockets, HL7, Integration, Visual Studio, IIS, Azure</span><br /><br />
-            <h4 class="cvCardHeader" style="color: #DBC8B8">Angular (v12)</h4>
-            <p>
-              My experience with Angular has been daily for over 2 years professionally at the NHS. I’ve used a lot of out of the box tools such as Karma/Jasmine and protractor for unit & e2e testing, RXJS for observer patterns. Finally I have used it for a couple smaller personal projects like a forum with an appointment booking functionality and a frontend for a games database library (using rapidAPI) to sort games by latest or highest rated.
-            </p>
-            <h4 class="cvCardHeader" style="color: #DBC8B8">VueJS (v2)</h4>
-            <p>
-              Vue is the framework use for the website I Co-founded https://copilot.gg which has been running since summer 2020. The website connects web-sockets to the server (SignalR Hub) to receive instant notifications if other users have interacted with your profile or a processed job has finished. It's also currently hosted on Azure, which we have used to track performance spikes and make improvements to the frontend such as lazyload scrolling and debouncing.
-            </p>
-            <h4 class="cvCardHeader" style="color: #DBC8B8">React (v17)</h4>
-            <p>
-              I have a few small projects and github repositories containing React workflow as well as currently working on a frontend rework of my Thoughtwall App. More to come here soon!
-            </p>
-            <h4 class="cvCardHeader" style="color: #DBC8B8">.Net Core (v3.1)</h4>
-            <p>
-              I use .Net both for my full time job at the hospital and for Copilot.gg to create all of my REST API’s, together with Entity Framework & SQL (with both code-first and database-first approaches), using LINQ to acquire data and finally for handling JWT requests so users can log into the sites I have created and browse content intended for them securely.
-            </p>
-            <h4 class="cvCardHeader" style="color: #DBC8B8">SQL</h4>
-            <p>
-              I have experience making queries, creating stored procedures, tables and performing inner/outer joins on them.
-              I also use MSSQLSMS as the interface for performing most of these actions.
-            </p>
+            <span style="font-size: 14px">
+              Javascript/Typescript, C#, React, Angular2+, Vue2, HTML/CSS, .NET, MVC, Blazor/Razor, LINQ, EntityFramework, MSSQLSMS, SignalR, Visual Studio, IIS, Azure, Unity
+            </span><br />
           </div>
         </div>
         
@@ -173,109 +169,6 @@
                   During my time here I took a course on the General Data Protection Regulation (GDPR) and Data Protection Act 2018 since I was required to have an in-depth understanding of these legislation.
               </p>
             </div>
-        </div>
-
-        <!-- Copilot -->
-        <div class="tab-pane fade show mt-3 container" id="WebApps" role="tabpanel" aria-labelledby="WebApps">
-          <div class="infoCard">
-            <div class="cvCardHeader">
-              <h4>Copilot &nbsp;<span class="cvJobDate">Twitch Tools and Data Analytics</span></h4>
-            </div>
-            <hr style="border: 1px solid #DBC8B8;"/>
-            <div id="carouselCopilot" class="carouselStyle carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                  <li data-target="#carouselCopilot" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselCopilot" data-slide-to="1"></li>
-                  <li data-target="#carouselCopilot" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carouselImgs carousel-item active">
-                  <img class="d-block w-100" src="images/CopilotCarousel/homepage.jpg">
-                </div>
-                <div class="carouselImgs carousel-item">
-                  <img class="d-block w-100" src="images/CopilotCarousel/PiscesPixieProfile.jpg">
-                </div>
-                <div class="carouselImgs carousel-item">
-                  <img class="d-block w-100" src="images/CopilotCarousel/piscesStream.jpg">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselCopilot" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselCopilot" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div> <br />
-            <h4 style="text-align: center;"><a style="color: rgb(236, 208, 182)" href="https://copilot.gg/">https://copilot.gg/</a></h4>
-            <div class="text-center mt-3 pb-4">
-                <p class="text-left">
-                    I am a cofounder and developer of Copilot, which is a collection of data tools for Twitch as 
-                    well as a place to collaborate and gain insights with other streamers. The web application  
-                    consists of all the following features: Users can browse chat activity in a simple 
-                    and easy-to-use graph to see your best moments based on emotes and phrases used.
-                </p>
-                <p class="text-left">
-                    It also allows you to scan your channel for accessibility issues such as colorblindness by scanning colour 
-                    schemes or patterns whilst also giving your design a score. One if it's main features is allowing streamer to
-                    maintain their copyright standing within livestreams and creative content in a trackable dashboard.
-                </p>
-                <p class="text-left">
-                    Finally, you can do all of this collaboritively and invite other users, managers, or editors to be a
-                    part of your profile and take advantage of our features.
-                </p>
-            </div>
-          </div>
-
-          <br /><hr />
-          
-          <div class="infoCard">
-            <div class="cvCardHeader">
-              <h4>ThoughtWall &nbsp;<span class="cvJobDate">Online Forum /w Realtime Chat</span></h4>
-            </div>
-            <hr style="border: 1px solid #DBC8B8;"/>
-            <div id="thoughtWallCarousel" class="carouselStyle carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                  <li data-target="#thoughtWallCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#thoughtWallCarousel" data-slide-to="1"></li>
-                  <li data-target="#thoughtWallCarousel" data-slide-to="2"></li>
-                  <li data-target="#thoughtWallCarousel" data-slide-to="3"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carouselImgs carousel-item active">
-                  <img class="d-block w-100" src="images/ThoughtWall/ReactHomepage.png">
-                </div>
-                <div class="carouselImgs carousel-item">
-                  <img class="d-block w-100" src="images/ThoughtWall/HomePage.png">
-                </div>
-                <div class="carouselImgs carousel-item">
-                  <img class="d-block w-100" src="images/ThoughtWall/ThreadPage.png">
-                </div>
-                <div class="carouselImgs carousel-item">
-                  <img class="d-block w-100" src="images/ThoughtWall/Bookings1.png">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#thoughtWallCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#thoughtWallCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div> <br />
-            <h4 style="text-align: center"><a style="color: rgb(236, 208, 182);" href="https://github.com/Pang/ThoughtWall">ThoughtWall Repo</a></h4>
-            <div class="text-center mt-3 pb-4">
-                <p class="text-left">
-                    This was my first full-stack project I worked on when I started teaching myself to code. I have revisited it many times since 
-                    with refactors and updates to use the latest version of the frameworks it relies on. The main reason for this is because it's an
-                    ideal project for me to test out any new features I want to play with, but also to show how much I have learnt and where I am
-                    in my coding journey.
-                </p>
-                <p>The first image is a rewrite in React, the other 3 are from the angular SPA project.</p>
-            </div>
-          </div>
         </div>
 
         <!-- OTHER PROJECTS -->              
