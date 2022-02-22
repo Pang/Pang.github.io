@@ -46,32 +46,36 @@
     <div class="py-5 mb-5" style="background-color:#333333">
       <div class="d-flex flex-wrap-reverse justify-content-center align-items-center my-5">
         <div class="projectDetailsContainer">
-          <h4 style="color: rgb(236, 208, 182)">Copilot</h4>
-          <p>As part of a team of 2, we developed this web application in VueJs & DotNet Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p> 
+          <h4 style="color: rgb(236, 208, 182)">Twitch Tools</h4>
+          <p>As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p> 
           <p>We also added some nifty features to visualise their chat data too!</p>
         </div>
         <div id="img3dContainer">
           <figure id="img3d" class="glossyImg">
-              <img id="activeCopilotImg" src="./images/CopilotCarousel/homepage.jpg" />
+              <img class="activeImg" src="./images/CopilotCarousel/homepage.jpg" />
               <img src="./images/CopilotCarousel/PiscesPixieProfile.jpg" />
               <img src="./images/CopilotCarousel/piscesStream.jpg" />
+              <div id="nextIcon" class="imgIcons" onclick="changeImg(this)">&#10148;</div>
+              <div id="zoomIcon" class="imgIcons" onclick="zoomImg(this)">&#9974;</div>
           </figure>
         </div>
       </div>
       <br />
-    <!-- Copilot project -->
+
+      <!-- Copilot project -->
       <div class="d-flex flex-wrap justify-content-center align-items-center my-5">
         <div id="img3dContainer">
-          <figure id="img3d" style="transform: rotate3d(1, 90, 0, 20deg); left: 17px;">
-              <img id="activeCopilotImg" src="./images/NPR/nprDiagram.png" />
-              <img src="./images/CopilotCarousel/PiscesPixieProfile.jpg" />
-              <img src="./images/CopilotCarousel/piscesStream.jpg" />
+          <figure id="img3d" class="img3dReverse">
+            <img class="activeImg" src="./images/NPR/nprDiagram.png" />
+            <img src="./images/NPR/nprDiagramBeds.png" />
+            <div id="nextIcon" class="imgIcons" onclick="changeImg(this)">&#10148;</div>
+            <div id="zoomIcon" class="imgIcons" onclick="zoomImg(this)">&#9974;</div>
           </figure>
         </div>
 
         <div class="projectDetailsContainer">
           <h4 style="color: rgb(236, 208, 182)">Nexus (EPR)</h4>
-          <p>Nexus is an Electronic Patient Record, built in Angular2+ & DotNet Core, used for admitting patients and tracking their journey through a hospital.</p>
+          <p>Nexus is an Electronic Patient Record, built in Angular2+ & .Net Core, used for admitting patients and tracking their journey through a hospital.</p>
           <p>It's main purpose is to remove the need of paper records being stored and traced, whilst allowing the medical and clinical staff to provide the best care with the necessary information needed.</p>
         </div>
       </div>
@@ -211,6 +215,9 @@
     <br />
     <hr />
     <p>&copy; Ryan Beckett - 2022</p>
+
+    <script src="script.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
@@ -221,5 +228,4 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 </body>
-
 </html>
