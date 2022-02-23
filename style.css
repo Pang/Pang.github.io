@@ -128,6 +128,14 @@ body {
 #img3d:hover {
     animation: 0.3s ease-in 0s forwards rotateAround;
 }
+@keyframes rotateAroundGloss {
+    from {transform: rotate(10deg);}
+    to {transform: rotate(0deg);}
+}
+#img3d:hover.glossyImg:before {
+    animation: 0.3s ease-in 0s forwards rotateAroundGloss;
+}
+
 @keyframes rotateAroundReverse {
     from {transform: rotate3d(1, 90, 0, 20deg)}
     to {transform: rotate3d(1, 90, 0, 0deg)}
@@ -169,13 +177,15 @@ body {
     padding-bottom:5px;
     font-size:24px;
 }
+#featuredProjects {
+    background: url('./images/seamless_paper_texture_dark.png') repeat;
+}
 
 .projectDetailsContainer {
     width: 500px;
     padding: 30px 0;
     color: white;
 }
-
 
 #NHS, #Others {
     text-align: left;
