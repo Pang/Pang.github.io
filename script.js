@@ -1,5 +1,4 @@
-function changeImg(el)
-{
+function changeImg(el) {
     let imgs = el.parentElement.getElementsByTagName('img');
     let noActive;
     for (let i = 0; i < imgs.length; i++) {
@@ -10,8 +9,7 @@ function changeImg(el)
     imgs[noActive].className = 'activeImg';
 }
 
-function zoomImg(el)
-{
+function zoomImg(el) {
     let imgs = el.parentElement.getElementsByTagName('img');
     let imgFocusEl;
     for (let i = 0; i < imgs.length; i++) {
@@ -20,4 +18,14 @@ function zoomImg(el)
         }
     }
     window.open(window.location.href + imgFocusEl.getAttribute('src').slice(1));
+}
+
+function openModal(modalId) {
+    let modal = document.getElementById(modalId);
+    modal.style.display = "block";
+}
+
+function closeDialog(modalId) {
+    let modal = document.getElementById(modalId);
+    modal.style.display = "none";
 }

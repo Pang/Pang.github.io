@@ -47,7 +47,9 @@
         <div class="projectDetailsContainer">
           <h4 style="color: rgb(236, 208, 182)">Twitch Tools</h4>
           <p>As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p> 
-          <p>We also added some nifty features to visualise their chat data too!</p>
+          <p>We also added some nifty features to visualise their chat data too! 
+            <a class="dialoglink" onclick="openModal('copilotVidWrapper')">Click Here</a> for a tour
+          </p>
         </div>
         <div id="img3dContainer">
           <figure id="img3d" class="glossyImg">
@@ -61,7 +63,7 @@
       </div>
       <br />
 
-      <!-- Copilot project -->
+      <!-- NPR project -->
       <div class="d-flex flex-wrap justify-content-center align-items-center my-5">
         <div id="img3dContainer">
           <figure id="img3d" class="img3dReverse">
@@ -212,6 +214,15 @@
     </div>
 
     <br />
+
+    <!-- dialogs -->
+    <div id="copilotVidWrapper" class="dialogWrapper">
+      <dialog open id="copilotVid">
+        <div class="dialogCloseBtn" onclick="closeDialog('copilotVidWrapper')">X</div>
+        <video controls src="./videos/copilotTour.mp4" type="video/mp4"></video>
+      </dialog>
+    </div>
+
     <hr />
     <p>&copy; Ryan Beckett - 2022</p>
 
