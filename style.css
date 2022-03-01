@@ -79,7 +79,7 @@ body {
 }
 
 @keyframes slideIn {
-    from {margin-left: 375px;}
+    from {margin-left: 450px;}
     to {margin-left: 0px;}
 }
 .activeImg {

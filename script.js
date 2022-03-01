@@ -1,3 +1,14 @@
+(function() {
+    // your page initialization code here
+    // the DOM will be available here
+    let activeImgs = document.getElementsByClassName('activeImg');
+    setInterval(function() {
+        for (let i = 0; i < activeImgs.length; i++) {
+            changeImg(activeImgs[i]);
+        }
+    }, 5000);
+ })();
+
 function changeImg(el) {
     let imgs = el.parentElement.getElementsByTagName('img');
     let noActive;
