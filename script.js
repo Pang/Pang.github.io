@@ -28,5 +28,7 @@ function openModal(modalId) {
 
 function closeDialog(modalId) {
     let modal = document.getElementById(modalId);
+    let video = modal.getElementsByTagName('video')[0];
+    if (video) video.pause();
     modal.style.display = "none";
 }
