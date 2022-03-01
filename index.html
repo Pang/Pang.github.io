@@ -41,8 +41,11 @@
       </div>
     </div>
 
-    <!-- Copilot project -->
+    <!--------------------------->
+    <!-- Featured Web Projects -->
+    <!--------------------------->
     <div id="featuredProjects" class="py-5 mb-5">
+      <!-- Copilot project -->
       <div class="d-flex flex-wrap-reverse justify-content-center align-items-center my-5">
         <div class="projectDetailsContainer">
           <h4 style="color: rgb(236, 208, 182)">Twitch Tools</h4>
@@ -77,115 +80,132 @@
         <div class="projectDetailsContainer">
           <h4 style="color: rgb(236, 208, 182)">Nexus (EPR)</h4>
           <p>Nexus is an Electronic Patient Record, built in Angular2+ & .Net Core, used for admitting patients and tracking their journey through a hospital.</p>
-          <p>It's main purpose is to remove the need of paper records being stored and traced, whilst allowing the medical and clinical staff to provide the best care with the necessary information needed.</p>
+          <p>
+            It's main purpose is to remove the need of paper records being stored and traced, whilst allowing the medical and clinical staff to provide the 
+            best care with the necessary information needed.
+          </p>
         </div>
       </div>
     </div>
 
-    <div class="tab-content" id="myTabContent">
-      <ul id="navbar" class="nav nav-tabs nav-fill mx-auto justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#CV" role="tab" aria-selected="false">CV</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#Others" role="tab" aria-selected="false">Unity</a>
-        </li>
-      </ul>
-      
-        <!-- CV HISTORY -->
-        <div class="tab-pane fade show mt-3 container cvBio active" id="CV" role="tabpanel" aria-labelledby="CV">
-          <div>
-            Javascript/Typescript, C#, React, Angular2+, Vue2, HTML/CSS, .NET, MVC, Blazor/Razor, LINQ, EntityFramework, MSSQLSMS, SignalR, Visual Studio, IIS, Azure, Unity
-          </div>
-          <hr class="my-3"/>
+    <!---------------->
+    <!-- References -->
+    <!---------------->
+    <section id="referenceSection">
+      <div class="referenceItem">
+        <h5><b>Full Name</b></h5>
+        <p><i>
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </i></p>
+      </div>
+      <div class="referenceItem">
+        <h5><b>Full Name</b></h5>
+        <p><i>
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </i></p>
+      </div>
+      <div class="referenceItem">
+        <h5><b>Full Name</b></h5>
+        <p><i>
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </i></p>
+      </div>
+    </section>
+    <br />
 
-          <h3>Pastest, UK</h3>
-            <div class="infoCard">
-              <div class="cvCardHeader" style="color: rgb(236, 208, 182)">
-                  <h4>Front-End Developer &nbsp;<span class="cvJobDate">Oct 2021 – Present</span></h4>
-              </div>
-              <p>
-                  At this company, my main role is front-end developer. Features are planned as a team, then my role is to turn those specifications into a
-                  complete interface and help build the API/Models alongside it. One of my current main priorities is the Microlearning feature which I have
-                  been lucky enough to be a part of at the beginning of development for it.
-              </p>
-              <p>
-                  Daily scrums and Agile principles are actively practiced and technology used includes MVC, React, Git & Azure.
-              </p>
-            </div>
-
-            <br/>
-
-            <h3>Blackpool Teaching Hospital, UK</h3>
-            <div class="infoCard">
-              <div class="cvCardHeader" style="color: rgb(236, 208, 182)">
-                  <h4>Full-Stack Developer &nbsp;<span class="cvJobDate">Aug 2019 – September 2021</span></h4>
-              </div>
-              <p>
-                Working with technologies like .Net and Angular, I have been a part of a great team creating web applications which aids the work of the medical and 
-                clinical staff at Blackpool Victoria hospital.
-              </p>
-              <p>
-                My main focus was on an in-house Electronic Patient Record known as Nexus, which aggregated together many third party systems as well as having it's own 
-                functionality for admitting a patient, following their journey of care and maintaining an overview of each ward in the hospital - allowing for faster, 
-                more reliable information retrieval, quicker nurse and doctor handovers as well as more efficient patient flow, allowing for better placement of patients 
-                to wards more suited to their needs.
-              </p>
-            </div>
-        </div>
-
-        <!-- OTHER PROJECTS -->              
-        <div class="tab-pane fade show mt-3 container" id="Others" role="tabpanel" aria-labelledby="Others">
-          <div class="infoCard">
-            <div class="cvCardHeader">
-              <h4>Procedural Terrain Generation</h4>
-            </div>
-            <hr style="border: 1px solid #DBC8B8;"/>
-            <p class="my-4">
-              For this project I began with a simple mesh generator, 100 x 100 vertices - and since you need 3 vertices 
-              to create a triangle and 2 triangles to create a square, I ended up multiplying this by another 6 to give me 60,000
-              vertices. This still wasn't enough to create the island size I was after so I scaled the mesh out by 50. Since I had
-              set out to create a low-poly look, hence also flat-shading the map, this worked out quite well!
-            </p>
-            <p>
-              The fun part was playing with perlin noise to get the desired landscape. I created a 'fall-off' map gradient which was subtracted from
-              the original perlin noise height, lowering the edges so it would be presented as an island instead of suddenly appearing to fall off the edge. 
-              I created the shader for the land using Unity's PBR graph and set the Albedo to the Vertex Color of the Gradient property that belonged 
-              to the Mesh Script, that way I could use the height of each vertices to define beaches, grass and mountain-tops.
-            </p>
-
-            <div class="ytWrapper">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wmaskscrRvM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <hr class="my-5" />
-          
-          <div class="infoCard">
-            <div class="cvCardHeader">
-              <h4>ShieldMaidens</h4>
-            </div>
-            <hr style="border: 1px solid #DBC8B8;"/>
-            <p class="my-4">
-                This is an endless runner game that is never the same twice! With a collection of map parts that are randomized 
-                as you make your way through a medieval fantasy world, you will have to think on your feet and react quickly to the environment
-                laid out before you in order to get as far through these lands as you possibly can. Your arsenal includes just a shield 
-                and yourself, block arrows and dash your way across traps and water!
-            </p>
-            <p class="my-4">
-              This was my first project in Unity and I chose this as it involved pulling together multiple skillsets. Having just picked up
-              a drawing pad and learning what Unity was capable off, this seemed like a great opportunity for learning and creating.
-            </p>
-            <div class="ytWrapper">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BKQ04dLX_6w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+    <!--------------------->
+    <!-- Unity Projects  -->
+    <!--------------------->
+    <div id="featuredProjects" class="py-5 mb-5">
+      <!-- Procedural Terrain  -->
+      <div class="d-flex flex-wrap justify-content-center align-items-center my-5">
+        <div id="img3dContainer">
+          <div class="ytWrapper">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wmaskscrRvM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
+        <div class="projectDetailsContainer">
+          <h4 style="color: rgb(236, 208, 182)">Procedural Terrain</h4>
+          <p class="p-2 px-4">
+            This project was a learning oppurtunity for me to understand how perlin noise was used to generate different
+            maps. In doing so I learnt a lot and decided to share my findings through a <a class="dialoglink" href="https://www.youtube.com/watch?v=cLs3CGNV120" target=”_blank”>YouTube tutorial</a>
+          </p>
+        </div>
+      </div>
+      <br />
+      <!-- ShieldMaidens -->
+      <div class="d-flex flex-wrap-reverse justify-content-center align-items-center my-5">
+        <div class="projectDetailsContainer">
+          <h4 style="color: rgb(236, 208, 182)">ShieldMaidens</h4>
+          <p class="p-2 px-4">
+            ShieldMaidens is a solo/co-op endless runner where you have to fight and block your way through enemies, 
+            but be on your toes as you also may encounter more elite enemies who require quick wits and reactions to defeat.
+          </p>
+        </div>
+        <div id="img3dContainer">
+          <div class="ytWrapper">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BKQ04dLX_6w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>  
+    
+    <!---------------->
+    <!------ CV ------>
+    <!---------------->
+    <div class="container">
+      <hr class="my-3"/>
+      <div>
+        Javascript/Typescript, C#, React, Angular2+, Vue2, HTML/CSS, .NET, MVC, Blazor/Razor, LINQ, EntityFramework, MSSQLSMS, SignalR, Visual Studio, IIS, Azure, Unity
+      </div>
+      <hr class="my-3 mb-5"/>
+
+      <h3>Pastest, UK</h3>
+      <div class="infoCard">
+        <div class="cvCardHeader" style="color: rgb(236, 208, 182)">
+            <h4>Front-End Developer &nbsp;<span class="cvJobDate">Oct 2021 – Present</span></h4>
+        </div>
+        <p>
+            At this company, my main role is front-end developer. Features are planned as a team, then my role is to turn those specifications into a
+            complete interface and help build the API/Models alongside it. One of my current main priorities is the Microlearning feature which I have
+            been lucky enough to be a part of at the beginning of development for it.
+        </p>
+        <p>
+            Daily scrums and Agile principles are actively practiced and technology used includes MVC, React, Git & Azure.
+        </p>
+      </div>
+
+      <br/>
+
+      <h3>Blackpool Teaching Hospital, UK</h3>
+      <div class="infoCard">
+        <div class="cvCardHeader" style="color: rgb(236, 208, 182)">
+            <h4>Full-Stack Developer &nbsp;<span class="cvJobDate">Aug 2019 – September 2021</span></h4>
+        </div>
+        <p>
+          Working with technologies like .Net and Angular, I have been a part of a great team creating web applications which aids the work of the medical and 
+          clinical staff at Blackpool Victoria hospital.
+        </p>
+        <p>
+          My main focus was on an in-house Electronic Patient Record known as Nexus, which aggregated together many third party systems as well as having it's own 
+          functionality for admitting a patient, following their journey of care and maintaining an overview of each ward in the hospital - allowing for faster, 
+          more reliable information retrieval, quicker nurse and doctor handovers as well as more efficient patient flow, allowing for better placement of patients 
+          to wards more suited to their needs.
+        </p>
+      </div>
     </div>
 
     <br />
 
-    <!-- dialogs -->
+    <!------------->
+    <!-- Dialogs -->
+    <!------------->
     <div id="copilotVidWrapper" class="dialogWrapper">
       <dialog open id="copilotVid">
         <div class="dialogCloseBtn" onclick="closeDialog('copilotVidWrapper')">X</div>
