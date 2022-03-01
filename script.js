@@ -7,6 +7,7 @@ function changeImg(el) {
     }
     noActive = noActive >= imgs.length - 1 ? 0 : noActive + 1;
     imgs[noActive].className = 'activeImg';
+    imgs[noActive == 0 ? imgs.length - 1 : noActive - 1].className = 'lastImg';
 }
 
 function zoomImg(el) {

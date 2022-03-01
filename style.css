@@ -83,9 +83,23 @@ body {
     to {margin-left: 0px;}
 }
 .activeImg {
-    animation: 0.8s ease-in 0s forwards slideIn !important;
+    animation: 0.8s linear 0s forwards slideIn !important;
+    display: block !important;
 }
-
+@keyframes slideOut {
+    from {
+        right: 0px;
+    }
+    to {
+        right: 450px;
+    }
+}
+.lastImg {
+    animation: 0.8s linear 0s forwards slideOut !important;
+    position: absolute;
+    display: block !important;
+    top: 0;
+}
 #img3d {
     position: relative;
     left: -10px;
@@ -128,9 +142,6 @@ body {
     width: 100%;
     height: 250px;
     display: none;
-}
-.activeImg {
-    display: block !important;
 }
 .imgIcons {
     padding: 10px;
