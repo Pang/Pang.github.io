@@ -1,0 +1,41 @@
+@keyframes homeBannerIntro {
+    from {top: 100px; opacity: 0;}
+    to {top: 0px; opacity: 1;}
+}
+
+/* Image transitions */
+@keyframes slideIn {
+    from {margin-left: 450px;}
+    to {margin-left: 0px;}
+}
+
+@keyframes slideOut {
+    from {
+        right: 0px;
+    }
+    to {
+        right: 450px;
+    }
+}
+
+@keyframes rotateAround {
+    from {transform: rotate3d(1, 90, 0, -20deg)}
+    to {transform: rotate3d(1, 90, 0, 0deg)}
+}
+
+@keyframes rotateAroundGloss {
+    from {transform: rotate(10deg);}
+    to {transform: rotate(0deg);}
+}
+
+@keyframes rotateAroundReverse {
+    from {transform: rotate3d(1, 90, 0, 20deg)}
+    to {transform: rotate3d(1, 90, 0, 0deg)}
+}
+
+/* tech icons */
+@keyframes blowUp {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.1);}
+    100% { transform: scale(1);}
+}

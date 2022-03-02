@@ -1,0 +1,30 @@
+@media only screen and (max-width: 766px) {
+    #home {
+        margin-top: 20px;
+    }
+    #picOfMe {
+        margin-bottom: 0px;
+    }
+    #picOfMe > div > p {
+        top: -50%;
+    }
+    #techIcons {
+        top: -50px;
+    }
+    .techIcon > img {
+        width: 40px;
+    }
+    #img3d > img {
+        height: 200px;
+    }
+    #carouselShieldmaiden {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .ytWrapper {
+        height: 165px;
+        width: 300px;
+    }
+}

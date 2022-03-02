@@ -8,7 +8,12 @@
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/dialogs.css">
+    <link rel="stylesheet" href="styles/mobile.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -55,7 +60,7 @@
           </p>
         </div>
         <div id="img3dContainer">
-          <figure id="img3d" class="glossyImg">
+          <figure id="img3d" class="imgShadow glossyImg">
               <img class="activeImg" src="./images/CopilotCarousel/homepage.jpg" />
               <img src="./images/CopilotCarousel/PiscesPixieProfile.jpg" />
               <img class="lastImg" src="./images/CopilotCarousel/piscesStream.jpg" />
@@ -69,7 +74,7 @@
       <!-- NPR project -->
       <div class="d-flex flex-wrap justify-content-center align-items-center my-5">
         <div id="img3dContainer">
-          <figure id="img3d" class="img3dReverse">
+          <figure id="img3d" class="imgShadow img3dReverse">
             <img class="activeImg" src="./images/NPR/nprDiagram.png" />
             <img src="./images/NPR/nprDiagramBeds.png" />
             <div id="nextIcon" class="imgIcons" onclick="changeImg(this)">&#10148;</div>
@@ -99,7 +104,7 @@
     <div id="featuredProjects" class="py-5 mb-5">
       <!-- Procedural Terrain  -->
       <div class="d-flex flex-wrap justify-content-center align-items-center my-5">
-        <div id="img3dContainer">
+        <div id="img3dContainer" class="imgShadow">
           <div class="ytWrapper">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wmaskscrRvM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -123,7 +128,7 @@
           </p>
           <p>You can get a link to games store-page <a class="dialoglink" href="https://pangdev.itch.io/shieldmaidens" target="blank">Here!</a></p>
         </div>
-        <div id="img3dContainer">
+        <div id="img3dContainer" class="imgShadow">
           <div class="ytWrapper">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BKQ04dLX_6w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -137,7 +142,7 @@
     <div class="container">
       <h3>Pastest, UK</h3>
       <div class="infoCard">
-        <div class="cvCardHeader" style="color: rgb(236, 208, 182)">
+        <div class="cvCardHeader">
             <h4>Front-End Developer &nbsp;<span class="cvJobDate">Oct 2021 – Present</span></h4>
         </div>
         <p>
@@ -154,7 +159,7 @@
 
       <h3>Blackpool Teaching Hospital, UK</h3>
       <div class="infoCard">
-        <div class="cvCardHeader" style="color: rgb(236, 208, 182)">
+        <div class="cvCardHeader">
             <h4>Full-Stack Developer &nbsp;<span class="cvJobDate">Aug 2019 – September 2021</span></h4>
         </div>
         <p>
@@ -169,14 +174,12 @@
         </p>
       </div>
 
-      <hr class="my-3 mt-5"/>
-      <div>
-        Javascript/Typescript, C#, React, Angular2+, Vue2, HTML/CSS, .NET, MVC, Blazor/Razor, LINQ, EntityFramework, MSSQLSMS, SignalR, Visual Studio, IIS, Azure, Unity
-      </div>
-      <hr class="my-3"/>
-    </div>
 
-    <br />
+    </div>
+    <hr class="my-3 mt-5"/>
+    <div>
+      HTML/CSS, Javascript/Typescript, C#, .NET, MVC, Blazor/Razor, LINQ, EntityFramework, MSSQLSMS, SignalR, Visual Studio, IIS, Azure, Unity, React, Angular2+, Vue2,
+    </div>
 
     <!------------->
     <!-- Dialogs -->

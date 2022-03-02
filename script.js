@@ -64,7 +64,7 @@ function openRefModal(modalId, refId) {
     const textArea = document.getElementById('referenceInFull');
     const refSelected = references.find(x => x.id == refId);
     textArea.innerHTML = '<h4><b>' + refSelected.fullName + '</b></h4>';
-    textArea.innerHTML +='<p>"' +  refSelected.longVersion + '"</p>';
+    textArea.innerHTML +='<p>' +  refSelected.longVersion + '</p>';
 }
 
 // close a modal using ID
