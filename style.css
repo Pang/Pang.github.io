@@ -283,6 +283,9 @@ ul {
     margin-right: auto;
 }
 
+#referenceDialogWrapper {
+    display: none;
+}
 .referenceItem {
     width: 400px;
     padding: 30px;
@@ -290,6 +293,9 @@ ul {
 #referenceDialog {
     width:800px;
     max-width:95%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px rgb(0 0 0 / 50%);
 }
 
 /* Mobile CSS */

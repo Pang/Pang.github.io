@@ -63,7 +63,7 @@ function openRefModal(modalId, refId) {
     modal.style.display = "block";
     const textArea = document.getElementById('referenceInFull');
     const refSelected = references.find(x => x.id == refId);
-    textArea.innerHTML = '<h4><b>' + refSelected.name + '</b></h4>';
+    textArea.innerHTML = '<h4><b>' + refSelected.fullName + '</b></h4>';
     textArea.innerHTML +='<p>"' +  refSelected.longVersion + '"</p>';
 }
 
