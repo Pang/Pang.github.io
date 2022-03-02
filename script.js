@@ -1,14 +1,32 @@
 (function() {
-    // your page initialization code here
-    // the DOM will be available here
+    autoScrollImgsEnabled();
+    fillReferences();
+ })();
+
+// place references
+function fillReferences() {
+    const refSection = document.getElementById('referenceSection');
+    for (let i = 0; i < references.length; i++) {
+        let ref = '<div class="referenceItem">' +
+        '<h5><b>' + references[i].fullName +'</b></h5>' +
+        '<p><i>"' + references[i].shortVersion + '"</i></p>' +
+        '<p><a class="dialoglink" onclick="openRefModal(`referenceDialogWrapper`,' + references[i].id + ')"><b>See More</b></a></p>' +
+        '</div>';
+        refSection.innerHTML += ref;
+    }
+}
+
+// set img auto scroll
+function autoScrollImgsEnabled() {
     let activeImgs = document.getElementsByClassName('activeImg');
     setInterval(function() {
         for (let i = 0; i < activeImgs.length; i++) {
             changeImg(activeImgs[i]);
         }
     }, 5000);
- })();
+}
 
+// manually change to next img
 function changeImg(el) {
     let imgs = el.parentElement.getElementsByTagName('img');
     let noActive;
@@ -21,6 +39,7 @@ function changeImg(el) {
     imgs[noActive == 0 ? imgs.length - 1 : noActive - 1].className = 'lastImg';
 }
 
+// open image full size in new tab
 function zoomImg(el) {
     let imgs = el.parentElement.getElementsByTagName('img');
     let imgFocusEl;
@@ -32,11 +51,23 @@ function zoomImg(el) {
     window.open(window.location.href + imgFocusEl.getAttribute('src').slice(1));
 }
 
+// open a modal using ID
 function openModal(modalId) {
     let modal = document.getElementById(modalId);
     modal.style.display = "block";
 }
 
+// open a modal using ID
+function openRefModal(modalId, refId) {
+    let modal = document.getElementById(modalId);
+    modal.style.display = "block";
+    const textArea = document.getElementById('referenceInFull');
+    const refSelected = references.find(x => x.id == refId);
+    textArea.innerHTML = '<h4><b>' + refSelected.name + '</b></h4>';
+    textArea.innerHTML +='<p>"' +  refSelected.longVersion + '"</p>';
+}
+
+// close a modal using ID
 function closeDialog(modalId) {
     let modal = document.getElementById(modalId);
     let video = modal.getElementsByTagName('video')[0];

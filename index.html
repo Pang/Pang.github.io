@@ -88,35 +88,9 @@
       </div>
     </div>
 
-    <!---------------->
     <!-- References -->
-    <!---------------->
-    <section id="referenceSection">
-      <div class="referenceItem">
-        <h5><b>Full Name</b></h5>
-        <p><i>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </i></p>
-      </div>
-      <div class="referenceItem">
-        <h5><b>Full Name</b></h5>
-        <p><i>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </i></p>
-      </div>
-      <div class="referenceItem">
-        <h5><b>Full Name</b></h5>
-        <p><i>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </i></p>
-      </div>
-    </section>
+    <!-- Filled from script -->
+    <section id="referenceSection"></section>
     <br />
 
     <!--------------------->
@@ -214,10 +188,18 @@
       </dialog>
     </div>
 
+    <div id="referenceDialogWrapper" class="dialogWrapper">
+      <dialog open id="referenceDialog">
+        <div class="dialogCloseBtn" onclick="closeDialog('referenceDialogWrapper')">X</div>
+        <div id="referenceInFull"></div>
+      </dialog>
+    </div>
+
     <hr />
     <p>&copy; Ryan Beckett - 2022</p>
 
-    <script src="script.js"></script>
+    <script type="application/javascript" src="data/references.js"></script>
+    <script type="application/javascript" src="script.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
