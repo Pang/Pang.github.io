@@ -9,15 +9,15 @@ const references = [
     },
     {
         "id" : 2,
-        "fullName" : "Hameed Mamaniat",
+        "fullName" : "Jak Brierley",
         "longVersion" :
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "<p>&ldquo;Working with Ryan on Copilot was a blessing. Ryan took initiative over multiple front-end systems, and brought a skilful voice to the table on critical project decisions. Having a developer who can be autonomous, but also works as a team member, brought us an elastic workflow for large technical challenges. Thanks to the active work he brought, our team could adapt and overcome problems with significant responsiveness, and deliver product features at the highest of quality.</p><p>Ryan oversaw a lot of front-end decisions and production-facing management very quickly from the start of the project, and quickly adapted to a codebase that wasn’t immediately friendly. Seeing him easily pick up an unfamiliar framework (VueJS) from an Angular background was a good trait to see in a developer, something other teams would significantly benefit from - versatility and resilience.&rdquo;</p>",
         "shortVersion" :
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"
+            "Having a developer who can be autonomous, but also works as a team member, brought us an elastic workflow for large technical challenges. Thanks to the active work he brought, our team could adapt and overcome problems with significant responsiveness, and deliver product features at the highest of quality."
     },
     {
         "id" : 3,
-        "fullName" : "Jak Brierley",
+        "fullName" : "Hameed Mamaniat",
         "longVersion" :
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "shortVersion" :
