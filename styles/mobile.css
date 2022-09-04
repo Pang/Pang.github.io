@@ -25,6 +25,6 @@
 @media only screen and (max-width: 500px) {
     .ytWrapper {
         height: 165px;
-        width: 300px;
+        width: 300px !important;
     }
 }

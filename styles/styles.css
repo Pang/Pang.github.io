@@ -15,17 +15,6 @@ body {
     box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
 }
 
-.cvCardHeader {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    color: rgb(236, 208, 182);
-}
-.cvJobDate {
-    font-size: 14px; 
-    color: #DBC8B8;
-}
-
 #home {
     margin-top: 90px;
     position:relative;
