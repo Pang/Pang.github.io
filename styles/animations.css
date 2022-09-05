@@ -10,12 +10,8 @@
 }
 
 @keyframes slideOut {
-    from {
-        right: 0px;
-    }
-    to {
-        right: 450px;
-    }
+    from { right: 0px; }
+    to { right: 450px; }
 }
 
 @keyframes rotateAround {
