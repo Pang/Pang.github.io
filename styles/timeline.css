@@ -67,12 +67,13 @@
 @media screen and (max-width: 600px) {
     .timeline::after {
         background: none;
+        border: none;
     }
     .timelineSection {
         padding: 0;
         margin-bottom: 10px;
     }
-    .timelineSection::after, .timelineSection::after {
+    .timelineSection::before, .timelineSection::after {
         border: none;
     }
 }

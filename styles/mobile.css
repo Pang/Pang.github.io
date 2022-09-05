@@ -28,3 +28,9 @@
         width: 300px !important;
     }
 }
+
+@media only screen and (max-width: 400px) {
+    #img3d > img {
+        height: 175px;
+    }
+}
