@@ -1,18 +1,35 @@
 (function() {
     autoScrollImgsEnabled();
     fillReferences();
+    fillJobs();
  })();
 
 // place references
 function fillReferences() {
-    const refSection = document.getElementById('referenceSection');
+    const refArea = document.getElementById('referenceSection');
     for (let i = 0; i < references.length; i++) {
         let ref = '<div class="referenceItem">' +
         '<h5><b>' + references[i].fullName +'</b></h5>' +
         '<p><i>"' + references[i].shortVersion + '"</i></p>' +
         '<p><a class="dialoglink" onclick="openRefModal(`referenceDialogWrapper`,' + references[i].id + ')"><b>See More</b></a></p>' +
         '</div>';
-        refSection.innerHTML += ref;
+        refArea.innerHTML += ref;
+    }
+}
+
+// place jobs
+function fillJobs() {
+    const timelineArea = document.getElementsByClassName('timeline')[0];
+    console.log(jobs);
+    for (let i = 0; i < jobs.length; i++) {
+        let ref = '<div class="timelineSection">' +
+        '<div class="content">' +
+        '<h2>' + jobs[i].employer +'</h5>' +
+        '<div class="timelineJobDate">' + jobs[i].datesWorked + '</div>' +
+        jobs[i].description +
+        '</div>' +
+        '</div>';
+        timelineArea.innerHTML += ref;
     }
 }
 

@@ -43,11 +43,11 @@
     <!--------------------------->
     <div id="featuredProjects" class="py-5 mb-5">
       <!-- Copilot project -->
-      <div class="d-flex flex-wrap-reverse justify-content-center align-items-center my-5">
+      <div class="d-flex flex-wrap-reverse justify-content-center align-items-center">
         <div class="projectDetailsContainer">
           <h4>Twitch Tools</h4>
-          <p>As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p> 
-          <p>We also added some nifty features to visualise their chat data too! 
+          <p class="p-2 px-4">As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p> 
+          <p class="p-2 px-4">We also added some nifty features to visualise their chat data too! 
             <a class="dialoglink" onclick="openModal('copilotVidWrapper')">Click Here</a> for a tour
           </p>
         </div>
@@ -64,7 +64,7 @@
       <br />
 
       <!-- NPR project -->
-      <div class="d-flex flex-wrap justify-content-center align-items-center my-5">
+      <div class="d-flex flex-wrap justify-content-center align-items-center">
         <div id="img3dContainer">
           <figure id="img3d" class="imgShadow img3dReverse">
             <img class="activeImg" src="./images/NPR/nprDiagram.png" />
@@ -75,8 +75,8 @@
         </div>
         <div class="projectDetailsContainer">
           <h4>Nexus (EPR)</h4>
-          <p>Nexus is an Electronic Patient Record, built in Angular2+ & .Net Core, used for admitting patients and tracking their journey through a hospital.</p>
-          <p>
+          <p class="p-2 px-4">Nexus is an Electronic Patient Record, built in Angular2+ & .Net Core, used for admitting patients and tracking their journey through a hospital.</p>
+          <p class="p-2 px-4">
             It's main purpose is to remove the need of paper records being stored and traced, whilst allowing the medical and clinical staff to provide the 
             best care with the necessary information needed.
           </p>
@@ -84,11 +84,11 @@
       </div>
 
       <!-- Webcontractor -->
-      <div class="d-flex flex-wrap-reverse justify-content-center align-items-center my-5">
+      <div class="d-flex flex-wrap-reverse justify-content-center align-items-center">
         <div class="projectDetailsContainer">
           <h4>WebContractor</h4>
-          <p>A solution for construction Contractors who need to simplify and improve the efficiencey of managing multiple sub-contractors over multiple projects.</p> 
-          <p>Companies can also manage applications for payments and invoices, whilst ensuring compliance with the UK Construction Act.</p>
+          <p class="p-2 px-4">A solution for construction Contractors who need to simplify and improve the efficiencey of managing multiple sub-contractors over multiple projects.</p> 
+          <p class="p-2 px-4">Companies can also manage applications for payments and invoices, whilst ensuring compliance with the UK Construction Act.</p>
         </div>
         <div id="img3dContainer">
           <figure id="img3d" class="imgShadow glossyImg">
@@ -167,57 +167,7 @@
     <!------ CV ------>
     <!---------------->
     <div class="container">
-      <div class="timeline">
-        <div class="timelineSection">
-          <div class="content">
-            <h2>WebContractor</h2>
-            <div class="timelineJobDate">May 2022 – Present</div>
-            <p>
-              WebContractor utilizes C# for full-stack development, with Blazor for creating front-end interfaces and .Net for building microservices, I have been able
-              to be a part of all areas of development in their core product. Daily scrums and Azure Dev-Ops allow us to make sure we are working on the right tasks and 
-              on track for when it comes to sharing our progress with clients when requests to functionsality have been made.
-            </p>
-            <p>
-              WebContractor's main product is for construction Contractors who need a solution to simplifying and improving the efficiencey of managing multiple sub-contractors
-              on a project. Companies can manage applications for payments and invoices more efficiently, whilst ensuring compliance with the UK Construction Act.
-          </p>
-          </div>
-        </div>
-
-        <div class="timelineSection">
-          <div class="content">
-            <h2>Pastest</h2>
-            <div class="timelineJobDate">Oct 2021 – April - 2022</div>
-            <p>
-              At Pastest, my role was to be the main front-end developer, but also assist in server-side work depending on the companies needs. 
-              Features are planned as a team, then my role is to turn those specifications into a complete interface and help build the backend alongside it. 
-              One of my main priorities were rebuilding the web-app in the latest version of MVC and developing a additional features to the existing product.
-          </p>
-          <p>
-              I also help to maintain the in-house CMS (built in React.js) which is used daily by the content team in order to create and edit subscription questions and learning resources,
-              and finally picking up support tickets on the help-desk which contains issues raised from both customers and colleagues.
-          </p>
-          </div>
-        </div>
-
-        <div class="timelineSection">
-          <div class="content">
-            <h2>Blackpool Victoria Hospital</h2>
-            <div class="timelineJobDate">Oct 2021 – April - 2022</div>
-            <p>
-              Working with technologies like .Net and Angular, I have been a part of a great team creating web applications which aids the work of the medical and 
-              clinical staff at Blackpool Victoria hospital.
-            </p>
-            <p>
-              My main focus was on an in-house Electronic Patient Record known as Nexus, which aggregated together many third party systems as well as having it's own 
-              functionality for admitting a patient. It followed their journey of care and maintained an overview of each ward in the hospital - allowing for faster, 
-              more reliable information retrieval, quicker nurse and doctor handovers as well as more efficient patient flow, allowing for better placement of patients 
-              to wards more suited to their needs.
-            </p>
-          </div>
-        </div>
-
-      </div>
+      <div class="timeline"></div>
     </div>
     
     <hr class="my-3 mt-5"/>
@@ -246,16 +196,8 @@
     <p>&copy; Ryan Beckett - 2022</p>
 
     <script type="application/javascript" src="data/references.js"></script>
+    <script type="application/javascript" src="data/jobs.js"></script>
     <script type="application/javascript" src="script.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
 </body>
 </html>

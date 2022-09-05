@@ -75,5 +75,6 @@
     }
     .timelineSection::before, .timelineSection::after {
         border: none;
+        background: none;
     }
 }
