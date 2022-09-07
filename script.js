@@ -20,7 +20,6 @@ function fillReferences() {
 // place jobs
 function fillJobs() {
     const timelineArea = document.getElementsByClassName('timeline')[0];
-    console.log(jobs);
     for (let i = 0; i < jobs.length; i++) {
         let ref = '<div class="timelineSection">' +
         '<div class="content">' +
