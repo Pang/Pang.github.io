@@ -6,7 +6,6 @@
     <title>RyanBeckett</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/global.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,16 +21,16 @@
 </head>
 
 <body>
-    <img id="home" class="center-block mx-auto img-fluid" src="images/NameHeader.png">
-    <div id="picOfMe" class="container flex row mx-auto justify-content-center">
+    <img id="home" src="images/NameHeader.png">
+    <div id="picOfMe">
       <img src="./images/me.jpg" />
       <div>
         <p>Web & Unity Developer</p>
-        <div id="techIcons" class="row container mx-auto mb-4 justify-content-center">
-          <div class="techIcon mx-2">
+        <div id="techIcons">
+          <div class="techIcon">
             <img src="images/Techs/cSharpLogo.png" />
           </div>
-          <div class="techIcon mx-2">
+          <div class="techIcon">
             <img id="jsLogo" src="images/Techs/JsLogo.png" />
           </div>
         </div>
@@ -41,13 +40,13 @@
     <!--------------------------->
     <!-- Featured Web Projects -->
     <!--------------------------->
-    <div id="featuredProjects" class="py-5 mb-5">
+    <div class="featuredProjects">
       <!-- Copilot project -->
-      <div class="d-flex flex-wrap-reverse justify-content-center align-items-center">
+      <div class="projectContainer reverseFlexMobile">
         <div class="projectDetailsContainer">
           <h4>Twitch Tools</h4>
-          <p class="p-2 px-4">As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p> 
-          <p class="p-2 px-4">We also added some nifty features to visualise their chat data too! 
+          <p>As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p> 
+          <p>We also added some nifty features to visualise their chat data too! 
             <a class="dialoglink" onclick="openModal('copilotVidWrapper')">Click Here</a> for a tour
           </p>
         </div>
@@ -64,7 +63,7 @@
       <br />
 
       <!-- NPR project -->
-      <div class="d-flex flex-wrap justify-content-center align-items-center">
+      <div class="projectContainer">
         <div id="img3dContainer">
           <figure id="img3d" class="imgShadow img3dReverse">
             <img class="activeImg" src="./images/NPR/nprDiagram.png" />
@@ -75,8 +74,8 @@
         </div>
         <div class="projectDetailsContainer">
           <h4>Nexus (EPR)</h4>
-          <p class="p-2 px-4">Nexus is an Electronic Patient Record, built in Angular2+ & .Net Core, used for admitting patients and tracking their journey through a hospital.</p>
-          <p class="p-2 px-4">
+          <p>Nexus is an Electronic Patient Record, built in Angular2+ & .Net Core, used for admitting patients and tracking their journey through a hospital.</p>
+          <p>
             It's main purpose is to remove the need of paper records being stored and traced, whilst allowing the medical and clinical staff to provide the 
             best care with the necessary information needed.
           </p>
@@ -84,11 +83,11 @@
       </div>
 
       <!-- Webcontractor -->
-      <div class="d-flex flex-wrap-reverse justify-content-center align-items-center">
+      <div class="projectContainer reverseFlexMobile">
         <div class="projectDetailsContainer">
           <h4>WebContractor</h4>
-          <p class="p-2 px-4">A solution for construction Contractors who need to simplify and improve the efficiencey of managing multiple sub-contractors over multiple projects.</p> 
-          <p class="p-2 px-4">Companies can also manage applications for payments and invoices, whilst ensuring compliance with the UK Construction Act.</p>
+          <p>A solution for construction Contractors who need to simplify and improve the efficiencey of managing multiple sub-contractors over multiple projects.</p> 
+          <p>Companies can also manage applications for payments and invoices, whilst ensuring compliance with the UK Construction Act.</p>
         </div>
         <div id="img3dContainer">
           <figure id="img3d" class="imgShadow glossyImg">
@@ -104,14 +103,13 @@
     <!-- References -->
     <!-- Filled from script -->
     <section id="referenceSection"></section>
-    <br />
 
     <!--------------------->
     <!-- Unity Projects  -->
     <!--------------------->
-    <div id="featuredProjects" class="py-5 mb-5">
+    <div class="featuredProjects">
       <!-- Procedural Terrain  -->
-      <div class="d-flex flex-wrap justify-content-center align-items-center my-5">
+      <div class="projectContainer">
         <div id="img3dContainer" class="imgShadow">
           <div class="ytWrapper">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wmaskscrRvM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -119,17 +117,17 @@
         </div>
         <div class="projectDetailsContainer">
           <h4>Procedural Terrain</h4>
-          <p class="p-2 px-4">
+          <p>
             This project was a learning oppurtunity for me to understand how perlin noise was used to generate different
             maps. In doing so I learnt a lot and decided to share my findings through a <a class="dialoglink" href="https://www.youtube.com/watch?v=cLs3CGNV120" target="blank">YouTube tutorial</a>
           </p>
         </div>
       </div>
       <!-- ShieldMaidens -->
-      <div class="d-flex flex-wrap-reverse justify-content-center align-items-center my-5">
+      <div class="projectContainer reverseFlexMobile">
         <div class="projectDetailsContainer">
           <h4>ShieldMaidens</h4>
-          <p class="p-2 px-4">
+          <p>
             ShieldMaidens is a solo/co-op endless runner where you have to fight and block your way through enemies, 
             but be on your toes as you also may encounter more elite enemies who require quick wits and reactions to defeat.
           </p>
@@ -142,7 +140,7 @@
         </div>
       </div>
       <!-- HexWorld -->
-      <div class="d-flex flex-wrap justify-content-center align-items-center my-5">
+      <div class="projectContainer">
         <div id="img3dContainer">
           <figure id="img3d" class="imgShadow img3dReverse">
             <img class="activeImg" src="./images/1HexWorldScreenshot.png" />
@@ -154,7 +152,7 @@
 
         <div class="projectDetailsContainer">
           <h4>HexWorld</h4>
-          <p class="p-2 px-4">
+          <p >
             A top down, 2d assets in a 3d environment, tower defence-like game. The maps are built by programatically rendering the 3d hex tile-grid on startup
             and reading a CSV file related to the map selected. Then assigning properties like land or water and placing the players keep or resources.
           </p>
@@ -168,7 +166,8 @@
     <!---------------->
     <div class="timeline"></div>
     
-    <hr class="my-3 mt-5"/>
+    <hr/>
+
     <div>
       HTML/CSS, Javascript/Typescript, C#, .NET, MVC, Blazor/Razor, LINQ, EntityFramework, MSSQLSMS, SignalR, Visual Studio, IIS, Azure, Unity, React, Angular2+, Vue2,
     </div>
@@ -196,6 +195,5 @@
     <script type="application/javascript" src="data/references.js"></script>
     <script type="application/javascript" src="data/jobs.js"></script>
     <script type="application/javascript" src="script.js"></script>
-
 </body>
 </html>

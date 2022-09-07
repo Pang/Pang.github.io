@@ -1,4 +1,9 @@
-@media only screen and (max-width: 766px) {
+@media only screen and (max-width: 1000px) {
+    .reverseFlexMobile {
+        flex-wrap: wrap-reverse;
+    }
+}
+@media only screen and (max-width: 639px) {
     #home {
         margin-top: 20px;
     }
@@ -16,9 +21,6 @@
     }
     #img3d > img {
         height: 200px;
-    }
-    #carouselShieldmaiden {
-        width: 100% !important;
     }
 }
 
