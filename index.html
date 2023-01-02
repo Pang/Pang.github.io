@@ -38,154 +38,16 @@
       </div>
     </div>
 
-    <!--------------------------->
-    <!-- Featured Web Projects -->
-    <!--------------------------->
-    <div class="featuredProjects">
-      <!-- Copilot project -->
-      <div class="projectContainer reverseFlexMobile">
-        <div class="projectDetailsContainer">
-          <h4>Twitch Tools</h4>
-          <p>As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p> 
-          <p>We also added some nifty features to visualise their chat data too! 
-            <a class="dialoglink" onclick="openModal('copilotVidWrapper')">Click Here</a> for a tour
-          </p>
-        </div>
-        <div id="img3dContainer">
-          <figure id="img3d" class="imgShadow glossyImg">
-              <img class="activeImg" src="./images/CopilotCarousel/homepage.jpg" />
-              <img src="./images/CopilotCarousel/PiscesPixieProfile.jpg" />
-              <img class="lastImg" src="./images/CopilotCarousel/piscesStream.jpg" />
-              <div id="nextIcon" class="imgIcons" onclick="changeImg(this)">&#10148;</div>
-              <div id="zoomIcon" class="imgIcons" onclick="zoomImg(this)">&#9974;</div>
-          </figure>
-        </div>
-      </div>
-      <br />
+    <!-- Featured Web Projects (Filled from script) -->
+    <div id="WebProjects" class="featuredProjects"></div>
 
-      <!-- NPR project -->
-      <div class="projectContainer">
-        <div id="img3dContainer">
-          <figure id="img3d" class="imgShadow img3dReverse">
-            <img class="activeImg" src="./images/NPR/nprDiagram.png" />
-            <img src="./images/NPR/nprDiagramBeds.png" />
-            <div id="nextIcon" class="imgIcons" onclick="changeImg(this)">&#10148;</div>
-            <div id="zoomIcon" class="imgIcons" onclick="zoomImg(this)">&#9974;</div>
-          </figure>
-        </div>
-        <div class="projectDetailsContainer">
-          <h4>Nexus (EPR)</h4>
-          <p>Nexus is an Electronic Patient Record, built in Angular2+ & .Net Core, used for admitting patients and tracking their journey through a hospital.</p>
-          <p>
-            It's main purpose is to remove the need of paper records being stored and traced, whilst allowing the medical and clinical staff to provide the 
-            best care with the necessary information needed.
-          </p>
-        </div>
-      </div>
-
-      <!-- Webcontractor -->
-      <div class="projectContainer reverseFlexMobile">
-        <div class="projectDetailsContainer">
-          <h4>WebContractor</h4>
-          <p>A solution for contractors within the field of construction, to improve the efficiencey of managing multiple sub-contractors over multiple projects.</p> 
-          <p>Companies can also manage applications for payments and invoices, whilst ensuring compliance with the UK Construction Act.</p>
-        </div>
-        <div id="img3dContainer">
-          <figure id="img3d" class="imgShadow glossyImg">
-              <img class="activeImg" src="./images/Webcontractor/subcontractOrders.png" />
-              <img src="./images/Webcontractor/subcontractOrderCreate.png" />
-              <div id="nextIcon" class="imgIcons" onclick="changeImg(this)">&#10148;</div>
-              <div id="zoomIcon" class="imgIcons" onclick="zoomImg(this)">&#9974;</div>
-          </figure>
-        </div>
-      </div>
-    </div>
-
-    <!-- References -->
-    <!-- Filled from script -->
+    <!-- References (Filled from script) -->
     <section id="referenceSection"></section>
 
-    <!--------------------->
-    <!-- Unity Projects  -->
-    <!--------------------->
-    <div class="featuredProjects">
-      <!-- Procedural Terrain  -->
-      <div class="projectContainer">
-        <div id="img3dContainer" class="imgShadow">
-          <div class="ytWrapper">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wmaskscrRvM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="projectDetailsContainer">
-          <h4>Procedural Terrain</h4>
-          <p>
-            This project was a learning oppurtunity for me to understand how perlin noise was used to generate different
-            maps. In doing so I learnt a lot and decided to share my findings through a <a class="dialoglink" href="https://www.youtube.com/watch?v=cLs3CGNV120" target="blank">YouTube tutorial</a>
-          </p>
-        </div>
-      </div>
-      <!-- ShieldMaidens -->
-      <div class="projectContainer reverseFlexMobile">
-        <div class="projectDetailsContainer">
-          <h4>ShieldMaidens</h4>
-          <p>
-            ShieldMaidens is a solo/co-op endless runner where you have to fight and block your way through enemies, 
-            but be on your toes as you can also encounter more elite enemies who require quick wits and reactions to defeat.
-          </p>
-          <p>You can get a link to games store-page <a class="dialoglink" href="https://pangdev.itch.io/shieldmaidens" target="blank">Here!</a></p>
-        </div>
-        <div id="img3dContainer" class="imgShadow">
-          <div class="ytWrapper">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BKQ04dLX_6w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-      <!-- Shieldmaidens 2 -->
-      <div class="projectContainer">
-        <div id="img3dContainer">
-          <figure id="img3d" class="imgShadow img3dReverse">
-            <img class="activeImg" src="./images/KeepDefenders/GoblinCamp.png" />
-            <img src="./images/KeepDefenders/Multiplayer2.png" />
-            <img src="./images/KeepDefenders/Sneak.png" />
-            <img class="lastImg" src="./images/ShieldMaidens2/ShieldMaidens2Vision.png" />
-            <div id="nextIcon" class="imgIcons" onclick="changeImg(this)">&#10148;</div>
-            <div id="zoomIcon" class="imgIcons" onclick="zoomImg(this)">&#9974;</div>
-          </figure>
-        </div>
-
-        <div class="projectDetailsContainer">
-          <h4>ShieldMaidens 2 (WiP)</h4>
-          <p>
-            A continuation of the medieval fantasy world I created in the first ShieldMaidens game, coming to life in 3d, online co-op and a new gameplay mechanic of stealth.
-          </p>
-          <p>This is a work in progress with more info coming soon!</p>
-        </div>
-      </div>
-      <!-- HexWorld -->
-      <div class="projectContainer">
-        <div class="projectDetailsContainer">
-          <h4>HexWorld</h4>
-          <p >
-            A top down, 2d assets in a 3d environment, tower defence-like game. The maps are built by programmatically rendering the 3d hex tile-grid on startup
-            and reading a CSV file related to the map selected. Then assigning properties like land or water and placing the players keep or resources.
-          </p>
-          <p>You can get a link to games store-page <a class="dialoglink" href="https://pangdev.itch.io/hexworld" target="blank">Here!</a></p>
-        </div>
-        <div id="img3dContainer">
-          <figure id="img3d" class="imgShadow img3dReverse">
-            <img class="activeImg" src="./images/HexWorld/HexWorldLedgeMap.png" />
-            <img src="./images/HexWorld/HexWorldSpiralMap.png" />
-            <img class="lastImg" src="./images/HexWorld/HexWorldSimpleMap.png" />
-            <div id="nextIcon" class="imgIcons" onclick="changeImg(this)">&#10148;</div>
-            <div id="zoomIcon" class="imgIcons" onclick="zoomImg(this)">&#9974;</div>
-          </figure>
-        </div>
-      </div>
-    </div>  
+    <!-- Game Projects  -->
+    <div id="GameProjects" class="featuredProjects"></div>
     
-    <!---------------->
-    <!------ CV ------>
-    <!---------------->
+    <!-- CV (Filled from script) -->
     <div class="timeline"></div>
     
     <hr/>
@@ -194,9 +56,7 @@
       HTML/CSS, Javascript/Typescript, C#, .NET, MVC, Blazor/Razor, LINQ, EntityFramework, MSSQLSMS, SignalR, Visual Studio, IIS, Azure, Unity, React, Angular2+, Vue2,
     </div>
 
-    <!------------->
     <!-- Dialogs -->
-    <!------------->
     <div id="copilotVidWrapper" class="dialogWrapper">
       <dialog open id="copilotVid">
         <div class="dialogCloseBtn" onclick="closeDialog('copilotVidWrapper')">X</div>
@@ -214,6 +74,7 @@
     <hr />
     <p>&copy; Ryan Beckett - 2022 - <a style="color: #60998b" target="blank" href="https://github.com/Pang/Pang.github.io">SourceCode</a></p>
 
+    <script type="application/javascript" src="data/projects.js"></script>
     <script type="application/javascript" src="data/references.js"></script>
     <script type="application/javascript" src="data/jobs.js"></script>
     <script type="application/javascript" src="script.js"></script>
