@@ -37,7 +37,7 @@ const projects = [
         "id" : 4,
         "type" : "game",
         "title" : "Procedural Terrain",
-        "description" : "<p>A solution for contractors within the field of construction, to improve the efficiencey of managing multiple sub-contractors over multiple projects.</p><p>Companies can also manage applications for payments and invoices, whilst ensuring compliance with the UK Construction Act.</p>",
+        "description" : "<p>This project was a learning oppurtunity for me to understand how perlin noise was used to generate different maps. In doing so I learnt a lot and decided to share my findings through a <a class=\"dialoglink\" href=\"https://www.youtube.com/watch?v=cLs3CGNV120\" target=\"blank\">YouTube tutorial</a></p>",
         "images" : [],
         "video" : "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/wmaskscrRvM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
     },
