@@ -57,7 +57,7 @@ const projects = [
         "images" : [
             "./images/KeepDefenders/GoblinCamp.png", 
             "./images/KeepDefenders/Multiplayer2.png", 
-            "./images/KeepDefenders/Sneak.png", 
+            "./images/KeepDefenders/WorldPretty.png", 
             "./images/ShieldMaidens2/ShieldMaidens2Vision.png"
         ],
         "video" : ""
