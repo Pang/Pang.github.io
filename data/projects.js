@@ -45,7 +45,7 @@ const projects = [
         "id" : 5,
         "type" : "game",
         "title" : "ShieldMaidens",
-        "description" : "<p>ShieldMaidens is a solo/co-op endless runner where you have to fight and block your way through enemies, but be on your toes as you can also encounter more elite enemies who require quick wits and reactions to defeat.</p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/shieldmaidens\" target=\"blank\">Here!</a></p>",
+        "description" : "<p>ShieldMaidens is a solo/co-op endless runner where you have to fight and block your way through enemies, but be on your toes as you can also encounter more elite enemies who require quick wits and reactions to defeat.</p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/shieldmaidens\" target=\"blank\">Here</a></p>",
         "images" : [],
         "video" : "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/BKQ04dLX_6w\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
     },
@@ -66,7 +66,7 @@ const projects = [
         "id" : 7,
         "type" : "game",
         "title" : "HexWorld",
-        "description" : "<p>A top down, 2d assets in a 3d environment, tower defence-like game. The maps are built by programmatically rendering the 3d hex tile-grid on startup and reading a CSV file related to the map selected. Then assigning properties like land or water and placing the players keep or resources.</p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/hexworld\" target=\"blank\">Here!</a></p>",
+        "description" : "<p>A top down, 2d assets in a 3d environment, tower defence game. The hex tile-grids are built programmatically, they then read a CSV file of the map selected which assigns properties such as land types or buildings, then allows the player to start their kingdom!</p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/hexworld\" target=\"blank\">Here</a></p>",
         "images" : [
             "./images/HexWorld/HexWorldLedgeMap.png",
             "./images/HexWorld/HexWorldSpiralMap.png",
