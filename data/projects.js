@@ -53,7 +53,7 @@ const projects = [
         "id" : 6,
         "type" : "game",
         "title" : "ShieldMaidens 2 (WiP)",
-        "description" : "<p>A continuation of the medieval fantasy world I created in the first ShieldMaidens game, coming to life in 3d, online co-op and a new gameplay mechanic of stealth.</p><p>This is a work in progress with more info coming soon!</p>",
+        "description" : "<p>A continuation of the medieval fantasy world I created in the first ShieldMaidens game, coming to life in 3d, online co-op and a new gameplay mechanic of stealth.</p><p><a class=\"dialoglink\" href=\"https://github.com/Pang/NpcLogic\">Here</a> is a script for the NPC AI</p>",
         "images" : [
             "./images/KeepDefenders/GoblinCamp.png", 
             "./images/KeepDefenders/Multiplayer2.png", 
