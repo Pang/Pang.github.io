@@ -26,7 +26,7 @@ const projects = [
         "id" : 3,
         "type" : "web",
         "title" : "WebContractor",
-        "description" : "<p>A solution for contractors within the field of construction, to improve the efficiencey of managing multiple sub-contractors over multiple projects.</p><p>Companies can also manage applications for payments and invoices, whilst ensuring compliance with the UK Construction Act.</p>",
+        "description" : "<p>A solution for contractors within the field of construction, to improve the efficiency of managing multiple sub-contractors over multiple projects.</p><p>Companies can also manage applications for payments and invoices, whilst ensuring compliance with the UK Construction Act.</p>",
         "images" : [
             "./images/Webcontractor/subcontractOrders.png", 
             "./images/Webcontractor/subcontractOrderCreate.png"
