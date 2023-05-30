@@ -53,7 +53,7 @@ const projects = [
         "id" : 6,
         "type" : "game",
         "title" : "NPC AI",
-        "description" : "<p>This is a co-op multiplayer map (using Unity's Lobby & Relay services) where you sneak around and assinate NPC's who can see and hear you coming if you're not careful! </p><p><a class=\"dialoglink\" href=\"https://github.com/Pang/NpcLogic\">Here</a> is the NPC logic</p>",
+        "description" : "<p>This is a co-op multiplayer map (using Unity's Lobby & Relay services) where you sneak around and assassinate NPC's who can see and hear you coming if you're not careful! </p><p><a class=\"dialoglink\" href=\"https://github.com/Pang/NpcLogic\">Here</a> is the NPC logic</p>",
         "images" : [
             "./images/KeepDefenders/GoblinCamp.png", 
             "./images/KeepDefenders/Multiplayer2.png", 
