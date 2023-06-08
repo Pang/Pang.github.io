@@ -3,7 +3,13 @@
     fillJobs();
     fillProjects('web', 'WebProjects');
     fillProjects('game', 'GameProjects');
+    CreateBookmark();
  })();
+
+function CreateBookmark() {
+    document.getElementById('WebBookmark').innerHTML = '<div class="bookmark"><div><span>' + 'Web Dev' + '</span></div></div>';
+    document.getElementById('GameBookmark').innerHTML = '<div class="bookmark"><div><span>' + 'Game Dev' + '</span></div></div>';
+}
 
 // place references
 function fillReferences() {
@@ -36,7 +42,7 @@ function fillJobs() {
 // fill all projects on page
 function fillProjects(projType, id) {
     const featuredProjects = document.getElementById(id);
-
+    
     for (let i = 0; i < projects.length; i++) {
         let isEven = i % 2 == 0;
         if (projects[i].type != projType) continue;
