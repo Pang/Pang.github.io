@@ -1,0 +1,53 @@
+body {
+    background: url('../images/seamless_paper_texture_dark.png') repeat;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: #e4c9b0;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+h4:first-of-type {
+    margin-top: 0;
+}
+
+h4 {
+    color: #97cfc1
+}
+
+.blogWrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 10px auto;
+    text-align: start;
+    padding: 40px;
+    background-color: #222223;
+}
+
+.refAsterisk {
+    font-weight: bold;
+    font-size: small;
+}
+
+.homeBtn {
+    position: absolute;
+    top: 4px;
+    right: 9px;
+    color: #65d3ff;
+    text-decoration: none;
+}
+
+.homeBtn:hover {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 500px) {
+    .blogWrapper {
+        padding: 20px;
+    }
+}
