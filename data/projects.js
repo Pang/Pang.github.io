@@ -53,12 +53,11 @@ const projects = [
         "id" : 6,
         "type" : "game",
         "title" : "NPC AI",
-        "description" : "<p>This is a co-op multiplayer map (using Unity's Lobby & Relay services) where you sneak around and assassinate NPC's who can see and hear you coming if you're not careful! </p><p><a class=\"dialoglink\" href=\"https://github.com/Pang/NpcLogic\">Here</a> is the NPC logic</p>",
+        "description" : "<p>Inspired by 3D stealth games, I wrote an NPC AI capable of seeing, hearing footsteps & searching for players. </p><p><a class=\"dialoglink\" href=\"https://github.com/Pang/NpcLogic\">Click here</a> to see the logic</p>",
         "images" : [
-            "./images/KeepDefenders/GoblinCamp.png", 
-            "./images/KeepDefenders/Multiplayer2.png", 
-            "./images/KeepDefenders/WorldPretty.png", 
-            "./images/ShieldMaidens2/ShieldMaidens2Vision.png"
+            "./images/NpcAI/ShieldMaidens2Vision.png",
+            "./images/NpcAI/ShieldMaidens2pic2.png",
+            "./images/NpcAI/Sneak.png"
         ],
         "video" : ""
     },
