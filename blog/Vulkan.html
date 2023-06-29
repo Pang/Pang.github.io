@@ -47,16 +47,21 @@
         <!-- Chapter 3 -->
         <h4>First steps in Vulkan</h4>
         <p>
-            Vulkan requires us to do a lot of setting up to begin with, so rather than share all the code with you at this point,
-            I'm going to abstract the steps needed into an ordered list so you understand what's required.
+            Vulkan requires us to do a lot of setting up to begin with. I'm going to abstract the steps needed into an ordered list 
+            so you understand what's required, but don't feel like you have to understand every step mentioned as of yet.
         </p>
         <ol>
             <li><b>Window:</b> The window which will contain our application</li>
             <li><b>Instance:</b> An instance of Vulkan, connecting our application and the Vulkan library</li>
-            <li><b>Surface:</b> To present rendered images to (Vulkan is platform agnost so we can't present straight to the window)</li>
+            <li><b>Surface:</b> To present rendered images to. (Vulkan is platform agnostic so we can't present straight to the window)</li>
             <li><b>Physical Device:</b> We pick the physical device/s (GPUs) that we want to work with</li>
             <li><b>Logical Device:</b> We pick the features on the physical device/s which we want to use</li>
-            <li><b>Command Buffer:</b> Command buffer allocation (?)</li>
+            <li><b>Swap Chain:</b> For queueing and swapping out images to display on our surface</li>
+            <li><b>Image Views:</b> (?)</li>
+            <li><b>Render Pass:</b> (?)</li>
+            <li><b>Framebuffers:</b> (?)</li>
+            <li><b>Command Pool:</b> Command buffer allocation (?)</li>
+            <li><b>Command Buffer:</b> (?)</li>
         </ol>
 
         <!-- Chapter 4 -->
