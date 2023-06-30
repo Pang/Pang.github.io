@@ -48,7 +48,7 @@
         <h4>First steps in Vulkan</h4>
         <p>
             Vulkan requires us to do a lot of setting up to begin with. I'm going to abstract the steps needed into an ordered list 
-            so you understand what's required, but don't feel like you have to understand every step mentioned as of yet.
+            so you understand what's required, but don't feel like you have to understand every step mentioned.
         </p>
         <ol>
             <li><b>Window:</b> The window which will contain our application</li>
@@ -56,15 +56,27 @@
             <li><b>Surface:</b> To present rendered images to. (Vulkan is platform agnostic so we can't present straight to the window)</li>
             <li><b>Physical Device:</b> We pick the physical device/s (GPUs) that we want to work with</li>
             <li><b>Logical Device:</b> We pick the features on the physical device/s which we want to use</li>
-            <li><b>Swap Chain:</b> For queueing and swapping out images to display on our surface</li>
-            <li><b>Image Views:</b> (?)</li>
-            <li><b>Render Pass:</b> (?)</li>
-            <li><b>Framebuffers:</b> (?)</li>
-            <li><b>Command Pool:</b> Command buffer allocation (?)</li>
-            <li><b>Command Buffer:</b> (?)</li>
+            <li><b>Graphics Pipeline:</b> Steps mentioned in "Graphics Pipeline" chapter</li>
+            <li><b>Swap Chain:</b> A queue of Framebuffers (usually 2 or 3) that swaps out images to display on our window</li>
+
         </ol>
 
         <!-- Chapter 4 -->
+        <h4>Framebuffers</h4>
+        <p>
+            In the previous chapter it was mentioned that Swap Chains are made up of Framebuffers, but it's nice to know what these are,
+            how they're created and how they fit into the process of displaying images to our screen.
+        </p>
+        <ol>
+            <!-- 
+                <li><b>Image Views:</b> (?)</li>
+                <li><b>Render Pass:</b> (?)</li>
+                <li><b>Framebuffers:</b> (?)</li>
+                <li><b>Command Pool:</b> Command buffer allocation (?)</li>
+                <li><b>Command Buffer:</b> (?)</li> 
+            -->
+        </ol>
+        <!-- Chapter # -->
         <h4>To be continued...</h4>
     </div>
 </body>
