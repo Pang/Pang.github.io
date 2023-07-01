@@ -16,7 +16,7 @@
 
 <body>
     <div class="blogWrapper">
-        <h2>Creating a graphics renderer with Vulkan</h2>
+        <h2>Vulkan for complete beginners</h2>
         <a href="../index.html" class="homeBtn">Home</a>
         <!-- Chapter 1 -->
         <h4>How does Vulkan work?</h4>
@@ -25,59 +25,93 @@
             but also meaning more control over all of the inner workings which go into displaying graphics on our monitors.
         </p>
         <p>
-            To fully understand how Vulkan is set up, it's important to understand how the graphics pipeline works.
-            It can be quite daunting when we see all the steps necessary, but I plan to explain each of these
-            and how they are handled by Vulkan so that you'll understand as a complete beginner!
+            To fully understand how Vulkan is set up, I will first go through the steps to get a project up and running.
+            Then in later chapters - break down the steps which need a deeper explanation.
+        </p>
+        <p>
+            It can be quite daunting when we see all the steps necessary, but hopefully by the end of this blog
+            you will understand their place and purpose, even as a complete beginner!
         </p>
 
         <!-- Chapter 2 -->
-        <h4>Graphics Pipeline</h4>
-        <ol>
-            <li><b>Input assembler:</b> Takes all of the raw vertex data</li>
-            <li><b>Vertex shader:</b> Runs on every vertex & puts the model into screen space</li>
-            <li><b>Tessellation shader:</b> Subdivides geometry, like making flat brick walls look more 3D</li>
-            <li><b>Geometry shader:</b> A more flexible version of tessellation, although used less due to performance</li>
-            <li><b>Rasterization:</b> Fragments<span class="refAsterisk">*</span> primitives (a line, point or triangle) & discards any that aren't displayed on screen or behind non-transparent objects</li>
-            <li><b>Fragment shader:</b> Determines the framebuffers<span class="refAsterisk">**</span> colour & depth values for every fragment</li>
-            <li><b>Color blending:</b> Pixels may blend to new colour if behind a transparent object such as a window or water, otherwise it may simply override it</li>
-        </ol>
-        <small><i><b>*</b> Fragment: Refers to the data necessary to generate a pixel in the framebuffer, eg: raster position, depth etc</i></small> <br />
-        <small><i><b>**</b> Framebuffer: An array of information containing how each pixel should be rendered held in memory</i> </small><br/>
-        
-        <!-- Chapter 3 -->
         <h4>First steps in Vulkan</h4>
         <p>
             Vulkan requires us to do a lot of setting up to begin with. I'm going to abstract the steps needed into an ordered list 
-            so you understand what's required, but don't feel like you have to understand every step mentioned.
+            so you understand what's required, but don't feel like you have to understand every step mentioned thus far.
         </p>
         <ol>
-            <li><b>Window:</b> The window which will contain our application</li>
-            <li><b>Instance:</b> An instance of Vulkan, connecting our application and the Vulkan library</li>
-            <li><b>Surface:</b> To present rendered images to. (Vulkan is platform agnostic so we can't present straight to the window)</li>
-            <li><b>Physical Device:</b> We pick the physical device/s (GPUs) that we want to work with</li>
-            <li><b>Logical Device:</b> We pick the features on the physical device/s which we want to use</li>
-            <li><b>Graphics Pipeline:</b> Steps mentioned in "Graphics Pipeline" chapter</li>
-            <li><b>Swap Chain:</b> A queue of Framebuffers (usually 2 or 3) that swaps out images to display on our window</li>
-
+            <li><span class="keywords">Window:</span> The window which will contain our application</li>
+            <li><span class="keywords">Instance:</span> An instance of Vulkan, connecting our application and the Vulkan library</li>
+            <li><span class="keywords">Surface:</span> To present rendered images to. (Vulkan is platform agnostic so we can't present straight to the window)</li>
+            <li><span class="keywords">Physical Device:</span> We pick the physical device/s (GPUs) that we want to work with</li>
+            <li><span class="keywords">Logical Device:</span> We pick the features on the physical device/s which we want to use</li>
+            <li><span class="keywords">Graphics Pipeline:</span> Contains instructions for what to render (eg: models) and how (eg: shaders)</li>
+            <li><span class="keywords">Framebuffers:</span> Information output from the graphics pipeline which is queued into the swapchain for displaying images</li>
+            <li><span class="keywords">Swap Chain:</span> A queue of Framebuffers (usually 2 or 3) that swaps out images to display on our window</li>
         </ol>
+        
+        <!-- Chapter 3 -->
+        <h4>Graphics Pipeline</h4>
+        <p>
+            The graphics pipeline takes all of the data for our scene and works out what should be rendered - and also how it should be rendered.
+        </p>
+        <ol>
+            <li><span class="keywords">Input assembler:</span> Takes all of the raw vertex data</li>
+            <li><span class="keywords">Vertex shader:</span> Runs on every vertex & puts the model into screen space</li>
+            <li><span class="keywords">Tessellation shader:</span> Subdivides geometry, like making flat brick walls look more 3D</li>
+            <li><span class="keywords">Geometry shader:</span> A more flexible version of tessellation, although used less due to performance</li>
+            <li><span class="keywords">Rasterization:</span> Fragments<span class="refAsterisk">*</span> primitives (a line, point or triangle) & discards any that aren't displayed on screen or behind non-transparent objects</li>
+            <li><span class="keywords">Fragment shader:</span> Determines the framebuffers<span class="refAsterisk">**</span> colour & depth values for every fragment</li>
+            <li><span class="keywords">Color blending:</span> Pixels may blend to new colour if behind a transparent object such as a window or water, otherwise it may simply override it</li>
+        </ol>
+        <small><i><span class="keywords">*</span> Fragment: Refers to the data necessary to generate a pixel in the framebuffer, eg: raster position, depth etc</i></small> <br />
+        <small><i><span class="keywords">**</span> Framebuffer: An array of information containing how each pixel should be rendered held in memory</i> </small><br/>
 
         <!-- Chapter 4 -->
         <h4>Framebuffers</h4>
         <p>
-            In the previous chapter it was mentioned that Swap Chains are made up of Framebuffers, but it's nice to know what these are,
-            how they're created and how they fit into the process of displaying images to our screen.
+            In the 'First steps' chapter it was mentioned that Swap Chains are made up of Framebuffers. These are blocks of memory, output from the graphics pipeline
+            and contain properties (aka: attachments) like a "colour buffer" or "depth buffer" which are essentially color values for each pixel that are copied from
+            the VRAM of the gpu and presented onto the screen. 
         </p>
-        <ol>
-            <!-- 
-                <li><b>Image Views:</b> (?)</li>
-                <li><b>Render Pass:</b> (?)</li>
-                <li><b>Framebuffers:</b> (?)</li>
-                <li><b>Command Pool:</b> Command buffer allocation (?)</li>
-                <li><b>Command Buffer:</b> (?)</li> 
-            -->
-        </ol>
-        <!-- Chapter # -->
-        <h4>To be continued...</h4>
+        <p>
+            You may have heard the term 60hz as a refresh rate on your monitor - this is a standard frequency meaning 60 cycles per second.
+            Most of the time, a swap chain will use double-buffering which uses 2 framebuffers at the same time. The framebuffer being displayed is
+            referred to as the front-buffer, and the one being rendered to by the graphics pipeline is the "back-buffer". 
+        </p>
+        <p>
+            It's up to the swap chain to decide when to swap these buffers around, this is referred to as V-Sync and essentially swaps them according to 
+            the refresh rate (hz) and updates the image on our monitor.
+        </p>
+
+        <!-- Chapter 5 -->
+        <h4>Swap Chains</h4>
+        <p>
+            Well now we know what framebuffers are and that our swap chain is full of them, next we will delve a bit deeper into swap chains.
+            The swap chain determines a few factors as to how we finally start presenting the images produced by our graphics pipeline to our monitors.
+            Some settings include:
+        </p>
+        <p>
+            <span class="keywords">Present Modes:</span> Decides how often we should refresh the images from our swap chain
+            <ul>
+                <li><span class="keywords">FIFO:</span> Causes the GPU to idle until the next refresh cycle (where the swap chain swaps the buffers around)</li>
+                <li><span class="keywords">Mailbox:</span> This mode never goes idle so it consistently refreshes with the latest image, meaning lower latency but a higher power consumption</li>
+                <li><span class="keywords">Immediate:</span> Ignores the v-sync completely meaning lower latency but high power consumption, and worst of all tearing<span class="refAsterisk">*</span></li>
+            </ul>
+            <small><i><span class="keywords">*</span> Tearing: a visible artefact what appears as though 2 halves of an image being displayed simultaneously</i></small>
+        </p>
+
+        <!-- Chapter 6 -->
+        <h4>Conclusion</h4>
+        <p>
+            <i class="keywords">So to round up everything we've just gone over even more briefly:</i> <br />
+            - The graphics pipeline takes a bunch of inputs such as our models & shaders - outputs a framebuffer which sits in memory as a back-buffer until the swap chain
+            swaps it into the front-buffer, causing the image to appear on our monitor.
+        </p>
+        <p>
+            The rabbit hole goes much deeper, however the aim of this blog was to give an abstracted, easy to understand overview of how Vulkan (and most GPU API's) work. 
+            I hope this gives you enough knowledge and confidence to start your very own project and good luck on your journey into graphics programming!
+        </p>
     </div>
 </body>
 </html>

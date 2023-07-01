@@ -1,6 +1,7 @@
 body {
     background: url('../images/seamless_paper_texture_dark.png') repeat;
     color: white;
+    font-family: Roboto !important;
 }
 
 h2 {
@@ -18,6 +19,11 @@ h4:first-of-type {
 
 h4 {
     color: #97cfc1
+}
+
+.keywords {
+    color: #efd7b4;
+    font-weight: normal;
 }
 
 .blogWrapper {
