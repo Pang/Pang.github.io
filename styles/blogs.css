@@ -52,6 +52,16 @@ h4 {
     font-weight: bold;
 }
 
+.vbPos {
+    color: #00b6ff;
+}
+.vbCol {
+    color: #1bff1b;
+}
+.vbNorm {
+    color: #ff7575;
+}
+
 @media only screen and (max-width: 500px) {
     .blogWrapper {
         padding: 20px;

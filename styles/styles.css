@@ -129,3 +129,10 @@ h5 {
     right:-40px;
     border-left:40px solid #97cfc1; 
 }
+
+code {
+    display: inline-block;
+    white-space: pre-line;
+    border: solid 1px white;
+    padding: 10px;
+}
