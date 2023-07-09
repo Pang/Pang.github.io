@@ -27,11 +27,52 @@
             in those gaps and dig deeper into the process, particularly around shaders, the graphics pipeline, framebuffers & the swap chain.
         </p>
 
+        <!-- Chapter 2-->
+        <h4>Shaders</h4>
+        <p>
+            Simply put, we write shaders to determine how to render objects in our application. A vert shader handles all of the
+            logic that we want to apply to our vertices in the graphics pipeline, and the frag shader deals with the fragments from the rasterizer.
+            <br />
+            <span class="keywords"> We may have attributes in our Vertex Shader that look like the following:</span> 
+        </p>
+        <p>
+            <code>layout(location = 0) in vec2 position;
+                layout(location = 1) in vec3 color;
 
-        <!-- Chapter 2 -->
+                layout(location = 0) out vec3 fragColor;
+                
+                void main() {
+                    &nbsp;&nbsp;gl_Position = vec4(position, 0.0, 1.0);
+                    &nbsp;&nbsp;fragColor = color;
+                }
+            </code>
+        </p>
+        <p>
+            The "in" keyword declares a variable inside the vert shader that will be used within the vertex buffers (more on this in the next chapter).
+            Whereas the "out" keyword, as seen on 'fragColor' declares a variable that will be passed to the fragment shader after the rasterization process.
+        </p>
+        <p>
+            <span class="keywords">The Fragment Shader:</span>
+        </p>
+        <p>
+            <code>layout(location = 0) in vec3 fragColor;
+                layout(location = 0) out vec4 outColor;
+                
+                void main() {
+                    &nbsp;&nbsp;outColor = vec4(fragColor, 1.0);
+                }
+
+            </code>
+        </p>
+        <p>
+            Notice the "in" keyword and that the location is the same as the location set in our vert shader for the fragColor. 
+            This fragment shader is ran for every pixel on the screen, whereas the vertex shader is ran for the number of vertices (so 3 for a triangle)
+        </p>
+
+        <!-- Chapter 3 -->
         <h4>Vertex Buffers</h4>
         <p>
-            These are instructions, written in our shaders, to tell the graphics pipeline how to build models and apply properties like colour.
+            These are instructions, written in our vertex shaders, to tell the graphics pipeline how to build models and apply properties like colour.
             A simple vertex buffer where we only want to pass attributes like the vertex position and colours may look like this: 
         </p>
         <p>
