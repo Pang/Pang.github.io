@@ -24,15 +24,15 @@
         <p>
             Previously, we went over the stages using Vulkan from creating a window to displaying an image on the screen.
             This was a high level overview and a few details in between were missed out purposefully. Now I'd like to fill
-            in those gaps and dig deeper into the process, particularly around the graphics pipeline, framebuffers & the swap chain.
+            in those gaps and dig deeper into the process, particularly around shaders, the graphics pipeline, framebuffers & the swap chain.
         </p>
 
 
         <!-- Chapter 2 -->
         <h4>Vertex Buffers</h4>
         <p>
-            These are instructions to tell our graphics pipeline how to build models and apply properties like colour.
-            A simple vertex buffer where we only want to pass vertex positions and colours may look like this: 
+            These are instructions, written in our shaders, to tell the graphics pipeline how to build models and apply properties like colour.
+            A simple vertex buffer where we only want to pass attributes like the vertex position and colours may look like this: 
         </p>
         <p>
             <code>layout(location = 0) in vec2 position;
@@ -46,19 +46,17 @@
                 <span class="vbCol">(h, i, j)</span>,
                 <span class="vbPos">(k, l)</span>, 
                 <span class="vbCol">(m, n, o)</span>
-            } 
-            <br />Goes into the graphics pipeline
+            }
             <br />
             <span class="vbPos">position attribute is blue (x, y)</span>, <span class="vbCol">colour attribute is green (r, g, b)</span><br /><br />
         </p>
         <p>
-            In the above example we are only using 1 binding and interleaving position and colour. It is possible to separate each attributes
-            into it's own unique bindings which can yield better performance, however differences can be very small and it's recommended to
-            stick with interleaved when dealing with simpler pipelines & algorithms.
+            In the above example we are only using 1 binding which interleaves position and colour. It is possible to separate each attributes
+            into it's own unique bindings however for simplicity it's recommended to stick with interleaved.
         </p>
         <p>    
-            Even if we separate our attributes into their own bindings, all bindings still go into the graphics pipeline on the same Vertex Buffer. 
-            To visualize this, see below:
+            Even if we separate all of our attributes into their own bindings, all bindings still go into the graphics pipeline together on 
+            the same Vertex Buffer. To visualize this, see below:
         </p>
         <p>
             <code>layout(location = 0) in vec2 position;
@@ -81,7 +79,6 @@
                 <span class="vbNorm">(s, t, u)</span>,
                 <span class="vbNorm">(v, w, x)</span>
             } ]
-            <br />Goes into the graphics pipeline as 1 vertex buffer
             <br />
             <span class="vbNorm">normal attribute is red (x, y, z)</span><br />
         </p>
