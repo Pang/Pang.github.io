@@ -76,10 +76,6 @@
             Notice the "in" keyword and that the location is the same as the location set in our vert shader for the fragColor. 
             This fragment shader is ran for every pixel on the screen, whereas the vertex shader is ran for the number of vertices (so 3 for a triangle).
         </p>
-        <p>
-            It's worth mentioning that when we set each vertex to a particular color, the fragment shader will blend these colors together through a method
-            called "Fragment Interpolation". This ensures smooth colouring within our models.
-        </P>
 
         <!-- Chapter 3 -->
         <h4>Vertex Buffers</h4>
@@ -109,12 +105,31 @@
                 &nbsp;&nbsp;{ { 0.5, 0.5}, { 0.0f, 1.0f, 0.0f } },
                 &nbsp;&nbsp;{ {-0.5, 0.5}, { 1.0f, 0.0f, 1.0f } }
             };</code>
+            <br /> <br />
+            <code>std::vector<VkVertexInputAttributeDescription> Model::Vertex::getAttributeDescriptions() {
+                &nbsp;&nbsp;std::vector<VkVertexInputAttributeDescription> attributeDescriptions(2);
+                &nbsp;&nbsp;attributeDescriptions[0].binding = 0;
+                &nbsp;&nbsp;attributeDescriptions[0].location = 0;
+                &nbsp;&nbsp;attributeDescriptions[0].format = VK_FORMAT_R32G32_SFLOAT; // vec 2
+                &nbsp;&nbsp;attributeDescriptions[0].offset = offsetof(Vertex, position);
+
+                &nbsp;&nbsp;attributeDescriptions[1].binding = 0;
+                &nbsp;&nbsp;attributeDescriptions[1].location = 1;
+                &nbsp;&nbsp;attributeDescriptions[1].format = VK_FORMAT_R32G32B32_SFLOAT;  // vec 3
+                &nbsp;&nbsp;attributeDescriptions[1].offset = offsetof(Vertex, color);
+
+                &nbsp;&nbsp;return attributeDescriptions;
+            }</code>
         </p>
         <p>
             In the above example we are only using 1 binding which interleaves position and colour. It is possible to separate each attributes
             into it's own unique bindings however for simplicity it's recommended to stick with interleaved. Regardless of however we sort our
             bindings, they all still go into the graphics pipeline together on the same Vertex Buffer.
         </p>
+        <p>
+            It's worth mentioning that when we set each vertex to a particular color, the fragment shader will blend these colors together through a method
+            called "Fragment Interpolation". This ensures smooth colouring within our models.
+        </P>
 
         <h4>Command Buffers</h4>
         <p>WIP</p>
