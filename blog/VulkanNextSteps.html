@@ -31,8 +31,8 @@
         <h4>What's next?</h4>
         <p>
             Previously, we went over the stages using Vulkan from creating a window to displaying an image on the screen.
-            This was a high level overview and a few details in between were missed out purposefully. Now I'd like to fill
-            in those gaps and dig deeper into the process, particularly around shaders, the graphics pipeline, framebuffers & the swap chain.
+            This was a high level overview and a few details in between were missed out purposefully. In this chapter I would
+            like to explain how shaders and the graphics pipeline interact.
         </p>
 
         <!-- Chapter 2-->
@@ -80,7 +80,7 @@
         <!-- Chapter 3 -->
         <h4>Vertex Buffers</h4>
         <p>
-            This is an object used to pass vertex data (written in our shaders) to the graphics pipeline with instructions on how to render objects and apply properties like colour.
+            This is an object used to pass the vertex data & attributes (written in our shaders) to the graphics pipeline with instructions on how to render objects and apply properties like colour.
             A simple set of vertex shader attributes where we only want to pass vertex position and colour may look like this: 
         </p>
         <p>
@@ -142,7 +142,20 @@
         </P>
 
         <h4>Command Buffers</h4>
-        <p>WIP</p>
+        <p>
+            In short, a Command Buffer sends commands from the CPU to be queued & executed on the GPU. This means it binds all of our graphics pipeline steps,
+            including drawing the vertices, to a "Render Pass" (A recorded set of instructions that sits inside the Command Buffer), becomes queued until executed 
+            on the GPU and then put into a Framebuffer which we talked about in the previous blog.
+        </p>
+        <p>
+            One of the main reasons the command buffer records this render pass is for optimizing performance. Essentially we can reuse the defined command buffer for
+            multiple frames, for when we don't need to draw anything new onto the display. Thus - draw commands wont need to be repeated for every frame!
+        </p>
+
+        <h4>Conclusion</h4>
+        <p>
+            ...
+        </p>
     </div>
 </body>
 </html>
