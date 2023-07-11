@@ -32,7 +32,7 @@
         <p>
             Previously, we went over the stages using Vulkan from creating a window to displaying an image on the screen.
             This was a high level overview and a few details in between were missed out purposefully. In this chapter I would
-            like to explain how shaders and the graphics pipeline interact.
+            like to explain how shaders and the graphics pipeline interact, as well as briefly explaining the roles of Vertex & Command Buffers
         </p>
 
         <!-- Chapter 2-->
@@ -143,18 +143,24 @@
 
         <h4>Command Buffers</h4>
         <p>
-            In short, a Command Buffer sends commands from the CPU to be queued & executed on the GPU. This means it binds all of our graphics pipeline steps,
+            In short, a Command Buffer records and sends commands from the CPU to be queued & executed on the GPU. This means it binds all of our graphics pipeline steps,
             including drawing the vertices, to a "Render Pass" (A recorded set of instructions that sits inside the Command Buffer), becomes queued until executed 
             on the GPU and then put into a Framebuffer which we talked about in the previous blog.
         </p>
         <p>
-            One of the main reasons the command buffer records this render pass is for optimizing performance. Essentially we can reuse the defined command buffer for
+            One of the main reasons the command buffer records this render pass is for optimizing performance. Essentially we can reuse the defined command for
             multiple frames, for when we don't need to draw anything new onto the display. Thus - draw commands wont need to be repeated for every frame!
         </p>
 
         <h4>Conclusion</h4>
         <p>
-            ...
+            The aim of this blog was to become more familiar with the steps that interact directly with the graphics pipeline. At this point, we should now be able to understand
+            a bit more of the code and process going on within a Vulkan project. If you would like a refresher on the previous blog I'll leave a link below. Thanks for taking
+            the time to read through this and I hope it's helped you in some way!
+        </p>
+        <p>
+            <span class="keywords">See also:</span> <br />
+            <a href="./Vulkan.html">Vulkan for Beginners</a>
         </p>
     </div>
 </body>
