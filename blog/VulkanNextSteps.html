@@ -80,14 +80,28 @@
         <!-- Chapter 3 -->
         <h4>Vertex Buffers</h4>
         <p>
-            These are instructions, written in our vertex shaders, to tell the graphics pipeline how to build models and apply properties like colour.
-            A simple vertex shader where we only want to pass attributes such as vertex position and colour may look like this: 
+            This is an object used to pass vertex data (written in our shaders) to the graphics pipeline with instructions on how to render objects and apply properties like colour.
+            A simple set of vertex shader attributes where we only want to pass vertex position and colour may look like this: 
         </p>
         <p>
             <code>layout(location = 0) in vec2 position;
                 layout(location = 1) in vec3 color;
             </code><br /><br />
-            <b>Output:</b><br />
+
+            <span class="keywords">Vulkan code defining these parameters:</span><br />
+            <code>std::vector&lt;Model::Vertex&gt; vertices {
+                &nbsp;&nbsp;{ { 0.0, -0.5 }, { 1.0f, 0.0f, 0.0f } },
+                &nbsp;&nbsp;{ { 0.5, 0.5}, { 0.0f, 1.0f, 0.0f } },
+                &nbsp;&nbsp;{ {-0.5, 0.5}, { 1.0f, 0.0f, 1.0f } }
+            };</code>
+            
+            <p>
+                In our examples we are only using 1 binding which interleaves position and colour. It is possible to separate each attributes
+                into it's own unique bindings however for simplicity it's recommended to stick with interleaved. Regardless of however we sort our
+                bindings, they all still go into the graphics pipeline together on the same Vertex Buffer.
+            </p>
+
+            <span class="keywords">Output:</span><br />
             {
                 <span class="vbPos">(a, b)</span>, 
                 <span class="vbCol">(c, d, e)</span>, 
@@ -97,15 +111,15 @@
                 <span class="vbCol">(m, n, o)</span>
             }
             <br />
-            <span class="vbPos">Position = (x, y)</span>, <span class="vbCol">Color = (r, g, b)</span><br /><br />
+            <span class="vbPos">Position = (x, y)</span>, <span class="vbCol">Color = (r, g, b)</span><br />
 
-            The Vulkan code may look more like this:<br />
-            <code>std::vector<Model::Vertex> vertices {
-                &nbsp;&nbsp;{ { 0.0, -0.5 }, { 1.0f, 0.0f, 0.0f } },
-                &nbsp;&nbsp;{ { 0.5, 0.5}, { 0.0f, 1.0f, 0.0f } },
-                &nbsp;&nbsp;{ {-0.5, 0.5}, { 1.0f, 0.0f, 1.0f } }
-            };</code>
-            <br /> <br />
+            <p>
+                To make things a little clearer, the below code example shows how we would set this up in Vulkan. Firstly they have the same bindings,
+                since we want to interleave them. Then the locations are set correctly with those of the shader, the Position attribute's format 
+                is defined by a 2d Vector, and finally the color uses a 3d Vector.
+            </p>
+
+            <span class="keywords">Vulkan code defining the input attributes descriptions:</span><br />
             <code>std::vector<VkVertexInputAttributeDescription> Model::Vertex::getAttributeDescriptions() {
                 &nbsp;&nbsp;std::vector<VkVertexInputAttributeDescription> attributeDescriptions(2);
                 &nbsp;&nbsp;attributeDescriptions[0].binding = 0;
@@ -121,11 +135,7 @@
                 &nbsp;&nbsp;return attributeDescriptions;
             }</code>
         </p>
-        <p>
-            In the above example we are only using 1 binding which interleaves position and colour. It is possible to separate each attributes
-            into it's own unique bindings however for simplicity it's recommended to stick with interleaved. Regardless of however we sort our
-            bindings, they all still go into the graphics pipeline together on the same Vertex Buffer.
-        </p>
+
         <p>
             It's worth mentioning that when we set each vertex to a particular color, the fragment shader will blend these colors together through a method
             called "Fragment Interpolation". This ensures smooth colouring within our models.
