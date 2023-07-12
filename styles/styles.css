@@ -137,3 +137,12 @@ code {
     padding: 10px;
     font-size:14px;
 }
+
+.urlLinks > a {
+    color: #428d91;
+    text-decoration: none;
+}
+
+.urlLinks > a:hover {
+    color: #445bcf;
+}
