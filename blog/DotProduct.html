@@ -39,17 +39,22 @@
         <h4>How to find it</h4>
         <p>
             Many game engines allow you to use libraries to determine a dot product which contain functions like the one below.
-            In Unity, the `.forward` is a normalized vector that only considers the objects rotation. <br />
-            <code>Vector3.Dot(targetObject, selfObject.forward);</code> <br />
+            In Unity, the `.forward` is a normalized vector that only considers the objects rotation. <br /> <br />
+            
+            (self = npc, target = player) <br />
+            <code>Vector3 dotTarget = (targetPosition - selfPosition).normalized;
+                Vector3.Dot(dotTarget, selfObject.forward);
+            </code> <br /> <br />
             
         </p>
         <p>
             An important thing to remember is that this doesn't account for the objects position, so if the rotation is <span class="keywords">`Vector3(0, 30, 0)`</span>, then
             the `.forward` property will always output the same <span class="keywords">`Vector3(0.50, 0.00, 0.87)`</span> regardless of it's position in world space. Therefore if you
-            do need to check that the target is in range first you will need to do something like: <br />
-            <code>float magnitude = (targetPos - fromPos).magnitude;
+            do need to check that the target is in range first you will need to do something like: <br /> <br />
+
+            <code>float magnitude = (targetPosition - selfPosition).magnitude;
                 return magnitude &lt; radius;
-            </code>
+            </code> <br /> <br />
         </p>
 
         <p>
@@ -62,8 +67,12 @@
         <!-- Chapter 3 -->
         <h4>Making it useful</h4>
         <p>
-            Regardless of how we choose to calculate our Dot Product, we are returned with the Radians as an output. Radians are a useful measurement and from it we can measure our
-            degrees. Let's say for example that our NPC is a monster with huge eyes granting it a large field of view, in Unity we will transform our Radians to Degrees with: <br />
+            If you recall, our <span class="keywords">`dotTarget`</span> and <span class="keywords">`selfObject.forwards`</span> properties are normalized, so we will get 
+            a value between -1 and 1. To make this useful we want to find out the degree of the angle and then use it to act as peripheral vision for the NPC. 
+        </p>
+        <p>
+            Let's say for example that our NPC is a monster with huge eyes granting it a large field of view, in Unity we'll first use <span class="keywords">Acos(f)</span> 
+            which returns the value in radians, and then transform our Radians to Degrees: <br /> <br />
             <code>float angle = Mathf.Acos(dotProduct) * Mathf.Rad2Deg;
                 if (angle &lt; peripheralVisionDegrees)
                 {
@@ -73,9 +82,19 @@
         </p>
 
         <h4>Conclusion</h4>
-        <p>...</p>
-
-        <p>See example: <a href="https://github.com/Pang/NpcLogic/blob/master/HelperMethods.cs">https://github.com/Pang/NpcLogic/blob/master/HelperMethods.cs</a></p>
+        <p>
+            Dot Products are useful for more than just NPC vision, you may want to check the angle of a plane and give it more friction if ascending higher into the air because - well gravity.
+            Another example being a drifting mechanic that begins once your car stops facing the way that it's moving towards, or even using it to measure how much damage a vehicles should 
+            receive during a head-on collision.
+        </p>
+        <p>
+            Finding use-cases for Dot products can be fun so I suggest coming up with something and try to build it for yourself. If you would like to see a full working example of how I implemented
+            this technique for NPC vision then I've left a link to the repo below, good luck!
+        </p>
+        <p>
+            <span class="keywords">See example:</span> <br />
+            <a href="https://github.com/Pang/NpcLogic/blob/master/HelperMethods.cs">https://github.com/Pang/NpcLogic/blob/master/HelperMethods.cs</a>
+        </p>
     </div>
 </body>
 </html>
