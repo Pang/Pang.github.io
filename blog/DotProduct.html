@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>RyanBeckett - Dot Product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="preload" href="../images/seamless_paper_texture.png" as="image" />
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/blogs.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJBFT9BLV7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJBFT9BLV7');
+    </script>
+</head>
+
+<body>
+    <div class="blogWrapper">
+        <h2>Dot Product</h2>
+        <a href="../Blog.html" class="homeBtn">Home</a>
+        
+        <!-- Chapter 1 -->
+        <h4>What is a Dot Product?</h4>
+        <p>
+            A Dot Product is a product of 2 vectors, used to determine the direction an object is facing relative to another object.
+            NPC vision in games is a good example of this, especially in stealth games since they need to know if the player is right 
+            in front of them so they can begin pursuit.
+        </p>
+        
+        <!-- Chapter 2 -->
+        <h4>How to find it</h4>
+        <p>
+            Many game engines allow you to use libraries to determine a dot product which contain functions like the one below.
+            In Unity, the `.forward` is a normalized vector that only considers the objects rotation. <br />
+            <code>Vector3.Dot(targetObject, selfObject.forward);</code> <br />
+            
+        </p>
+        <p>
+            An important thing to remember is that this doesn't account for the objects position, so if the rotation is <span class="keywords">`Vector3(0, 30, 0)`</span>, then
+            the `.forward` property will always output the same <span class="keywords">`Vector3(0.50, 0.00, 0.87)`</span> regardless of it's position in world space. Therefore if you
+            do need to check that the target is in range first you will need to do something like: <br />
+            <code>float magnitude = (targetPos - fromPos).magnitude;
+                return magnitude &lt; radius;
+            </code>
+        </p>
+
+        <p>
+            Both formulas below can be used to attain the Dot Product (<span class="keywords">a·b</span>), remember that a vector between 2 lines 
+            (<span class="keywords">|a|</span>) means the magnitude of that vector <br />
+            <span class="keywords">a·b = |a| * |b| * cos(θ)</span> <br />
+            <span class="keywords">a·b = (ax * bx) + (ay * by) + (az * bz)</span>
+        </p>
+
+        <!-- Chapter 3 -->
+        <h4>Making it useful</h4>
+        <p>
+            Regardless of how we choose to calculate our Dot Product, we are returned with the Radians as an output. Radians are a useful measurement and from it we can measure our
+            degrees. Let's say for example that our NPC is a monster with huge eyes granting it a large field of view, in Unity we will transform our Radians to Degrees with: <br />
+            <code>float angle = Mathf.Acos(dotProduct) * Mathf.Rad2Deg;
+                if (angle &lt; peripheralVisionDegrees)
+                {
+                    &nbsp;&nbsp;// attack player!
+                }
+            </code>
+        </p>
+
+        <h4>Conclusion</h4>
+        <p>...</p>
+
+        <p>See example: <a href="https://github.com/Pang/NpcLogic/blob/master/HelperMethods.cs">https://github.com/Pang/NpcLogic/blob/master/HelperMethods.cs</a></p>
+    </div>
+</body>
+</html>
