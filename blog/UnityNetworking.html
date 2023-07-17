@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>RyanBeckett - Unity Networking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="preload" href="../images/seamless_paper_texture.png" as="image" />
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/blogs.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJBFT9BLV7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJBFT9BLV7');
+    </script>
+</head>
+
+<body>
+    <div class="blogWrapper">
+        <h2>Unity Networking</h2>
+        <a href="../Blog.html" class="homeBtn">Home</a>
+        
+        <!-- Chapter 1 -->
+        <h4>Netcode for Gameobjects</h4>
+        <p>
+            One of Unity's most excited new features, for me at least, was the new built-in Netcode for Gameobjects library and functionality introduced in version 2021.3, however now fully
+            released in the 2023 LTS! It allows us to build networking logic into our games quite easily through their Unity Cloud Service and the use of Server/Client RPC requests.
+        </p>
+
+        <!-- Chapter 2 -->
+        <h4>RPC Requests</h4>
+        <p>An RPC is short for 'Remote Prodecure Call' and essentially can be called by Clients to trigger on the server or by the server/host to be triggered on the clients</p>
+        <p>
+            One example of when we want to call an RPC as a client to the server is to let the host know we've changed our weapon, then it's the responsibility of the server
+            to let everyone else know that you're carrying a new weapon.
+        </p>
+        <p>
+            You may be wondering why the client can't just let all the other clients know without first alerting the host. Well this is a safety precaution that allows the server
+            to check that the call being made was 'legal' and not a nasty cheater trying to hack the game in his favor.
+        </p>
+
+        <!-- Chapter 3 -->
+        <h4>Player Damage Example</h4>
+        <h5 class="vbNorm">Bad example</h5>
+        <p>
+            <span class="keywords">Client A:</span> Tells the Server he shot Client B for 100 damage <br/>
+            <span class="keywords">Host:</span> Accepts parameters given by Client A and then share that information with all other clients
+        </p>
+        <h5 class="vbCol">Good example</h5>
+        <p>
+            <span class="keywords">Client A:</span> Tells the Server he shot client B with a cheap pistol<br/>
+            <span class="keywords">Host:</span> Checks Client A is carrying a pistol, generates the damage amount that would normally be given by that pistol, applies it to Client B and shares that info
+        </p>
+        <p>
+            One problem with the good example is that as Client A, we wouldn't want to have to wait until the Host has ran through all of it's logic and sent us back the amount of damage we've done.
+            Therefore to get around this, we make it seem like we've damaged Client through feedback and animation, then adjust the health when it has been returned.
+        </p>
+
+        <!-- Chapter 4 -->
+        <h4>Lobbies</h4>
+        <p>
+            Unity Services also has a library for lobbies which makes this part really easy, creating one looks a little like this:
+        </p>
+        <code>CreateLobbyOptions lobbyOptions = new CreateLobbyOptions
+            {
+                &nbsp;&nbsp;IsPrivate = true,
+                &nbsp;&nbsp;Player = GetPlayer(),
+                &nbsp;&nbsp;Data = new Dictionary<string, DataObject>
+                &nbsp;&nbsp;{
+                &nbsp;&nbsp;&nbsp;&nbsp;{
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KEY_START_GAME,
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new DataObject(DataObject.VisibilityOptions.Member, "0")
+                &nbsp;&nbsp;&nbsp;&nbsp;}
+                &nbsp;&nbsp;}
+            };
+            Lobby lobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, maxPlayers, lobbyOptions);
+        </code>
+</body>
+</html>
