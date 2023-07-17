@@ -19,7 +19,7 @@ h5 {
 }
 
 #home {
-    margin-top: 90px;
+    margin-top: 45px;
     position: relative;
     max-width: 100%;
     animation: 0.8s ease-in 0s forwards homeBannerIntro;
@@ -33,7 +33,7 @@ h5 {
     position:relative;
     animation: 0.8s ease-in 0s forwards homeBannerIntro;
     margin: auto;
-    margin-bottom: 120px;
+    margin-bottom: 60px;
     justify-content: center;
 }
 #picOfMe > img {
