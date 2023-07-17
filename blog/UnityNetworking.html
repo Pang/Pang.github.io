@@ -56,7 +56,7 @@
         <h5 class="vbCol">Good example</h5>
         <p>
             <span class="keywords">Client A:</span> Tells the Server he shot client B with a cheap pistol<br/>
-            <span class="keywords">Host:</span> Checks Client A is carrying a pistol, generates the damage amount that would normally be given by that pistol, applies it to Client B and shares that info
+            <span class="keywords">Host:</span> Checks Client A's weapon, generates the damage amount that would normally be given by that weapon, applies it to Client B and shares that info
         </p>
         <p>
             One problem with the good example is that as Client A, we wouldn't want to have to wait until the Host has ran through all of it's logic and sent us back the amount of damage we've done.
@@ -70,17 +70,61 @@
         </p>
         <code>CreateLobbyOptions lobbyOptions = new CreateLobbyOptions
             {
-                &nbsp;&nbsp;IsPrivate = true,
-                &nbsp;&nbsp;Player = GetPlayer(),
-                &nbsp;&nbsp;Data = new Dictionary<string, DataObject>
-                &nbsp;&nbsp;{
-                &nbsp;&nbsp;&nbsp;&nbsp;{
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KEY_START_GAME,
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new DataObject(DataObject.VisibilityOptions.Member, "0")
-                &nbsp;&nbsp;&nbsp;&nbsp;}
-                &nbsp;&nbsp;}
+                &nbsp; IsPrivate = false,
+                &nbsp; Player = GetPlayer(),
+                &nbsp; Data = new Dictionary<string, DataObject>
+                &nbsp; {
+                &nbsp; &nbsp; {
+                &nbsp; &nbsp; &nbsp; KEY_START_GAME,
+                &nbsp; &nbsp; &nbsp; new DataObject(DataObject.VisibilityOptions.Member, "0")
+                &nbsp; &nbsp; }
+                &nbsp; }
             };
             Lobby lobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, maxPlayers, lobbyOptions);
         </code>
+        <p>
+            You'll need to build a UI for this ofcourse. But once a lobby is created, we can use the below to get all public lobbies and display them on a board<br />
+            <code>QueryResponse queryResponse = await Lobbies.Instance.QueryLobbiesAsync();</code>
+        </p>
+        <p>
+            If you decide to create private lobbies, a lobby code is generated when created. You can share this with people you want to play with and the logic
+            for them to join will look like this:
+            <code>var joinLobbyByCodeOptions = new JoinLobbyByCodeOptions() { Player = GetPlayer() };
+            var joinedLobby = await Lobbies.Instance.JoinLobbyByCodeAsync(lobbyCode, joinLobbyByCodeOptions);</code>
+        </p>
+
+        <!-- Chapter 5 -->
+        <h4>Syncing Obstacles</h4>
+        <p>
+            In the following example I'm about to give, when a player joins my server, I need everyone to see the moving obstacles at in the exact same position at the exact same time.
+            If this is done incorrectly, some players may appear to be floating or possibly cheating.
+        </p>
+        <code>[ClientRpc]
+            void SetObstaclePositionClientRpc(ulong clientId, float timeElapsed, bool isReversing)
+            {
+                &nbsp; var obstacle = GetNetworkObject(clientId).GetComponent<BaseObstacle>();
+                &nbsp; obstacle.TimeElapsed = timeElapsed;
+                &nbsp; if (obstacle.HasReverse)
+                &nbsp; {
+                &nbsp; &nbsp; obstacle.GetComponent<SidewaysMovingPlatform>().Reverse = isReversing;
+                &nbsp; }
+            }
+        </code>
+        <p>
+            If you remember earlier I mentioned that the Server has to call an RPC that will trigger on the clients. This means each client will be told to run this method that says the 
+            objects ID <span class="keywords">(ulong)</span>, the time already elapsed during it's cycle <span class="keywords">(float)</span> and wether or not it's going it's original 
+            way or reversing <span class="keywords">(bool)</span>.
+        </p>
+        <p>
+            This should only need to be called once when the player first enters, afterwards the cycle should be completely predictable and never go off course. Bare in mind that you 
+            wouldn't use this logic for something like a football since you need to know at all times where it's exact position is during the game.
+        </p>
+        
+        <!-- Chapter 6 -->
+        <h4>Conclusion</h4>
+        <p>
+            A very light introduction to Unity Networking, but for me these bits of information really helped string together a bigger picture of just how much thought and effort goes
+            into making online multiplayer games seamless and enjoyable to play with friends. Thanks for taking the time to read this blog and don't forget to check out my others!
+        </p>
 </body>
 </html>
