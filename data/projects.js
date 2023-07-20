@@ -77,7 +77,7 @@ const projects = [
         "id" : 8,
         "type" : "game",
         "title" : "Online-Multiplayer Platformer",
-        "description" : "<p>I built this game with Unity\’s Netcode for Gameobjects library so that I could also play it with friends and family. You can create a private lobby and use a secret code to join and it also uses a Client-Host model, whilst runs over Unity’s online services to collect analytics. One of the biggest challenges for this project was getting all of the moving objects to sync up the same for every player. I wrote an article about my findings from this project on my blog <a class=\"dialoglink\" href=\"./blog/UnityNetworking.html\" target=\"blank\">Here</a></p>",
+        "description" : "<p>I built this game with Unity\’s Netcode for Gameobjects library so that I could also play it with friends and family. You can create a private lobby and use a secret code to join as it uses a Client-Host model and then connects to Unity’s online services to collect analytics. One of the biggest challenges for this project was getting all of the moving objects to sync up the same for every player. I wrote an article about my findings from this project on my blog <a class=\"dialoglink\" href=\"./blog/UnityNetworking.html\" target=\"blank\">Here</a></p>",
         "images" : [
             "./images/OnlinePlatformer/Platformer1.png",
             "./images/OnlinePlatformer/Platformer1.png"
