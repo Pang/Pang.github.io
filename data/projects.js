@@ -37,7 +37,7 @@ const projects = [
         "id" : 4,
         "type" : "game",
         "title" : "Procedural Terrain",
-        "description" : "<p>This project was a learning oppurtunity for me to understand how perlin noise was used to generate different maps. In doing so I learnt a lot and decided to share my findings through a <a class=\"dialoglink\" href=\"https://www.youtube.com/watch?v=cLs3CGNV120\" target=\"blank\">YouTube tutorial</a></p>",
+        "description" : "<p>Through the use of perlin noise, creating my own mesh and building a shader for the colours of the terrain depending on it\’s height, I was able to generate different maps and then use “fall-off” to turn them into islands. I shared my findings and how I built this project on a <a class=\"dialoglink\" href=\"https://www.youtube.com/watch?v=cLs3CGNV120\" target=\"blank\">YouTube tutorial</a></p>",
         "images" : [],
         "video" : "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/wmaskscrRvM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
     },
@@ -45,7 +45,7 @@ const projects = [
         "id" : 5,
         "type" : "game",
         "title" : "ShieldMaidens",
-        "description" : "<p>ShieldMaidens is a solo/co-op endless runner where you have to fight and block your way through enemies, but be on your toes as you can also encounter more elite enemies who require quick wits and reactions to defeat.</p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/shieldmaidens\" target=\"blank\">Here</a></p>",
+        "description" : "<p>ShieldMaidens is a solo/co-op endless runner where you have to fight and block your way through enemies in a randomly generated world so you never go on the same run twice, shared-screen co-op and joypad support. Hand-drawn assets by myself and a combat system that allows the player/s to decide their own style of play. </p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/shieldmaidens\" target=\"blank\">Here</a></p>",
         "images" : [],
         "video" : "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/BKQ04dLX_6w\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
     },
@@ -53,7 +53,7 @@ const projects = [
         "id" : 6,
         "type" : "game",
         "title" : "NPC AI",
-        "description" : "<p>Inspired by 3D stealth games, I wrote an NPC AI capable of seeing, hearing footsteps & searching for players. </p><p><a class=\"dialoglink\" href=\"https://github.com/Pang/NpcLogic\">Click here</a> to see the logic</p>",
+        "description" : "<p>Inspired by 3D stealth games, I used a state machine design pattern to set the idle, investigate and attack states of the NPC. Then through the use of linear algebra and the Dot Product, I could check the position of the player from the NPC. Finally I gave the player a crouching state which meant their footsteps couldn’t be heard when sneaking behind a wall or the back of an enemy. </p><p><a class=\"dialoglink\" href=\"https://github.com/Pang/NpcLogic\">Click here</a> to see the logic</p>",
         "images" : [
             "./images/NpcAI/ShieldMaidens2Vision.png",
             "./images/NpcAI/ShieldMaidens2pic2.png",
@@ -65,11 +65,22 @@ const projects = [
         "id" : 7,
         "type" : "game",
         "title" : "HexWorld",
-        "description" : "<p>A top down, 2d assets in a 3d environment, tower defence game. The hex tile-grids are built programmatically, they then read a CSV file of the map selected which assigns properties such as land types or buildings, then allows the player to start their kingdom!</p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/hexworld\" target=\"blank\">Here</a></p>",
+        "description" : "<p>A top down, 2d assets in a 3d environment, tower defence game. The hex-tile grid is programmatically rendered and then uses the CSV selected from the menu to determine land, water, buildings and both player and enemy starting points. Finally it uses the pathfinding ‘Breadth-First-Search’ algorithm to find either the nearest player unit or attacks your base!</p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/hexworld\" target=\"blank\">Here</a></p>",
         "images" : [
             "./images/HexWorld/HexWorldLedgeMap.png",
             "./images/HexWorld/HexWorldSpiralMap.png",
             "./images/HexWorld/HexWorldSimpleMap.png",
+        ],
+        "video" : ""
+    },
+    {
+        "id" : 8,
+        "type" : "game",
+        "title" : "Online-Multiplayer Platformer",
+        "description" : "<p>I built this game with Unity\’s Netcode for Gameobjects library so that I could also play it with friends and family. You can create a private lobby and use a secret code to join and it also uses a Client-Host model, whilst runs over Unity’s online services to collect analytics. One of the biggest challenges for this project was getting all of the moving objects to sync up the same for every player. I wrote an article about my findings from this project on my blog <a class=\"dialoglink\" href=\"./blog/UnityNetworking.html\" target=\"blank\">Here</a></p>",
+        "images" : [
+            "./images/OnlinePlatformer/Platformer1.png",
+            "./images/OnlinePlatformer/Platformer1.png"
         ],
         "video" : ""
     },
