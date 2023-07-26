@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>RyanBeckett - A* Pathfinding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="preload" href="../images/seamless_paper_texture.png" as="image" />
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/blogs.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJBFT9BLV7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJBFT9BLV7');
+    </script>
+</head>
+
+<body>
+    <div class="blogWrapper">
+        <h2>A* Pathfinding</h2>
+        <a href="../Blog.html" class="homeBtn">Home</a>
+        
+        <!-- Chapter 1 -->
+        <h4>What is the A* Pathfinding algorithm?</h4>
+        <p>
+            This is one of the most popular algorithms used in games when giving NPC's the ability to find their own way to a destination. With A* you can
+            cleverly navigated around non-walkable tiles and find the shortest path, even when it's not a straight line!
+        </p>
+        <p>
+            I've implemented this into a hex-grid game where waves of enemies spawn every turn and creep closer to your base. One issue I did find was that 
+            having dozens of units all running the A* algorithm at the same time to find their way caused my fans to go into overdrive. A very easy fix for
+            this required staggering the logic runtime for each unit by a few hundred milliseconds (A very common trick, also used in Assassins Creed for crowd reactions)
+        </p>
+
+        <!-- Chapter 2 -->
+        <h4>How does it work?</h4>
+        <p>
+            Put very simply, it checks the distance from each neighbouring tile to the target destination tile <span class="keywords">(known as the G cost)</span>. It also checks this current tile
+            against the starting tile <span class="keywords">(H cost)</span>, then adds both distances together <span class="keywords">(F cost)</span>. Once it's done that for all neighbouring tiles, it will check which has the lowest value 
+            since that will give us the lowest number of moves to get to our destination.
+        </p>
+        <h4>
+            [ <span class="keywords">1</span> ] [ <span class="keywords">2</span> ] [ <span class="keywords">3</span> ]<br/>
+            [ <span class="keywords">4</span> ] [ <span class="keywords">5</span> ] [ <span class="keywords">6</span> ]<br/>
+            [ <span class="keywords">7</span> ] [ <span class="keywords">8</span> ] [ <span class="keywords">9</span> ]
+        </h4>
+        <p>
+            Let's imagine we're at tile 1 and want to get to 9, we would first check all the neighbouring tiles of 1 (2, 4 & 5). <br />
+            <ul>
+                <li>Tile 2 would be G Cost "1" because it's our first move. H cost "2" because we'd have to go to 5 then 9 to reach our destination, and F cost "3" (G + H)</li>
+                <li>Tile 4 would be G cost "1", H cost "1" because now it only needs to move 1 more tile to reach 9, making the F cost "2"</li>
+                <li>Tile 5 would be G cost "1", H cost "2" since it would need to go 5 then 9, finally making the F cost "3"</li>
+            </ul>
+            Hopefully this has made it quite clear to see that now we know the F cost of tile 2 is the lowest, we would add this into our path array and continue the process
+            until we reach our path.
+        </p>
+
+        <!-- Chapter 3 -->
+        <h4>Code example</h4>
+        <p>
+            <code>var current = nodesToSearch[0];
+
+                foreach (var node in nodesToSearch)
+                {
+                    &nbsp; if (node.F &lt; current.F || node.F == current.F && node.H &lt; current.H)
+                    &nbsp; &nbsp; current = node;
+                }
+
+                visitedNodes.Add(current);
+                nodesToSearch.Remove(current);
+
+                if (current == target)
+                {
+                    &nbsp; visitedNodes.RemoveAt(0);
+                    &nbsp; return visitedNodes;
+                }
+            </code>
+        </p>
+        <p>
+            To explain; "nodesToSearch" will contain the neighbours of either the starting tile of the previously selected tiles neighbours. We then decide the new current tile
+            by doing our F cost checks and adding it to our visitedNodes list/array. We can remove it from the nodesToSearch since we won't need to go on the same tile twice. Finally,
+            if the current tile is the target tile, we can safely assume we've reached our destination, remove the starting node since we're already on it, and return the path for our
+            NPC to follow.
+        </p>
+
+        <h4>Conclusion</h4>
+        <p>
+            This is a great algorithm to learn and use if your trying to build NPC AI as it's one of the most cost effective. Other algorithms like "Breadth First Search" will work too, 
+            however it's not as optimized as A* since it will check every neighbouring tile out from it's position until it finds the target. Thus I find it better to use for calculating
+            possible movement tiles when your unit only has a small movement range.
+        </p>
+    </div>
+</body>
+</html>

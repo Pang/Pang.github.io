@@ -65,7 +65,7 @@ const projects = [
         "id" : 7,
         "type" : "game",
         "title" : "HexWorld",
-        "description" : "<p>A top down, 2d assets in a 3d environment, tower defence game. The hex-tile grid is programmatically rendered and then uses the CSV selected from the menu to determine land, water, buildings and both player and enemy starting points. Finally it uses the pathfinding ‘Breadth-First-Search’ algorithm to find either the nearest player unit or attacks your base!</p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/hexworld\" target=\"blank\">Here</a></p>",
+        "description" : "<p>A top down tower defence like game. The hex-tile grid is programmatically rendered and then uses the CSV selected from the menu to determine land, water & other interests on the map. The NPC units use A* Pathfinding and the Player's units use the ‘Breadth-First-Search’ algorithm to find viable paths around your lands.</p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/hexworld\" target=\"blank\">Here</a></p>",
         "images" : [
             "./images/HexWorld/HexWorldLedgeMap.png",
             "./images/HexWorld/HexWorldSpiralMap.png",
