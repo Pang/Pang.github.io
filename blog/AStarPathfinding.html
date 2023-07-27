@@ -55,8 +55,8 @@
             Let's imagine we're at tile 1 and want to get to 9, we would first check all the neighbouring tiles of 1 (2, 4 & 5). <br />
             <ul>
                 <li>Tile 2 would be G Cost "1" because it's our first move. H cost "2" because we'd have to go to 5 then 9 to reach our destination, and F cost "3" (G + H)</li>
-                <li>Tile 4 would be G cost "1", H cost "1" because now it only needs to move 1 more tile to reach 9, making the F cost "2"</li>
-                <li>Tile 5 would be G cost "1", H cost "2" since it would need to go 5 then 9, finally making the F cost "3"</li>
+                <li>Tile 4 would be G cost "1", H cost "2" since it would need to go 5 then 9, finally making the F cost "3"</li>
+                <li>Tile 5 would be G cost "1", H cost "1" because now it only needs to move 1 more tile to reach 9, making the F cost "2"</li>
             </ul>
             Hopefully this has made it quite clear to see that now we know the F cost of tile 5 is the lowest, we would add this into our path array and continue the process
             until we reach our path.
