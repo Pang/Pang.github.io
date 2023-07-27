@@ -59,7 +59,7 @@
                 <li>Tile 5 would be G cost "1", H cost "1" because now it only needs to move 1 more tile to reach 9, making the F cost "2"</li>
             </ul>
             Hopefully this has made it quite clear to see that now we know the F cost of tile 5 is the lowest, we would add this into our path array and continue the process
-            until we reach our path.
+            until we reach our target.
         </p>
 
         <!-- Chapter 3 -->
@@ -84,7 +84,7 @@
             </code>
         </p>
         <p>
-            To explain; "nodesToSearch" will contain the neighbours of either the starting tile of the previously selected tiles neighbours. We then decide the new current tile
+            To explain; "nodesToSearch" will contain the neighbours of either the starting tile or the previously selected lowest F cost. We then decide the new current tile
             by doing our F cost checks and adding it to our visitedNodes list/array. We can remove it from the nodesToSearch since we won't need to go on the same tile twice. Finally,
             if the current tile is the target tile, we can safely assume we've reached our destination, remove the starting node since we're already on it, and return the path for our
             NPC to follow.
@@ -93,8 +93,8 @@
         <h4>Conclusion</h4>
         <p>
             This is a great algorithm to learn and use if your trying to build NPC AI as it's one of the most cost effective. Other algorithms like "Breadth First Search" will work too, 
-            however it's not as optimized as A* since it will check every neighbouring tile out from it's position until it finds the target. Thus I find it better to use for calculating
-            possible movement tiles when your unit only has a small movement range.
+            however it's not as optimized as A* since it will check every neighbouring tile out from it's position until it finds the target. Thus I find "BFS" better to use for calculating
+            possible movement tiles when your unit only has a small movement range, and A* better for finding a path from one side of the map to the other.
         </p>
     </div>
 </body>
