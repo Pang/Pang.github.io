@@ -80,7 +80,32 @@
         </p>
 
         <p>
-            For this tutorial, we're going to go with the third option. In my main controller movement key set I've gone with Up and Down for rotating the look up / look down motion,
+            For this tutorial, we're going to go with the third option. In my first controller movement key set I've gone with turning the ship to face left or right using the 
+            Y rotation axis (Imagine the pole going straight down you body - head to toe). The forward and back keys in this case will make move the ship forwards or backwards. 
+            There's 2 separate methods for these inputs to clearly explain the code. OnForwardJets only listens to Up <span class="keywords">(W)</span> and OnTurn listens for Left/Right <span class="keywords">(A/D)</span>
+        </p>
+
+        <code>public void OnForwardJets(InputAction.CallbackContext context)
+            {
+                &nbsp; &nbsp; if (context.performed) jetsOn = true;
+                &nbsp; &nbsp; else if (context.canceled) jetsOn = false;
+            }
+
+            public void OnTurn(InputAction.CallbackContext context)
+            {
+                &nbsp; &nbsp; if (context.action.inProgress)
+                &nbsp; &nbsp; {
+                    &nbsp; &nbsp; &nbsp; &nbsp; Vector2 deltaValue = context.ReadValue<Vector2>() * Time.smoothDeltaTime;
+                    &nbsp; &nbsp; &nbsp; &nbsp; deltaValue *= rotationStrength;
+                    &nbsp; &nbsp; &nbsp; &nbsp; var correctValues = new Vector3(0, deltaValue.x, 0);
+                    &nbsp; &nbsp; &nbsp; &nbsp; turnInput = correctValues;
+                &nbsp; &nbsp; }
+            }
+            
+        </code>
+
+        <p>
+            The above is my first set, bound to WASD, whereas this is the second set and will bind the the arrow keys. We have Up and Down for rotating the look up / look down motion,
             and the left right keys to spin on the Z axis so we can turn our ship on it's side to fit those wings through small gaps!
         </p>
 
@@ -96,27 +121,27 @@
             }
         </code>
 
-        <p>
-            The above is my first set, bound to WASD, whereas this is the second set and will bind the the arrow keys. This piece of code will make sure to turn
-            the ship to face left or right using the Y rotation axis (Imagine the pole going straight down you body - head to toe).
-        </p>
-
-        <code>public void OnTurn(InputAction.CallbackContext context)
-            {
-                &nbsp; &nbsp; if (context.action.inProgress)
-                &nbsp; &nbsp; {
-                    &nbsp; &nbsp; &nbsp; &nbsp; Vector2 deltaValue = context.ReadValue<Vector2>() * Time.smoothDeltaTime;
-                    &nbsp; &nbsp; &nbsp; &nbsp; deltaValue *= rotationStrength;
-                    &nbsp; &nbsp; &nbsp; &nbsp; var correctValues = new Vector3(0, deltaValue.x, 0);
-                    &nbsp; &nbsp; &nbsp; &nbsp; leanInput = correctValues;
-                &nbsp; &nbsp; }
-            }
-        </code>
-
         <!-- Chapter 4 -->
         <h4>Conclusion</h4>
+
+        <p>Finally, make sure your updating those values in your Update method like so</p>
+        <code>if (jetsOn)
+            {
+                &nbsp; &nbsp; transform.position += (transform.forward * speed * Time.deltaTime);
+            }
+            
+            if (rotateInput != Vector3.zero)
+            {
+                &nbsp; &nbsp; transform.Rotate(rotateInput);
+            }
+    
+            if (turnInput != Vector3.zero)
+            {
+                &nbsp; &nbsp; transform.Rotate(turnInput);
+            }
+        </code>
         <p>
-            This controller gives complete freedom of moveability for the player, although at the start a little tricky to learn admittingly, once you're use to moving
+            This controller gives complete freedom of moveability for the player, although at the start a little tricky to learn admittingly, but once you're use to moving
             in this fashion there will be no obstacles you can't get around!
         </p>
         <p>
