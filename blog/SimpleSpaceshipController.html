@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>RyanBeckett - Simple Spaceship Controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="preload" href="../images/seamless_paper_texture.png" as="image" />
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/blogs.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJBFT9BLV7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJBFT9BLV7');
+    </script>
+</head>
+
+<body>
+    <div class="blogWrapper">
+        <h2>Simple Spaceship Controller</h2>
+        <a href="../Blog.html" class="homeBtn">Home</a>
+        
+        <!-- Chapter 1 -->
+        <h4>Delta values</h4>
+        <p>
+            Before diving into the logic, it's important to know how delta values work. These are useful for controller because we have a universal language of how
+            to translate movement using Vector values. Imagine a 2d topdown map and the 4 values below are your 'WASD' keys.
+            <ul>
+                <li>Up = (0, 1)</li>
+                <li>Down = (0, -1)</li>
+                <li>Left = (-1, 0)</li>
+                <li>Right = (1, 0)</li>
+            </ul>
+            Now let's say we want to make this game playable on a gamepad, all we need to do is detect the direction of the equivelent up/down/left/right keys or even
+            the thumbstick, and we can apply that vector to our player object's position. Say the player is at coordinates <span class="greenTxt">(3, 4)</span>, we add an Up value and now they're
+            at <span class="greenTxt">(3, 5)</span>.
+        </p>
+
+        <!-- Chapter 2 -->
+        <h4>Updating position in Unity</h4>
+        <p>
+            Using the new input system, we read the input context as a vector2 and times (x) it by Time.SmoothDeltaTime. Since this is ran on every frame we hold the key down,
+            the Delta time part makes sure the movement feels consistent regardless of the FPS you're getting. The code looks like this:
+        </p>
+        <code>Vector2 deltaToMovement = context.ReadValuez&lt;Vector2&gt;() * Time.smoothDeltaTime;</code> 
+        <p>
+            The second step, now that we have a consistent movement speed, is to give it some strength. We don't want our spaceship moving at a snails pace!
+        </p>
+        <code>deltaToMovement *= movementStrength;</code> 
+        <p>
+            In our unity file we should have defined a property to track the players input. For this example just define it as <span class="blueTxt">"private Vector2 playerInput = new Vector2();"</span>.
+            Now, during each Update cycle, we want to check if theres any input - playerInput will be <span class="greenTxt">(0,0)</span> if not - but if it is, then we need the following code:
+        </p>
+        <code>if (playerInput != Vector2.zero)
+            {
+                &nbsp; &nbsp; transform.position += playerInput;
+            }  
+        </code>
+
+        <!-- Chapter 3 -->
+        <h4>The Spaceship controller</h4>
+        <p>
+            For a spaceship we want to move around in a 3d space (no pun intended). On planets where gravity exists we don't allow characters to move up in a Y direction (the sky)
+            or into the earth's crust. Since we're in space however, I've assigned up and down to the X rotation. Image the X-axis rotating similarly to a pig roast,
+            except the pole is going through the left side of the spaceship through the right. This will cause the object nose to look up or down.
+        </p>
+
+        <p>
+            Ok we've figured out how to rotate up and down, but now we need to move the ship left and right. <br />You have 3 options here: <br />
+            <span class="keywords">First option:</span> Assign left and right buttons to Y rotation, this will simply rotate the nose in the expected direction.<br />
+            <span class="keywords">Second option:</span> Assign those turning values to the Z rotation axis and replicate your favourite star wars scenes<br />
+            <span class="keywords">Third option:</span> Both! However this will require 2 sets of movement keys (2 thumbsticks or WASD & arrow keys)<br />
+        </p>
+
+        <p>
+            For this tutorial, we're going to go with the third option. In my main controller movement key set I've gone with Up and Down for rotating the look up / look down motion,
+            and the left right keys to spin on the Z axis so we can turn our ship on it's side to fit those wings through small gaps!
+        </p>
+
+        <code>public void OnRotate(InputAction.CallbackContext context)
+            {
+                &nbsp; &nbsp; if (context.action.inProgress)
+                &nbsp; &nbsp; {
+                    &nbsp; &nbsp; &nbsp; &nbsp; Vector2 deltaValue = context.ReadValue&lt;Vector2&gt;() * Time.smoothDeltaTime;
+                    &nbsp; &nbsp; &nbsp; &nbsp; deltaValue *= rotationStrength;
+                    &nbsp; &nbsp; &nbsp; &nbsp; var correctValues = new Vector3(deltaValue.y, 0, -deltaValue.x);
+                    &nbsp; &nbsp; &nbsp; &nbsp; rotateInput = correctValues;
+                &nbsp; &nbsp; }
+            }
+        </code>
+
+        <p>
+            The above is my first set, bound to WASD, whereas this is the second set and will bind the the arrow keys. This piece of code will make sure to turn
+            the ship to face left or right using the Y rotation axis (Imagine the pole going straight down you body - head to toe).
+        </p>
+
+        <code>public void OnTurn(InputAction.CallbackContext context)
+            {
+                &nbsp; &nbsp; if (context.action.inProgress)
+                &nbsp; &nbsp; {
+                    &nbsp; &nbsp; &nbsp; &nbsp; Vector2 deltaValue = context.ReadValue<Vector2>() * Time.smoothDeltaTime;
+                    &nbsp; &nbsp; &nbsp; &nbsp; deltaValue *= rotationStrength;
+                    &nbsp; &nbsp; &nbsp; &nbsp; var correctValues = new Vector3(0, deltaValue.x, 0);
+                    &nbsp; &nbsp; &nbsp; &nbsp; leanInput = correctValues;
+                &nbsp; &nbsp; }
+            }
+        </code>
+
+        <!-- Chapter 4 -->
+        <h4>Conclusion</h4>
+        <p>
+            This controller gives complete freedom of moveability for the player, although at the start a little tricky to learn admittingly, once you're use to moving
+            in this fashion there will be no obstacles you can't get around!
+        </p>
+        <p>
+            Thank you for taking the time to read this article and good luck on your coding journey! Don't forget to check out my other Unity and coding tutorials.
+        </p>
+</body>
+</html>
