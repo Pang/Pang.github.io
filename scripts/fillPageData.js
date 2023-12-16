@@ -17,7 +17,7 @@ function fillReferences() {
     for (let i = 0; i < references.length; i++) {
         let ref = '<div class="referenceItem">' +
         '<h5><b>' + references[i].fullName +'</b></h5>' +
-        '<p><i>"' + references[i].shortVersion + '"</i></p>' +
+        '<p><i>' + references[i].shortVersion + '</i></p>' +
         '<p><a class="dialoglink" onclick="openRefModal(`referenceDialogWrapper`,' + references[i].id + ')"><b>See More</b></a></p>' +
         '</div>';
         refArea.innerHTML += ref;
