@@ -84,4 +84,15 @@ const projects = [
         ],
         "video" : ""
     },
+    {
+        "id" : 9,
+        "type" : "game",
+        "title" : "StarRacers",
+        "description" : "<p>A VR game that lets the player walk around their ship bay to select levels, then enter their ship to race around tracks and race against time. You can choose between using VR controllers, gamepad or Keyboard/Mouse. Race with your preferred method of control!</p>",
+        "images" : [
+            "./images/StarRacers/StarRacers1.jpg",
+            "./images/StarRacers/StarRacers2.jpg"
+        ],
+        "video" : ""
+    },
 ];
