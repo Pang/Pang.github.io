@@ -15,7 +15,7 @@ const jobs = [
         "id" : 3,
         "employer" : "Pastest",
         "datesWorked" : "Oct 2021 – Apr 2022",
-        "description" : "<p>At Pastest, I was the main Front-end developer of the team, but I also assisted in the server-side work depending on the priority of tasks. Features were planned as a team, then my role was to turn those specifications into a complete interface and then help build and support the backend. One of my main priorities were rebuilding the web-app in the latest version of MVC and developing a Microlearning feature to be included in the existing subscription.</p><p>I also maintained the in-house Content Management System (built in ReactJS) which was used daily by the content team to create and edit exam questions and learning resources. Finally picking up support tickets on the help-desk which contained issues raised from both customers and colleagues.</p>"
+        "description" : "<p>I was hired to build a new 'Microlearning' feature using ASP.Net, which was an extension of their Medical Exam question bank subscription. I was given designs and a functional specification and had weekly meetings to share my progress with the team and managers involved in the project.</p> <p>Whilst here, I also supported the junior developers working on their in-house content management system built in ReactJS. This was used by the content team to create and manage exam questions, learning resources and other materials that would appear in both their web and mobile app.</p>"
     },
     {
         "id" : 4,
