@@ -76,17 +76,6 @@ const projects = [
     {
         "id" : 8,
         "type" : "game",
-        "title" : "Online-Multiplayer Platformer",
-        "description" : "<p>I built this game with Unity\’s Netcode for Gameobjects library so that I could also play it with friends and family. You can create a private lobby and use a secret code to join as it uses a Client-Host model and then connects to Unity’s online services to collect analytics. One of the biggest challenges for this project was getting all of the moving objects to sync up the same for every player. I wrote an article about my findings from this project on my blog <a class=\"dialoglink\" href=\"./blog/UnityNetworking.html\" target=\"blank\">Here</a></p>",
-        "images" : [
-            "./images/OnlinePlatformer/Platformer1.png",
-            "./images/OnlinePlatformer/Platformer1.png"
-        ],
-        "video" : ""
-    },
-    {
-        "id" : 9,
-        "type" : "game",
         "title" : "StarRacers",
         "description" : "<p>A VR game that lets the player walk around their ship bay to select levels, then enter their ship to race around tracks and race against time. You can choose between using VR controllers, gamepad or Keyboard/Mouse. Race with your preferred method of control!</p>",
         "images" : [
