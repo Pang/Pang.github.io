@@ -3,7 +3,7 @@ const jobs = [
         "id" : 1,
         "employer" : "Holovis",
         "datesWorked" : "December 2023 – Present",
-        "description" : "<p>Working as a Software Solutions Architect I get to contribute to many different areas of a project. From planning and structuring the architecture of code, working in Unity, to building server-side functionality and developing for embedded systems.</p>"
+        "description" : "<p>Working as a Software Solutions Architect I get to contribute to many different areas of a project. From planning and structuring the architecture of code, creating the application in Unity then building microservices or API’s that are needed alongside it. I also get involved with the embedded programming side of things when needed.</p> <p>A lot of my time is also spent creating Ansible scripts to deploy all our projects across multiple machines or building test pipelines to build new releases of code for the number of attractions we design and build for our clients.</p>"
     },
     {
         "id" : 2,
