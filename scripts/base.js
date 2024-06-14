@@ -1,5 +1,6 @@
 (function() {
     autoScrollImgsEnabled();
+    GetLatestYear();
  })();
 
 // set img auto scroll
@@ -59,4 +60,10 @@ function closeDialog(modalId) {
     let video = modal.getElementsByTagName('video')[0];
     if (video) video.pause();
     modal.style.display = "none";
+}
+
+// replace copyright year with latest
+function GetLatestYear() {
+    let date = new Date();
+    document.getElementById("latestYear").innerHTML = date.getFullYear();
 }
