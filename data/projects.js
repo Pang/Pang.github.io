@@ -5,9 +5,9 @@ const projects = [
         "title" : "Twitch Tools",
         "description" : "<p>As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p><p>We also added some nifty features to visualise their chat data too! <a class=\"dialoglink\" onclick=\"openModal('copilotVidWrapper')\">Click Here</a> for a tour</p>",
         "images" : [
-            "./images/CopilotCarousel/homepage.jpg", 
-            "./images/CopilotCarousel/PiscesPixieProfile.jpg", 
-            "./images/CopilotCarousel/piscesStream.jpg"
+            "./images/CopilotCarousel/homepage.jpeg", 
+            "./images/CopilotCarousel/PiscesPixieProfile.jpeg", 
+            "./images/CopilotCarousel/piscesStream.jpeg"
         ],
         "video" : "",
     },
@@ -17,8 +17,8 @@ const projects = [
         "title" : "Nexus (EPR)",
         "description" : "<p>Nexus is an Electronic Patient Record, built in Angular2+ & .Net Core, used for admitting patients and tracking their journey through a hospital.</p><p>It's main purpose is to remove the need of paper records being stored and traced, whilst allowing the medical and clinical staff to provide the best care with the necessary information needed.</p>",
         "images" : [
-            "./images/NPR/nprDiagram.png", 
-            "./images/NPR/nprDiagramBeds.png"
+            "./images/NPR/nprDiagram.jpeg", 
+            "./images/NPR/nprDiagramBeds.jpeg"
         ],
         "video" : "",
     },
@@ -28,8 +28,8 @@ const projects = [
         "title" : "WebContractor",
         "description" : "<p>A solution for contractors within the field of construction, to improve the efficiency of managing multiple sub-contractors over multiple projects.</p><p>Companies can also manage applications for payments and invoices, whilst ensuring compliance with the UK Construction Act.</p>",
         "images" : [
-            "./images/Webcontractor/subcontractOrders.png", 
-            "./images/Webcontractor/subcontractOrderCreate.png"
+            "./images/Webcontractor/subcontractOrders.jpeg", 
+            "./images/Webcontractor/subcontractOrderCreate.jpeg"
         ],
         "video" : "",
     },
@@ -55,9 +55,9 @@ const projects = [
         "title" : "NPC AI",
         "description" : "<p>Inspired by 3D stealth games, I used a state machine design pattern to set the idle, investigate and attack states of the NPC. Then through the use of linear algebra and the Dot Product, I could check the position of the player from the NPC. Finally I gave the player a crouching state which meant their footsteps couldn’t be heard when sneaking behind a wall or the back of an enemy. </p><p><a class=\"dialoglink\" href=\"https://github.com/Pang/NpcLogic\">Click here</a> to see the logic</p>",
         "images" : [
-            "./images/NpcAI/ShieldMaidens2Vision.png",
-            "./images/NpcAI/ShieldMaidens2pic2.png",
-            "./images/NpcAI/Sneak.png"
+            "./images/NpcAI/ShieldMaidens2Vision.jpeg",
+            "./images/NpcAI/ShieldMaidens2pic2.jpeg",
+            "./images/NpcAI/Sneak.jpeg"
         ],
         "video" : ""
     },
@@ -67,9 +67,9 @@ const projects = [
         "title" : "HexWorld",
         "description" : "<p>A top down tower defence like game. The hex-tile grid is programmatically rendered and then uses the CSV selected from the menu to determine land, water & other interests on the map. The NPC units use A* Pathfinding and the Player's units use the ‘Breadth-First-Search’ algorithm to find viable paths around your lands.</p><p>You can get a link to games store-page <a class=\"dialoglink\" href=\"https://pangdev.itch.io/hexworld\" target=\"blank\">Here</a></p>",
         "images" : [
-            "./images/HexWorld/HexWorldLedgeMap.png",
-            "./images/HexWorld/HexWorldSpiralMap.png",
-            "./images/HexWorld/HexWorldSimpleMap.png",
+            "./images/HexWorld/HexWorldLedgeMap.jpeg",
+            "./images/HexWorld/HexWorldSpiralMap.jpeg",
+            "./images/HexWorld/HexWorldSimpleMap.jpeg",
         ],
         "video" : ""
     },
