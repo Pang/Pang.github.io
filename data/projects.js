@@ -1,18 +1,7 @@
 const projects = [
+
     {
         "id" : 1,
-        "type" : "web",
-        "title" : "Twitch Tools",
-        "description" : "<p>As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p><p>We also added some nifty features to visualise their chat data too! <a class=\"dialoglink\" onclick=\"openModal('copilotVidWrapper')\">Click Here</a> for a tour</p>",
-        "images" : [
-            "./images/CopilotCarousel/homepage.jpg", 
-            "./images/CopilotCarousel/PiscesPixieProfile.jpg", 
-            "./images/CopilotCarousel/piscesStream.jpg"
-        ],
-        "video" : "",
-    },
-    {
-        "id" : 2,
         "type" : "web",
         "title" : "Nexus (EPR)",
         "description" : "<p>Nexus is an Electronic Patient Record, built in Angular2+ & .Net Core, used for admitting patients and tracking their journey through a hospital.</p><p>It's main purpose is to remove the need of paper records being stored and traced, whilst allowing the medical and clinical staff to provide the best care with the necessary information needed.</p>",
@@ -23,13 +12,25 @@ const projects = [
         "video" : "",
     },
     {
-        "id" : 3,
+        "id" : 2,
         "type" : "web",
         "title" : "WebContractor",
         "description" : "<p>A solution for contractors within the field of construction, to improve the efficiency of managing multiple sub-contractors over multiple projects.</p><p>Companies can also manage applications for payments and invoices, whilst ensuring compliance with the UK Construction Act.</p>",
         "images" : [
             "./images/Webcontractor/subcontractOrders.png", 
             "./images/Webcontractor/subcontractOrderCreate.png"
+        ],
+        "video" : "",
+    },
+    {
+        "id" : 3,
+        "type" : "web",
+        "title" : "Twitch Tools",
+        "description" : "<p>As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p><p>We also added some nifty features to visualise their chat data too! <a class=\"dialoglink\" onclick=\"openModal('copilotVidWrapper')\">Click Here</a> for a tour</p>",
+        "images" : [
+            "./images/CopilotCarousel/homepage.jpg", 
+            "./images/CopilotCarousel/PiscesPixieProfile.jpg", 
+            "./images/CopilotCarousel/piscesStream.jpg"
         ],
         "video" : "",
     },
