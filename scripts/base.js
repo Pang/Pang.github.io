@@ -52,6 +52,9 @@ function openRefModal(modalId, refId) {
     const refSelected = references.find(x => x.id == refId);
     textArea.innerHTML = '<h4><b>' + refSelected.fullName + '</b></h4>';
     textArea.innerHTML +='<p>' +  refSelected.longVersion + '</p>';
+
+    const refLinkedIn = document.getElementById('refLinkedin');
+    refLinkedIn.setAttribute('href', refSelected.linkedin);
 }
 
 // close a modal using ID
