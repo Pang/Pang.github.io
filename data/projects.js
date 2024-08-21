@@ -28,9 +28,9 @@ const projects = [
         "title" : "Twitch Tools",
         "description" : "<p>As part of a team of 2, we developed a web application in VueJs & .Net Core to help streamers tackle the raising concerns of DMCA strikes for having music caught in the background audio of their streams.</p><p>We also added some nifty features to visualise their chat data too! <a class=\"dialoglink\" onclick=\"openModal('copilotVidWrapper')\">Click Here</a> for a tour</p>",
         "images" : [
-            "./images/CopilotCarousel/homepage.jpg", 
-            "./images/CopilotCarousel/PiscesPixieProfile.jpg", 
-            "./images/CopilotCarousel/piscesStream.jpg"
+            "./images/CopilotCarousel/homepage.jpeg", 
+            "./images/CopilotCarousel/PiscesPixieProfile.jpeg", 
+            "./images/CopilotCarousel/piscesStream.jpeg"
         ],
         "video" : "",
     },
