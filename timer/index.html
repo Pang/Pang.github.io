@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Second Timer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: beige;
+        }
+        button {
+            padding: 50px;
+            font-size: 80px;
+            cursor: pointer;
+            border-radius: 100%;
+            height: 225px;
+            width: 225px;
+            background-color: #00a915;
+            border: 5px solid black;
+            color: #000000;
+            font-weight: bold;
+        }
+        #timer {
+            margin-top: 20px;
+            font-size: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="startButton">GO</button>
+    <div id="timer">30</div>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const timerDisplay = document.getElementById('timer');
+        
+        let countdown;
+        let timeRemaining = 30;
+
+        function startTimer() {
+            // Clear any existing timer
+            clearInterval(countdown);
+            
+            // Reset time remaining to 30 seconds
+            timeRemaining = 30;
+            timerDisplay.textContent = timeRemaining;
+
+            // Start the countdown
+            countdown = setInterval(() => {
+                timeRemaining--;
+                timerDisplay.textContent = timeRemaining;
+
+                if (timeRemaining <= 0) {
+                    clearInterval(countdown);
+                    timerDisplay.textContent = "Fin!";
+                }
+            }, 1000);
+        }
+
+        startButton.addEventListener('click', startTimer);
+    </script>
+</body>
+</html>
