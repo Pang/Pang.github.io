@@ -2,7 +2,7 @@ const jobs = [
     {
         "id" : 1,
         "employer" : "Holovis",
-        "datesWorked" : "December 2023 – November 2023",
+        "datesWorked" : "December 2023 – November 2024",
         "description" : "<p>This role required that I was able to take initiative and contribute to many different technical areas of a project. From planning features, giving time estimates and database architecture whilst considering long term maintainability and scalability through best coding practices. Building interfaces in React or Unity and backend API’s or microservices using .Net Core, depending on the requirements from clients and the use of technical discussions on how to best approach a software solution.</p> <p>TDD was a big part of the development process, NUnit being the preferred .Net testing framework. I would write my own tests first and make sure all of the logic passes, then create a YAML script and set up a multibranch pipeline to create release builds the QA team can use for testing. To get these running on the hardware we build and set up for our clients I would also use a tool called Ansible, which was used to write scripts for setting up and deploying to multiple machines.</p>"
     },
     {
