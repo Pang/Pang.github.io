@@ -1,3 +1,7 @@
+import references from "../data/references.json" with { type: "json" };
+import jobs from "../data/jobs.json" with { type: "json" };
+import projects from "../data/projects.json" with { type: "json" };
+
 (function() {
     fillReferences();
     fillJobs();
@@ -14,6 +18,8 @@ function CreateBookmark() {
 // place references
 function fillReferences() {
     const refArea = document.getElementById('referenceSection');
+    console.log("qweqweqweqwe");
+    console.log(references.length);
     for (let i = 0; i < references.length; i++) {
         let ref = '<div class="referenceItem">' +
         '<h5><b>' + references[i].fullName +'</b></h5>' +

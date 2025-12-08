@@ -1,5 +1,4 @@
-const projects = [
-
+[
     {
         "id" : 1,
         "type" : "web",
@@ -9,7 +8,7 @@ const projects = [
             "./images/NPR/nprDiagram.jpeg", 
             "./images/NPR/nprDiagramBeds.jpeg"
         ],
-        "video" : "",
+        "video" : ""
     },
     {
         "id" : 2,
@@ -20,7 +19,7 @@ const projects = [
             "./images/Webcontractor/subcontractOrders.jpeg", 
             "./images/Webcontractor/subcontractOrderCreate.jpeg"
         ],
-        "video" : "",
+        "video" : ""
     },
     {
         "id" : 3,
@@ -32,13 +31,13 @@ const projects = [
             "./images/CopilotCarousel/PiscesPixieProfile.jpeg", 
             "./images/CopilotCarousel/piscesStream.jpeg"
         ],
-        "video" : "",
+        "video" : ""
     },
     {
         "id" : 4,
         "type" : "game",
         "title" : "Procedural Terrain",
-        "description" : "<p>Through the use of perlin noise, creating my own mesh and building a shader for the colours of the terrain depending on it\’s height, I was able to generate different maps and then use “fall-off” to turn them into islands. I shared my findings and how I built this project on a <a class=\"dialoglink\" href=\"https://www.youtube.com/watch?v=cLs3CGNV120\" target=\"blank\">YouTube tutorial</a></p>",
+        "description" : "<p>Through the use of perlin noise, creating my own mesh and building a shader for the colours of the terrain depending on it’s height, I was able to generate different maps and then use “fall-off” to turn them into islands. I shared my findings and how I built this project on a <a class=\"dialoglink\" href=\"https://www.youtube.com/watch?v=cLs3CGNV120\" target=\"blank\">YouTube tutorial</a></p>",
         "images" : [],
         "video" : "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/wmaskscrRvM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
     },
@@ -64,6 +63,5 @@ const projects = [
             "./images/NpcAI/Sneak.jpeg"
         ],
         "video" : ""
-    },
-
-];
+    }
+]

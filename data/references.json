@@ -1,4 +1,4 @@
-const references = [
+[
     {
         "id" : 1,
         "fullName" : "Ross Prestwich",
@@ -26,4 +26,4 @@ const references = [
         "shortVersion" :
             "&ldquo;He is very reliable and an avid learner which was a perfect fit for our culture and values as he developed proficiency with a previously unfamiliar Blazor framework which he was very enthusiatic about as he got the oppurtunity to develop new skills.&rdquo;"
     }
-];
+]
