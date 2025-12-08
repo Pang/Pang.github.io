@@ -145,3 +145,7 @@ code {
 .urlLinks > a:hover {
     color: #445bcf;
 }
+
+.footer > a {
+    color: #60998b;
+}
