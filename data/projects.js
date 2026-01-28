@@ -38,7 +38,7 @@ const projects = [
         "id" : 4,
         "type" : "web",
         "title" : "QuoteCapture",
-        "description" : "<p>A full application that streamlines a contractors entire workflow, from quoting jobs to fitting them in their calendar and building and invoice.</p><p>This was a solo project which I hosted on a linux server, built in blazor & .Net and use Postgres for the database.</p>",
+        "description" : "<p>A full application that streamlines a contractors entire workflow, from quoting jobs to fitting them in their calendar and aggregating data for invoices.</p><p>This was a solo project which I hosted on a linux server, built in blazor & .Net and use Postgres for the database.</p>",
         "images" : [
             "./images/QuoteCapture/QC_CalendarScreenshot.jpg",
             "./images/QuoteCapture/QC_ClientsScreenshot.jpg",
@@ -67,14 +67,10 @@ const projects = [
         "id" : 7,
         "type" : "game",
         "title" : "Others",
-        "description" : "<p>NPC AI - Inspired by 3D stealth games, uses dot product and lets you crouch to sneak past enemies. <a class=\"dialoglink\" href=\"https://github.com/Pang/NpcLogic\">Code</a></p><p>HexWorld - A top down tower defence like game. Programmatically rendered maps by reading a CSV. NPC's use A* Pathfinding and Players use ‘Breadth-First-Search’ algorithm to find viable paths. <a class=\"dialoglink\" href=\"https://pangdev.itch.io/hexworld\" target=\"blank\">Store page</a></p>",
+        "description" : "<p>Maps rendered from CSV files. A* Pathfinding for NPC's and ‘Breadth-First-Search’ for players. <a class=\"dialoglink\" href=\"https://pangdev.itch.io/hexworld\" target=\"blank\">Store page</a></p>A classic match 3 game written in c++ using the Raylib library. <a class=\"dialoglink\" href=\"https://github.com/Pang/Match3_Raylib\">Github</a></p>",
         "images" : [
-            "./images/HexWorld/HexWorldLedgeMap.jpeg",
-            "./images/NpcAI/ShieldMaidens2Vision.jpeg",
             "./images/HexWorld/HexWorldSpiralMap.jpeg",
-            "./images/NpcAI/ShieldMaidens2pic2.jpeg",
-            "./images/HexWorld/HexWorldSimpleMap.jpeg",
-            "./images/NpcAI/Sneak.jpeg"
+            "./images/match3.png"
         ],
         "video" : ""
     },

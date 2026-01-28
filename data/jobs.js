@@ -27,12 +27,6 @@ const jobs = [
         "id" : 5,
         "employer" : "Blackpool Victoria Hospital",
         "datesWorked" : "Aug 2019 – Sep 2021",
-        "description" : "<p>Working with technologies like .Net and Angular, I was a large contributor to their in-house EPR system Nexus, which aided the work of the medical and clinical staff.This app was built to aggregate many third party systems as well as having its own functionality for admitting a patient, following their journey of care and maintaining an overview of each ward in the hospital.</p>"
-    },
-    {
-        "id" : 6,
-        "employer" : "Freelance",
-        "datesWorked" : "Aug 2017 – Sep 2019",
-        "description" : "<p>Whilst working full time, I taught myself to code websites with html, CSS and javascript, then used these skills to build web pages for small businesses. These were statically hosted and I handled the domains myself so clients didn’t have to worry about additional admin.</p>"
+        "description" : "<p>Working with technologies like .Net and Angular, I was a large contributor to their in-house EPR system Nexus, which aided the work of the medical and clinical staff. This app was built to aggregate many third party systems as well as having its own functionality for admitting a patient, following their journey of care and maintaining an overview of each ward in the hospital.</p>"
     },
 ];
