@@ -63,8 +63,22 @@ const projects = [
         "images" : [],
         "video" : "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/BKQ04dLX_6w\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
     },
-    {
+        {
         "id" : 7,
+        "type" : "game",
+        "title" : "Top-down Stealther",
+        "description" : "<p>Using SFML 3 and C++, this game has you sneaking past different NPCs to find the keys on each floor and escape to the next level.</p>",
+        "images" : [
+            "./images/StealthGame/main_menu.png",
+            "./images/StealthGame/ghost_level.png",
+            "./images/StealthGame/knight_level.png",
+            "./images/StealthGame/skeleton_level.png",
+            "./images/StealthGame/elf_level.png"
+        ],
+        "video" : ""
+    },
+    {
+        "id" : 8,
         "type" : "game",
         "title" : "Others",
         "description" : "<p>Maps rendered from CSV files. A* Pathfinding for NPC's and ‘Breadth-First-Search’ for players. <a class=\"dialoglink\" href=\"https://pangdev.itch.io/hexworld\" target=\"blank\">Store page</a></p>A classic match 3 game written in c++ using the Raylib library. <a class=\"dialoglink\" href=\"https://github.com/Pang/Match3_Raylib\">Github</a></p>",

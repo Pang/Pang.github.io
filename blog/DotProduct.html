@@ -48,9 +48,8 @@
             
         </p>
         <p>
-            An important thing to remember is that this doesn't account for the objects position, so if the rotation is <span class="keywords">`Vector3(0, 30, 0)`</span>, then
-            the `.forward` property will always output the same <span class="keywords">`Vector3(0.50, 0.00, 0.87)`</span> regardless of it's position in world space. Therefore if you
-            do need to check that the target is in range first you will need to do something like: <br /> <br />
+            An important thing to remember is that this doesn't account for the objects position, so to check that the target 
+            is in range first you will need to do something like: <br /> <br />
 
             <code>float magnitude = (targetPosition - selfPosition).magnitude;
                 return magnitude &lt; radius;
