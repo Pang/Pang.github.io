@@ -1,3 +1,5 @@
+let autoScrollTimer;
+
 (function() {
     autoScrollImgsEnabled();
     GetLatestYear();
@@ -6,7 +8,7 @@
 // set img auto scroll
 function autoScrollImgsEnabled() {
     let activeImgs = document.getElementsByClassName('activeImg');
-    setInterval(function() {
+    autoScrollTimer = setInterval(function() {
         for (let i = 0; i < activeImgs.length; i++) {
             changeImg(activeImgs[i]);
         }
@@ -24,6 +26,10 @@ function changeImg(el) {
     noActive = noActive >= imgs.length - 1 ? 0 : noActive + 1;
     imgs[noActive].className = 'activeImg';
     imgs[noActive == 0 ? imgs.length - 1 : noActive - 1].className = 'lastImg';
+    
+    // Reset the auto-scroll timer
+    clearInterval(autoScrollTimer);
+    autoScrollImgsEnabled();
 }
 
 // open image full size in new tab
