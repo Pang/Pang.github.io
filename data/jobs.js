@@ -2,8 +2,8 @@ const jobs = [
     {
         "id" : 1,
         "employer" : "Eclipse",
-        "datesWorked" : "November 2024 – Present",
-        "description" : "<p>Currently leading on a Blazor .Net project that replicates all the features from their current desktop product, with the aim of building stronger foundations on current technology that can be scaled and maintained easier.</p> <p>Other than building this application as an almost 'greenfield' project, I have set up GitLab, created docker containers for ease of deployment, implemented CI/CD pipelines, written unit and functional tests as well as put together documentation that helps junior developers get straight into contributing on the project.</p>"
+        "datesWorked" : "November 2024 – March 2026",
+        "description" : "<p>Lead on a Blazor .Net project that aims to replace their main desktop product, with the aim of building stronger foundations on current technology that has better performance and scalability.</p> <p>Other than building this application as an almost 'greenfield' project, I have set up GitLab, created docker containers for ease of deployment, implemented CI/CD pipelines, written unit and functional tests as well as put together documentation that helps junior developers get straight into contributing on the project.</p>"
     },
     {
         "id" : 2,
