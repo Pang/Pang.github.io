@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team Fixtures</title>
+<style>
+  :root {
+    --bg: #f6f5f1;
+    --panel: #ffffff;
+    --ink: #1c1d1f;
+    --muted: #6b6e74;
+    --line: #e3e1da;
+    --accent: #e0561b;
+    --win: #1f8a4c;
+    --loss: #c23b2a;
+    --draw: #7a6f2b;
+    --chip: #f0eee8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141517;
+      --panel: #1d1f22;
+      --ink: #ecebe7;
+      --muted: #9a9ca1;
+      --line: #2e3034;
+      --accent: #ff7a3d;
+      --win: #4cc380;
+      --loss: #ff6b5a;
+      --draw: #d6c45e;
+      --chip: #26282c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 28px 16px 60px; }
+  header .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+  header h1 { margin: 2px 0 4px; font-size: 30px; letter-spacing: -0.02em; }
+  header p { margin: 0; color: var(--muted); }
+
+  details.adv { margin: 18px 0 20px; color: var(--muted); font-size: 13px; }
+  details.adv summary { cursor: pointer; }
+  form.controls {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 10px; align-items: end; margin-top: 12px;
+  }
+  form.controls .wide { grid-column: 1 / -1; }
+  label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .06em; }
+  input {
+    width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px;
+    background: var(--panel); color: var(--ink); font: inherit;
+  }
+  button {
+    padding: 9px 18px; border: 0; border-radius: 8px; background: var(--accent); color: #fff;
+    font: inherit; font-weight: 600; cursor: pointer;
+  }
+  button:disabled { opacity: .55; cursor: default; }
+
+  #status { min-height: 22px; color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+  .error {
+    background: color-mix(in srgb, var(--loss) 12%, var(--panel));
+    border: 1px solid color-mix(in srgb, var(--loss) 40%, var(--line));
+    padding: 12px 14px; border-radius: 10px; margin-bottom: 18px; white-space: pre-wrap;
+  }
+
+  .summary { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; min-width: 88px; }
+  .stat b { display: block; font-size: 22px; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+
+  .next {
+    margin: 22px 0 6px; padding: 16px 18px; border-radius: 12px;
+    background: color-mix(in srgb, var(--accent) 10%, var(--panel));
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  }
+  .next .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-weight: 700; }
+  .next .vs { font-size: 20px; font-weight: 700; margin: 4px 0 2px; }
+  .next .info { color: var(--muted); font-size: 14px; }
+
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 28px 0 10px; }
+  .fx {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 14px; align-items: center;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px; margin-bottom: 8px;
+  }
+  .when { font-size: 13px; color: var(--muted); line-height: 1.3; }
+  .when b { display: block; color: var(--ink); font-size: 15px; }
+  .teams { min-width: 0; }
+  .teams .t { display: flex; justify-content: space-between; gap: 12px; }
+  .teams .t.me { font-weight: 700; }
+  .teams .t span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .teams .score { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .meta { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .badge {
+    font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--chip); color: var(--muted);
+    min-width: 34px; text-align: center; white-space: nowrap;
+  }
+  .badge.W { background: color-mix(in srgb, var(--win) 18%, var(--panel)); color: var(--win); }
+  .badge.L { background: color-mix(in srgb, var(--loss) 18%, var(--panel)); color: var(--loss); }
+  .badge.D { background: color-mix(in srgb, var(--draw) 18%, var(--panel)); color: var(--draw); }
+
+  .table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { padding: 9px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+  th:nth-child(2), td:nth-child(2) { text-align: left; width: 100%; }
+  th:first-child, td:first-child { text-align: center; }
+  tr:last-child td { border-bottom: 0; }
+  tr.me td { background: color-mix(in srgb, var(--accent) 10%, var(--panel)); font-weight: 700; }
+  .empty { color: var(--muted); padding: 14px 0; }
+
+  @media (max-width: 600px) {
+    form.controls { grid-template-columns: 1fr 1fr; }
+    form.controls button { grid-column: 1 / -1; }
+    .fx { grid-template-columns: 1fr auto; }
+    .when { grid-column: 1 / -1; display: flex; gap: 8px; align-items: baseline; }
+    .when b { display: inline; }
+    .hide-sm { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow" id="eyebrow">Loading…</div>
+    <h1 id="title">Team fixtures</h1>
+    <p id="subtitle"></p>
+  </header>
+
+  <details class="adv">
+    <summary>Change team or league</summary>
+    <form class="controls" id="form">
+      <div class="wide">
+        <label for="site">Spawtz site</label>
+        <input type="text" id="site" value="https://sportforallcentres.spawtz.com">
+      </div>
+      <div><label for="team">Team ID</label><input type="number" id="team" value="2073" min="1"></div>
+      <div><label for="league">League ID</label><input type="number" id="league" value="80" min="1"></div>
+      <div><label for="season">Season ID</label><input type="number" id="season" value="9" min="1"></div>
+      <div><label for="division">Division ID</label><input type="number" id="division" value="825" min="1"></div>
+      <button type="submit" id="go">Load</button>
+    </form>
+  </details>
+
+  <div id="status"></div>
+  <div id="out"></div>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const FIELDS = ["site", "team", "league", "season", "division"];
+
+  // ---------- settings: URL params > saved > defaults ----------
+  const params = new URLSearchParams(location.search);
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem("spawtzTeamFixtures") || "{}"); } catch {}
+  for (const f of FIELDS) {
+    const v = params.get(f) ?? saved[f];
+    if (v != null && v !== "") $(f).value = v;
+  }
+  const settings = () => Object.fromEntries(FIELDS.map((f) => [f, $(f).value.trim()]));
+
+  // ---------- fetching ----------
+  async function getXml(url) {
+    let res;
+    try { res = await fetch(url); }
+    catch { throw new Error("Couldn't reach the Spawtz feed. Check your connection, or whether the site hosting this page restricts outgoing requests."); }
+    if (!res.ok) throw new Error(`The feed returned HTTP ${res.status}.`);
+    const doc = new DOMParser().parseFromString(await res.text(), "application/xml");
+    if (doc.querySelector("parsererror")) throw new Error("The feed response wasn't valid XML.");
+    return doc;
+  }
+
+  // ---------- parsing ----------
+  const attr = (el, name) => el.getAttribute(name) ?? "";
+  const num = (el, name) => { const s = attr(el, name); if (s === "") return null; const v = Number(s); return Number.isFinite(v) ? v : null; };
+  const isTrue = (el, name) => attr(el, name).toLowerCase() === "true";
+
+  function parseDate(s) {
+    const m = String(s).match(/(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}):(\d{2}))?/);
+    return m ? new Date(+m[3], +m[2] - 1, +m[1], +(m[4] || 0), +(m[5] || 0)) : null;
+  }
+
+  // <League LeagueName SeasonName DivisionName>
+  //   <Week Date="16/10/2026">
+  //     <Fixture DateTime Id PlayingAreaName VenueName HomeTeamId HomeTeam HomeTeamScore HomeTeamForfeit
+  //              AwayTeamId AwayTeam AwayTeamScore AwayTeamForfeit Duration ... />
+  function parseFixtures(doc, teamId) {
+    const root = doc.documentElement;
+    const now = new Date();
+    const id = String(teamId);
+    const fixtures = [];
+    let teamName = "";
+
+    for (const fx of doc.getElementsByTagName("Fixture")) {
+      const homeId = attr(fx, "HomeTeamId"), awayId = attr(fx, "AwayTeamId");
+      if (homeId !== id && awayId !== id) continue;
+
+      const isHome = homeId === id;
+      const date = parseDate(attr(fx, "DateTime") || attr(fx.parentElement, "Date"));
+      const hs = num(fx, "HomeTeamScore"), as = num(fx, "AwayTeamScore");
+      const homeForfeit = isTrue(fx, "HomeTeamForfeit"), awayForfeit = isTrue(fx, "AwayTeamForfeit");
+      const forfeit = homeForfeit || awayForfeit;
+      const hasScore = hs !== null && as !== null && (hs > 0 || as > 0);
+      const inPast = date ? date < now : false;
+      const played = forfeit || hasScore;
+
+      let result = "";
+      if (forfeit) {
+        const weForfeit = isHome ? homeForfeit : awayForfeit;
+        const theyForfeit = isHome ? awayForfeit : homeForfeit;
+        result = weForfeit && !theyForfeit ? "L" : theyForfeit && !weForfeit ? "W" : "";
+      } else if (hasScore) {
+        const us = isHome ? hs : as, them = isHome ? as : hs;
+        result = us > them ? "W" : us < them ? "L" : "D";
+      }
+
+      const f = {
+        id: attr(fx, "Id"),
+        date,
+        home: attr(fx, "HomeTeam") || `Team ${homeId}`,
+        away: attr(fx, "AwayTeam") || `Team ${awayId}`,
+        hs, as, isHome, played, result, forfeit, homeForfeit, awayForfeit,
+        awaitingResult: !played && inPast,
+        court: attr(fx, "PlayingAreaName"),
+        venue: attr(fx, "VenueName"),
+        name: attr(fx, "FixtureName"),
+      };
+      if (!teamName) teamName = isHome ? f.home : f.away;
+      fixtures.push(f);
+    }
+
+    return {
+      league: attr(root, "LeagueName"),
+      season: attr(root, "SeasonName"),
+      division: attr(root, "DivisionName"),
+      teamName,
+      fixtures,
+    };
+  }
+
+  function parseStandings(doc) {
+    return [...doc.getElementsByTagName("Team")]
+      .filter((t) => t.parentElement === doc.documentElement && !isTrue(t, "Hide"))
+      .map((t) => ({
+        id: attr(t, "Id"), name: attr(t, "Name"),
+        position: num(t, "Position") ?? 0,
+        played: num(t, "Played") ?? 0, won: num(t, "Won") ?? 0, lost: num(t, "Lost") ?? 0, drawn: num(t, "Drawn") ?? 0,
+        for: num(t, "For") ?? 0, against: num(t, "Against") ?? 0, diff: num(t, "Difference") ?? 0, points: num(t, "Points") ?? 0,
+      }))
+      .sort((a, b) => a.position - b.position);
+  }
+
+  // ---------- rendering ----------
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const day = (d) => d ? d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" }) : "Date TBC";
+  const longDay = (d) => d ? d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" }) : "Date TBC";
+  const time = (d) => d ? d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }) : "";
+  const ordinal = (n) => n + (({ 1: "st", 2: "nd", 3: "rd" })[(n % 100 >= 11 && n % 100 <= 13) ? 0 : n % 10] || "th");
+  const place = (f) => [f.court, f.venue && !f.court.toLowerCase().includes(f.venue.toLowerCase()) ? f.venue : ""].filter(Boolean).join(", ");
+
+  function fixtureRow(f) {
+    const score = (n, ff) => ff ? "FF" : (f.played && n !== null ? n : "");
+    let badge, cls = f.result;
+    if (f.played) badge = f.result || "FT";
+    else if (f.awaitingResult) badge = "TBC";
+    else { badge = "vs"; cls = ""; }
+    const meta = [place(f), f.name].filter(Boolean).map(esc).join(" · ");
+    return `
+      <div class="fx">
+        <div class="when"><b>${esc(day(f.date))}</b>${esc(time(f.date))}</div>
+        <div class="teams">
+          <div class="t ${f.isHome ? "me" : ""}"><span>${esc(f.home)}</span><span class="score">${score(f.hs, f.homeForfeit)}</span></div>
+          <div class="t ${!f.isHome ? "me" : ""}"><span>${esc(f.away)}</span><span class="score">${score(f.as, f.awayForfeit)}</span></div>
+          ${meta ? `<div class="meta">${meta}</div>` : ""}
+        </div>
+        <span class="badge ${esc(cls)}" ${f.awaitingResult ? 'title="Played, result not entered yet"' : ""}>${esc(badge)}</span>
+      </div>`;
+  }
+
+  function nextCard(f) {
+    const opp = f.isHome ? f.away : f.home;
+    return `
+      <div class="next">
+        <div class="lbl">Next game</div>
+        <div class="vs">${f.isHome ? "vs" : "@"} ${esc(opp)}</div>
+        <div class="info">${esc(longDay(f.date))}${f.date ? " · " + esc(time(f.date)) : ""}${place(f) ? " · " + esc(place(f)) : ""}</div>
+      </div>`;
+  }
+
+  function standingsTable(teams, myId) {
+    return `
+      <div class="table-wrap"><table>
+        <thead><tr>
+          <th>#</th><th>Team</th><th>P</th><th>W</th><th>L</th>
+          <th class="hide-sm">For</th><th class="hide-sm">Agn</th><th>+/-</th><th>Pts</th>
+        </tr></thead>
+        <tbody>${teams.map((t) => `
+          <tr class="${t.id === String(myId) ? "me" : ""}">
+            <td>${t.position}</td><td>${esc(t.name)}</td><td>${t.played}</td><td>${t.won}</td><td>${t.lost}</td>
+            <td class="hide-sm">${t.for}</td><td class="hide-sm">${t.against}</td>
+            <td>${t.diff > 0 ? "+" : ""}${t.diff}</td><td><b>${t.points}</b></td>
+          </tr>`).join("")}
+        </tbody>
+      </table></div>`;
+  }
+
+  function render(data, standings, s) {
+    $("eyebrow").textContent = [data.league, data.division, data.season].filter(Boolean).join(" · ");
+
+    if (!data.fixtures.length) {
+      $("title").textContent = `Team ${s.team}`;
+      $("subtitle").textContent = "";
+      $("out").innerHTML =
+        `<div class="error">No fixtures found for team ${esc(s.team)} in this division. Check the IDs under “Change team or league”.</div>` +
+        (standings.length ? `<h2>Teams in this division</h2>${standingsTable(standings, s.team)}` : "");
+      return;
+    }
+
+    const me = standings.find((t) => t.id === String(s.team));
+    $("title").textContent = data.teamName;
+    $("subtitle").textContent = me ? `${ordinal(me.position)} of ${standings.length}` : "";
+    document.title = `${data.teamName} fixtures`;
+
+    const upcoming = data.fixtures.filter((f) => !f.played && !f.awaitingResult).sort((a, b) => (a.date || Infinity) - (b.date || Infinity));
+    const results = data.fixtures.filter((f) => f.played || f.awaitingResult).sort((a, b) => (b.date || 0) - (a.date || 0));
+
+    // Record from the fixtures themselves, so it matches what's listed
+    const played = results.filter((f) => f.played);
+    const count = (r) => played.filter((f) => f.result === r).length;
+    const pf = played.reduce((n, f) => n + ((f.isHome ? f.hs : f.as) || 0), 0);
+    const pa = played.reduce((n, f) => n + ((f.isHome ? f.as : f.hs) || 0), 0);
+    const diff = pf - pa;
+
+    $("out").innerHTML = `
+      <div class="summary">
+        <div class="stat"><b>${played.length}</b><span>Played</span></div>
+        <div class="stat"><b>${count("W")}</b><span>Won</span></div>
+        <div class="stat"><b>${count("L")}</b><span>Lost</span></div>
+        ${count("D") ? `<div class="stat"><b>${count("D")}</b><span>Drawn</span></div>` : ""}
+        <div class="stat"><b>${pf}–${pa}</b><span>Points</span></div>
+        <div class="stat"><b>${diff > 0 ? "+" : ""}${diff}</b><span>Diff</span></div>
+      </div>
+
+      ${upcoming.length ? nextCard(upcoming[0]) : ""}
+
+      <h2>Upcoming</h2>
+      ${upcoming.length ? upcoming.map(fixtureRow).join("") : `<div class="empty">Nothing scheduled yet.</div>`}
+
+      <h2>Results</h2>
+      ${results.length ? results.map(fixtureRow).join("") : `<div class="empty">No results yet.</div>`}
+
+      ${standings.length ? `<h2>Standings</h2>${standingsTable(standings, s.team)}` : ""}
+    `;
+  }
+
+  // ---------- main ----------
+  async function load() {
+    const s = settings();
+    try { localStorage.setItem("spawtzTeamFixtures", JSON.stringify(s)); } catch {}
+
+    const feed = (type) => `${s.site.replace(/\/+$/, "")}/External/Fixtures/Feed.aspx?` +
+      new URLSearchParams({ Type: type, LeagueId: s.league, SeasonId: s.season, DivisionId: s.division });
+
+    $("go").disabled = true;
+    $("status").textContent = "Loading…";
+    try {
+      const [fixturesDoc, standingsResult] = await Promise.all([
+        getXml(feed("Fixtures")),
+        getXml(feed("Standings")).then((d) => d, () => null), // standings are optional
+      ]);
+      const data = parseFixtures(fixturesDoc, s.team);
+      const standings = standingsResult ? parseStandings(standingsResult) : [];
+      render(data, standings, s);
+      $("status").textContent = `Updated ${time(new Date())}`;
+    } catch (e) {
+      $("status").textContent = "";
+      $("eyebrow").textContent = "";
+      $("out").innerHTML = `<div class="error">${esc(e.message)}</div>`;
+    } finally {
+      $("go").disabled = false;
+    }
+  }
+
+  $("form").addEventListener("submit", (e) => { e.preventDefault(); load(); });
+  load();
+})();
+</script>
+</body>
+</html>
